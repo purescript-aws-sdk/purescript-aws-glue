@@ -20,397 +20,551 @@ import Data.StrMap as StrMap
 import AWS.Request as Request
 import AWS.Request.Types as Types
 
-serviceName = "Glue" :: String
-
 
 -- | <p>Creates one or more partitions in a batch operation.</p>
 batchCreatePartition :: forall eff. BatchCreatePartitionRequest -> Aff (exception :: EXCEPTION | eff) BatchCreatePartitionResponse
-batchCreatePartition = Request.request serviceName "batchCreatePartition" 
+batchCreatePartition = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "batchCreatePartition"
 
 
 -- | <p>Deletes a list of connection definitions from the Data Catalog.</p>
 batchDeleteConnection :: forall eff. BatchDeleteConnectionRequest -> Aff (exception :: EXCEPTION | eff) BatchDeleteConnectionResponse
-batchDeleteConnection = Request.request serviceName "batchDeleteConnection" 
+batchDeleteConnection = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "batchDeleteConnection"
 
 
 -- | <p>Deletes one or more partitions in a batch operation.</p>
 batchDeletePartition :: forall eff. BatchDeletePartitionRequest -> Aff (exception :: EXCEPTION | eff) BatchDeletePartitionResponse
-batchDeletePartition = Request.request serviceName "batchDeletePartition" 
+batchDeletePartition = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "batchDeletePartition"
 
 
 -- | <p>Deletes multiple tables at once.</p>
 batchDeleteTable :: forall eff. BatchDeleteTableRequest -> Aff (exception :: EXCEPTION | eff) BatchDeleteTableResponse
-batchDeleteTable = Request.request serviceName "batchDeleteTable" 
+batchDeleteTable = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "batchDeleteTable"
 
 
 -- | <p>Deletes a specified batch of versions of a table.</p>
 batchDeleteTableVersion :: forall eff. BatchDeleteTableVersionRequest -> Aff (exception :: EXCEPTION | eff) BatchDeleteTableVersionResponse
-batchDeleteTableVersion = Request.request serviceName "batchDeleteTableVersion" 
+batchDeleteTableVersion = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "batchDeleteTableVersion"
 
 
 -- | <p>Retrieves partitions in a batch request.</p>
 batchGetPartition :: forall eff. BatchGetPartitionRequest -> Aff (exception :: EXCEPTION | eff) BatchGetPartitionResponse
-batchGetPartition = Request.request serviceName "batchGetPartition" 
+batchGetPartition = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "batchGetPartition"
 
 
 -- | <p>Stops one or more job runs for a specified Job.</p>
 batchStopJobRun :: forall eff. BatchStopJobRunRequest -> Aff (exception :: EXCEPTION | eff) BatchStopJobRunResponse
-batchStopJobRun = Request.request serviceName "batchStopJobRun" 
+batchStopJobRun = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "batchStopJobRun"
 
 
 -- | <p>Creates a classifier in the user's account. This may be a <code>GrokClassifier</code>, an <code>XMLClassifier</code>, or abbrev <code>JsonClassifier</code>, depending on which field of the request is present.</p>
 createClassifier :: forall eff. CreateClassifierRequest -> Aff (exception :: EXCEPTION | eff) CreateClassifierResponse
-createClassifier = Request.request serviceName "createClassifier" 
+createClassifier = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "createClassifier"
 
 
 -- | <p>Creates a connection definition in the Data Catalog.</p>
 createConnection :: forall eff. CreateConnectionRequest -> Aff (exception :: EXCEPTION | eff) CreateConnectionResponse
-createConnection = Request.request serviceName "createConnection" 
+createConnection = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "createConnection"
 
 
 -- | <p>Creates a new crawler with specified targets, role, configuration, and optional schedule. At least one crawl target must be specified, in either the <i>s3Targets</i> or the <i>jdbcTargets</i> field.</p>
 createCrawler :: forall eff. CreateCrawlerRequest -> Aff (exception :: EXCEPTION | eff) CreateCrawlerResponse
-createCrawler = Request.request serviceName "createCrawler" 
+createCrawler = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "createCrawler"
 
 
 -- | <p>Creates a new database in a Data Catalog.</p>
 createDatabase :: forall eff. CreateDatabaseRequest -> Aff (exception :: EXCEPTION | eff) CreateDatabaseResponse
-createDatabase = Request.request serviceName "createDatabase" 
+createDatabase = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "createDatabase"
 
 
 -- | <p>Creates a new DevEndpoint.</p>
 createDevEndpoint :: forall eff. CreateDevEndpointRequest -> Aff (exception :: EXCEPTION | eff) CreateDevEndpointResponse
-createDevEndpoint = Request.request serviceName "createDevEndpoint" 
+createDevEndpoint = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "createDevEndpoint"
 
 
 -- | <p>Creates a new job.</p>
 createJob :: forall eff. CreateJobRequest -> Aff (exception :: EXCEPTION | eff) CreateJobResponse
-createJob = Request.request serviceName "createJob" 
+createJob = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "createJob"
 
 
 -- | <p>Creates a new partition.</p>
 createPartition :: forall eff. CreatePartitionRequest -> Aff (exception :: EXCEPTION | eff) CreatePartitionResponse
-createPartition = Request.request serviceName "createPartition" 
+createPartition = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "createPartition"
 
 
 -- | <p>Transforms a directed acyclic graph (DAG) into code.</p>
 createScript :: forall eff. CreateScriptRequest -> Aff (exception :: EXCEPTION | eff) CreateScriptResponse
-createScript = Request.request serviceName "createScript" 
+createScript = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "createScript"
 
 
 -- | <p>Creates a new table definition in the Data Catalog.</p>
 createTable :: forall eff. CreateTableRequest -> Aff (exception :: EXCEPTION | eff) CreateTableResponse
-createTable = Request.request serviceName "createTable" 
+createTable = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "createTable"
 
 
 -- | <p>Creates a new trigger.</p>
 createTrigger :: forall eff. CreateTriggerRequest -> Aff (exception :: EXCEPTION | eff) CreateTriggerResponse
-createTrigger = Request.request serviceName "createTrigger" 
+createTrigger = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "createTrigger"
 
 
 -- | <p>Creates a new function definition in the Data Catalog.</p>
 createUserDefinedFunction :: forall eff. CreateUserDefinedFunctionRequest -> Aff (exception :: EXCEPTION | eff) CreateUserDefinedFunctionResponse
-createUserDefinedFunction = Request.request serviceName "createUserDefinedFunction" 
+createUserDefinedFunction = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "createUserDefinedFunction"
 
 
 -- | <p>Removes a classifier from the Data Catalog.</p>
 deleteClassifier :: forall eff. DeleteClassifierRequest -> Aff (exception :: EXCEPTION | eff) DeleteClassifierResponse
-deleteClassifier = Request.request serviceName "deleteClassifier" 
+deleteClassifier = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "deleteClassifier"
 
 
 -- | <p>Deletes a connection from the Data Catalog.</p>
 deleteConnection :: forall eff. DeleteConnectionRequest -> Aff (exception :: EXCEPTION | eff) DeleteConnectionResponse
-deleteConnection = Request.request serviceName "deleteConnection" 
+deleteConnection = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "deleteConnection"
 
 
 -- | <p>Removes a specified crawler from the Data Catalog, unless the crawler state is <code>RUNNING</code>.</p>
 deleteCrawler :: forall eff. DeleteCrawlerRequest -> Aff (exception :: EXCEPTION | eff) DeleteCrawlerResponse
-deleteCrawler = Request.request serviceName "deleteCrawler" 
+deleteCrawler = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "deleteCrawler"
 
 
 -- | <p>Removes a specified Database from a Data Catalog.</p>
 deleteDatabase :: forall eff. DeleteDatabaseRequest -> Aff (exception :: EXCEPTION | eff) DeleteDatabaseResponse
-deleteDatabase = Request.request serviceName "deleteDatabase" 
+deleteDatabase = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "deleteDatabase"
 
 
 -- | <p>Deletes a specified DevEndpoint.</p>
 deleteDevEndpoint :: forall eff. DeleteDevEndpointRequest -> Aff (exception :: EXCEPTION | eff) DeleteDevEndpointResponse
-deleteDevEndpoint = Request.request serviceName "deleteDevEndpoint" 
+deleteDevEndpoint = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "deleteDevEndpoint"
 
 
 -- | <p>Deletes a specified job. If the job is not found, no exception is thrown.</p>
 deleteJob :: forall eff. DeleteJobRequest -> Aff (exception :: EXCEPTION | eff) DeleteJobResponse
-deleteJob = Request.request serviceName "deleteJob" 
+deleteJob = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "deleteJob"
 
 
 -- | <p>Deletes a specified partition.</p>
 deletePartition :: forall eff. DeletePartitionRequest -> Aff (exception :: EXCEPTION | eff) DeletePartitionResponse
-deletePartition = Request.request serviceName "deletePartition" 
+deletePartition = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "deletePartition"
 
 
 -- | <p>Removes a table definition from the Data Catalog.</p>
 deleteTable :: forall eff. DeleteTableRequest -> Aff (exception :: EXCEPTION | eff) DeleteTableResponse
-deleteTable = Request.request serviceName "deleteTable" 
+deleteTable = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "deleteTable"
 
 
 -- | <p>Deletes a specified version of a table.</p>
 deleteTableVersion :: forall eff. DeleteTableVersionRequest -> Aff (exception :: EXCEPTION | eff) DeleteTableVersionResponse
-deleteTableVersion = Request.request serviceName "deleteTableVersion" 
+deleteTableVersion = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "deleteTableVersion"
 
 
 -- | <p>Deletes a specified trigger. If the trigger is not found, no exception is thrown.</p>
 deleteTrigger :: forall eff. DeleteTriggerRequest -> Aff (exception :: EXCEPTION | eff) DeleteTriggerResponse
-deleteTrigger = Request.request serviceName "deleteTrigger" 
+deleteTrigger = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "deleteTrigger"
 
 
 -- | <p>Deletes an existing function definition from the Data Catalog.</p>
 deleteUserDefinedFunction :: forall eff. DeleteUserDefinedFunctionRequest -> Aff (exception :: EXCEPTION | eff) DeleteUserDefinedFunctionResponse
-deleteUserDefinedFunction = Request.request serviceName "deleteUserDefinedFunction" 
+deleteUserDefinedFunction = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "deleteUserDefinedFunction"
 
 
 -- | <p>Retrieves the status of a migration operation.</p>
 getCatalogImportStatus :: forall eff. GetCatalogImportStatusRequest -> Aff (exception :: EXCEPTION | eff) GetCatalogImportStatusResponse
-getCatalogImportStatus = Request.request serviceName "getCatalogImportStatus" 
+getCatalogImportStatus = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getCatalogImportStatus"
 
 
 -- | <p>Retrieve a classifier by name.</p>
 getClassifier :: forall eff. GetClassifierRequest -> Aff (exception :: EXCEPTION | eff) GetClassifierResponse
-getClassifier = Request.request serviceName "getClassifier" 
+getClassifier = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getClassifier"
 
 
 -- | <p>Lists all classifier objects in the Data Catalog.</p>
 getClassifiers :: forall eff. GetClassifiersRequest -> Aff (exception :: EXCEPTION | eff) GetClassifiersResponse
-getClassifiers = Request.request serviceName "getClassifiers" 
+getClassifiers = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getClassifiers"
 
 
 -- | <p>Retrieves a connection definition from the Data Catalog.</p>
 getConnection :: forall eff. GetConnectionRequest -> Aff (exception :: EXCEPTION | eff) GetConnectionResponse
-getConnection = Request.request serviceName "getConnection" 
+getConnection = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getConnection"
 
 
 -- | <p>Retrieves a list of connection definitions from the Data Catalog.</p>
 getConnections :: forall eff. GetConnectionsRequest -> Aff (exception :: EXCEPTION | eff) GetConnectionsResponse
-getConnections = Request.request serviceName "getConnections" 
+getConnections = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getConnections"
 
 
 -- | <p>Retrieves metadata for a specified crawler.</p>
 getCrawler :: forall eff. GetCrawlerRequest -> Aff (exception :: EXCEPTION | eff) GetCrawlerResponse
-getCrawler = Request.request serviceName "getCrawler" 
+getCrawler = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getCrawler"
 
 
 -- | <p>Retrieves metrics about specified crawlers.</p>
 getCrawlerMetrics :: forall eff. GetCrawlerMetricsRequest -> Aff (exception :: EXCEPTION | eff) GetCrawlerMetricsResponse
-getCrawlerMetrics = Request.request serviceName "getCrawlerMetrics" 
+getCrawlerMetrics = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getCrawlerMetrics"
 
 
 -- | <p>Retrieves metadata for all crawlers defined in the customer account.</p>
 getCrawlers :: forall eff. GetCrawlersRequest -> Aff (exception :: EXCEPTION | eff) GetCrawlersResponse
-getCrawlers = Request.request serviceName "getCrawlers" 
+getCrawlers = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getCrawlers"
 
 
 -- | <p>Retrieves the definition of a specified database.</p>
 getDatabase :: forall eff. GetDatabaseRequest -> Aff (exception :: EXCEPTION | eff) GetDatabaseResponse
-getDatabase = Request.request serviceName "getDatabase" 
+getDatabase = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getDatabase"
 
 
 -- | <p>Retrieves all Databases defined in a given Data Catalog.</p>
 getDatabases :: forall eff. GetDatabasesRequest -> Aff (exception :: EXCEPTION | eff) GetDatabasesResponse
-getDatabases = Request.request serviceName "getDatabases" 
+getDatabases = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getDatabases"
 
 
 -- | <p>Transforms a Python script into a directed acyclic graph (DAG). </p>
 getDataflowGraph :: forall eff. GetDataflowGraphRequest -> Aff (exception :: EXCEPTION | eff) GetDataflowGraphResponse
-getDataflowGraph = Request.request serviceName "getDataflowGraph" 
+getDataflowGraph = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getDataflowGraph"
 
 
 -- | <p>Retrieves information about a specified DevEndpoint.</p>
 getDevEndpoint :: forall eff. GetDevEndpointRequest -> Aff (exception :: EXCEPTION | eff) GetDevEndpointResponse
-getDevEndpoint = Request.request serviceName "getDevEndpoint" 
+getDevEndpoint = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getDevEndpoint"
 
 
 -- | <p>Retrieves all the DevEndpoints in this AWS account.</p>
 getDevEndpoints :: forall eff. GetDevEndpointsRequest -> Aff (exception :: EXCEPTION | eff) GetDevEndpointsResponse
-getDevEndpoints = Request.request serviceName "getDevEndpoints" 
+getDevEndpoints = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getDevEndpoints"
 
 
 -- | <p>Retrieves an existing job definition.</p>
 getJob :: forall eff. GetJobRequest -> Aff (exception :: EXCEPTION | eff) GetJobResponse
-getJob = Request.request serviceName "getJob" 
+getJob = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getJob"
 
 
 -- | <p>Retrieves the metadata for a given job run.</p>
 getJobRun :: forall eff. GetJobRunRequest -> Aff (exception :: EXCEPTION | eff) GetJobRunResponse
-getJobRun = Request.request serviceName "getJobRun" 
+getJobRun = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getJobRun"
 
 
 -- | <p>Retrieves metadata for all runs of a given job.</p>
 getJobRuns :: forall eff. GetJobRunsRequest -> Aff (exception :: EXCEPTION | eff) GetJobRunsResponse
-getJobRuns = Request.request serviceName "getJobRuns" 
+getJobRuns = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getJobRuns"
 
 
 -- | <p>Retrieves all current jobs.</p>
 getJobs :: forall eff. GetJobsRequest -> Aff (exception :: EXCEPTION | eff) GetJobsResponse
-getJobs = Request.request serviceName "getJobs" 
+getJobs = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getJobs"
 
 
 -- | <p>Creates mappings.</p>
 getMapping :: forall eff. GetMappingRequest -> Aff (exception :: EXCEPTION | eff) GetMappingResponse
-getMapping = Request.request serviceName "getMapping" 
+getMapping = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getMapping"
 
 
 -- | <p>Retrieves information about a specified partition.</p>
 getPartition :: forall eff. GetPartitionRequest -> Aff (exception :: EXCEPTION | eff) GetPartitionResponse
-getPartition = Request.request serviceName "getPartition" 
+getPartition = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getPartition"
 
 
 -- | <p>Retrieves information about the partitions in a table.</p>
 getPartitions :: forall eff. GetPartitionsRequest -> Aff (exception :: EXCEPTION | eff) GetPartitionsResponse
-getPartitions = Request.request serviceName "getPartitions" 
+getPartitions = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getPartitions"
 
 
 -- | <p>Gets code to perform a specified mapping.</p>
 getPlan :: forall eff. GetPlanRequest -> Aff (exception :: EXCEPTION | eff) GetPlanResponse
-getPlan = Request.request serviceName "getPlan" 
+getPlan = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getPlan"
 
 
 -- | <p>Retrieves the <code>Table</code> definition in a Data Catalog for a specified table.</p>
 getTable :: forall eff. GetTableRequest -> Aff (exception :: EXCEPTION | eff) GetTableResponse
-getTable = Request.request serviceName "getTable" 
+getTable = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getTable"
 
 
 -- | <p>Retrieves a specified version of a table.</p>
 getTableVersion :: forall eff. GetTableVersionRequest -> Aff (exception :: EXCEPTION | eff) GetTableVersionResponse
-getTableVersion = Request.request serviceName "getTableVersion" 
+getTableVersion = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getTableVersion"
 
 
 -- | <p>Retrieves a list of strings that identify available versions of a specified table.</p>
 getTableVersions :: forall eff. GetTableVersionsRequest -> Aff (exception :: EXCEPTION | eff) GetTableVersionsResponse
-getTableVersions = Request.request serviceName "getTableVersions" 
+getTableVersions = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getTableVersions"
 
 
 -- | <p>Retrieves the definitions of some or all of the tables in a given <code>Database</code>.</p>
 getTables :: forall eff. GetTablesRequest -> Aff (exception :: EXCEPTION | eff) GetTablesResponse
-getTables = Request.request serviceName "getTables" 
+getTables = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getTables"
 
 
 -- | <p>Retrieves the definition of a trigger.</p>
 getTrigger :: forall eff. GetTriggerRequest -> Aff (exception :: EXCEPTION | eff) GetTriggerResponse
-getTrigger = Request.request serviceName "getTrigger" 
+getTrigger = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getTrigger"
 
 
 -- | <p>Gets all the triggers associated with a job.</p>
 getTriggers :: forall eff. GetTriggersRequest -> Aff (exception :: EXCEPTION | eff) GetTriggersResponse
-getTriggers = Request.request serviceName "getTriggers" 
+getTriggers = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getTriggers"
 
 
 -- | <p>Retrieves a specified function definition from the Data Catalog.</p>
 getUserDefinedFunction :: forall eff. GetUserDefinedFunctionRequest -> Aff (exception :: EXCEPTION | eff) GetUserDefinedFunctionResponse
-getUserDefinedFunction = Request.request serviceName "getUserDefinedFunction" 
+getUserDefinedFunction = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getUserDefinedFunction"
 
 
 -- | <p>Retrieves a multiple function definitions from the Data Catalog.</p>
 getUserDefinedFunctions :: forall eff. GetUserDefinedFunctionsRequest -> Aff (exception :: EXCEPTION | eff) GetUserDefinedFunctionsResponse
-getUserDefinedFunctions = Request.request serviceName "getUserDefinedFunctions" 
+getUserDefinedFunctions = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "getUserDefinedFunctions"
 
 
 -- | <p>Imports an existing Athena Data Catalog to AWS Glue</p>
 importCatalogToGlue :: forall eff. ImportCatalogToGlueRequest -> Aff (exception :: EXCEPTION | eff) ImportCatalogToGlueResponse
-importCatalogToGlue = Request.request serviceName "importCatalogToGlue" 
+importCatalogToGlue = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "importCatalogToGlue"
 
 
 -- | <p>Resets a bookmark entry.</p>
 resetJobBookmark :: forall eff. ResetJobBookmarkRequest -> Aff (exception :: EXCEPTION | eff) ResetJobBookmarkResponse
-resetJobBookmark = Request.request serviceName "resetJobBookmark" 
+resetJobBookmark = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "resetJobBookmark"
 
 
 -- | <p>Starts a crawl using the specified crawler, regardless of what is scheduled. If the crawler is already running, does nothing.</p>
 startCrawler :: forall eff. StartCrawlerRequest -> Aff (exception :: EXCEPTION | eff) StartCrawlerResponse
-startCrawler = Request.request serviceName "startCrawler" 
+startCrawler = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "startCrawler"
 
 
 -- | <p>Changes the schedule state of the specified crawler to <code>SCHEDULED</code>, unless the crawler is already running or the schedule state is already <code>SCHEDULED</code>.</p>
 startCrawlerSchedule :: forall eff. StartCrawlerScheduleRequest -> Aff (exception :: EXCEPTION | eff) StartCrawlerScheduleResponse
-startCrawlerSchedule = Request.request serviceName "startCrawlerSchedule" 
+startCrawlerSchedule = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "startCrawlerSchedule"
 
 
 -- | <p>Runs a job.</p>
 startJobRun :: forall eff. StartJobRunRequest -> Aff (exception :: EXCEPTION | eff) StartJobRunResponse
-startJobRun = Request.request serviceName "startJobRun" 
+startJobRun = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "startJobRun"
 
 
 -- | <p>Starts an existing trigger. See <a href="http://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering Jobs</a> for information about how different types of trigger are started.</p>
 startTrigger :: forall eff. StartTriggerRequest -> Aff (exception :: EXCEPTION | eff) StartTriggerResponse
-startTrigger = Request.request serviceName "startTrigger" 
+startTrigger = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "startTrigger"
 
 
 -- | <p>If the specified crawler is running, stops the crawl.</p>
 stopCrawler :: forall eff. StopCrawlerRequest -> Aff (exception :: EXCEPTION | eff) StopCrawlerResponse
-stopCrawler = Request.request serviceName "stopCrawler" 
+stopCrawler = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "stopCrawler"
 
 
 -- | <p>Sets the schedule state of the specified crawler to <code>NOT_SCHEDULED</code>, but does not stop the crawler if it is already running.</p>
 stopCrawlerSchedule :: forall eff. StopCrawlerScheduleRequest -> Aff (exception :: EXCEPTION | eff) StopCrawlerScheduleResponse
-stopCrawlerSchedule = Request.request serviceName "stopCrawlerSchedule" 
+stopCrawlerSchedule = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "stopCrawlerSchedule"
 
 
 -- | <p>Stops a specified trigger.</p>
 stopTrigger :: forall eff. StopTriggerRequest -> Aff (exception :: EXCEPTION | eff) StopTriggerResponse
-stopTrigger = Request.request serviceName "stopTrigger" 
+stopTrigger = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "stopTrigger"
 
 
 -- | <p>Modifies an existing classifier (a <code>GrokClassifier</code>, <code>XMLClassifier</code>, or <code>JsonClassifier</code>, depending on which field is present).</p>
 updateClassifier :: forall eff. UpdateClassifierRequest -> Aff (exception :: EXCEPTION | eff) UpdateClassifierResponse
-updateClassifier = Request.request serviceName "updateClassifier" 
+updateClassifier = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "updateClassifier"
 
 
 -- | <p>Updates a connection definition in the Data Catalog.</p>
 updateConnection :: forall eff. UpdateConnectionRequest -> Aff (exception :: EXCEPTION | eff) UpdateConnectionResponse
-updateConnection = Request.request serviceName "updateConnection" 
+updateConnection = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "updateConnection"
 
 
 -- | <p>Updates a crawler. If a crawler is running, you must stop it using <code>StopCrawler</code> before updating it.</p>
 updateCrawler :: forall eff. UpdateCrawlerRequest -> Aff (exception :: EXCEPTION | eff) UpdateCrawlerResponse
-updateCrawler = Request.request serviceName "updateCrawler" 
+updateCrawler = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "updateCrawler"
 
 
 -- | <p>Updates the schedule of a crawler using a <code>cron</code> expression. </p>
 updateCrawlerSchedule :: forall eff. UpdateCrawlerScheduleRequest -> Aff (exception :: EXCEPTION | eff) UpdateCrawlerScheduleResponse
-updateCrawlerSchedule = Request.request serviceName "updateCrawlerSchedule" 
+updateCrawlerSchedule = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "updateCrawlerSchedule"
 
 
 -- | <p>Updates an existing database definition in a Data Catalog.</p>
 updateDatabase :: forall eff. UpdateDatabaseRequest -> Aff (exception :: EXCEPTION | eff) UpdateDatabaseResponse
-updateDatabase = Request.request serviceName "updateDatabase" 
+updateDatabase = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "updateDatabase"
 
 
 -- | <p>Updates a specified DevEndpoint.</p>
 updateDevEndpoint :: forall eff. UpdateDevEndpointRequest -> Aff (exception :: EXCEPTION | eff) UpdateDevEndpointResponse
-updateDevEndpoint = Request.request serviceName "updateDevEndpoint" 
+updateDevEndpoint = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "updateDevEndpoint"
 
 
 -- | <p>Updates an existing job definition.</p>
 updateJob :: forall eff. UpdateJobRequest -> Aff (exception :: EXCEPTION | eff) UpdateJobResponse
-updateJob = Request.request serviceName "updateJob" 
+updateJob = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "updateJob"
 
 
 -- | <p>Updates a partition.</p>
 updatePartition :: forall eff. UpdatePartitionRequest -> Aff (exception :: EXCEPTION | eff) UpdatePartitionResponse
-updatePartition = Request.request serviceName "updatePartition" 
+updatePartition = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "updatePartition"
 
 
 -- | <p>Updates a metadata table in the Data Catalog.</p>
 updateTable :: forall eff. UpdateTableRequest -> Aff (exception :: EXCEPTION | eff) UpdateTableResponse
-updateTable = Request.request serviceName "updateTable" 
+updateTable = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "updateTable"
 
 
 -- | <p>Updates a trigger definition.</p>
 updateTrigger :: forall eff. UpdateTriggerRequest -> Aff (exception :: EXCEPTION | eff) UpdateTriggerResponse
-updateTrigger = Request.request serviceName "updateTrigger" 
+updateTrigger = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "updateTrigger"
 
 
 -- | <p>Updates an existing function definition in the Data Catalog.</p>
 updateUserDefinedFunction :: forall eff. UpdateUserDefinedFunctionRequest -> Aff (exception :: EXCEPTION | eff) UpdateUserDefinedFunctionResponse
-updateUserDefinedFunction = Request.request serviceName "updateUserDefinedFunction" 
+updateUserDefinedFunction = Request.request service method  where
+    service = Request.ServiceName "Glue"
+    method = Request.MethodName "updateUserDefinedFunction"
 
 
 -- | <p>Access to a resource was denied.</p>
