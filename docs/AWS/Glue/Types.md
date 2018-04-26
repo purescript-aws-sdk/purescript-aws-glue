@@ -10,7 +10,7 @@ options :: Options
 
 ``` purescript
 newtype AccessDeniedException
-  = AccessDeniedException { "Message" :: NullOrUndefined (MessageString) }
+  = AccessDeniedException { "Message" :: Maybe (MessageString) }
 ```
 
 <p>Access to a resource was denied.</p>
@@ -35,7 +35,7 @@ Constructs AccessDeniedException from required parameters
 #### `newAccessDeniedException'`
 
 ``` purescript
-newAccessDeniedException' :: ({ "Message" :: NullOrUndefined (MessageString) } -> { "Message" :: NullOrUndefined (MessageString) }) -> AccessDeniedException
+newAccessDeniedException' :: ({ "Message" :: Maybe (MessageString) } -> { "Message" :: Maybe (MessageString) }) -> AccessDeniedException
 ```
 
 Constructs AccessDeniedException's fields from required parameters
@@ -44,7 +44,7 @@ Constructs AccessDeniedException's fields from required parameters
 
 ``` purescript
 newtype Action
-  = Action { "JobName" :: NullOrUndefined (NameString), "Arguments" :: NullOrUndefined (GenericMap) }
+  = Action { "JobName" :: Maybe (NameString), "Arguments" :: Maybe (GenericMap) }
 ```
 
 <p>Defines an action to be initiated by a trigger.</p>
@@ -69,7 +69,7 @@ Constructs Action from required parameters
 #### `newAction'`
 
 ``` purescript
-newAction' :: ({ "JobName" :: NullOrUndefined (NameString), "Arguments" :: NullOrUndefined (GenericMap) } -> { "JobName" :: NullOrUndefined (NameString), "Arguments" :: NullOrUndefined (GenericMap) }) -> Action
+newAction' :: ({ "JobName" :: Maybe (NameString), "Arguments" :: Maybe (GenericMap) } -> { "JobName" :: Maybe (NameString), "Arguments" :: Maybe (GenericMap) }) -> Action
 ```
 
 Constructs Action's fields from required parameters
@@ -94,7 +94,7 @@ Encode ActionList
 
 ``` purescript
 newtype AlreadyExistsException
-  = AlreadyExistsException { "Message" :: NullOrUndefined (MessageString) }
+  = AlreadyExistsException { "Message" :: Maybe (MessageString) }
 ```
 
 <p>A resource to be created or added already exists.</p>
@@ -119,7 +119,7 @@ Constructs AlreadyExistsException from required parameters
 #### `newAlreadyExistsException'`
 
 ``` purescript
-newAlreadyExistsException' :: ({ "Message" :: NullOrUndefined (MessageString) } -> { "Message" :: NullOrUndefined (MessageString) }) -> AlreadyExistsException
+newAlreadyExistsException' :: ({ "Message" :: Maybe (MessageString) } -> { "Message" :: Maybe (MessageString) }) -> AlreadyExistsException
 ```
 
 Constructs AlreadyExistsException's fields from required parameters
@@ -144,7 +144,7 @@ Encode AttemptCount
 
 ``` purescript
 newtype BatchCreatePartitionRequest
-  = BatchCreatePartitionRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionInputList" :: PartitionInputList }
+  = BatchCreatePartitionRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionInputList" :: PartitionInputList }
 ```
 
 ##### Instances
@@ -167,7 +167,7 @@ Constructs BatchCreatePartitionRequest from required parameters
 #### `newBatchCreatePartitionRequest'`
 
 ``` purescript
-newBatchCreatePartitionRequest' :: NameString -> PartitionInputList -> NameString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionInputList" :: PartitionInputList } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionInputList" :: PartitionInputList }) -> BatchCreatePartitionRequest
+newBatchCreatePartitionRequest' :: NameString -> PartitionInputList -> NameString -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionInputList" :: PartitionInputList } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionInputList" :: PartitionInputList }) -> BatchCreatePartitionRequest
 ```
 
 Constructs BatchCreatePartitionRequest's fields from required parameters
@@ -176,7 +176,7 @@ Constructs BatchCreatePartitionRequest's fields from required parameters
 
 ``` purescript
 newtype BatchCreatePartitionResponse
-  = BatchCreatePartitionResponse { "Errors" :: NullOrUndefined (PartitionErrors) }
+  = BatchCreatePartitionResponse { "Errors" :: Maybe (PartitionErrors) }
 ```
 
 ##### Instances
@@ -199,7 +199,7 @@ Constructs BatchCreatePartitionResponse from required parameters
 #### `newBatchCreatePartitionResponse'`
 
 ``` purescript
-newBatchCreatePartitionResponse' :: ({ "Errors" :: NullOrUndefined (PartitionErrors) } -> { "Errors" :: NullOrUndefined (PartitionErrors) }) -> BatchCreatePartitionResponse
+newBatchCreatePartitionResponse' :: ({ "Errors" :: Maybe (PartitionErrors) } -> { "Errors" :: Maybe (PartitionErrors) }) -> BatchCreatePartitionResponse
 ```
 
 Constructs BatchCreatePartitionResponse's fields from required parameters
@@ -208,7 +208,7 @@ Constructs BatchCreatePartitionResponse's fields from required parameters
 
 ``` purescript
 newtype BatchDeleteConnectionRequest
-  = BatchDeleteConnectionRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "ConnectionNameList" :: DeleteConnectionNameList }
+  = BatchDeleteConnectionRequest { "CatalogId" :: Maybe (CatalogIdString), "ConnectionNameList" :: DeleteConnectionNameList }
 ```
 
 ##### Instances
@@ -231,7 +231,7 @@ Constructs BatchDeleteConnectionRequest from required parameters
 #### `newBatchDeleteConnectionRequest'`
 
 ``` purescript
-newBatchDeleteConnectionRequest' :: DeleteConnectionNameList -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "ConnectionNameList" :: DeleteConnectionNameList } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "ConnectionNameList" :: DeleteConnectionNameList }) -> BatchDeleteConnectionRequest
+newBatchDeleteConnectionRequest' :: DeleteConnectionNameList -> ({ "CatalogId" :: Maybe (CatalogIdString), "ConnectionNameList" :: DeleteConnectionNameList } -> { "CatalogId" :: Maybe (CatalogIdString), "ConnectionNameList" :: DeleteConnectionNameList }) -> BatchDeleteConnectionRequest
 ```
 
 Constructs BatchDeleteConnectionRequest's fields from required parameters
@@ -240,7 +240,7 @@ Constructs BatchDeleteConnectionRequest's fields from required parameters
 
 ``` purescript
 newtype BatchDeleteConnectionResponse
-  = BatchDeleteConnectionResponse { "Succeeded" :: NullOrUndefined (NameStringList), "Errors" :: NullOrUndefined (ErrorByName) }
+  = BatchDeleteConnectionResponse { "Succeeded" :: Maybe (NameStringList), "Errors" :: Maybe (ErrorByName) }
 ```
 
 ##### Instances
@@ -263,7 +263,7 @@ Constructs BatchDeleteConnectionResponse from required parameters
 #### `newBatchDeleteConnectionResponse'`
 
 ``` purescript
-newBatchDeleteConnectionResponse' :: ({ "Succeeded" :: NullOrUndefined (NameStringList), "Errors" :: NullOrUndefined (ErrorByName) } -> { "Succeeded" :: NullOrUndefined (NameStringList), "Errors" :: NullOrUndefined (ErrorByName) }) -> BatchDeleteConnectionResponse
+newBatchDeleteConnectionResponse' :: ({ "Succeeded" :: Maybe (NameStringList), "Errors" :: Maybe (ErrorByName) } -> { "Succeeded" :: Maybe (NameStringList), "Errors" :: Maybe (ErrorByName) }) -> BatchDeleteConnectionResponse
 ```
 
 Constructs BatchDeleteConnectionResponse's fields from required parameters
@@ -272,7 +272,7 @@ Constructs BatchDeleteConnectionResponse's fields from required parameters
 
 ``` purescript
 newtype BatchDeletePartitionRequest
-  = BatchDeletePartitionRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionsToDelete" :: BatchDeletePartitionValueList }
+  = BatchDeletePartitionRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionsToDelete" :: BatchDeletePartitionValueList }
 ```
 
 ##### Instances
@@ -295,7 +295,7 @@ Constructs BatchDeletePartitionRequest from required parameters
 #### `newBatchDeletePartitionRequest'`
 
 ``` purescript
-newBatchDeletePartitionRequest' :: NameString -> BatchDeletePartitionValueList -> NameString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionsToDelete" :: BatchDeletePartitionValueList } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionsToDelete" :: BatchDeletePartitionValueList }) -> BatchDeletePartitionRequest
+newBatchDeletePartitionRequest' :: NameString -> BatchDeletePartitionValueList -> NameString -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionsToDelete" :: BatchDeletePartitionValueList } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionsToDelete" :: BatchDeletePartitionValueList }) -> BatchDeletePartitionRequest
 ```
 
 Constructs BatchDeletePartitionRequest's fields from required parameters
@@ -304,7 +304,7 @@ Constructs BatchDeletePartitionRequest's fields from required parameters
 
 ``` purescript
 newtype BatchDeletePartitionResponse
-  = BatchDeletePartitionResponse { "Errors" :: NullOrUndefined (PartitionErrors) }
+  = BatchDeletePartitionResponse { "Errors" :: Maybe (PartitionErrors) }
 ```
 
 ##### Instances
@@ -327,7 +327,7 @@ Constructs BatchDeletePartitionResponse from required parameters
 #### `newBatchDeletePartitionResponse'`
 
 ``` purescript
-newBatchDeletePartitionResponse' :: ({ "Errors" :: NullOrUndefined (PartitionErrors) } -> { "Errors" :: NullOrUndefined (PartitionErrors) }) -> BatchDeletePartitionResponse
+newBatchDeletePartitionResponse' :: ({ "Errors" :: Maybe (PartitionErrors) } -> { "Errors" :: Maybe (PartitionErrors) }) -> BatchDeletePartitionResponse
 ```
 
 Constructs BatchDeletePartitionResponse's fields from required parameters
@@ -368,7 +368,7 @@ Encode BatchDeleteTableNameList
 
 ``` purescript
 newtype BatchDeleteTableRequest
-  = BatchDeleteTableRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TablesToDelete" :: BatchDeleteTableNameList }
+  = BatchDeleteTableRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TablesToDelete" :: BatchDeleteTableNameList }
 ```
 
 ##### Instances
@@ -391,7 +391,7 @@ Constructs BatchDeleteTableRequest from required parameters
 #### `newBatchDeleteTableRequest'`
 
 ``` purescript
-newBatchDeleteTableRequest' :: NameString -> BatchDeleteTableNameList -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TablesToDelete" :: BatchDeleteTableNameList } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TablesToDelete" :: BatchDeleteTableNameList }) -> BatchDeleteTableRequest
+newBatchDeleteTableRequest' :: NameString -> BatchDeleteTableNameList -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TablesToDelete" :: BatchDeleteTableNameList } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TablesToDelete" :: BatchDeleteTableNameList }) -> BatchDeleteTableRequest
 ```
 
 Constructs BatchDeleteTableRequest's fields from required parameters
@@ -400,7 +400,7 @@ Constructs BatchDeleteTableRequest's fields from required parameters
 
 ``` purescript
 newtype BatchDeleteTableResponse
-  = BatchDeleteTableResponse { "Errors" :: NullOrUndefined (TableErrors) }
+  = BatchDeleteTableResponse { "Errors" :: Maybe (TableErrors) }
 ```
 
 ##### Instances
@@ -423,7 +423,7 @@ Constructs BatchDeleteTableResponse from required parameters
 #### `newBatchDeleteTableResponse'`
 
 ``` purescript
-newBatchDeleteTableResponse' :: ({ "Errors" :: NullOrUndefined (TableErrors) } -> { "Errors" :: NullOrUndefined (TableErrors) }) -> BatchDeleteTableResponse
+newBatchDeleteTableResponse' :: ({ "Errors" :: Maybe (TableErrors) } -> { "Errors" :: Maybe (TableErrors) }) -> BatchDeleteTableResponse
 ```
 
 Constructs BatchDeleteTableResponse's fields from required parameters
@@ -448,7 +448,7 @@ Encode BatchDeleteTableVersionList
 
 ``` purescript
 newtype BatchDeleteTableVersionRequest
-  = BatchDeleteTableVersionRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "VersionIds" :: BatchDeleteTableVersionList }
+  = BatchDeleteTableVersionRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "VersionIds" :: BatchDeleteTableVersionList }
 ```
 
 ##### Instances
@@ -471,7 +471,7 @@ Constructs BatchDeleteTableVersionRequest from required parameters
 #### `newBatchDeleteTableVersionRequest'`
 
 ``` purescript
-newBatchDeleteTableVersionRequest' :: NameString -> NameString -> BatchDeleteTableVersionList -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "VersionIds" :: BatchDeleteTableVersionList } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "VersionIds" :: BatchDeleteTableVersionList }) -> BatchDeleteTableVersionRequest
+newBatchDeleteTableVersionRequest' :: NameString -> NameString -> BatchDeleteTableVersionList -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "VersionIds" :: BatchDeleteTableVersionList } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "VersionIds" :: BatchDeleteTableVersionList }) -> BatchDeleteTableVersionRequest
 ```
 
 Constructs BatchDeleteTableVersionRequest's fields from required parameters
@@ -480,7 +480,7 @@ Constructs BatchDeleteTableVersionRequest's fields from required parameters
 
 ``` purescript
 newtype BatchDeleteTableVersionResponse
-  = BatchDeleteTableVersionResponse { "Errors" :: NullOrUndefined (TableVersionErrors) }
+  = BatchDeleteTableVersionResponse { "Errors" :: Maybe (TableVersionErrors) }
 ```
 
 ##### Instances
@@ -503,7 +503,7 @@ Constructs BatchDeleteTableVersionResponse from required parameters
 #### `newBatchDeleteTableVersionResponse'`
 
 ``` purescript
-newBatchDeleteTableVersionResponse' :: ({ "Errors" :: NullOrUndefined (TableVersionErrors) } -> { "Errors" :: NullOrUndefined (TableVersionErrors) }) -> BatchDeleteTableVersionResponse
+newBatchDeleteTableVersionResponse' :: ({ "Errors" :: Maybe (TableVersionErrors) } -> { "Errors" :: Maybe (TableVersionErrors) }) -> BatchDeleteTableVersionResponse
 ```
 
 Constructs BatchDeleteTableVersionResponse's fields from required parameters
@@ -512,7 +512,7 @@ Constructs BatchDeleteTableVersionResponse's fields from required parameters
 
 ``` purescript
 newtype BatchGetPartitionRequest
-  = BatchGetPartitionRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionsToGet" :: BatchGetPartitionValueList }
+  = BatchGetPartitionRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionsToGet" :: BatchGetPartitionValueList }
 ```
 
 ##### Instances
@@ -535,7 +535,7 @@ Constructs BatchGetPartitionRequest from required parameters
 #### `newBatchGetPartitionRequest'`
 
 ``` purescript
-newBatchGetPartitionRequest' :: NameString -> BatchGetPartitionValueList -> NameString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionsToGet" :: BatchGetPartitionValueList } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionsToGet" :: BatchGetPartitionValueList }) -> BatchGetPartitionRequest
+newBatchGetPartitionRequest' :: NameString -> BatchGetPartitionValueList -> NameString -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionsToGet" :: BatchGetPartitionValueList } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionsToGet" :: BatchGetPartitionValueList }) -> BatchGetPartitionRequest
 ```
 
 Constructs BatchGetPartitionRequest's fields from required parameters
@@ -544,7 +544,7 @@ Constructs BatchGetPartitionRequest's fields from required parameters
 
 ``` purescript
 newtype BatchGetPartitionResponse
-  = BatchGetPartitionResponse { "Partitions" :: NullOrUndefined (PartitionList), "UnprocessedKeys" :: NullOrUndefined (BatchGetPartitionValueList) }
+  = BatchGetPartitionResponse { "Partitions" :: Maybe (PartitionList), "UnprocessedKeys" :: Maybe (BatchGetPartitionValueList) }
 ```
 
 ##### Instances
@@ -567,7 +567,7 @@ Constructs BatchGetPartitionResponse from required parameters
 #### `newBatchGetPartitionResponse'`
 
 ``` purescript
-newBatchGetPartitionResponse' :: ({ "Partitions" :: NullOrUndefined (PartitionList), "UnprocessedKeys" :: NullOrUndefined (BatchGetPartitionValueList) } -> { "Partitions" :: NullOrUndefined (PartitionList), "UnprocessedKeys" :: NullOrUndefined (BatchGetPartitionValueList) }) -> BatchGetPartitionResponse
+newBatchGetPartitionResponse' :: ({ "Partitions" :: Maybe (PartitionList), "UnprocessedKeys" :: Maybe (BatchGetPartitionValueList) } -> { "Partitions" :: Maybe (PartitionList), "UnprocessedKeys" :: Maybe (BatchGetPartitionValueList) }) -> BatchGetPartitionResponse
 ```
 
 Constructs BatchGetPartitionResponse's fields from required parameters
@@ -592,7 +592,7 @@ Encode BatchGetPartitionValueList
 
 ``` purescript
 newtype BatchStopJobRunError
-  = BatchStopJobRunError { "JobName" :: NullOrUndefined (NameString), "JobRunId" :: NullOrUndefined (IdString), "ErrorDetail" :: NullOrUndefined (ErrorDetail) }
+  = BatchStopJobRunError { "JobName" :: Maybe (NameString), "JobRunId" :: Maybe (IdString), "ErrorDetail" :: Maybe (ErrorDetail) }
 ```
 
 <p>Records an error that occurred when attempting to stop a specified JobRun.</p>
@@ -617,7 +617,7 @@ Constructs BatchStopJobRunError from required parameters
 #### `newBatchStopJobRunError'`
 
 ``` purescript
-newBatchStopJobRunError' :: ({ "JobName" :: NullOrUndefined (NameString), "JobRunId" :: NullOrUndefined (IdString), "ErrorDetail" :: NullOrUndefined (ErrorDetail) } -> { "JobName" :: NullOrUndefined (NameString), "JobRunId" :: NullOrUndefined (IdString), "ErrorDetail" :: NullOrUndefined (ErrorDetail) }) -> BatchStopJobRunError
+newBatchStopJobRunError' :: ({ "JobName" :: Maybe (NameString), "JobRunId" :: Maybe (IdString), "ErrorDetail" :: Maybe (ErrorDetail) } -> { "JobName" :: Maybe (NameString), "JobRunId" :: Maybe (IdString), "ErrorDetail" :: Maybe (ErrorDetail) }) -> BatchStopJobRunError
 ```
 
 Constructs BatchStopJobRunError's fields from required parameters
@@ -690,7 +690,7 @@ Constructs BatchStopJobRunRequest's fields from required parameters
 
 ``` purescript
 newtype BatchStopJobRunResponse
-  = BatchStopJobRunResponse { "SuccessfulSubmissions" :: NullOrUndefined (BatchStopJobRunSuccessfulSubmissionList), "Errors" :: NullOrUndefined (BatchStopJobRunErrorList) }
+  = BatchStopJobRunResponse { "SuccessfulSubmissions" :: Maybe (BatchStopJobRunSuccessfulSubmissionList), "Errors" :: Maybe (BatchStopJobRunErrorList) }
 ```
 
 ##### Instances
@@ -713,7 +713,7 @@ Constructs BatchStopJobRunResponse from required parameters
 #### `newBatchStopJobRunResponse'`
 
 ``` purescript
-newBatchStopJobRunResponse' :: ({ "SuccessfulSubmissions" :: NullOrUndefined (BatchStopJobRunSuccessfulSubmissionList), "Errors" :: NullOrUndefined (BatchStopJobRunErrorList) } -> { "SuccessfulSubmissions" :: NullOrUndefined (BatchStopJobRunSuccessfulSubmissionList), "Errors" :: NullOrUndefined (BatchStopJobRunErrorList) }) -> BatchStopJobRunResponse
+newBatchStopJobRunResponse' :: ({ "SuccessfulSubmissions" :: Maybe (BatchStopJobRunSuccessfulSubmissionList), "Errors" :: Maybe (BatchStopJobRunErrorList) } -> { "SuccessfulSubmissions" :: Maybe (BatchStopJobRunSuccessfulSubmissionList), "Errors" :: Maybe (BatchStopJobRunErrorList) }) -> BatchStopJobRunResponse
 ```
 
 Constructs BatchStopJobRunResponse's fields from required parameters
@@ -722,7 +722,7 @@ Constructs BatchStopJobRunResponse's fields from required parameters
 
 ``` purescript
 newtype BatchStopJobRunSuccessfulSubmission
-  = BatchStopJobRunSuccessfulSubmission { "JobName" :: NullOrUndefined (NameString), "JobRunId" :: NullOrUndefined (IdString) }
+  = BatchStopJobRunSuccessfulSubmission { "JobName" :: Maybe (NameString), "JobRunId" :: Maybe (IdString) }
 ```
 
 <p>Records a successful request to stop a specified JobRun.</p>
@@ -747,7 +747,7 @@ Constructs BatchStopJobRunSuccessfulSubmission from required parameters
 #### `newBatchStopJobRunSuccessfulSubmission'`
 
 ``` purescript
-newBatchStopJobRunSuccessfulSubmission' :: ({ "JobName" :: NullOrUndefined (NameString), "JobRunId" :: NullOrUndefined (IdString) } -> { "JobName" :: NullOrUndefined (NameString), "JobRunId" :: NullOrUndefined (IdString) }) -> BatchStopJobRunSuccessfulSubmission
+newBatchStopJobRunSuccessfulSubmission' :: ({ "JobName" :: Maybe (NameString), "JobRunId" :: Maybe (IdString) } -> { "JobName" :: Maybe (NameString), "JobRunId" :: Maybe (IdString) }) -> BatchStopJobRunSuccessfulSubmission
 ```
 
 Constructs BatchStopJobRunSuccessfulSubmission's fields from required parameters
@@ -886,7 +886,7 @@ Encode CatalogIdString
 
 ``` purescript
 newtype CatalogImportStatus
-  = CatalogImportStatus { "ImportCompleted" :: NullOrUndefined (Boolean), "ImportTime" :: NullOrUndefined (Timestamp), "ImportedBy" :: NullOrUndefined (NameString) }
+  = CatalogImportStatus { "ImportCompleted" :: Maybe (Boolean), "ImportTime" :: Maybe (Timestamp), "ImportedBy" :: Maybe (NameString) }
 ```
 
 <p>A structure containing migration status information.</p>
@@ -911,7 +911,7 @@ Constructs CatalogImportStatus from required parameters
 #### `newCatalogImportStatus'`
 
 ``` purescript
-newCatalogImportStatus' :: ({ "ImportCompleted" :: NullOrUndefined (Boolean), "ImportTime" :: NullOrUndefined (Timestamp), "ImportedBy" :: NullOrUndefined (NameString) } -> { "ImportCompleted" :: NullOrUndefined (Boolean), "ImportTime" :: NullOrUndefined (Timestamp), "ImportedBy" :: NullOrUndefined (NameString) }) -> CatalogImportStatus
+newCatalogImportStatus' :: ({ "ImportCompleted" :: Maybe (Boolean), "ImportTime" :: Maybe (Timestamp), "ImportedBy" :: Maybe (NameString) } -> { "ImportCompleted" :: Maybe (Boolean), "ImportTime" :: Maybe (Timestamp), "ImportedBy" :: Maybe (NameString) }) -> CatalogImportStatus
 ```
 
 Constructs CatalogImportStatus's fields from required parameters
@@ -936,7 +936,7 @@ Encode Classification
 
 ``` purescript
 newtype Classifier
-  = Classifier { "GrokClassifier" :: NullOrUndefined (GrokClassifier), "XMLClassifier" :: NullOrUndefined (XMLClassifier), "JsonClassifier" :: NullOrUndefined (JsonClassifier) }
+  = Classifier { "GrokClassifier" :: Maybe (GrokClassifier), "XMLClassifier" :: Maybe (XMLClassifier), "JsonClassifier" :: Maybe (JsonClassifier) }
 ```
 
 <p>Classifiers are written in Python and triggered during a crawl task. You can write your own classifiers to best categorize your data sources and specify the appropriate schemas to use for them. A classifier checks whether a given file is in a format it can handle, and if it is, the classifier creates a schema in the form of a <code>StructType</code> object that matches that data format.</p> <p>A classifier can be a <code>grok</code> classifier, an XML classifier, or a JSON classifier, asspecified in one of the fields in the <code>Classifier</code> object.</p>
@@ -961,7 +961,7 @@ Constructs Classifier from required parameters
 #### `newClassifier'`
 
 ``` purescript
-newClassifier' :: ({ "GrokClassifier" :: NullOrUndefined (GrokClassifier), "XMLClassifier" :: NullOrUndefined (XMLClassifier), "JsonClassifier" :: NullOrUndefined (JsonClassifier) } -> { "GrokClassifier" :: NullOrUndefined (GrokClassifier), "XMLClassifier" :: NullOrUndefined (XMLClassifier), "JsonClassifier" :: NullOrUndefined (JsonClassifier) }) -> Classifier
+newClassifier' :: ({ "GrokClassifier" :: Maybe (GrokClassifier), "XMLClassifier" :: Maybe (XMLClassifier), "JsonClassifier" :: Maybe (JsonClassifier) } -> { "GrokClassifier" :: Maybe (GrokClassifier), "XMLClassifier" :: Maybe (XMLClassifier), "JsonClassifier" :: Maybe (JsonClassifier) }) -> Classifier
 ```
 
 Constructs Classifier's fields from required parameters
@@ -1034,7 +1034,7 @@ Encode CodeGenArgValue
 
 ``` purescript
 newtype CodeGenEdge
-  = CodeGenEdge { "Source" :: CodeGenIdentifier, "Target" :: CodeGenIdentifier, "TargetParameter" :: NullOrUndefined (CodeGenArgName) }
+  = CodeGenEdge { "Source" :: CodeGenIdentifier, "Target" :: CodeGenIdentifier, "TargetParameter" :: Maybe (CodeGenArgName) }
 ```
 
 <p>Represents a directional edge in a directed acyclic graph (DAG).</p>
@@ -1059,7 +1059,7 @@ Constructs CodeGenEdge from required parameters
 #### `newCodeGenEdge'`
 
 ``` purescript
-newCodeGenEdge' :: CodeGenIdentifier -> CodeGenIdentifier -> ({ "Source" :: CodeGenIdentifier, "Target" :: CodeGenIdentifier, "TargetParameter" :: NullOrUndefined (CodeGenArgName) } -> { "Source" :: CodeGenIdentifier, "Target" :: CodeGenIdentifier, "TargetParameter" :: NullOrUndefined (CodeGenArgName) }) -> CodeGenEdge
+newCodeGenEdge' :: CodeGenIdentifier -> CodeGenIdentifier -> ({ "Source" :: CodeGenIdentifier, "Target" :: CodeGenIdentifier, "TargetParameter" :: Maybe (CodeGenArgName) } -> { "Source" :: CodeGenIdentifier, "Target" :: CodeGenIdentifier, "TargetParameter" :: Maybe (CodeGenArgName) }) -> CodeGenEdge
 ```
 
 Constructs CodeGenEdge's fields from required parameters
@@ -1084,7 +1084,7 @@ Encode CodeGenIdentifier
 
 ``` purescript
 newtype CodeGenNode
-  = CodeGenNode { "Id" :: CodeGenIdentifier, "NodeType" :: CodeGenNodeType, "Args" :: CodeGenNodeArgs, "LineNumber" :: NullOrUndefined (Int) }
+  = CodeGenNode { "Id" :: CodeGenIdentifier, "NodeType" :: CodeGenNodeType, "Args" :: CodeGenNodeArgs, "LineNumber" :: Maybe (Int) }
 ```
 
 <p>Represents a node in a directed acyclic graph (DAG)</p>
@@ -1109,7 +1109,7 @@ Constructs CodeGenNode from required parameters
 #### `newCodeGenNode'`
 
 ``` purescript
-newCodeGenNode' :: CodeGenNodeArgs -> CodeGenIdentifier -> CodeGenNodeType -> ({ "Id" :: CodeGenIdentifier, "NodeType" :: CodeGenNodeType, "Args" :: CodeGenNodeArgs, "LineNumber" :: NullOrUndefined (Int) } -> { "Id" :: CodeGenIdentifier, "NodeType" :: CodeGenNodeType, "Args" :: CodeGenNodeArgs, "LineNumber" :: NullOrUndefined (Int) }) -> CodeGenNode
+newCodeGenNode' :: CodeGenNodeArgs -> CodeGenIdentifier -> CodeGenNodeType -> ({ "Id" :: CodeGenIdentifier, "NodeType" :: CodeGenNodeType, "Args" :: CodeGenNodeArgs, "LineNumber" :: Maybe (Int) } -> { "Id" :: CodeGenIdentifier, "NodeType" :: CodeGenNodeType, "Args" :: CodeGenNodeArgs, "LineNumber" :: Maybe (Int) }) -> CodeGenNode
 ```
 
 Constructs CodeGenNode's fields from required parameters
@@ -1118,7 +1118,7 @@ Constructs CodeGenNode's fields from required parameters
 
 ``` purescript
 newtype CodeGenNodeArg
-  = CodeGenNodeArg { "Name" :: CodeGenArgName, "Value" :: CodeGenArgValue, "Param" :: NullOrUndefined (Boolean) }
+  = CodeGenNodeArg { "Name" :: CodeGenArgName, "Value" :: CodeGenArgValue, "Param" :: Maybe (Boolean) }
 ```
 
 <p>An argument or property of a node.</p>
@@ -1143,7 +1143,7 @@ Constructs CodeGenNodeArg from required parameters
 #### `newCodeGenNodeArg'`
 
 ``` purescript
-newCodeGenNodeArg' :: CodeGenArgName -> CodeGenArgValue -> ({ "Name" :: CodeGenArgName, "Value" :: CodeGenArgValue, "Param" :: NullOrUndefined (Boolean) } -> { "Name" :: CodeGenArgName, "Value" :: CodeGenArgValue, "Param" :: NullOrUndefined (Boolean) }) -> CodeGenNodeArg
+newCodeGenNodeArg' :: CodeGenArgName -> CodeGenArgValue -> ({ "Name" :: CodeGenArgName, "Value" :: CodeGenArgValue, "Param" :: Maybe (Boolean) } -> { "Name" :: CodeGenArgName, "Value" :: CodeGenArgValue, "Param" :: Maybe (Boolean) }) -> CodeGenNodeArg
 ```
 
 Constructs CodeGenNodeArg's fields from required parameters
@@ -1184,7 +1184,7 @@ Encode CodeGenNodeType
 
 ``` purescript
 newtype Column
-  = Column { "Name" :: NameString, "Type" :: NullOrUndefined (ColumnTypeString), "Comment" :: NullOrUndefined (CommentString) }
+  = Column { "Name" :: NameString, "Type" :: Maybe (ColumnTypeString), "Comment" :: Maybe (CommentString) }
 ```
 
 <p>A column in a <code>Table</code>.</p>
@@ -1209,7 +1209,7 @@ Constructs Column from required parameters
 #### `newColumn'`
 
 ``` purescript
-newColumn' :: NameString -> ({ "Name" :: NameString, "Type" :: NullOrUndefined (ColumnTypeString), "Comment" :: NullOrUndefined (CommentString) } -> { "Name" :: NameString, "Type" :: NullOrUndefined (ColumnTypeString), "Comment" :: NullOrUndefined (CommentString) }) -> Column
+newColumn' :: NameString -> ({ "Name" :: NameString, "Type" :: Maybe (ColumnTypeString), "Comment" :: Maybe (CommentString) } -> { "Name" :: NameString, "Type" :: Maybe (ColumnTypeString), "Comment" :: Maybe (CommentString) }) -> Column
 ```
 
 Constructs Column's fields from required parameters
@@ -1298,7 +1298,7 @@ Encode CommentString
 
 ``` purescript
 newtype ConcurrentModificationException
-  = ConcurrentModificationException { "Message" :: NullOrUndefined (MessageString) }
+  = ConcurrentModificationException { "Message" :: Maybe (MessageString) }
 ```
 
 <p>Two processes are trying to modify a resource simultaneously.</p>
@@ -1323,7 +1323,7 @@ Constructs ConcurrentModificationException from required parameters
 #### `newConcurrentModificationException'`
 
 ``` purescript
-newConcurrentModificationException' :: ({ "Message" :: NullOrUndefined (MessageString) } -> { "Message" :: NullOrUndefined (MessageString) }) -> ConcurrentModificationException
+newConcurrentModificationException' :: ({ "Message" :: Maybe (MessageString) } -> { "Message" :: Maybe (MessageString) }) -> ConcurrentModificationException
 ```
 
 Constructs ConcurrentModificationException's fields from required parameters
@@ -1332,7 +1332,7 @@ Constructs ConcurrentModificationException's fields from required parameters
 
 ``` purescript
 newtype ConcurrentRunsExceededException
-  = ConcurrentRunsExceededException { "Message" :: NullOrUndefined (MessageString) }
+  = ConcurrentRunsExceededException { "Message" :: Maybe (MessageString) }
 ```
 
 <p>Too many jobs are being run concurrently.</p>
@@ -1357,7 +1357,7 @@ Constructs ConcurrentRunsExceededException from required parameters
 #### `newConcurrentRunsExceededException'`
 
 ``` purescript
-newConcurrentRunsExceededException' :: ({ "Message" :: NullOrUndefined (MessageString) } -> { "Message" :: NullOrUndefined (MessageString) }) -> ConcurrentRunsExceededException
+newConcurrentRunsExceededException' :: ({ "Message" :: Maybe (MessageString) } -> { "Message" :: Maybe (MessageString) }) -> ConcurrentRunsExceededException
 ```
 
 Constructs ConcurrentRunsExceededException's fields from required parameters
@@ -1366,7 +1366,7 @@ Constructs ConcurrentRunsExceededException's fields from required parameters
 
 ``` purescript
 newtype Condition
-  = Condition { "LogicalOperator" :: NullOrUndefined (LogicalOperator), "JobName" :: NullOrUndefined (NameString), "State" :: NullOrUndefined (JobRunState) }
+  = Condition { "LogicalOperator" :: Maybe (LogicalOperator), "JobName" :: Maybe (NameString), "State" :: Maybe (JobRunState) }
 ```
 
 <p>Defines a condition under which a trigger fires.</p>
@@ -1391,7 +1391,7 @@ Constructs Condition from required parameters
 #### `newCondition'`
 
 ``` purescript
-newCondition' :: ({ "LogicalOperator" :: NullOrUndefined (LogicalOperator), "JobName" :: NullOrUndefined (NameString), "State" :: NullOrUndefined (JobRunState) } -> { "LogicalOperator" :: NullOrUndefined (LogicalOperator), "JobName" :: NullOrUndefined (NameString), "State" :: NullOrUndefined (JobRunState) }) -> Condition
+newCondition' :: ({ "LogicalOperator" :: Maybe (LogicalOperator), "JobName" :: Maybe (NameString), "State" :: Maybe (JobRunState) } -> { "LogicalOperator" :: Maybe (LogicalOperator), "JobName" :: Maybe (NameString), "State" :: Maybe (JobRunState) }) -> Condition
 ```
 
 Constructs Condition's fields from required parameters
@@ -1416,7 +1416,7 @@ Encode ConditionList
 
 ``` purescript
 newtype Connection
-  = Connection { "Name" :: NullOrUndefined (NameString), "Description" :: NullOrUndefined (DescriptionString), "ConnectionType" :: NullOrUndefined (ConnectionType), "MatchCriteria" :: NullOrUndefined (MatchCriteria), "ConnectionProperties" :: NullOrUndefined (ConnectionProperties), "PhysicalConnectionRequirements" :: NullOrUndefined (PhysicalConnectionRequirements), "CreationTime" :: NullOrUndefined (Timestamp), "LastUpdatedTime" :: NullOrUndefined (Timestamp), "LastUpdatedBy" :: NullOrUndefined (NameString) }
+  = Connection { "Name" :: Maybe (NameString), "Description" :: Maybe (DescriptionString), "ConnectionType" :: Maybe (ConnectionType), "MatchCriteria" :: Maybe (MatchCriteria), "ConnectionProperties" :: Maybe (ConnectionProperties), "PhysicalConnectionRequirements" :: Maybe (PhysicalConnectionRequirements), "CreationTime" :: Maybe (Timestamp), "LastUpdatedTime" :: Maybe (Timestamp), "LastUpdatedBy" :: Maybe (NameString) }
 ```
 
 <p>Defines a connection to a data source.</p>
@@ -1441,7 +1441,7 @@ Constructs Connection from required parameters
 #### `newConnection'`
 
 ``` purescript
-newConnection' :: ({ "Name" :: NullOrUndefined (NameString), "Description" :: NullOrUndefined (DescriptionString), "ConnectionType" :: NullOrUndefined (ConnectionType), "MatchCriteria" :: NullOrUndefined (MatchCriteria), "ConnectionProperties" :: NullOrUndefined (ConnectionProperties), "PhysicalConnectionRequirements" :: NullOrUndefined (PhysicalConnectionRequirements), "CreationTime" :: NullOrUndefined (Timestamp), "LastUpdatedTime" :: NullOrUndefined (Timestamp), "LastUpdatedBy" :: NullOrUndefined (NameString) } -> { "Name" :: NullOrUndefined (NameString), "Description" :: NullOrUndefined (DescriptionString), "ConnectionType" :: NullOrUndefined (ConnectionType), "MatchCriteria" :: NullOrUndefined (MatchCriteria), "ConnectionProperties" :: NullOrUndefined (ConnectionProperties), "PhysicalConnectionRequirements" :: NullOrUndefined (PhysicalConnectionRequirements), "CreationTime" :: NullOrUndefined (Timestamp), "LastUpdatedTime" :: NullOrUndefined (Timestamp), "LastUpdatedBy" :: NullOrUndefined (NameString) }) -> Connection
+newConnection' :: ({ "Name" :: Maybe (NameString), "Description" :: Maybe (DescriptionString), "ConnectionType" :: Maybe (ConnectionType), "MatchCriteria" :: Maybe (MatchCriteria), "ConnectionProperties" :: Maybe (ConnectionProperties), "PhysicalConnectionRequirements" :: Maybe (PhysicalConnectionRequirements), "CreationTime" :: Maybe (Timestamp), "LastUpdatedTime" :: Maybe (Timestamp), "LastUpdatedBy" :: Maybe (NameString) } -> { "Name" :: Maybe (NameString), "Description" :: Maybe (DescriptionString), "ConnectionType" :: Maybe (ConnectionType), "MatchCriteria" :: Maybe (MatchCriteria), "ConnectionProperties" :: Maybe (ConnectionProperties), "PhysicalConnectionRequirements" :: Maybe (PhysicalConnectionRequirements), "CreationTime" :: Maybe (Timestamp), "LastUpdatedTime" :: Maybe (Timestamp), "LastUpdatedBy" :: Maybe (NameString) }) -> Connection
 ```
 
 Constructs Connection's fields from required parameters
@@ -1450,7 +1450,7 @@ Constructs Connection's fields from required parameters
 
 ``` purescript
 newtype ConnectionInput
-  = ConnectionInput { "Name" :: NameString, "Description" :: NullOrUndefined (DescriptionString), "ConnectionType" :: ConnectionType, "MatchCriteria" :: NullOrUndefined (MatchCriteria), "ConnectionProperties" :: ConnectionProperties, "PhysicalConnectionRequirements" :: NullOrUndefined (PhysicalConnectionRequirements) }
+  = ConnectionInput { "Name" :: NameString, "Description" :: Maybe (DescriptionString), "ConnectionType" :: ConnectionType, "MatchCriteria" :: Maybe (MatchCriteria), "ConnectionProperties" :: ConnectionProperties, "PhysicalConnectionRequirements" :: Maybe (PhysicalConnectionRequirements) }
 ```
 
 <p>A structure used to specify a connection to create or update.</p>
@@ -1475,7 +1475,7 @@ Constructs ConnectionInput from required parameters
 #### `newConnectionInput'`
 
 ``` purescript
-newConnectionInput' :: ConnectionProperties -> ConnectionType -> NameString -> ({ "Name" :: NameString, "Description" :: NullOrUndefined (DescriptionString), "ConnectionType" :: ConnectionType, "MatchCriteria" :: NullOrUndefined (MatchCriteria), "ConnectionProperties" :: ConnectionProperties, "PhysicalConnectionRequirements" :: NullOrUndefined (PhysicalConnectionRequirements) } -> { "Name" :: NameString, "Description" :: NullOrUndefined (DescriptionString), "ConnectionType" :: ConnectionType, "MatchCriteria" :: NullOrUndefined (MatchCriteria), "ConnectionProperties" :: ConnectionProperties, "PhysicalConnectionRequirements" :: NullOrUndefined (PhysicalConnectionRequirements) }) -> ConnectionInput
+newConnectionInput' :: ConnectionProperties -> ConnectionType -> NameString -> ({ "Name" :: NameString, "Description" :: Maybe (DescriptionString), "ConnectionType" :: ConnectionType, "MatchCriteria" :: Maybe (MatchCriteria), "ConnectionProperties" :: ConnectionProperties, "PhysicalConnectionRequirements" :: Maybe (PhysicalConnectionRequirements) } -> { "Name" :: NameString, "Description" :: Maybe (DescriptionString), "ConnectionType" :: ConnectionType, "MatchCriteria" :: Maybe (MatchCriteria), "ConnectionProperties" :: ConnectionProperties, "PhysicalConnectionRequirements" :: Maybe (PhysicalConnectionRequirements) }) -> ConnectionInput
 ```
 
 Constructs ConnectionInput's fields from required parameters
@@ -1564,7 +1564,7 @@ Encode ConnectionType
 
 ``` purescript
 newtype ConnectionsList
-  = ConnectionsList { "Connections" :: NullOrUndefined (StringList) }
+  = ConnectionsList { "Connections" :: Maybe (StringList) }
 ```
 
 <p>Specifies the connections used by a job.</p>
@@ -1589,7 +1589,7 @@ Constructs ConnectionsList from required parameters
 #### `newConnectionsList'`
 
 ``` purescript
-newConnectionsList' :: ({ "Connections" :: NullOrUndefined (StringList) } -> { "Connections" :: NullOrUndefined (StringList) }) -> ConnectionsList
+newConnectionsList' :: ({ "Connections" :: Maybe (StringList) } -> { "Connections" :: Maybe (StringList) }) -> ConnectionsList
 ```
 
 Constructs ConnectionsList's fields from required parameters
@@ -1598,7 +1598,7 @@ Constructs ConnectionsList's fields from required parameters
 
 ``` purescript
 newtype Crawler
-  = Crawler { "Name" :: NullOrUndefined (NameString), "Role" :: NullOrUndefined (Role), "Targets" :: NullOrUndefined (CrawlerTargets), "DatabaseName" :: NullOrUndefined (DatabaseName), "Description" :: NullOrUndefined (DescriptionString), "Classifiers" :: NullOrUndefined (ClassifierNameList), "SchemaChangePolicy" :: NullOrUndefined (SchemaChangePolicy), "State" :: NullOrUndefined (CrawlerState), "TablePrefix" :: NullOrUndefined (TablePrefix), "Schedule" :: NullOrUndefined (Schedule), "CrawlElapsedTime" :: NullOrUndefined (MillisecondsCount), "CreationTime" :: NullOrUndefined (Timestamp), "LastUpdated" :: NullOrUndefined (Timestamp), "LastCrawl" :: NullOrUndefined (LastCrawlInfo), "Version" :: NullOrUndefined (VersionId), "Configuration" :: NullOrUndefined (CrawlerConfiguration) }
+  = Crawler { "Name" :: Maybe (NameString), "Role" :: Maybe (Role), "Targets" :: Maybe (CrawlerTargets), "DatabaseName" :: Maybe (DatabaseName), "Description" :: Maybe (DescriptionString), "Classifiers" :: Maybe (ClassifierNameList), "SchemaChangePolicy" :: Maybe (SchemaChangePolicy), "State" :: Maybe (CrawlerState), "TablePrefix" :: Maybe (TablePrefix), "Schedule" :: Maybe (Schedule), "CrawlElapsedTime" :: Maybe (MillisecondsCount), "CreationTime" :: Maybe (Timestamp), "LastUpdated" :: Maybe (Timestamp), "LastCrawl" :: Maybe (LastCrawlInfo), "Version" :: Maybe (VersionId), "Configuration" :: Maybe (CrawlerConfiguration) }
 ```
 
 <p>Specifies a crawler program that examines a data source and uses classifiers to try to determine its schema. If successful, the crawler records metadata concerning the data source in the AWS Glue Data Catalog.</p>
@@ -1623,7 +1623,7 @@ Constructs Crawler from required parameters
 #### `newCrawler'`
 
 ``` purescript
-newCrawler' :: ({ "Name" :: NullOrUndefined (NameString), "Role" :: NullOrUndefined (Role), "Targets" :: NullOrUndefined (CrawlerTargets), "DatabaseName" :: NullOrUndefined (DatabaseName), "Description" :: NullOrUndefined (DescriptionString), "Classifiers" :: NullOrUndefined (ClassifierNameList), "SchemaChangePolicy" :: NullOrUndefined (SchemaChangePolicy), "State" :: NullOrUndefined (CrawlerState), "TablePrefix" :: NullOrUndefined (TablePrefix), "Schedule" :: NullOrUndefined (Schedule), "CrawlElapsedTime" :: NullOrUndefined (MillisecondsCount), "CreationTime" :: NullOrUndefined (Timestamp), "LastUpdated" :: NullOrUndefined (Timestamp), "LastCrawl" :: NullOrUndefined (LastCrawlInfo), "Version" :: NullOrUndefined (VersionId), "Configuration" :: NullOrUndefined (CrawlerConfiguration) } -> { "Name" :: NullOrUndefined (NameString), "Role" :: NullOrUndefined (Role), "Targets" :: NullOrUndefined (CrawlerTargets), "DatabaseName" :: NullOrUndefined (DatabaseName), "Description" :: NullOrUndefined (DescriptionString), "Classifiers" :: NullOrUndefined (ClassifierNameList), "SchemaChangePolicy" :: NullOrUndefined (SchemaChangePolicy), "State" :: NullOrUndefined (CrawlerState), "TablePrefix" :: NullOrUndefined (TablePrefix), "Schedule" :: NullOrUndefined (Schedule), "CrawlElapsedTime" :: NullOrUndefined (MillisecondsCount), "CreationTime" :: NullOrUndefined (Timestamp), "LastUpdated" :: NullOrUndefined (Timestamp), "LastCrawl" :: NullOrUndefined (LastCrawlInfo), "Version" :: NullOrUndefined (VersionId), "Configuration" :: NullOrUndefined (CrawlerConfiguration) }) -> Crawler
+newCrawler' :: ({ "Name" :: Maybe (NameString), "Role" :: Maybe (Role), "Targets" :: Maybe (CrawlerTargets), "DatabaseName" :: Maybe (DatabaseName), "Description" :: Maybe (DescriptionString), "Classifiers" :: Maybe (ClassifierNameList), "SchemaChangePolicy" :: Maybe (SchemaChangePolicy), "State" :: Maybe (CrawlerState), "TablePrefix" :: Maybe (TablePrefix), "Schedule" :: Maybe (Schedule), "CrawlElapsedTime" :: Maybe (MillisecondsCount), "CreationTime" :: Maybe (Timestamp), "LastUpdated" :: Maybe (Timestamp), "LastCrawl" :: Maybe (LastCrawlInfo), "Version" :: Maybe (VersionId), "Configuration" :: Maybe (CrawlerConfiguration) } -> { "Name" :: Maybe (NameString), "Role" :: Maybe (Role), "Targets" :: Maybe (CrawlerTargets), "DatabaseName" :: Maybe (DatabaseName), "Description" :: Maybe (DescriptionString), "Classifiers" :: Maybe (ClassifierNameList), "SchemaChangePolicy" :: Maybe (SchemaChangePolicy), "State" :: Maybe (CrawlerState), "TablePrefix" :: Maybe (TablePrefix), "Schedule" :: Maybe (Schedule), "CrawlElapsedTime" :: Maybe (MillisecondsCount), "CreationTime" :: Maybe (Timestamp), "LastUpdated" :: Maybe (Timestamp), "LastCrawl" :: Maybe (LastCrawlInfo), "Version" :: Maybe (VersionId), "Configuration" :: Maybe (CrawlerConfiguration) }) -> Crawler
 ```
 
 Constructs Crawler's fields from required parameters
@@ -1664,7 +1664,7 @@ Encode CrawlerList
 
 ``` purescript
 newtype CrawlerMetrics
-  = CrawlerMetrics { "CrawlerName" :: NullOrUndefined (NameString), "TimeLeftSeconds" :: NullOrUndefined (NonNegativeDouble), "StillEstimating" :: NullOrUndefined (Boolean), "LastRuntimeSeconds" :: NullOrUndefined (NonNegativeDouble), "MedianRuntimeSeconds" :: NullOrUndefined (NonNegativeDouble), "TablesCreated" :: NullOrUndefined (NonNegativeInteger), "TablesUpdated" :: NullOrUndefined (NonNegativeInteger), "TablesDeleted" :: NullOrUndefined (NonNegativeInteger) }
+  = CrawlerMetrics { "CrawlerName" :: Maybe (NameString), "TimeLeftSeconds" :: Maybe (NonNegativeDouble), "StillEstimating" :: Maybe (Boolean), "LastRuntimeSeconds" :: Maybe (NonNegativeDouble), "MedianRuntimeSeconds" :: Maybe (NonNegativeDouble), "TablesCreated" :: Maybe (NonNegativeInteger), "TablesUpdated" :: Maybe (NonNegativeInteger), "TablesDeleted" :: Maybe (NonNegativeInteger) }
 ```
 
 <p>Metrics for a specified crawler.</p>
@@ -1689,7 +1689,7 @@ Constructs CrawlerMetrics from required parameters
 #### `newCrawlerMetrics'`
 
 ``` purescript
-newCrawlerMetrics' :: ({ "CrawlerName" :: NullOrUndefined (NameString), "TimeLeftSeconds" :: NullOrUndefined (NonNegativeDouble), "StillEstimating" :: NullOrUndefined (Boolean), "LastRuntimeSeconds" :: NullOrUndefined (NonNegativeDouble), "MedianRuntimeSeconds" :: NullOrUndefined (NonNegativeDouble), "TablesCreated" :: NullOrUndefined (NonNegativeInteger), "TablesUpdated" :: NullOrUndefined (NonNegativeInteger), "TablesDeleted" :: NullOrUndefined (NonNegativeInteger) } -> { "CrawlerName" :: NullOrUndefined (NameString), "TimeLeftSeconds" :: NullOrUndefined (NonNegativeDouble), "StillEstimating" :: NullOrUndefined (Boolean), "LastRuntimeSeconds" :: NullOrUndefined (NonNegativeDouble), "MedianRuntimeSeconds" :: NullOrUndefined (NonNegativeDouble), "TablesCreated" :: NullOrUndefined (NonNegativeInteger), "TablesUpdated" :: NullOrUndefined (NonNegativeInteger), "TablesDeleted" :: NullOrUndefined (NonNegativeInteger) }) -> CrawlerMetrics
+newCrawlerMetrics' :: ({ "CrawlerName" :: Maybe (NameString), "TimeLeftSeconds" :: Maybe (NonNegativeDouble), "StillEstimating" :: Maybe (Boolean), "LastRuntimeSeconds" :: Maybe (NonNegativeDouble), "MedianRuntimeSeconds" :: Maybe (NonNegativeDouble), "TablesCreated" :: Maybe (NonNegativeInteger), "TablesUpdated" :: Maybe (NonNegativeInteger), "TablesDeleted" :: Maybe (NonNegativeInteger) } -> { "CrawlerName" :: Maybe (NameString), "TimeLeftSeconds" :: Maybe (NonNegativeDouble), "StillEstimating" :: Maybe (Boolean), "LastRuntimeSeconds" :: Maybe (NonNegativeDouble), "MedianRuntimeSeconds" :: Maybe (NonNegativeDouble), "TablesCreated" :: Maybe (NonNegativeInteger), "TablesUpdated" :: Maybe (NonNegativeInteger), "TablesDeleted" :: Maybe (NonNegativeInteger) }) -> CrawlerMetrics
 ```
 
 Constructs CrawlerMetrics's fields from required parameters
@@ -1730,7 +1730,7 @@ Encode CrawlerNameList
 
 ``` purescript
 newtype CrawlerNotRunningException
-  = CrawlerNotRunningException { "Message" :: NullOrUndefined (MessageString) }
+  = CrawlerNotRunningException { "Message" :: Maybe (MessageString) }
 ```
 
 <p>The specified crawler is not running.</p>
@@ -1755,7 +1755,7 @@ Constructs CrawlerNotRunningException from required parameters
 #### `newCrawlerNotRunningException'`
 
 ``` purescript
-newCrawlerNotRunningException' :: ({ "Message" :: NullOrUndefined (MessageString) } -> { "Message" :: NullOrUndefined (MessageString) }) -> CrawlerNotRunningException
+newCrawlerNotRunningException' :: ({ "Message" :: Maybe (MessageString) } -> { "Message" :: Maybe (MessageString) }) -> CrawlerNotRunningException
 ```
 
 Constructs CrawlerNotRunningException's fields from required parameters
@@ -1764,7 +1764,7 @@ Constructs CrawlerNotRunningException's fields from required parameters
 
 ``` purescript
 newtype CrawlerRunningException
-  = CrawlerRunningException { "Message" :: NullOrUndefined (MessageString) }
+  = CrawlerRunningException { "Message" :: Maybe (MessageString) }
 ```
 
 <p>The operation cannot be performed because the crawler is already running.</p>
@@ -1789,7 +1789,7 @@ Constructs CrawlerRunningException from required parameters
 #### `newCrawlerRunningException'`
 
 ``` purescript
-newCrawlerRunningException' :: ({ "Message" :: NullOrUndefined (MessageString) } -> { "Message" :: NullOrUndefined (MessageString) }) -> CrawlerRunningException
+newCrawlerRunningException' :: ({ "Message" :: Maybe (MessageString) } -> { "Message" :: Maybe (MessageString) }) -> CrawlerRunningException
 ```
 
 Constructs CrawlerRunningException's fields from required parameters
@@ -1814,7 +1814,7 @@ Encode CrawlerState
 
 ``` purescript
 newtype CrawlerStoppingException
-  = CrawlerStoppingException { "Message" :: NullOrUndefined (MessageString) }
+  = CrawlerStoppingException { "Message" :: Maybe (MessageString) }
 ```
 
 <p>The specified crawler is stopping.</p>
@@ -1839,7 +1839,7 @@ Constructs CrawlerStoppingException from required parameters
 #### `newCrawlerStoppingException'`
 
 ``` purescript
-newCrawlerStoppingException' :: ({ "Message" :: NullOrUndefined (MessageString) } -> { "Message" :: NullOrUndefined (MessageString) }) -> CrawlerStoppingException
+newCrawlerStoppingException' :: ({ "Message" :: Maybe (MessageString) } -> { "Message" :: Maybe (MessageString) }) -> CrawlerStoppingException
 ```
 
 Constructs CrawlerStoppingException's fields from required parameters
@@ -1848,7 +1848,7 @@ Constructs CrawlerStoppingException's fields from required parameters
 
 ``` purescript
 newtype CrawlerTargets
-  = CrawlerTargets { "S3Targets" :: NullOrUndefined (S3TargetList), "JdbcTargets" :: NullOrUndefined (JdbcTargetList) }
+  = CrawlerTargets { "S3Targets" :: Maybe (S3TargetList), "JdbcTargets" :: Maybe (JdbcTargetList) }
 ```
 
 <p>Specifies data stores to crawl.</p>
@@ -1873,7 +1873,7 @@ Constructs CrawlerTargets from required parameters
 #### `newCrawlerTargets'`
 
 ``` purescript
-newCrawlerTargets' :: ({ "S3Targets" :: NullOrUndefined (S3TargetList), "JdbcTargets" :: NullOrUndefined (JdbcTargetList) } -> { "S3Targets" :: NullOrUndefined (S3TargetList), "JdbcTargets" :: NullOrUndefined (JdbcTargetList) }) -> CrawlerTargets
+newCrawlerTargets' :: ({ "S3Targets" :: Maybe (S3TargetList), "JdbcTargets" :: Maybe (JdbcTargetList) } -> { "S3Targets" :: Maybe (S3TargetList), "JdbcTargets" :: Maybe (JdbcTargetList) }) -> CrawlerTargets
 ```
 
 Constructs CrawlerTargets's fields from required parameters
@@ -1882,7 +1882,7 @@ Constructs CrawlerTargets's fields from required parameters
 
 ``` purescript
 newtype CreateClassifierRequest
-  = CreateClassifierRequest { "GrokClassifier" :: NullOrUndefined (CreateGrokClassifierRequest), "XMLClassifier" :: NullOrUndefined (CreateXMLClassifierRequest), "JsonClassifier" :: NullOrUndefined (CreateJsonClassifierRequest) }
+  = CreateClassifierRequest { "GrokClassifier" :: Maybe (CreateGrokClassifierRequest), "XMLClassifier" :: Maybe (CreateXMLClassifierRequest), "JsonClassifier" :: Maybe (CreateJsonClassifierRequest) }
 ```
 
 ##### Instances
@@ -1905,7 +1905,7 @@ Constructs CreateClassifierRequest from required parameters
 #### `newCreateClassifierRequest'`
 
 ``` purescript
-newCreateClassifierRequest' :: ({ "GrokClassifier" :: NullOrUndefined (CreateGrokClassifierRequest), "XMLClassifier" :: NullOrUndefined (CreateXMLClassifierRequest), "JsonClassifier" :: NullOrUndefined (CreateJsonClassifierRequest) } -> { "GrokClassifier" :: NullOrUndefined (CreateGrokClassifierRequest), "XMLClassifier" :: NullOrUndefined (CreateXMLClassifierRequest), "JsonClassifier" :: NullOrUndefined (CreateJsonClassifierRequest) }) -> CreateClassifierRequest
+newCreateClassifierRequest' :: ({ "GrokClassifier" :: Maybe (CreateGrokClassifierRequest), "XMLClassifier" :: Maybe (CreateXMLClassifierRequest), "JsonClassifier" :: Maybe (CreateJsonClassifierRequest) } -> { "GrokClassifier" :: Maybe (CreateGrokClassifierRequest), "XMLClassifier" :: Maybe (CreateXMLClassifierRequest), "JsonClassifier" :: Maybe (CreateJsonClassifierRequest) }) -> CreateClassifierRequest
 ```
 
 Constructs CreateClassifierRequest's fields from required parameters
@@ -1930,7 +1930,7 @@ Encode CreateClassifierResponse
 
 ``` purescript
 newtype CreateConnectionRequest
-  = CreateConnectionRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "ConnectionInput" :: ConnectionInput }
+  = CreateConnectionRequest { "CatalogId" :: Maybe (CatalogIdString), "ConnectionInput" :: ConnectionInput }
 ```
 
 ##### Instances
@@ -1953,7 +1953,7 @@ Constructs CreateConnectionRequest from required parameters
 #### `newCreateConnectionRequest'`
 
 ``` purescript
-newCreateConnectionRequest' :: ConnectionInput -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "ConnectionInput" :: ConnectionInput } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "ConnectionInput" :: ConnectionInput }) -> CreateConnectionRequest
+newCreateConnectionRequest' :: ConnectionInput -> ({ "CatalogId" :: Maybe (CatalogIdString), "ConnectionInput" :: ConnectionInput } -> { "CatalogId" :: Maybe (CatalogIdString), "ConnectionInput" :: ConnectionInput }) -> CreateConnectionRequest
 ```
 
 Constructs CreateConnectionRequest's fields from required parameters
@@ -1978,7 +1978,7 @@ Encode CreateConnectionResponse
 
 ``` purescript
 newtype CreateCrawlerRequest
-  = CreateCrawlerRequest { "Name" :: NameString, "Role" :: Role, "DatabaseName" :: DatabaseName, "Description" :: NullOrUndefined (DescriptionString), "Targets" :: CrawlerTargets, "Schedule" :: NullOrUndefined (CronExpression), "Classifiers" :: NullOrUndefined (ClassifierNameList), "TablePrefix" :: NullOrUndefined (TablePrefix), "SchemaChangePolicy" :: NullOrUndefined (SchemaChangePolicy), "Configuration" :: NullOrUndefined (CrawlerConfiguration) }
+  = CreateCrawlerRequest { "Name" :: NameString, "Role" :: Role, "DatabaseName" :: DatabaseName, "Description" :: Maybe (DescriptionString), "Targets" :: CrawlerTargets, "Schedule" :: Maybe (CronExpression), "Classifiers" :: Maybe (ClassifierNameList), "TablePrefix" :: Maybe (TablePrefix), "SchemaChangePolicy" :: Maybe (SchemaChangePolicy), "Configuration" :: Maybe (CrawlerConfiguration) }
 ```
 
 ##### Instances
@@ -2001,7 +2001,7 @@ Constructs CreateCrawlerRequest from required parameters
 #### `newCreateCrawlerRequest'`
 
 ``` purescript
-newCreateCrawlerRequest' :: DatabaseName -> NameString -> Role -> CrawlerTargets -> ({ "Name" :: NameString, "Role" :: Role, "DatabaseName" :: DatabaseName, "Description" :: NullOrUndefined (DescriptionString), "Targets" :: CrawlerTargets, "Schedule" :: NullOrUndefined (CronExpression), "Classifiers" :: NullOrUndefined (ClassifierNameList), "TablePrefix" :: NullOrUndefined (TablePrefix), "SchemaChangePolicy" :: NullOrUndefined (SchemaChangePolicy), "Configuration" :: NullOrUndefined (CrawlerConfiguration) } -> { "Name" :: NameString, "Role" :: Role, "DatabaseName" :: DatabaseName, "Description" :: NullOrUndefined (DescriptionString), "Targets" :: CrawlerTargets, "Schedule" :: NullOrUndefined (CronExpression), "Classifiers" :: NullOrUndefined (ClassifierNameList), "TablePrefix" :: NullOrUndefined (TablePrefix), "SchemaChangePolicy" :: NullOrUndefined (SchemaChangePolicy), "Configuration" :: NullOrUndefined (CrawlerConfiguration) }) -> CreateCrawlerRequest
+newCreateCrawlerRequest' :: DatabaseName -> NameString -> Role -> CrawlerTargets -> ({ "Name" :: NameString, "Role" :: Role, "DatabaseName" :: DatabaseName, "Description" :: Maybe (DescriptionString), "Targets" :: CrawlerTargets, "Schedule" :: Maybe (CronExpression), "Classifiers" :: Maybe (ClassifierNameList), "TablePrefix" :: Maybe (TablePrefix), "SchemaChangePolicy" :: Maybe (SchemaChangePolicy), "Configuration" :: Maybe (CrawlerConfiguration) } -> { "Name" :: NameString, "Role" :: Role, "DatabaseName" :: DatabaseName, "Description" :: Maybe (DescriptionString), "Targets" :: CrawlerTargets, "Schedule" :: Maybe (CronExpression), "Classifiers" :: Maybe (ClassifierNameList), "TablePrefix" :: Maybe (TablePrefix), "SchemaChangePolicy" :: Maybe (SchemaChangePolicy), "Configuration" :: Maybe (CrawlerConfiguration) }) -> CreateCrawlerRequest
 ```
 
 Constructs CreateCrawlerRequest's fields from required parameters
@@ -2026,7 +2026,7 @@ Encode CreateCrawlerResponse
 
 ``` purescript
 newtype CreateDatabaseRequest
-  = CreateDatabaseRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseInput" :: DatabaseInput }
+  = CreateDatabaseRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseInput" :: DatabaseInput }
 ```
 
 ##### Instances
@@ -2049,7 +2049,7 @@ Constructs CreateDatabaseRequest from required parameters
 #### `newCreateDatabaseRequest'`
 
 ``` purescript
-newCreateDatabaseRequest' :: DatabaseInput -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseInput" :: DatabaseInput } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseInput" :: DatabaseInput }) -> CreateDatabaseRequest
+newCreateDatabaseRequest' :: DatabaseInput -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseInput" :: DatabaseInput } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseInput" :: DatabaseInput }) -> CreateDatabaseRequest
 ```
 
 Constructs CreateDatabaseRequest's fields from required parameters
@@ -2074,7 +2074,7 @@ Encode CreateDatabaseResponse
 
 ``` purescript
 newtype CreateDevEndpointRequest
-  = CreateDevEndpointRequest { "EndpointName" :: GenericString, "RoleArn" :: RoleArn, "SecurityGroupIds" :: NullOrUndefined (StringList), "SubnetId" :: NullOrUndefined (GenericString), "PublicKey" :: GenericString, "NumberOfNodes" :: NullOrUndefined (IntegerValue), "ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString), "ExtraJarsS3Path" :: NullOrUndefined (GenericString) }
+  = CreateDevEndpointRequest { "EndpointName" :: GenericString, "RoleArn" :: RoleArn, "SecurityGroupIds" :: Maybe (StringList), "SubnetId" :: Maybe (GenericString), "PublicKey" :: GenericString, "NumberOfNodes" :: Maybe (IntegerValue), "ExtraPythonLibsS3Path" :: Maybe (GenericString), "ExtraJarsS3Path" :: Maybe (GenericString) }
 ```
 
 ##### Instances
@@ -2097,7 +2097,7 @@ Constructs CreateDevEndpointRequest from required parameters
 #### `newCreateDevEndpointRequest'`
 
 ``` purescript
-newCreateDevEndpointRequest' :: GenericString -> GenericString -> RoleArn -> ({ "EndpointName" :: GenericString, "RoleArn" :: RoleArn, "SecurityGroupIds" :: NullOrUndefined (StringList), "SubnetId" :: NullOrUndefined (GenericString), "PublicKey" :: GenericString, "NumberOfNodes" :: NullOrUndefined (IntegerValue), "ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString), "ExtraJarsS3Path" :: NullOrUndefined (GenericString) } -> { "EndpointName" :: GenericString, "RoleArn" :: RoleArn, "SecurityGroupIds" :: NullOrUndefined (StringList), "SubnetId" :: NullOrUndefined (GenericString), "PublicKey" :: GenericString, "NumberOfNodes" :: NullOrUndefined (IntegerValue), "ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString), "ExtraJarsS3Path" :: NullOrUndefined (GenericString) }) -> CreateDevEndpointRequest
+newCreateDevEndpointRequest' :: GenericString -> GenericString -> RoleArn -> ({ "EndpointName" :: GenericString, "RoleArn" :: RoleArn, "SecurityGroupIds" :: Maybe (StringList), "SubnetId" :: Maybe (GenericString), "PublicKey" :: GenericString, "NumberOfNodes" :: Maybe (IntegerValue), "ExtraPythonLibsS3Path" :: Maybe (GenericString), "ExtraJarsS3Path" :: Maybe (GenericString) } -> { "EndpointName" :: GenericString, "RoleArn" :: RoleArn, "SecurityGroupIds" :: Maybe (StringList), "SubnetId" :: Maybe (GenericString), "PublicKey" :: GenericString, "NumberOfNodes" :: Maybe (IntegerValue), "ExtraPythonLibsS3Path" :: Maybe (GenericString), "ExtraJarsS3Path" :: Maybe (GenericString) }) -> CreateDevEndpointRequest
 ```
 
 Constructs CreateDevEndpointRequest's fields from required parameters
@@ -2106,7 +2106,7 @@ Constructs CreateDevEndpointRequest's fields from required parameters
 
 ``` purescript
 newtype CreateDevEndpointResponse
-  = CreateDevEndpointResponse { "EndpointName" :: NullOrUndefined (GenericString), "Status" :: NullOrUndefined (GenericString), "SecurityGroupIds" :: NullOrUndefined (StringList), "SubnetId" :: NullOrUndefined (GenericString), "RoleArn" :: NullOrUndefined (RoleArn), "YarnEndpointAddress" :: NullOrUndefined (GenericString), "ZeppelinRemoteSparkInterpreterPort" :: NullOrUndefined (IntegerValue), "NumberOfNodes" :: NullOrUndefined (IntegerValue), "AvailabilityZone" :: NullOrUndefined (GenericString), "VpcId" :: NullOrUndefined (GenericString), "ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString), "ExtraJarsS3Path" :: NullOrUndefined (GenericString), "FailureReason" :: NullOrUndefined (GenericString), "CreatedTimestamp" :: NullOrUndefined (TimestampValue) }
+  = CreateDevEndpointResponse { "EndpointName" :: Maybe (GenericString), "Status" :: Maybe (GenericString), "SecurityGroupIds" :: Maybe (StringList), "SubnetId" :: Maybe (GenericString), "RoleArn" :: Maybe (RoleArn), "YarnEndpointAddress" :: Maybe (GenericString), "ZeppelinRemoteSparkInterpreterPort" :: Maybe (IntegerValue), "NumberOfNodes" :: Maybe (IntegerValue), "AvailabilityZone" :: Maybe (GenericString), "VpcId" :: Maybe (GenericString), "ExtraPythonLibsS3Path" :: Maybe (GenericString), "ExtraJarsS3Path" :: Maybe (GenericString), "FailureReason" :: Maybe (GenericString), "CreatedTimestamp" :: Maybe (TimestampValue) }
 ```
 
 ##### Instances
@@ -2129,7 +2129,7 @@ Constructs CreateDevEndpointResponse from required parameters
 #### `newCreateDevEndpointResponse'`
 
 ``` purescript
-newCreateDevEndpointResponse' :: ({ "EndpointName" :: NullOrUndefined (GenericString), "Status" :: NullOrUndefined (GenericString), "SecurityGroupIds" :: NullOrUndefined (StringList), "SubnetId" :: NullOrUndefined (GenericString), "RoleArn" :: NullOrUndefined (RoleArn), "YarnEndpointAddress" :: NullOrUndefined (GenericString), "ZeppelinRemoteSparkInterpreterPort" :: NullOrUndefined (IntegerValue), "NumberOfNodes" :: NullOrUndefined (IntegerValue), "AvailabilityZone" :: NullOrUndefined (GenericString), "VpcId" :: NullOrUndefined (GenericString), "ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString), "ExtraJarsS3Path" :: NullOrUndefined (GenericString), "FailureReason" :: NullOrUndefined (GenericString), "CreatedTimestamp" :: NullOrUndefined (TimestampValue) } -> { "EndpointName" :: NullOrUndefined (GenericString), "Status" :: NullOrUndefined (GenericString), "SecurityGroupIds" :: NullOrUndefined (StringList), "SubnetId" :: NullOrUndefined (GenericString), "RoleArn" :: NullOrUndefined (RoleArn), "YarnEndpointAddress" :: NullOrUndefined (GenericString), "ZeppelinRemoteSparkInterpreterPort" :: NullOrUndefined (IntegerValue), "NumberOfNodes" :: NullOrUndefined (IntegerValue), "AvailabilityZone" :: NullOrUndefined (GenericString), "VpcId" :: NullOrUndefined (GenericString), "ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString), "ExtraJarsS3Path" :: NullOrUndefined (GenericString), "FailureReason" :: NullOrUndefined (GenericString), "CreatedTimestamp" :: NullOrUndefined (TimestampValue) }) -> CreateDevEndpointResponse
+newCreateDevEndpointResponse' :: ({ "EndpointName" :: Maybe (GenericString), "Status" :: Maybe (GenericString), "SecurityGroupIds" :: Maybe (StringList), "SubnetId" :: Maybe (GenericString), "RoleArn" :: Maybe (RoleArn), "YarnEndpointAddress" :: Maybe (GenericString), "ZeppelinRemoteSparkInterpreterPort" :: Maybe (IntegerValue), "NumberOfNodes" :: Maybe (IntegerValue), "AvailabilityZone" :: Maybe (GenericString), "VpcId" :: Maybe (GenericString), "ExtraPythonLibsS3Path" :: Maybe (GenericString), "ExtraJarsS3Path" :: Maybe (GenericString), "FailureReason" :: Maybe (GenericString), "CreatedTimestamp" :: Maybe (TimestampValue) } -> { "EndpointName" :: Maybe (GenericString), "Status" :: Maybe (GenericString), "SecurityGroupIds" :: Maybe (StringList), "SubnetId" :: Maybe (GenericString), "RoleArn" :: Maybe (RoleArn), "YarnEndpointAddress" :: Maybe (GenericString), "ZeppelinRemoteSparkInterpreterPort" :: Maybe (IntegerValue), "NumberOfNodes" :: Maybe (IntegerValue), "AvailabilityZone" :: Maybe (GenericString), "VpcId" :: Maybe (GenericString), "ExtraPythonLibsS3Path" :: Maybe (GenericString), "ExtraJarsS3Path" :: Maybe (GenericString), "FailureReason" :: Maybe (GenericString), "CreatedTimestamp" :: Maybe (TimestampValue) }) -> CreateDevEndpointResponse
 ```
 
 Constructs CreateDevEndpointResponse's fields from required parameters
@@ -2138,7 +2138,7 @@ Constructs CreateDevEndpointResponse's fields from required parameters
 
 ``` purescript
 newtype CreateGrokClassifierRequest
-  = CreateGrokClassifierRequest { "Classification" :: Classification, "Name" :: NameString, "GrokPattern" :: GrokPattern, "CustomPatterns" :: NullOrUndefined (CustomPatterns) }
+  = CreateGrokClassifierRequest { "Classification" :: Classification, "Name" :: NameString, "GrokPattern" :: GrokPattern, "CustomPatterns" :: Maybe (CustomPatterns) }
 ```
 
 <p>Specifies a <code>grok</code> classifier for <code>CreateClassifier</code> to create.</p>
@@ -2163,7 +2163,7 @@ Constructs CreateGrokClassifierRequest from required parameters
 #### `newCreateGrokClassifierRequest'`
 
 ``` purescript
-newCreateGrokClassifierRequest' :: Classification -> GrokPattern -> NameString -> ({ "Classification" :: Classification, "Name" :: NameString, "GrokPattern" :: GrokPattern, "CustomPatterns" :: NullOrUndefined (CustomPatterns) } -> { "Classification" :: Classification, "Name" :: NameString, "GrokPattern" :: GrokPattern, "CustomPatterns" :: NullOrUndefined (CustomPatterns) }) -> CreateGrokClassifierRequest
+newCreateGrokClassifierRequest' :: Classification -> GrokPattern -> NameString -> ({ "Classification" :: Classification, "Name" :: NameString, "GrokPattern" :: GrokPattern, "CustomPatterns" :: Maybe (CustomPatterns) } -> { "Classification" :: Classification, "Name" :: NameString, "GrokPattern" :: GrokPattern, "CustomPatterns" :: Maybe (CustomPatterns) }) -> CreateGrokClassifierRequest
 ```
 
 Constructs CreateGrokClassifierRequest's fields from required parameters
@@ -2172,7 +2172,7 @@ Constructs CreateGrokClassifierRequest's fields from required parameters
 
 ``` purescript
 newtype CreateJobRequest
-  = CreateJobRequest { "Name" :: NameString, "Description" :: NullOrUndefined (DescriptionString), "LogUri" :: NullOrUndefined (UriString), "Role" :: RoleString, "ExecutionProperty" :: NullOrUndefined (ExecutionProperty), "Command" :: JobCommand, "DefaultArguments" :: NullOrUndefined (GenericMap), "Connections" :: NullOrUndefined (ConnectionsList), "MaxRetries" :: NullOrUndefined (MaxRetries), "AllocatedCapacity" :: NullOrUndefined (IntegerValue) }
+  = CreateJobRequest { "Name" :: NameString, "Description" :: Maybe (DescriptionString), "LogUri" :: Maybe (UriString), "Role" :: RoleString, "ExecutionProperty" :: Maybe (ExecutionProperty), "Command" :: JobCommand, "DefaultArguments" :: Maybe (GenericMap), "Connections" :: Maybe (ConnectionsList), "MaxRetries" :: Maybe (MaxRetries), "AllocatedCapacity" :: Maybe (IntegerValue) }
 ```
 
 ##### Instances
@@ -2195,7 +2195,7 @@ Constructs CreateJobRequest from required parameters
 #### `newCreateJobRequest'`
 
 ``` purescript
-newCreateJobRequest' :: JobCommand -> NameString -> RoleString -> ({ "Name" :: NameString, "Description" :: NullOrUndefined (DescriptionString), "LogUri" :: NullOrUndefined (UriString), "Role" :: RoleString, "ExecutionProperty" :: NullOrUndefined (ExecutionProperty), "Command" :: JobCommand, "DefaultArguments" :: NullOrUndefined (GenericMap), "Connections" :: NullOrUndefined (ConnectionsList), "MaxRetries" :: NullOrUndefined (MaxRetries), "AllocatedCapacity" :: NullOrUndefined (IntegerValue) } -> { "Name" :: NameString, "Description" :: NullOrUndefined (DescriptionString), "LogUri" :: NullOrUndefined (UriString), "Role" :: RoleString, "ExecutionProperty" :: NullOrUndefined (ExecutionProperty), "Command" :: JobCommand, "DefaultArguments" :: NullOrUndefined (GenericMap), "Connections" :: NullOrUndefined (ConnectionsList), "MaxRetries" :: NullOrUndefined (MaxRetries), "AllocatedCapacity" :: NullOrUndefined (IntegerValue) }) -> CreateJobRequest
+newCreateJobRequest' :: JobCommand -> NameString -> RoleString -> ({ "Name" :: NameString, "Description" :: Maybe (DescriptionString), "LogUri" :: Maybe (UriString), "Role" :: RoleString, "ExecutionProperty" :: Maybe (ExecutionProperty), "Command" :: JobCommand, "DefaultArguments" :: Maybe (GenericMap), "Connections" :: Maybe (ConnectionsList), "MaxRetries" :: Maybe (MaxRetries), "AllocatedCapacity" :: Maybe (IntegerValue) } -> { "Name" :: NameString, "Description" :: Maybe (DescriptionString), "LogUri" :: Maybe (UriString), "Role" :: RoleString, "ExecutionProperty" :: Maybe (ExecutionProperty), "Command" :: JobCommand, "DefaultArguments" :: Maybe (GenericMap), "Connections" :: Maybe (ConnectionsList), "MaxRetries" :: Maybe (MaxRetries), "AllocatedCapacity" :: Maybe (IntegerValue) }) -> CreateJobRequest
 ```
 
 Constructs CreateJobRequest's fields from required parameters
@@ -2204,7 +2204,7 @@ Constructs CreateJobRequest's fields from required parameters
 
 ``` purescript
 newtype CreateJobResponse
-  = CreateJobResponse { "Name" :: NullOrUndefined (NameString) }
+  = CreateJobResponse { "Name" :: Maybe (NameString) }
 ```
 
 ##### Instances
@@ -2227,7 +2227,7 @@ Constructs CreateJobResponse from required parameters
 #### `newCreateJobResponse'`
 
 ``` purescript
-newCreateJobResponse' :: ({ "Name" :: NullOrUndefined (NameString) } -> { "Name" :: NullOrUndefined (NameString) }) -> CreateJobResponse
+newCreateJobResponse' :: ({ "Name" :: Maybe (NameString) } -> { "Name" :: Maybe (NameString) }) -> CreateJobResponse
 ```
 
 Constructs CreateJobResponse's fields from required parameters
@@ -2270,7 +2270,7 @@ Constructs CreateJsonClassifierRequest's fields from required parameters
 
 ``` purescript
 newtype CreatePartitionRequest
-  = CreatePartitionRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionInput" :: PartitionInput }
+  = CreatePartitionRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionInput" :: PartitionInput }
 ```
 
 ##### Instances
@@ -2293,7 +2293,7 @@ Constructs CreatePartitionRequest from required parameters
 #### `newCreatePartitionRequest'`
 
 ``` purescript
-newCreatePartitionRequest' :: NameString -> PartitionInput -> NameString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionInput" :: PartitionInput } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionInput" :: PartitionInput }) -> CreatePartitionRequest
+newCreatePartitionRequest' :: NameString -> PartitionInput -> NameString -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionInput" :: PartitionInput } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionInput" :: PartitionInput }) -> CreatePartitionRequest
 ```
 
 Constructs CreatePartitionRequest's fields from required parameters
@@ -2318,7 +2318,7 @@ Encode CreatePartitionResponse
 
 ``` purescript
 newtype CreateScriptRequest
-  = CreateScriptRequest { "DagNodes" :: NullOrUndefined (DagNodes), "DagEdges" :: NullOrUndefined (DagEdges), "Language" :: NullOrUndefined (Language) }
+  = CreateScriptRequest { "DagNodes" :: Maybe (DagNodes), "DagEdges" :: Maybe (DagEdges), "Language" :: Maybe (Language) }
 ```
 
 ##### Instances
@@ -2341,7 +2341,7 @@ Constructs CreateScriptRequest from required parameters
 #### `newCreateScriptRequest'`
 
 ``` purescript
-newCreateScriptRequest' :: ({ "DagNodes" :: NullOrUndefined (DagNodes), "DagEdges" :: NullOrUndefined (DagEdges), "Language" :: NullOrUndefined (Language) } -> { "DagNodes" :: NullOrUndefined (DagNodes), "DagEdges" :: NullOrUndefined (DagEdges), "Language" :: NullOrUndefined (Language) }) -> CreateScriptRequest
+newCreateScriptRequest' :: ({ "DagNodes" :: Maybe (DagNodes), "DagEdges" :: Maybe (DagEdges), "Language" :: Maybe (Language) } -> { "DagNodes" :: Maybe (DagNodes), "DagEdges" :: Maybe (DagEdges), "Language" :: Maybe (Language) }) -> CreateScriptRequest
 ```
 
 Constructs CreateScriptRequest's fields from required parameters
@@ -2350,7 +2350,7 @@ Constructs CreateScriptRequest's fields from required parameters
 
 ``` purescript
 newtype CreateScriptResponse
-  = CreateScriptResponse { "PythonScript" :: NullOrUndefined (PythonScript), "ScalaCode" :: NullOrUndefined (ScalaCode) }
+  = CreateScriptResponse { "PythonScript" :: Maybe (PythonScript), "ScalaCode" :: Maybe (ScalaCode) }
 ```
 
 ##### Instances
@@ -2373,7 +2373,7 @@ Constructs CreateScriptResponse from required parameters
 #### `newCreateScriptResponse'`
 
 ``` purescript
-newCreateScriptResponse' :: ({ "PythonScript" :: NullOrUndefined (PythonScript), "ScalaCode" :: NullOrUndefined (ScalaCode) } -> { "PythonScript" :: NullOrUndefined (PythonScript), "ScalaCode" :: NullOrUndefined (ScalaCode) }) -> CreateScriptResponse
+newCreateScriptResponse' :: ({ "PythonScript" :: Maybe (PythonScript), "ScalaCode" :: Maybe (ScalaCode) } -> { "PythonScript" :: Maybe (PythonScript), "ScalaCode" :: Maybe (ScalaCode) }) -> CreateScriptResponse
 ```
 
 Constructs CreateScriptResponse's fields from required parameters
@@ -2382,7 +2382,7 @@ Constructs CreateScriptResponse's fields from required parameters
 
 ``` purescript
 newtype CreateTableRequest
-  = CreateTableRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableInput" :: TableInput }
+  = CreateTableRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableInput" :: TableInput }
 ```
 
 ##### Instances
@@ -2405,7 +2405,7 @@ Constructs CreateTableRequest from required parameters
 #### `newCreateTableRequest'`
 
 ``` purescript
-newCreateTableRequest' :: NameString -> TableInput -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableInput" :: TableInput } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableInput" :: TableInput }) -> CreateTableRequest
+newCreateTableRequest' :: NameString -> TableInput -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableInput" :: TableInput } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableInput" :: TableInput }) -> CreateTableRequest
 ```
 
 Constructs CreateTableRequest's fields from required parameters
@@ -2430,7 +2430,7 @@ Encode CreateTableResponse
 
 ``` purescript
 newtype CreateTriggerRequest
-  = CreateTriggerRequest { "Name" :: NameString, "Type" :: TriggerType, "Schedule" :: NullOrUndefined (GenericString), "Predicate" :: NullOrUndefined (Predicate), "Actions" :: ActionList, "Description" :: NullOrUndefined (DescriptionString) }
+  = CreateTriggerRequest { "Name" :: NameString, "Type" :: TriggerType, "Schedule" :: Maybe (GenericString), "Predicate" :: Maybe (Predicate), "Actions" :: ActionList, "Description" :: Maybe (DescriptionString) }
 ```
 
 ##### Instances
@@ -2453,7 +2453,7 @@ Constructs CreateTriggerRequest from required parameters
 #### `newCreateTriggerRequest'`
 
 ``` purescript
-newCreateTriggerRequest' :: ActionList -> NameString -> TriggerType -> ({ "Name" :: NameString, "Type" :: TriggerType, "Schedule" :: NullOrUndefined (GenericString), "Predicate" :: NullOrUndefined (Predicate), "Actions" :: ActionList, "Description" :: NullOrUndefined (DescriptionString) } -> { "Name" :: NameString, "Type" :: TriggerType, "Schedule" :: NullOrUndefined (GenericString), "Predicate" :: NullOrUndefined (Predicate), "Actions" :: ActionList, "Description" :: NullOrUndefined (DescriptionString) }) -> CreateTriggerRequest
+newCreateTriggerRequest' :: ActionList -> NameString -> TriggerType -> ({ "Name" :: NameString, "Type" :: TriggerType, "Schedule" :: Maybe (GenericString), "Predicate" :: Maybe (Predicate), "Actions" :: ActionList, "Description" :: Maybe (DescriptionString) } -> { "Name" :: NameString, "Type" :: TriggerType, "Schedule" :: Maybe (GenericString), "Predicate" :: Maybe (Predicate), "Actions" :: ActionList, "Description" :: Maybe (DescriptionString) }) -> CreateTriggerRequest
 ```
 
 Constructs CreateTriggerRequest's fields from required parameters
@@ -2462,7 +2462,7 @@ Constructs CreateTriggerRequest's fields from required parameters
 
 ``` purescript
 newtype CreateTriggerResponse
-  = CreateTriggerResponse { "Name" :: NullOrUndefined (NameString) }
+  = CreateTriggerResponse { "Name" :: Maybe (NameString) }
 ```
 
 ##### Instances
@@ -2485,7 +2485,7 @@ Constructs CreateTriggerResponse from required parameters
 #### `newCreateTriggerResponse'`
 
 ``` purescript
-newCreateTriggerResponse' :: ({ "Name" :: NullOrUndefined (NameString) } -> { "Name" :: NullOrUndefined (NameString) }) -> CreateTriggerResponse
+newCreateTriggerResponse' :: ({ "Name" :: Maybe (NameString) } -> { "Name" :: Maybe (NameString) }) -> CreateTriggerResponse
 ```
 
 Constructs CreateTriggerResponse's fields from required parameters
@@ -2494,7 +2494,7 @@ Constructs CreateTriggerResponse's fields from required parameters
 
 ``` purescript
 newtype CreateUserDefinedFunctionRequest
-  = CreateUserDefinedFunctionRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "FunctionInput" :: UserDefinedFunctionInput }
+  = CreateUserDefinedFunctionRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "FunctionInput" :: UserDefinedFunctionInput }
 ```
 
 ##### Instances
@@ -2517,7 +2517,7 @@ Constructs CreateUserDefinedFunctionRequest from required parameters
 #### `newCreateUserDefinedFunctionRequest'`
 
 ``` purescript
-newCreateUserDefinedFunctionRequest' :: NameString -> UserDefinedFunctionInput -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "FunctionInput" :: UserDefinedFunctionInput } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "FunctionInput" :: UserDefinedFunctionInput }) -> CreateUserDefinedFunctionRequest
+newCreateUserDefinedFunctionRequest' :: NameString -> UserDefinedFunctionInput -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "FunctionInput" :: UserDefinedFunctionInput } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "FunctionInput" :: UserDefinedFunctionInput }) -> CreateUserDefinedFunctionRequest
 ```
 
 Constructs CreateUserDefinedFunctionRequest's fields from required parameters
@@ -2542,7 +2542,7 @@ Encode CreateUserDefinedFunctionResponse
 
 ``` purescript
 newtype CreateXMLClassifierRequest
-  = CreateXMLClassifierRequest { "Classification" :: Classification, "Name" :: NameString, "RowTag" :: NullOrUndefined (RowTag) }
+  = CreateXMLClassifierRequest { "Classification" :: Classification, "Name" :: NameString, "RowTag" :: Maybe (RowTag) }
 ```
 
 <p>Specifies an XML classifier for <code>CreateClassifier</code> to create.</p>
@@ -2567,7 +2567,7 @@ Constructs CreateXMLClassifierRequest from required parameters
 #### `newCreateXMLClassifierRequest'`
 
 ``` purescript
-newCreateXMLClassifierRequest' :: Classification -> NameString -> ({ "Classification" :: Classification, "Name" :: NameString, "RowTag" :: NullOrUndefined (RowTag) } -> { "Classification" :: Classification, "Name" :: NameString, "RowTag" :: NullOrUndefined (RowTag) }) -> CreateXMLClassifierRequest
+newCreateXMLClassifierRequest' :: Classification -> NameString -> ({ "Classification" :: Classification, "Name" :: NameString, "RowTag" :: Maybe (RowTag) } -> { "Classification" :: Classification, "Name" :: NameString, "RowTag" :: Maybe (RowTag) }) -> CreateXMLClassifierRequest
 ```
 
 Constructs CreateXMLClassifierRequest's fields from required parameters
@@ -2640,7 +2640,7 @@ Encode DagNodes
 
 ``` purescript
 newtype Database
-  = Database { "Name" :: NameString, "Description" :: NullOrUndefined (DescriptionString), "LocationUri" :: NullOrUndefined (URI), "Parameters" :: NullOrUndefined (ParametersMap), "CreateTime" :: NullOrUndefined (Timestamp) }
+  = Database { "Name" :: NameString, "Description" :: Maybe (DescriptionString), "LocationUri" :: Maybe (URI), "Parameters" :: Maybe (ParametersMap), "CreateTime" :: Maybe (Timestamp) }
 ```
 
 <p>The <code>Database</code> object represents a logical grouping of tables that may reside in a Hive metastore or an RDBMS.</p>
@@ -2665,7 +2665,7 @@ Constructs Database from required parameters
 #### `newDatabase'`
 
 ``` purescript
-newDatabase' :: NameString -> ({ "Name" :: NameString, "Description" :: NullOrUndefined (DescriptionString), "LocationUri" :: NullOrUndefined (URI), "Parameters" :: NullOrUndefined (ParametersMap), "CreateTime" :: NullOrUndefined (Timestamp) } -> { "Name" :: NameString, "Description" :: NullOrUndefined (DescriptionString), "LocationUri" :: NullOrUndefined (URI), "Parameters" :: NullOrUndefined (ParametersMap), "CreateTime" :: NullOrUndefined (Timestamp) }) -> Database
+newDatabase' :: NameString -> ({ "Name" :: NameString, "Description" :: Maybe (DescriptionString), "LocationUri" :: Maybe (URI), "Parameters" :: Maybe (ParametersMap), "CreateTime" :: Maybe (Timestamp) } -> { "Name" :: NameString, "Description" :: Maybe (DescriptionString), "LocationUri" :: Maybe (URI), "Parameters" :: Maybe (ParametersMap), "CreateTime" :: Maybe (Timestamp) }) -> Database
 ```
 
 Constructs Database's fields from required parameters
@@ -2674,7 +2674,7 @@ Constructs Database's fields from required parameters
 
 ``` purescript
 newtype DatabaseInput
-  = DatabaseInput { "Name" :: NameString, "Description" :: NullOrUndefined (DescriptionString), "LocationUri" :: NullOrUndefined (URI), "Parameters" :: NullOrUndefined (ParametersMap) }
+  = DatabaseInput { "Name" :: NameString, "Description" :: Maybe (DescriptionString), "LocationUri" :: Maybe (URI), "Parameters" :: Maybe (ParametersMap) }
 ```
 
 <p>The structure used to create or update a database.</p>
@@ -2699,7 +2699,7 @@ Constructs DatabaseInput from required parameters
 #### `newDatabaseInput'`
 
 ``` purescript
-newDatabaseInput' :: NameString -> ({ "Name" :: NameString, "Description" :: NullOrUndefined (DescriptionString), "LocationUri" :: NullOrUndefined (URI), "Parameters" :: NullOrUndefined (ParametersMap) } -> { "Name" :: NameString, "Description" :: NullOrUndefined (DescriptionString), "LocationUri" :: NullOrUndefined (URI), "Parameters" :: NullOrUndefined (ParametersMap) }) -> DatabaseInput
+newDatabaseInput' :: NameString -> ({ "Name" :: NameString, "Description" :: Maybe (DescriptionString), "LocationUri" :: Maybe (URI), "Parameters" :: Maybe (ParametersMap) } -> { "Name" :: NameString, "Description" :: Maybe (DescriptionString), "LocationUri" :: Maybe (URI), "Parameters" :: Maybe (ParametersMap) }) -> DatabaseInput
 ```
 
 Constructs DatabaseInput's fields from required parameters
@@ -2820,7 +2820,7 @@ Encode DeleteConnectionNameList
 
 ``` purescript
 newtype DeleteConnectionRequest
-  = DeleteConnectionRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "ConnectionName" :: NameString }
+  = DeleteConnectionRequest { "CatalogId" :: Maybe (CatalogIdString), "ConnectionName" :: NameString }
 ```
 
 ##### Instances
@@ -2843,7 +2843,7 @@ Constructs DeleteConnectionRequest from required parameters
 #### `newDeleteConnectionRequest'`
 
 ``` purescript
-newDeleteConnectionRequest' :: NameString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "ConnectionName" :: NameString } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "ConnectionName" :: NameString }) -> DeleteConnectionRequest
+newDeleteConnectionRequest' :: NameString -> ({ "CatalogId" :: Maybe (CatalogIdString), "ConnectionName" :: NameString } -> { "CatalogId" :: Maybe (CatalogIdString), "ConnectionName" :: NameString }) -> DeleteConnectionRequest
 ```
 
 Constructs DeleteConnectionRequest's fields from required parameters
@@ -2916,7 +2916,7 @@ Encode DeleteCrawlerResponse
 
 ``` purescript
 newtype DeleteDatabaseRequest
-  = DeleteDatabaseRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "Name" :: NameString }
+  = DeleteDatabaseRequest { "CatalogId" :: Maybe (CatalogIdString), "Name" :: NameString }
 ```
 
 ##### Instances
@@ -2939,7 +2939,7 @@ Constructs DeleteDatabaseRequest from required parameters
 #### `newDeleteDatabaseRequest'`
 
 ``` purescript
-newDeleteDatabaseRequest' :: NameString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "Name" :: NameString } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "Name" :: NameString }) -> DeleteDatabaseRequest
+newDeleteDatabaseRequest' :: NameString -> ({ "CatalogId" :: Maybe (CatalogIdString), "Name" :: NameString } -> { "CatalogId" :: Maybe (CatalogIdString), "Name" :: NameString }) -> DeleteDatabaseRequest
 ```
 
 Constructs DeleteDatabaseRequest's fields from required parameters
@@ -3044,7 +3044,7 @@ Constructs DeleteJobRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteJobResponse
-  = DeleteJobResponse { "JobName" :: NullOrUndefined (NameString) }
+  = DeleteJobResponse { "JobName" :: Maybe (NameString) }
 ```
 
 ##### Instances
@@ -3067,7 +3067,7 @@ Constructs DeleteJobResponse from required parameters
 #### `newDeleteJobResponse'`
 
 ``` purescript
-newDeleteJobResponse' :: ({ "JobName" :: NullOrUndefined (NameString) } -> { "JobName" :: NullOrUndefined (NameString) }) -> DeleteJobResponse
+newDeleteJobResponse' :: ({ "JobName" :: Maybe (NameString) } -> { "JobName" :: Maybe (NameString) }) -> DeleteJobResponse
 ```
 
 Constructs DeleteJobResponse's fields from required parameters
@@ -3076,7 +3076,7 @@ Constructs DeleteJobResponse's fields from required parameters
 
 ``` purescript
 newtype DeletePartitionRequest
-  = DeletePartitionRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionValues" :: ValueStringList }
+  = DeletePartitionRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionValues" :: ValueStringList }
 ```
 
 ##### Instances
@@ -3099,7 +3099,7 @@ Constructs DeletePartitionRequest from required parameters
 #### `newDeletePartitionRequest'`
 
 ``` purescript
-newDeletePartitionRequest' :: NameString -> ValueStringList -> NameString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionValues" :: ValueStringList } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionValues" :: ValueStringList }) -> DeletePartitionRequest
+newDeletePartitionRequest' :: NameString -> ValueStringList -> NameString -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionValues" :: ValueStringList } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionValues" :: ValueStringList }) -> DeletePartitionRequest
 ```
 
 Constructs DeletePartitionRequest's fields from required parameters
@@ -3124,7 +3124,7 @@ Encode DeletePartitionResponse
 
 ``` purescript
 newtype DeleteTableRequest
-  = DeleteTableRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "Name" :: NameString }
+  = DeleteTableRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "Name" :: NameString }
 ```
 
 ##### Instances
@@ -3147,7 +3147,7 @@ Constructs DeleteTableRequest from required parameters
 #### `newDeleteTableRequest'`
 
 ``` purescript
-newDeleteTableRequest' :: NameString -> NameString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "Name" :: NameString } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "Name" :: NameString }) -> DeleteTableRequest
+newDeleteTableRequest' :: NameString -> NameString -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "Name" :: NameString } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "Name" :: NameString }) -> DeleteTableRequest
 ```
 
 Constructs DeleteTableRequest's fields from required parameters
@@ -3172,7 +3172,7 @@ Encode DeleteTableResponse
 
 ``` purescript
 newtype DeleteTableVersionRequest
-  = DeleteTableVersionRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "VersionId" :: VersionString }
+  = DeleteTableVersionRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "VersionId" :: VersionString }
 ```
 
 ##### Instances
@@ -3195,7 +3195,7 @@ Constructs DeleteTableVersionRequest from required parameters
 #### `newDeleteTableVersionRequest'`
 
 ``` purescript
-newDeleteTableVersionRequest' :: NameString -> NameString -> VersionString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "VersionId" :: VersionString } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "VersionId" :: VersionString }) -> DeleteTableVersionRequest
+newDeleteTableVersionRequest' :: NameString -> NameString -> VersionString -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "VersionId" :: VersionString } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "VersionId" :: VersionString }) -> DeleteTableVersionRequest
 ```
 
 Constructs DeleteTableVersionRequest's fields from required parameters
@@ -3252,7 +3252,7 @@ Constructs DeleteTriggerRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteTriggerResponse
-  = DeleteTriggerResponse { "Name" :: NullOrUndefined (NameString) }
+  = DeleteTriggerResponse { "Name" :: Maybe (NameString) }
 ```
 
 ##### Instances
@@ -3275,7 +3275,7 @@ Constructs DeleteTriggerResponse from required parameters
 #### `newDeleteTriggerResponse'`
 
 ``` purescript
-newDeleteTriggerResponse' :: ({ "Name" :: NullOrUndefined (NameString) } -> { "Name" :: NullOrUndefined (NameString) }) -> DeleteTriggerResponse
+newDeleteTriggerResponse' :: ({ "Name" :: Maybe (NameString) } -> { "Name" :: Maybe (NameString) }) -> DeleteTriggerResponse
 ```
 
 Constructs DeleteTriggerResponse's fields from required parameters
@@ -3284,7 +3284,7 @@ Constructs DeleteTriggerResponse's fields from required parameters
 
 ``` purescript
 newtype DeleteUserDefinedFunctionRequest
-  = DeleteUserDefinedFunctionRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "FunctionName" :: NameString }
+  = DeleteUserDefinedFunctionRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "FunctionName" :: NameString }
 ```
 
 ##### Instances
@@ -3307,7 +3307,7 @@ Constructs DeleteUserDefinedFunctionRequest from required parameters
 #### `newDeleteUserDefinedFunctionRequest'`
 
 ``` purescript
-newDeleteUserDefinedFunctionRequest' :: NameString -> NameString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "FunctionName" :: NameString } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "FunctionName" :: NameString }) -> DeleteUserDefinedFunctionRequest
+newDeleteUserDefinedFunctionRequest' :: NameString -> NameString -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "FunctionName" :: NameString } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "FunctionName" :: NameString }) -> DeleteUserDefinedFunctionRequest
 ```
 
 Constructs DeleteUserDefinedFunctionRequest's fields from required parameters
@@ -3364,7 +3364,7 @@ Encode DescriptionStringRemovable
 
 ``` purescript
 newtype DevEndpoint
-  = DevEndpoint { "EndpointName" :: NullOrUndefined (GenericString), "RoleArn" :: NullOrUndefined (RoleArn), "SecurityGroupIds" :: NullOrUndefined (StringList), "SubnetId" :: NullOrUndefined (GenericString), "YarnEndpointAddress" :: NullOrUndefined (GenericString), "ZeppelinRemoteSparkInterpreterPort" :: NullOrUndefined (IntegerValue), "PublicAddress" :: NullOrUndefined (GenericString), "Status" :: NullOrUndefined (GenericString), "NumberOfNodes" :: NullOrUndefined (IntegerValue), "AvailabilityZone" :: NullOrUndefined (GenericString), "VpcId" :: NullOrUndefined (GenericString), "ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString), "ExtraJarsS3Path" :: NullOrUndefined (GenericString), "FailureReason" :: NullOrUndefined (GenericString), "LastUpdateStatus" :: NullOrUndefined (GenericString), "CreatedTimestamp" :: NullOrUndefined (TimestampValue), "LastModifiedTimestamp" :: NullOrUndefined (TimestampValue), "PublicKey" :: NullOrUndefined (GenericString) }
+  = DevEndpoint { "EndpointName" :: Maybe (GenericString), "RoleArn" :: Maybe (RoleArn), "SecurityGroupIds" :: Maybe (StringList), "SubnetId" :: Maybe (GenericString), "YarnEndpointAddress" :: Maybe (GenericString), "ZeppelinRemoteSparkInterpreterPort" :: Maybe (IntegerValue), "PublicAddress" :: Maybe (GenericString), "Status" :: Maybe (GenericString), "NumberOfNodes" :: Maybe (IntegerValue), "AvailabilityZone" :: Maybe (GenericString), "VpcId" :: Maybe (GenericString), "ExtraPythonLibsS3Path" :: Maybe (GenericString), "ExtraJarsS3Path" :: Maybe (GenericString), "FailureReason" :: Maybe (GenericString), "LastUpdateStatus" :: Maybe (GenericString), "CreatedTimestamp" :: Maybe (TimestampValue), "LastModifiedTimestamp" :: Maybe (TimestampValue), "PublicKey" :: Maybe (GenericString) }
 ```
 
 <p>A development endpoint where a developer can remotely debug ETL scripts.</p>
@@ -3389,7 +3389,7 @@ Constructs DevEndpoint from required parameters
 #### `newDevEndpoint'`
 
 ``` purescript
-newDevEndpoint' :: ({ "EndpointName" :: NullOrUndefined (GenericString), "RoleArn" :: NullOrUndefined (RoleArn), "SecurityGroupIds" :: NullOrUndefined (StringList), "SubnetId" :: NullOrUndefined (GenericString), "YarnEndpointAddress" :: NullOrUndefined (GenericString), "ZeppelinRemoteSparkInterpreterPort" :: NullOrUndefined (IntegerValue), "PublicAddress" :: NullOrUndefined (GenericString), "Status" :: NullOrUndefined (GenericString), "NumberOfNodes" :: NullOrUndefined (IntegerValue), "AvailabilityZone" :: NullOrUndefined (GenericString), "VpcId" :: NullOrUndefined (GenericString), "ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString), "ExtraJarsS3Path" :: NullOrUndefined (GenericString), "FailureReason" :: NullOrUndefined (GenericString), "LastUpdateStatus" :: NullOrUndefined (GenericString), "CreatedTimestamp" :: NullOrUndefined (TimestampValue), "LastModifiedTimestamp" :: NullOrUndefined (TimestampValue), "PublicKey" :: NullOrUndefined (GenericString) } -> { "EndpointName" :: NullOrUndefined (GenericString), "RoleArn" :: NullOrUndefined (RoleArn), "SecurityGroupIds" :: NullOrUndefined (StringList), "SubnetId" :: NullOrUndefined (GenericString), "YarnEndpointAddress" :: NullOrUndefined (GenericString), "ZeppelinRemoteSparkInterpreterPort" :: NullOrUndefined (IntegerValue), "PublicAddress" :: NullOrUndefined (GenericString), "Status" :: NullOrUndefined (GenericString), "NumberOfNodes" :: NullOrUndefined (IntegerValue), "AvailabilityZone" :: NullOrUndefined (GenericString), "VpcId" :: NullOrUndefined (GenericString), "ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString), "ExtraJarsS3Path" :: NullOrUndefined (GenericString), "FailureReason" :: NullOrUndefined (GenericString), "LastUpdateStatus" :: NullOrUndefined (GenericString), "CreatedTimestamp" :: NullOrUndefined (TimestampValue), "LastModifiedTimestamp" :: NullOrUndefined (TimestampValue), "PublicKey" :: NullOrUndefined (GenericString) }) -> DevEndpoint
+newDevEndpoint' :: ({ "EndpointName" :: Maybe (GenericString), "RoleArn" :: Maybe (RoleArn), "SecurityGroupIds" :: Maybe (StringList), "SubnetId" :: Maybe (GenericString), "YarnEndpointAddress" :: Maybe (GenericString), "ZeppelinRemoteSparkInterpreterPort" :: Maybe (IntegerValue), "PublicAddress" :: Maybe (GenericString), "Status" :: Maybe (GenericString), "NumberOfNodes" :: Maybe (IntegerValue), "AvailabilityZone" :: Maybe (GenericString), "VpcId" :: Maybe (GenericString), "ExtraPythonLibsS3Path" :: Maybe (GenericString), "ExtraJarsS3Path" :: Maybe (GenericString), "FailureReason" :: Maybe (GenericString), "LastUpdateStatus" :: Maybe (GenericString), "CreatedTimestamp" :: Maybe (TimestampValue), "LastModifiedTimestamp" :: Maybe (TimestampValue), "PublicKey" :: Maybe (GenericString) } -> { "EndpointName" :: Maybe (GenericString), "RoleArn" :: Maybe (RoleArn), "SecurityGroupIds" :: Maybe (StringList), "SubnetId" :: Maybe (GenericString), "YarnEndpointAddress" :: Maybe (GenericString), "ZeppelinRemoteSparkInterpreterPort" :: Maybe (IntegerValue), "PublicAddress" :: Maybe (GenericString), "Status" :: Maybe (GenericString), "NumberOfNodes" :: Maybe (IntegerValue), "AvailabilityZone" :: Maybe (GenericString), "VpcId" :: Maybe (GenericString), "ExtraPythonLibsS3Path" :: Maybe (GenericString), "ExtraJarsS3Path" :: Maybe (GenericString), "FailureReason" :: Maybe (GenericString), "LastUpdateStatus" :: Maybe (GenericString), "CreatedTimestamp" :: Maybe (TimestampValue), "LastModifiedTimestamp" :: Maybe (TimestampValue), "PublicKey" :: Maybe (GenericString) }) -> DevEndpoint
 ```
 
 Constructs DevEndpoint's fields from required parameters
@@ -3398,7 +3398,7 @@ Constructs DevEndpoint's fields from required parameters
 
 ``` purescript
 newtype DevEndpointCustomLibraries
-  = DevEndpointCustomLibraries { "ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString), "ExtraJarsS3Path" :: NullOrUndefined (GenericString) }
+  = DevEndpointCustomLibraries { "ExtraPythonLibsS3Path" :: Maybe (GenericString), "ExtraJarsS3Path" :: Maybe (GenericString) }
 ```
 
 <p>Custom libraries to be loaded into a DevEndpoint.</p>
@@ -3423,7 +3423,7 @@ Constructs DevEndpointCustomLibraries from required parameters
 #### `newDevEndpointCustomLibraries'`
 
 ``` purescript
-newDevEndpointCustomLibraries' :: ({ "ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString), "ExtraJarsS3Path" :: NullOrUndefined (GenericString) } -> { "ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString), "ExtraJarsS3Path" :: NullOrUndefined (GenericString) }) -> DevEndpointCustomLibraries
+newDevEndpointCustomLibraries' :: ({ "ExtraPythonLibsS3Path" :: Maybe (GenericString), "ExtraJarsS3Path" :: Maybe (GenericString) } -> { "ExtraPythonLibsS3Path" :: Maybe (GenericString), "ExtraJarsS3Path" :: Maybe (GenericString) }) -> DevEndpointCustomLibraries
 ```
 
 Constructs DevEndpointCustomLibraries's fields from required parameters
@@ -3448,7 +3448,7 @@ Encode DevEndpointList
 
 ``` purescript
 newtype EntityNotFoundException
-  = EntityNotFoundException { "Message" :: NullOrUndefined (MessageString) }
+  = EntityNotFoundException { "Message" :: Maybe (MessageString) }
 ```
 
 <p>A specified entity does not exist</p>
@@ -3473,7 +3473,7 @@ Constructs EntityNotFoundException from required parameters
 #### `newEntityNotFoundException'`
 
 ``` purescript
-newEntityNotFoundException' :: ({ "Message" :: NullOrUndefined (MessageString) } -> { "Message" :: NullOrUndefined (MessageString) }) -> EntityNotFoundException
+newEntityNotFoundException' :: ({ "Message" :: Maybe (MessageString) } -> { "Message" :: Maybe (MessageString) }) -> EntityNotFoundException
 ```
 
 Constructs EntityNotFoundException's fields from required parameters
@@ -3498,7 +3498,7 @@ Encode ErrorByName
 
 ``` purescript
 newtype ErrorDetail
-  = ErrorDetail { "ErrorCode" :: NullOrUndefined (NameString), "ErrorMessage" :: NullOrUndefined (DescriptionString) }
+  = ErrorDetail { "ErrorCode" :: Maybe (NameString), "ErrorMessage" :: Maybe (DescriptionString) }
 ```
 
 <p>Contains details about an error.</p>
@@ -3523,7 +3523,7 @@ Constructs ErrorDetail from required parameters
 #### `newErrorDetail'`
 
 ``` purescript
-newErrorDetail' :: ({ "ErrorCode" :: NullOrUndefined (NameString), "ErrorMessage" :: NullOrUndefined (DescriptionString) } -> { "ErrorCode" :: NullOrUndefined (NameString), "ErrorMessage" :: NullOrUndefined (DescriptionString) }) -> ErrorDetail
+newErrorDetail' :: ({ "ErrorCode" :: Maybe (NameString), "ErrorMessage" :: Maybe (DescriptionString) } -> { "ErrorCode" :: Maybe (NameString), "ErrorMessage" :: Maybe (DescriptionString) }) -> ErrorDetail
 ```
 
 Constructs ErrorDetail's fields from required parameters
@@ -3548,7 +3548,7 @@ Encode ErrorString
 
 ``` purescript
 newtype ExecutionProperty
-  = ExecutionProperty { "MaxConcurrentRuns" :: NullOrUndefined (MaxConcurrentRuns) }
+  = ExecutionProperty { "MaxConcurrentRuns" :: Maybe (MaxConcurrentRuns) }
 ```
 
 <p>An execution property of a job.</p>
@@ -3573,7 +3573,7 @@ Constructs ExecutionProperty from required parameters
 #### `newExecutionProperty'`
 
 ``` purescript
-newExecutionProperty' :: ({ "MaxConcurrentRuns" :: NullOrUndefined (MaxConcurrentRuns) } -> { "MaxConcurrentRuns" :: NullOrUndefined (MaxConcurrentRuns) }) -> ExecutionProperty
+newExecutionProperty' :: ({ "MaxConcurrentRuns" :: Maybe (MaxConcurrentRuns) } -> { "MaxConcurrentRuns" :: Maybe (MaxConcurrentRuns) }) -> ExecutionProperty
 ```
 
 Constructs ExecutionProperty's fields from required parameters
@@ -3662,7 +3662,7 @@ Encode GenericString
 
 ``` purescript
 newtype GetCatalogImportStatusRequest
-  = GetCatalogImportStatusRequest { "CatalogId" :: NullOrUndefined (CatalogIdString) }
+  = GetCatalogImportStatusRequest { "CatalogId" :: Maybe (CatalogIdString) }
 ```
 
 ##### Instances
@@ -3685,7 +3685,7 @@ Constructs GetCatalogImportStatusRequest from required parameters
 #### `newGetCatalogImportStatusRequest'`
 
 ``` purescript
-newGetCatalogImportStatusRequest' :: ({ "CatalogId" :: NullOrUndefined (CatalogIdString) } -> { "CatalogId" :: NullOrUndefined (CatalogIdString) }) -> GetCatalogImportStatusRequest
+newGetCatalogImportStatusRequest' :: ({ "CatalogId" :: Maybe (CatalogIdString) } -> { "CatalogId" :: Maybe (CatalogIdString) }) -> GetCatalogImportStatusRequest
 ```
 
 Constructs GetCatalogImportStatusRequest's fields from required parameters
@@ -3694,7 +3694,7 @@ Constructs GetCatalogImportStatusRequest's fields from required parameters
 
 ``` purescript
 newtype GetCatalogImportStatusResponse
-  = GetCatalogImportStatusResponse { "ImportStatus" :: NullOrUndefined (CatalogImportStatus) }
+  = GetCatalogImportStatusResponse { "ImportStatus" :: Maybe (CatalogImportStatus) }
 ```
 
 ##### Instances
@@ -3717,7 +3717,7 @@ Constructs GetCatalogImportStatusResponse from required parameters
 #### `newGetCatalogImportStatusResponse'`
 
 ``` purescript
-newGetCatalogImportStatusResponse' :: ({ "ImportStatus" :: NullOrUndefined (CatalogImportStatus) } -> { "ImportStatus" :: NullOrUndefined (CatalogImportStatus) }) -> GetCatalogImportStatusResponse
+newGetCatalogImportStatusResponse' :: ({ "ImportStatus" :: Maybe (CatalogImportStatus) } -> { "ImportStatus" :: Maybe (CatalogImportStatus) }) -> GetCatalogImportStatusResponse
 ```
 
 Constructs GetCatalogImportStatusResponse's fields from required parameters
@@ -3758,7 +3758,7 @@ Constructs GetClassifierRequest's fields from required parameters
 
 ``` purescript
 newtype GetClassifierResponse
-  = GetClassifierResponse { "Classifier" :: NullOrUndefined (Classifier) }
+  = GetClassifierResponse { "Classifier" :: Maybe (Classifier) }
 ```
 
 ##### Instances
@@ -3781,7 +3781,7 @@ Constructs GetClassifierResponse from required parameters
 #### `newGetClassifierResponse'`
 
 ``` purescript
-newGetClassifierResponse' :: ({ "Classifier" :: NullOrUndefined (Classifier) } -> { "Classifier" :: NullOrUndefined (Classifier) }) -> GetClassifierResponse
+newGetClassifierResponse' :: ({ "Classifier" :: Maybe (Classifier) } -> { "Classifier" :: Maybe (Classifier) }) -> GetClassifierResponse
 ```
 
 Constructs GetClassifierResponse's fields from required parameters
@@ -3790,7 +3790,7 @@ Constructs GetClassifierResponse's fields from required parameters
 
 ``` purescript
 newtype GetClassifiersRequest
-  = GetClassifiersRequest { "MaxResults" :: NullOrUndefined (PageSize), "NextToken" :: NullOrUndefined (Token) }
+  = GetClassifiersRequest { "MaxResults" :: Maybe (PageSize), "NextToken" :: Maybe (Token) }
 ```
 
 ##### Instances
@@ -3813,7 +3813,7 @@ Constructs GetClassifiersRequest from required parameters
 #### `newGetClassifiersRequest'`
 
 ``` purescript
-newGetClassifiersRequest' :: ({ "MaxResults" :: NullOrUndefined (PageSize), "NextToken" :: NullOrUndefined (Token) } -> { "MaxResults" :: NullOrUndefined (PageSize), "NextToken" :: NullOrUndefined (Token) }) -> GetClassifiersRequest
+newGetClassifiersRequest' :: ({ "MaxResults" :: Maybe (PageSize), "NextToken" :: Maybe (Token) } -> { "MaxResults" :: Maybe (PageSize), "NextToken" :: Maybe (Token) }) -> GetClassifiersRequest
 ```
 
 Constructs GetClassifiersRequest's fields from required parameters
@@ -3822,7 +3822,7 @@ Constructs GetClassifiersRequest's fields from required parameters
 
 ``` purescript
 newtype GetClassifiersResponse
-  = GetClassifiersResponse { "Classifiers" :: NullOrUndefined (ClassifierList), "NextToken" :: NullOrUndefined (Token) }
+  = GetClassifiersResponse { "Classifiers" :: Maybe (ClassifierList), "NextToken" :: Maybe (Token) }
 ```
 
 ##### Instances
@@ -3845,7 +3845,7 @@ Constructs GetClassifiersResponse from required parameters
 #### `newGetClassifiersResponse'`
 
 ``` purescript
-newGetClassifiersResponse' :: ({ "Classifiers" :: NullOrUndefined (ClassifierList), "NextToken" :: NullOrUndefined (Token) } -> { "Classifiers" :: NullOrUndefined (ClassifierList), "NextToken" :: NullOrUndefined (Token) }) -> GetClassifiersResponse
+newGetClassifiersResponse' :: ({ "Classifiers" :: Maybe (ClassifierList), "NextToken" :: Maybe (Token) } -> { "Classifiers" :: Maybe (ClassifierList), "NextToken" :: Maybe (Token) }) -> GetClassifiersResponse
 ```
 
 Constructs GetClassifiersResponse's fields from required parameters
@@ -3854,7 +3854,7 @@ Constructs GetClassifiersResponse's fields from required parameters
 
 ``` purescript
 newtype GetConnectionRequest
-  = GetConnectionRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "Name" :: NameString }
+  = GetConnectionRequest { "CatalogId" :: Maybe (CatalogIdString), "Name" :: NameString }
 ```
 
 ##### Instances
@@ -3877,7 +3877,7 @@ Constructs GetConnectionRequest from required parameters
 #### `newGetConnectionRequest'`
 
 ``` purescript
-newGetConnectionRequest' :: NameString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "Name" :: NameString } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "Name" :: NameString }) -> GetConnectionRequest
+newGetConnectionRequest' :: NameString -> ({ "CatalogId" :: Maybe (CatalogIdString), "Name" :: NameString } -> { "CatalogId" :: Maybe (CatalogIdString), "Name" :: NameString }) -> GetConnectionRequest
 ```
 
 Constructs GetConnectionRequest's fields from required parameters
@@ -3886,7 +3886,7 @@ Constructs GetConnectionRequest's fields from required parameters
 
 ``` purescript
 newtype GetConnectionResponse
-  = GetConnectionResponse { "Connection" :: NullOrUndefined (Connection) }
+  = GetConnectionResponse { "Connection" :: Maybe (Connection) }
 ```
 
 ##### Instances
@@ -3909,7 +3909,7 @@ Constructs GetConnectionResponse from required parameters
 #### `newGetConnectionResponse'`
 
 ``` purescript
-newGetConnectionResponse' :: ({ "Connection" :: NullOrUndefined (Connection) } -> { "Connection" :: NullOrUndefined (Connection) }) -> GetConnectionResponse
+newGetConnectionResponse' :: ({ "Connection" :: Maybe (Connection) } -> { "Connection" :: Maybe (Connection) }) -> GetConnectionResponse
 ```
 
 Constructs GetConnectionResponse's fields from required parameters
@@ -3918,7 +3918,7 @@ Constructs GetConnectionResponse's fields from required parameters
 
 ``` purescript
 newtype GetConnectionsFilter
-  = GetConnectionsFilter { "MatchCriteria" :: NullOrUndefined (MatchCriteria), "ConnectionType" :: NullOrUndefined (ConnectionType) }
+  = GetConnectionsFilter { "MatchCriteria" :: Maybe (MatchCriteria), "ConnectionType" :: Maybe (ConnectionType) }
 ```
 
 <p>Filters the connection definitions returned by the <code>GetConnections</code> API.</p>
@@ -3943,7 +3943,7 @@ Constructs GetConnectionsFilter from required parameters
 #### `newGetConnectionsFilter'`
 
 ``` purescript
-newGetConnectionsFilter' :: ({ "MatchCriteria" :: NullOrUndefined (MatchCriteria), "ConnectionType" :: NullOrUndefined (ConnectionType) } -> { "MatchCriteria" :: NullOrUndefined (MatchCriteria), "ConnectionType" :: NullOrUndefined (ConnectionType) }) -> GetConnectionsFilter
+newGetConnectionsFilter' :: ({ "MatchCriteria" :: Maybe (MatchCriteria), "ConnectionType" :: Maybe (ConnectionType) } -> { "MatchCriteria" :: Maybe (MatchCriteria), "ConnectionType" :: Maybe (ConnectionType) }) -> GetConnectionsFilter
 ```
 
 Constructs GetConnectionsFilter's fields from required parameters
@@ -3952,7 +3952,7 @@ Constructs GetConnectionsFilter's fields from required parameters
 
 ``` purescript
 newtype GetConnectionsRequest
-  = GetConnectionsRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "Filter" :: NullOrUndefined (GetConnectionsFilter), "NextToken" :: NullOrUndefined (Token), "MaxResults" :: NullOrUndefined (PageSize) }
+  = GetConnectionsRequest { "CatalogId" :: Maybe (CatalogIdString), "Filter" :: Maybe (GetConnectionsFilter), "NextToken" :: Maybe (Token), "MaxResults" :: Maybe (PageSize) }
 ```
 
 ##### Instances
@@ -3975,7 +3975,7 @@ Constructs GetConnectionsRequest from required parameters
 #### `newGetConnectionsRequest'`
 
 ``` purescript
-newGetConnectionsRequest' :: ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "Filter" :: NullOrUndefined (GetConnectionsFilter), "NextToken" :: NullOrUndefined (Token), "MaxResults" :: NullOrUndefined (PageSize) } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "Filter" :: NullOrUndefined (GetConnectionsFilter), "NextToken" :: NullOrUndefined (Token), "MaxResults" :: NullOrUndefined (PageSize) }) -> GetConnectionsRequest
+newGetConnectionsRequest' :: ({ "CatalogId" :: Maybe (CatalogIdString), "Filter" :: Maybe (GetConnectionsFilter), "NextToken" :: Maybe (Token), "MaxResults" :: Maybe (PageSize) } -> { "CatalogId" :: Maybe (CatalogIdString), "Filter" :: Maybe (GetConnectionsFilter), "NextToken" :: Maybe (Token), "MaxResults" :: Maybe (PageSize) }) -> GetConnectionsRequest
 ```
 
 Constructs GetConnectionsRequest's fields from required parameters
@@ -3984,7 +3984,7 @@ Constructs GetConnectionsRequest's fields from required parameters
 
 ``` purescript
 newtype GetConnectionsResponse
-  = GetConnectionsResponse { "ConnectionList" :: NullOrUndefined (ConnectionList), "NextToken" :: NullOrUndefined (Token) }
+  = GetConnectionsResponse { "ConnectionList" :: Maybe (ConnectionList), "NextToken" :: Maybe (Token) }
 ```
 
 ##### Instances
@@ -4007,7 +4007,7 @@ Constructs GetConnectionsResponse from required parameters
 #### `newGetConnectionsResponse'`
 
 ``` purescript
-newGetConnectionsResponse' :: ({ "ConnectionList" :: NullOrUndefined (ConnectionList), "NextToken" :: NullOrUndefined (Token) } -> { "ConnectionList" :: NullOrUndefined (ConnectionList), "NextToken" :: NullOrUndefined (Token) }) -> GetConnectionsResponse
+newGetConnectionsResponse' :: ({ "ConnectionList" :: Maybe (ConnectionList), "NextToken" :: Maybe (Token) } -> { "ConnectionList" :: Maybe (ConnectionList), "NextToken" :: Maybe (Token) }) -> GetConnectionsResponse
 ```
 
 Constructs GetConnectionsResponse's fields from required parameters
@@ -4016,7 +4016,7 @@ Constructs GetConnectionsResponse's fields from required parameters
 
 ``` purescript
 newtype GetCrawlerMetricsRequest
-  = GetCrawlerMetricsRequest { "CrawlerNameList" :: NullOrUndefined (CrawlerNameList), "MaxResults" :: NullOrUndefined (PageSize), "NextToken" :: NullOrUndefined (Token) }
+  = GetCrawlerMetricsRequest { "CrawlerNameList" :: Maybe (CrawlerNameList), "MaxResults" :: Maybe (PageSize), "NextToken" :: Maybe (Token) }
 ```
 
 ##### Instances
@@ -4039,7 +4039,7 @@ Constructs GetCrawlerMetricsRequest from required parameters
 #### `newGetCrawlerMetricsRequest'`
 
 ``` purescript
-newGetCrawlerMetricsRequest' :: ({ "CrawlerNameList" :: NullOrUndefined (CrawlerNameList), "MaxResults" :: NullOrUndefined (PageSize), "NextToken" :: NullOrUndefined (Token) } -> { "CrawlerNameList" :: NullOrUndefined (CrawlerNameList), "MaxResults" :: NullOrUndefined (PageSize), "NextToken" :: NullOrUndefined (Token) }) -> GetCrawlerMetricsRequest
+newGetCrawlerMetricsRequest' :: ({ "CrawlerNameList" :: Maybe (CrawlerNameList), "MaxResults" :: Maybe (PageSize), "NextToken" :: Maybe (Token) } -> { "CrawlerNameList" :: Maybe (CrawlerNameList), "MaxResults" :: Maybe (PageSize), "NextToken" :: Maybe (Token) }) -> GetCrawlerMetricsRequest
 ```
 
 Constructs GetCrawlerMetricsRequest's fields from required parameters
@@ -4048,7 +4048,7 @@ Constructs GetCrawlerMetricsRequest's fields from required parameters
 
 ``` purescript
 newtype GetCrawlerMetricsResponse
-  = GetCrawlerMetricsResponse { "CrawlerMetricsList" :: NullOrUndefined (CrawlerMetricsList), "NextToken" :: NullOrUndefined (Token) }
+  = GetCrawlerMetricsResponse { "CrawlerMetricsList" :: Maybe (CrawlerMetricsList), "NextToken" :: Maybe (Token) }
 ```
 
 ##### Instances
@@ -4071,7 +4071,7 @@ Constructs GetCrawlerMetricsResponse from required parameters
 #### `newGetCrawlerMetricsResponse'`
 
 ``` purescript
-newGetCrawlerMetricsResponse' :: ({ "CrawlerMetricsList" :: NullOrUndefined (CrawlerMetricsList), "NextToken" :: NullOrUndefined (Token) } -> { "CrawlerMetricsList" :: NullOrUndefined (CrawlerMetricsList), "NextToken" :: NullOrUndefined (Token) }) -> GetCrawlerMetricsResponse
+newGetCrawlerMetricsResponse' :: ({ "CrawlerMetricsList" :: Maybe (CrawlerMetricsList), "NextToken" :: Maybe (Token) } -> { "CrawlerMetricsList" :: Maybe (CrawlerMetricsList), "NextToken" :: Maybe (Token) }) -> GetCrawlerMetricsResponse
 ```
 
 Constructs GetCrawlerMetricsResponse's fields from required parameters
@@ -4112,7 +4112,7 @@ Constructs GetCrawlerRequest's fields from required parameters
 
 ``` purescript
 newtype GetCrawlerResponse
-  = GetCrawlerResponse { "Crawler" :: NullOrUndefined (Crawler) }
+  = GetCrawlerResponse { "Crawler" :: Maybe (Crawler) }
 ```
 
 ##### Instances
@@ -4135,7 +4135,7 @@ Constructs GetCrawlerResponse from required parameters
 #### `newGetCrawlerResponse'`
 
 ``` purescript
-newGetCrawlerResponse' :: ({ "Crawler" :: NullOrUndefined (Crawler) } -> { "Crawler" :: NullOrUndefined (Crawler) }) -> GetCrawlerResponse
+newGetCrawlerResponse' :: ({ "Crawler" :: Maybe (Crawler) } -> { "Crawler" :: Maybe (Crawler) }) -> GetCrawlerResponse
 ```
 
 Constructs GetCrawlerResponse's fields from required parameters
@@ -4144,7 +4144,7 @@ Constructs GetCrawlerResponse's fields from required parameters
 
 ``` purescript
 newtype GetCrawlersRequest
-  = GetCrawlersRequest { "MaxResults" :: NullOrUndefined (PageSize), "NextToken" :: NullOrUndefined (Token) }
+  = GetCrawlersRequest { "MaxResults" :: Maybe (PageSize), "NextToken" :: Maybe (Token) }
 ```
 
 ##### Instances
@@ -4167,7 +4167,7 @@ Constructs GetCrawlersRequest from required parameters
 #### `newGetCrawlersRequest'`
 
 ``` purescript
-newGetCrawlersRequest' :: ({ "MaxResults" :: NullOrUndefined (PageSize), "NextToken" :: NullOrUndefined (Token) } -> { "MaxResults" :: NullOrUndefined (PageSize), "NextToken" :: NullOrUndefined (Token) }) -> GetCrawlersRequest
+newGetCrawlersRequest' :: ({ "MaxResults" :: Maybe (PageSize), "NextToken" :: Maybe (Token) } -> { "MaxResults" :: Maybe (PageSize), "NextToken" :: Maybe (Token) }) -> GetCrawlersRequest
 ```
 
 Constructs GetCrawlersRequest's fields from required parameters
@@ -4176,7 +4176,7 @@ Constructs GetCrawlersRequest's fields from required parameters
 
 ``` purescript
 newtype GetCrawlersResponse
-  = GetCrawlersResponse { "Crawlers" :: NullOrUndefined (CrawlerList), "NextToken" :: NullOrUndefined (Token) }
+  = GetCrawlersResponse { "Crawlers" :: Maybe (CrawlerList), "NextToken" :: Maybe (Token) }
 ```
 
 ##### Instances
@@ -4199,7 +4199,7 @@ Constructs GetCrawlersResponse from required parameters
 #### `newGetCrawlersResponse'`
 
 ``` purescript
-newGetCrawlersResponse' :: ({ "Crawlers" :: NullOrUndefined (CrawlerList), "NextToken" :: NullOrUndefined (Token) } -> { "Crawlers" :: NullOrUndefined (CrawlerList), "NextToken" :: NullOrUndefined (Token) }) -> GetCrawlersResponse
+newGetCrawlersResponse' :: ({ "Crawlers" :: Maybe (CrawlerList), "NextToken" :: Maybe (Token) } -> { "Crawlers" :: Maybe (CrawlerList), "NextToken" :: Maybe (Token) }) -> GetCrawlersResponse
 ```
 
 Constructs GetCrawlersResponse's fields from required parameters
@@ -4208,7 +4208,7 @@ Constructs GetCrawlersResponse's fields from required parameters
 
 ``` purescript
 newtype GetDatabaseRequest
-  = GetDatabaseRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "Name" :: NameString }
+  = GetDatabaseRequest { "CatalogId" :: Maybe (CatalogIdString), "Name" :: NameString }
 ```
 
 ##### Instances
@@ -4231,7 +4231,7 @@ Constructs GetDatabaseRequest from required parameters
 #### `newGetDatabaseRequest'`
 
 ``` purescript
-newGetDatabaseRequest' :: NameString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "Name" :: NameString } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "Name" :: NameString }) -> GetDatabaseRequest
+newGetDatabaseRequest' :: NameString -> ({ "CatalogId" :: Maybe (CatalogIdString), "Name" :: NameString } -> { "CatalogId" :: Maybe (CatalogIdString), "Name" :: NameString }) -> GetDatabaseRequest
 ```
 
 Constructs GetDatabaseRequest's fields from required parameters
@@ -4240,7 +4240,7 @@ Constructs GetDatabaseRequest's fields from required parameters
 
 ``` purescript
 newtype GetDatabaseResponse
-  = GetDatabaseResponse { "Database" :: NullOrUndefined (Database) }
+  = GetDatabaseResponse { "Database" :: Maybe (Database) }
 ```
 
 ##### Instances
@@ -4263,7 +4263,7 @@ Constructs GetDatabaseResponse from required parameters
 #### `newGetDatabaseResponse'`
 
 ``` purescript
-newGetDatabaseResponse' :: ({ "Database" :: NullOrUndefined (Database) } -> { "Database" :: NullOrUndefined (Database) }) -> GetDatabaseResponse
+newGetDatabaseResponse' :: ({ "Database" :: Maybe (Database) } -> { "Database" :: Maybe (Database) }) -> GetDatabaseResponse
 ```
 
 Constructs GetDatabaseResponse's fields from required parameters
@@ -4272,7 +4272,7 @@ Constructs GetDatabaseResponse's fields from required parameters
 
 ``` purescript
 newtype GetDatabasesRequest
-  = GetDatabasesRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "NextToken" :: NullOrUndefined (Token), "MaxResults" :: NullOrUndefined (PageSize) }
+  = GetDatabasesRequest { "CatalogId" :: Maybe (CatalogIdString), "NextToken" :: Maybe (Token), "MaxResults" :: Maybe (PageSize) }
 ```
 
 ##### Instances
@@ -4295,7 +4295,7 @@ Constructs GetDatabasesRequest from required parameters
 #### `newGetDatabasesRequest'`
 
 ``` purescript
-newGetDatabasesRequest' :: ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "NextToken" :: NullOrUndefined (Token), "MaxResults" :: NullOrUndefined (PageSize) } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "NextToken" :: NullOrUndefined (Token), "MaxResults" :: NullOrUndefined (PageSize) }) -> GetDatabasesRequest
+newGetDatabasesRequest' :: ({ "CatalogId" :: Maybe (CatalogIdString), "NextToken" :: Maybe (Token), "MaxResults" :: Maybe (PageSize) } -> { "CatalogId" :: Maybe (CatalogIdString), "NextToken" :: Maybe (Token), "MaxResults" :: Maybe (PageSize) }) -> GetDatabasesRequest
 ```
 
 Constructs GetDatabasesRequest's fields from required parameters
@@ -4304,7 +4304,7 @@ Constructs GetDatabasesRequest's fields from required parameters
 
 ``` purescript
 newtype GetDatabasesResponse
-  = GetDatabasesResponse { "DatabaseList" :: DatabaseList, "NextToken" :: NullOrUndefined (Token) }
+  = GetDatabasesResponse { "DatabaseList" :: DatabaseList, "NextToken" :: Maybe (Token) }
 ```
 
 ##### Instances
@@ -4327,7 +4327,7 @@ Constructs GetDatabasesResponse from required parameters
 #### `newGetDatabasesResponse'`
 
 ``` purescript
-newGetDatabasesResponse' :: DatabaseList -> ({ "DatabaseList" :: DatabaseList, "NextToken" :: NullOrUndefined (Token) } -> { "DatabaseList" :: DatabaseList, "NextToken" :: NullOrUndefined (Token) }) -> GetDatabasesResponse
+newGetDatabasesResponse' :: DatabaseList -> ({ "DatabaseList" :: DatabaseList, "NextToken" :: Maybe (Token) } -> { "DatabaseList" :: DatabaseList, "NextToken" :: Maybe (Token) }) -> GetDatabasesResponse
 ```
 
 Constructs GetDatabasesResponse's fields from required parameters
@@ -4336,7 +4336,7 @@ Constructs GetDatabasesResponse's fields from required parameters
 
 ``` purescript
 newtype GetDataflowGraphRequest
-  = GetDataflowGraphRequest { "PythonScript" :: NullOrUndefined (PythonScript) }
+  = GetDataflowGraphRequest { "PythonScript" :: Maybe (PythonScript) }
 ```
 
 ##### Instances
@@ -4359,7 +4359,7 @@ Constructs GetDataflowGraphRequest from required parameters
 #### `newGetDataflowGraphRequest'`
 
 ``` purescript
-newGetDataflowGraphRequest' :: ({ "PythonScript" :: NullOrUndefined (PythonScript) } -> { "PythonScript" :: NullOrUndefined (PythonScript) }) -> GetDataflowGraphRequest
+newGetDataflowGraphRequest' :: ({ "PythonScript" :: Maybe (PythonScript) } -> { "PythonScript" :: Maybe (PythonScript) }) -> GetDataflowGraphRequest
 ```
 
 Constructs GetDataflowGraphRequest's fields from required parameters
@@ -4368,7 +4368,7 @@ Constructs GetDataflowGraphRequest's fields from required parameters
 
 ``` purescript
 newtype GetDataflowGraphResponse
-  = GetDataflowGraphResponse { "DagNodes" :: NullOrUndefined (DagNodes), "DagEdges" :: NullOrUndefined (DagEdges) }
+  = GetDataflowGraphResponse { "DagNodes" :: Maybe (DagNodes), "DagEdges" :: Maybe (DagEdges) }
 ```
 
 ##### Instances
@@ -4391,7 +4391,7 @@ Constructs GetDataflowGraphResponse from required parameters
 #### `newGetDataflowGraphResponse'`
 
 ``` purescript
-newGetDataflowGraphResponse' :: ({ "DagNodes" :: NullOrUndefined (DagNodes), "DagEdges" :: NullOrUndefined (DagEdges) } -> { "DagNodes" :: NullOrUndefined (DagNodes), "DagEdges" :: NullOrUndefined (DagEdges) }) -> GetDataflowGraphResponse
+newGetDataflowGraphResponse' :: ({ "DagNodes" :: Maybe (DagNodes), "DagEdges" :: Maybe (DagEdges) } -> { "DagNodes" :: Maybe (DagNodes), "DagEdges" :: Maybe (DagEdges) }) -> GetDataflowGraphResponse
 ```
 
 Constructs GetDataflowGraphResponse's fields from required parameters
@@ -4432,7 +4432,7 @@ Constructs GetDevEndpointRequest's fields from required parameters
 
 ``` purescript
 newtype GetDevEndpointResponse
-  = GetDevEndpointResponse { "DevEndpoint" :: NullOrUndefined (DevEndpoint) }
+  = GetDevEndpointResponse { "DevEndpoint" :: Maybe (DevEndpoint) }
 ```
 
 ##### Instances
@@ -4455,7 +4455,7 @@ Constructs GetDevEndpointResponse from required parameters
 #### `newGetDevEndpointResponse'`
 
 ``` purescript
-newGetDevEndpointResponse' :: ({ "DevEndpoint" :: NullOrUndefined (DevEndpoint) } -> { "DevEndpoint" :: NullOrUndefined (DevEndpoint) }) -> GetDevEndpointResponse
+newGetDevEndpointResponse' :: ({ "DevEndpoint" :: Maybe (DevEndpoint) } -> { "DevEndpoint" :: Maybe (DevEndpoint) }) -> GetDevEndpointResponse
 ```
 
 Constructs GetDevEndpointResponse's fields from required parameters
@@ -4464,7 +4464,7 @@ Constructs GetDevEndpointResponse's fields from required parameters
 
 ``` purescript
 newtype GetDevEndpointsRequest
-  = GetDevEndpointsRequest { "MaxResults" :: NullOrUndefined (PageSize), "NextToken" :: NullOrUndefined (GenericString) }
+  = GetDevEndpointsRequest { "MaxResults" :: Maybe (PageSize), "NextToken" :: Maybe (GenericString) }
 ```
 
 ##### Instances
@@ -4487,7 +4487,7 @@ Constructs GetDevEndpointsRequest from required parameters
 #### `newGetDevEndpointsRequest'`
 
 ``` purescript
-newGetDevEndpointsRequest' :: ({ "MaxResults" :: NullOrUndefined (PageSize), "NextToken" :: NullOrUndefined (GenericString) } -> { "MaxResults" :: NullOrUndefined (PageSize), "NextToken" :: NullOrUndefined (GenericString) }) -> GetDevEndpointsRequest
+newGetDevEndpointsRequest' :: ({ "MaxResults" :: Maybe (PageSize), "NextToken" :: Maybe (GenericString) } -> { "MaxResults" :: Maybe (PageSize), "NextToken" :: Maybe (GenericString) }) -> GetDevEndpointsRequest
 ```
 
 Constructs GetDevEndpointsRequest's fields from required parameters
@@ -4496,7 +4496,7 @@ Constructs GetDevEndpointsRequest's fields from required parameters
 
 ``` purescript
 newtype GetDevEndpointsResponse
-  = GetDevEndpointsResponse { "DevEndpoints" :: NullOrUndefined (DevEndpointList), "NextToken" :: NullOrUndefined (GenericString) }
+  = GetDevEndpointsResponse { "DevEndpoints" :: Maybe (DevEndpointList), "NextToken" :: Maybe (GenericString) }
 ```
 
 ##### Instances
@@ -4519,7 +4519,7 @@ Constructs GetDevEndpointsResponse from required parameters
 #### `newGetDevEndpointsResponse'`
 
 ``` purescript
-newGetDevEndpointsResponse' :: ({ "DevEndpoints" :: NullOrUndefined (DevEndpointList), "NextToken" :: NullOrUndefined (GenericString) } -> { "DevEndpoints" :: NullOrUndefined (DevEndpointList), "NextToken" :: NullOrUndefined (GenericString) }) -> GetDevEndpointsResponse
+newGetDevEndpointsResponse' :: ({ "DevEndpoints" :: Maybe (DevEndpointList), "NextToken" :: Maybe (GenericString) } -> { "DevEndpoints" :: Maybe (DevEndpointList), "NextToken" :: Maybe (GenericString) }) -> GetDevEndpointsResponse
 ```
 
 Constructs GetDevEndpointsResponse's fields from required parameters
@@ -4560,7 +4560,7 @@ Constructs GetJobRequest's fields from required parameters
 
 ``` purescript
 newtype GetJobResponse
-  = GetJobResponse { "Job" :: NullOrUndefined (Job) }
+  = GetJobResponse { "Job" :: Maybe (Job) }
 ```
 
 ##### Instances
@@ -4583,7 +4583,7 @@ Constructs GetJobResponse from required parameters
 #### `newGetJobResponse'`
 
 ``` purescript
-newGetJobResponse' :: ({ "Job" :: NullOrUndefined (Job) } -> { "Job" :: NullOrUndefined (Job) }) -> GetJobResponse
+newGetJobResponse' :: ({ "Job" :: Maybe (Job) } -> { "Job" :: Maybe (Job) }) -> GetJobResponse
 ```
 
 Constructs GetJobResponse's fields from required parameters
@@ -4592,7 +4592,7 @@ Constructs GetJobResponse's fields from required parameters
 
 ``` purescript
 newtype GetJobRunRequest
-  = GetJobRunRequest { "JobName" :: NameString, "RunId" :: IdString, "PredecessorsIncluded" :: NullOrUndefined (BooleanValue) }
+  = GetJobRunRequest { "JobName" :: NameString, "RunId" :: IdString, "PredecessorsIncluded" :: Maybe (BooleanValue) }
 ```
 
 ##### Instances
@@ -4615,7 +4615,7 @@ Constructs GetJobRunRequest from required parameters
 #### `newGetJobRunRequest'`
 
 ``` purescript
-newGetJobRunRequest' :: NameString -> IdString -> ({ "JobName" :: NameString, "RunId" :: IdString, "PredecessorsIncluded" :: NullOrUndefined (BooleanValue) } -> { "JobName" :: NameString, "RunId" :: IdString, "PredecessorsIncluded" :: NullOrUndefined (BooleanValue) }) -> GetJobRunRequest
+newGetJobRunRequest' :: NameString -> IdString -> ({ "JobName" :: NameString, "RunId" :: IdString, "PredecessorsIncluded" :: Maybe (BooleanValue) } -> { "JobName" :: NameString, "RunId" :: IdString, "PredecessorsIncluded" :: Maybe (BooleanValue) }) -> GetJobRunRequest
 ```
 
 Constructs GetJobRunRequest's fields from required parameters
@@ -4624,7 +4624,7 @@ Constructs GetJobRunRequest's fields from required parameters
 
 ``` purescript
 newtype GetJobRunResponse
-  = GetJobRunResponse { "JobRun" :: NullOrUndefined (JobRun) }
+  = GetJobRunResponse { "JobRun" :: Maybe (JobRun) }
 ```
 
 ##### Instances
@@ -4647,7 +4647,7 @@ Constructs GetJobRunResponse from required parameters
 #### `newGetJobRunResponse'`
 
 ``` purescript
-newGetJobRunResponse' :: ({ "JobRun" :: NullOrUndefined (JobRun) } -> { "JobRun" :: NullOrUndefined (JobRun) }) -> GetJobRunResponse
+newGetJobRunResponse' :: ({ "JobRun" :: Maybe (JobRun) } -> { "JobRun" :: Maybe (JobRun) }) -> GetJobRunResponse
 ```
 
 Constructs GetJobRunResponse's fields from required parameters
@@ -4656,7 +4656,7 @@ Constructs GetJobRunResponse's fields from required parameters
 
 ``` purescript
 newtype GetJobRunsRequest
-  = GetJobRunsRequest { "JobName" :: NameString, "NextToken" :: NullOrUndefined (GenericString), "MaxResults" :: NullOrUndefined (PageSize) }
+  = GetJobRunsRequest { "JobName" :: NameString, "NextToken" :: Maybe (GenericString), "MaxResults" :: Maybe (PageSize) }
 ```
 
 ##### Instances
@@ -4679,7 +4679,7 @@ Constructs GetJobRunsRequest from required parameters
 #### `newGetJobRunsRequest'`
 
 ``` purescript
-newGetJobRunsRequest' :: NameString -> ({ "JobName" :: NameString, "NextToken" :: NullOrUndefined (GenericString), "MaxResults" :: NullOrUndefined (PageSize) } -> { "JobName" :: NameString, "NextToken" :: NullOrUndefined (GenericString), "MaxResults" :: NullOrUndefined (PageSize) }) -> GetJobRunsRequest
+newGetJobRunsRequest' :: NameString -> ({ "JobName" :: NameString, "NextToken" :: Maybe (GenericString), "MaxResults" :: Maybe (PageSize) } -> { "JobName" :: NameString, "NextToken" :: Maybe (GenericString), "MaxResults" :: Maybe (PageSize) }) -> GetJobRunsRequest
 ```
 
 Constructs GetJobRunsRequest's fields from required parameters
@@ -4688,7 +4688,7 @@ Constructs GetJobRunsRequest's fields from required parameters
 
 ``` purescript
 newtype GetJobRunsResponse
-  = GetJobRunsResponse { "JobRuns" :: NullOrUndefined (JobRunList), "NextToken" :: NullOrUndefined (GenericString) }
+  = GetJobRunsResponse { "JobRuns" :: Maybe (JobRunList), "NextToken" :: Maybe (GenericString) }
 ```
 
 ##### Instances
@@ -4711,7 +4711,7 @@ Constructs GetJobRunsResponse from required parameters
 #### `newGetJobRunsResponse'`
 
 ``` purescript
-newGetJobRunsResponse' :: ({ "JobRuns" :: NullOrUndefined (JobRunList), "NextToken" :: NullOrUndefined (GenericString) } -> { "JobRuns" :: NullOrUndefined (JobRunList), "NextToken" :: NullOrUndefined (GenericString) }) -> GetJobRunsResponse
+newGetJobRunsResponse' :: ({ "JobRuns" :: Maybe (JobRunList), "NextToken" :: Maybe (GenericString) } -> { "JobRuns" :: Maybe (JobRunList), "NextToken" :: Maybe (GenericString) }) -> GetJobRunsResponse
 ```
 
 Constructs GetJobRunsResponse's fields from required parameters
@@ -4720,7 +4720,7 @@ Constructs GetJobRunsResponse's fields from required parameters
 
 ``` purescript
 newtype GetJobsRequest
-  = GetJobsRequest { "NextToken" :: NullOrUndefined (GenericString), "MaxResults" :: NullOrUndefined (PageSize) }
+  = GetJobsRequest { "NextToken" :: Maybe (GenericString), "MaxResults" :: Maybe (PageSize) }
 ```
 
 ##### Instances
@@ -4743,7 +4743,7 @@ Constructs GetJobsRequest from required parameters
 #### `newGetJobsRequest'`
 
 ``` purescript
-newGetJobsRequest' :: ({ "NextToken" :: NullOrUndefined (GenericString), "MaxResults" :: NullOrUndefined (PageSize) } -> { "NextToken" :: NullOrUndefined (GenericString), "MaxResults" :: NullOrUndefined (PageSize) }) -> GetJobsRequest
+newGetJobsRequest' :: ({ "NextToken" :: Maybe (GenericString), "MaxResults" :: Maybe (PageSize) } -> { "NextToken" :: Maybe (GenericString), "MaxResults" :: Maybe (PageSize) }) -> GetJobsRequest
 ```
 
 Constructs GetJobsRequest's fields from required parameters
@@ -4752,7 +4752,7 @@ Constructs GetJobsRequest's fields from required parameters
 
 ``` purescript
 newtype GetJobsResponse
-  = GetJobsResponse { "Jobs" :: NullOrUndefined (JobList), "NextToken" :: NullOrUndefined (GenericString) }
+  = GetJobsResponse { "Jobs" :: Maybe (JobList), "NextToken" :: Maybe (GenericString) }
 ```
 
 ##### Instances
@@ -4775,7 +4775,7 @@ Constructs GetJobsResponse from required parameters
 #### `newGetJobsResponse'`
 
 ``` purescript
-newGetJobsResponse' :: ({ "Jobs" :: NullOrUndefined (JobList), "NextToken" :: NullOrUndefined (GenericString) } -> { "Jobs" :: NullOrUndefined (JobList), "NextToken" :: NullOrUndefined (GenericString) }) -> GetJobsResponse
+newGetJobsResponse' :: ({ "Jobs" :: Maybe (JobList), "NextToken" :: Maybe (GenericString) } -> { "Jobs" :: Maybe (JobList), "NextToken" :: Maybe (GenericString) }) -> GetJobsResponse
 ```
 
 Constructs GetJobsResponse's fields from required parameters
@@ -4784,7 +4784,7 @@ Constructs GetJobsResponse's fields from required parameters
 
 ``` purescript
 newtype GetMappingRequest
-  = GetMappingRequest { "Source" :: CatalogEntry, "Sinks" :: NullOrUndefined (CatalogEntries), "Location" :: NullOrUndefined (Location) }
+  = GetMappingRequest { "Source" :: CatalogEntry, "Sinks" :: Maybe (CatalogEntries), "Location" :: Maybe (Location) }
 ```
 
 ##### Instances
@@ -4807,7 +4807,7 @@ Constructs GetMappingRequest from required parameters
 #### `newGetMappingRequest'`
 
 ``` purescript
-newGetMappingRequest' :: CatalogEntry -> ({ "Source" :: CatalogEntry, "Sinks" :: NullOrUndefined (CatalogEntries), "Location" :: NullOrUndefined (Location) } -> { "Source" :: CatalogEntry, "Sinks" :: NullOrUndefined (CatalogEntries), "Location" :: NullOrUndefined (Location) }) -> GetMappingRequest
+newGetMappingRequest' :: CatalogEntry -> ({ "Source" :: CatalogEntry, "Sinks" :: Maybe (CatalogEntries), "Location" :: Maybe (Location) } -> { "Source" :: CatalogEntry, "Sinks" :: Maybe (CatalogEntries), "Location" :: Maybe (Location) }) -> GetMappingRequest
 ```
 
 Constructs GetMappingRequest's fields from required parameters
@@ -4848,7 +4848,7 @@ Constructs GetMappingResponse's fields from required parameters
 
 ``` purescript
 newtype GetPartitionRequest
-  = GetPartitionRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionValues" :: ValueStringList }
+  = GetPartitionRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionValues" :: ValueStringList }
 ```
 
 ##### Instances
@@ -4871,7 +4871,7 @@ Constructs GetPartitionRequest from required parameters
 #### `newGetPartitionRequest'`
 
 ``` purescript
-newGetPartitionRequest' :: NameString -> ValueStringList -> NameString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionValues" :: ValueStringList } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionValues" :: ValueStringList }) -> GetPartitionRequest
+newGetPartitionRequest' :: NameString -> ValueStringList -> NameString -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionValues" :: ValueStringList } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionValues" :: ValueStringList }) -> GetPartitionRequest
 ```
 
 Constructs GetPartitionRequest's fields from required parameters
@@ -4880,7 +4880,7 @@ Constructs GetPartitionRequest's fields from required parameters
 
 ``` purescript
 newtype GetPartitionResponse
-  = GetPartitionResponse { "Partition" :: NullOrUndefined (Partition) }
+  = GetPartitionResponse { "Partition" :: Maybe (Partition) }
 ```
 
 ##### Instances
@@ -4903,7 +4903,7 @@ Constructs GetPartitionResponse from required parameters
 #### `newGetPartitionResponse'`
 
 ``` purescript
-newGetPartitionResponse' :: ({ "Partition" :: NullOrUndefined (Partition) } -> { "Partition" :: NullOrUndefined (Partition) }) -> GetPartitionResponse
+newGetPartitionResponse' :: ({ "Partition" :: Maybe (Partition) } -> { "Partition" :: Maybe (Partition) }) -> GetPartitionResponse
 ```
 
 Constructs GetPartitionResponse's fields from required parameters
@@ -4912,7 +4912,7 @@ Constructs GetPartitionResponse's fields from required parameters
 
 ``` purescript
 newtype GetPartitionsRequest
-  = GetPartitionsRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "Expression" :: NullOrUndefined (PredicateString), "NextToken" :: NullOrUndefined (Token), "Segment" :: NullOrUndefined (Segment), "MaxResults" :: NullOrUndefined (PageSize) }
+  = GetPartitionsRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "Expression" :: Maybe (PredicateString), "NextToken" :: Maybe (Token), "Segment" :: Maybe (Segment), "MaxResults" :: Maybe (PageSize) }
 ```
 
 ##### Instances
@@ -4935,7 +4935,7 @@ Constructs GetPartitionsRequest from required parameters
 #### `newGetPartitionsRequest'`
 
 ``` purescript
-newGetPartitionsRequest' :: NameString -> NameString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "Expression" :: NullOrUndefined (PredicateString), "NextToken" :: NullOrUndefined (Token), "Segment" :: NullOrUndefined (Segment), "MaxResults" :: NullOrUndefined (PageSize) } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "Expression" :: NullOrUndefined (PredicateString), "NextToken" :: NullOrUndefined (Token), "Segment" :: NullOrUndefined (Segment), "MaxResults" :: NullOrUndefined (PageSize) }) -> GetPartitionsRequest
+newGetPartitionsRequest' :: NameString -> NameString -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "Expression" :: Maybe (PredicateString), "NextToken" :: Maybe (Token), "Segment" :: Maybe (Segment), "MaxResults" :: Maybe (PageSize) } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "Expression" :: Maybe (PredicateString), "NextToken" :: Maybe (Token), "Segment" :: Maybe (Segment), "MaxResults" :: Maybe (PageSize) }) -> GetPartitionsRequest
 ```
 
 Constructs GetPartitionsRequest's fields from required parameters
@@ -4944,7 +4944,7 @@ Constructs GetPartitionsRequest's fields from required parameters
 
 ``` purescript
 newtype GetPartitionsResponse
-  = GetPartitionsResponse { "Partitions" :: NullOrUndefined (PartitionList), "NextToken" :: NullOrUndefined (Token) }
+  = GetPartitionsResponse { "Partitions" :: Maybe (PartitionList), "NextToken" :: Maybe (Token) }
 ```
 
 ##### Instances
@@ -4967,7 +4967,7 @@ Constructs GetPartitionsResponse from required parameters
 #### `newGetPartitionsResponse'`
 
 ``` purescript
-newGetPartitionsResponse' :: ({ "Partitions" :: NullOrUndefined (PartitionList), "NextToken" :: NullOrUndefined (Token) } -> { "Partitions" :: NullOrUndefined (PartitionList), "NextToken" :: NullOrUndefined (Token) }) -> GetPartitionsResponse
+newGetPartitionsResponse' :: ({ "Partitions" :: Maybe (PartitionList), "NextToken" :: Maybe (Token) } -> { "Partitions" :: Maybe (PartitionList), "NextToken" :: Maybe (Token) }) -> GetPartitionsResponse
 ```
 
 Constructs GetPartitionsResponse's fields from required parameters
@@ -4976,7 +4976,7 @@ Constructs GetPartitionsResponse's fields from required parameters
 
 ``` purescript
 newtype GetPlanRequest
-  = GetPlanRequest { "Mapping" :: MappingList, "Source" :: CatalogEntry, "Sinks" :: NullOrUndefined (CatalogEntries), "Location" :: NullOrUndefined (Location), "Language" :: NullOrUndefined (Language) }
+  = GetPlanRequest { "Mapping" :: MappingList, "Source" :: CatalogEntry, "Sinks" :: Maybe (CatalogEntries), "Location" :: Maybe (Location), "Language" :: Maybe (Language) }
 ```
 
 ##### Instances
@@ -4999,7 +4999,7 @@ Constructs GetPlanRequest from required parameters
 #### `newGetPlanRequest'`
 
 ``` purescript
-newGetPlanRequest' :: MappingList -> CatalogEntry -> ({ "Mapping" :: MappingList, "Source" :: CatalogEntry, "Sinks" :: NullOrUndefined (CatalogEntries), "Location" :: NullOrUndefined (Location), "Language" :: NullOrUndefined (Language) } -> { "Mapping" :: MappingList, "Source" :: CatalogEntry, "Sinks" :: NullOrUndefined (CatalogEntries), "Location" :: NullOrUndefined (Location), "Language" :: NullOrUndefined (Language) }) -> GetPlanRequest
+newGetPlanRequest' :: MappingList -> CatalogEntry -> ({ "Mapping" :: MappingList, "Source" :: CatalogEntry, "Sinks" :: Maybe (CatalogEntries), "Location" :: Maybe (Location), "Language" :: Maybe (Language) } -> { "Mapping" :: MappingList, "Source" :: CatalogEntry, "Sinks" :: Maybe (CatalogEntries), "Location" :: Maybe (Location), "Language" :: Maybe (Language) }) -> GetPlanRequest
 ```
 
 Constructs GetPlanRequest's fields from required parameters
@@ -5008,7 +5008,7 @@ Constructs GetPlanRequest's fields from required parameters
 
 ``` purescript
 newtype GetPlanResponse
-  = GetPlanResponse { "PythonScript" :: NullOrUndefined (PythonScript), "ScalaCode" :: NullOrUndefined (ScalaCode) }
+  = GetPlanResponse { "PythonScript" :: Maybe (PythonScript), "ScalaCode" :: Maybe (ScalaCode) }
 ```
 
 ##### Instances
@@ -5031,7 +5031,7 @@ Constructs GetPlanResponse from required parameters
 #### `newGetPlanResponse'`
 
 ``` purescript
-newGetPlanResponse' :: ({ "PythonScript" :: NullOrUndefined (PythonScript), "ScalaCode" :: NullOrUndefined (ScalaCode) } -> { "PythonScript" :: NullOrUndefined (PythonScript), "ScalaCode" :: NullOrUndefined (ScalaCode) }) -> GetPlanResponse
+newGetPlanResponse' :: ({ "PythonScript" :: Maybe (PythonScript), "ScalaCode" :: Maybe (ScalaCode) } -> { "PythonScript" :: Maybe (PythonScript), "ScalaCode" :: Maybe (ScalaCode) }) -> GetPlanResponse
 ```
 
 Constructs GetPlanResponse's fields from required parameters
@@ -5040,7 +5040,7 @@ Constructs GetPlanResponse's fields from required parameters
 
 ``` purescript
 newtype GetTableRequest
-  = GetTableRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "Name" :: NameString }
+  = GetTableRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "Name" :: NameString }
 ```
 
 ##### Instances
@@ -5063,7 +5063,7 @@ Constructs GetTableRequest from required parameters
 #### `newGetTableRequest'`
 
 ``` purescript
-newGetTableRequest' :: NameString -> NameString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "Name" :: NameString } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "Name" :: NameString }) -> GetTableRequest
+newGetTableRequest' :: NameString -> NameString -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "Name" :: NameString } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "Name" :: NameString }) -> GetTableRequest
 ```
 
 Constructs GetTableRequest's fields from required parameters
@@ -5072,7 +5072,7 @@ Constructs GetTableRequest's fields from required parameters
 
 ``` purescript
 newtype GetTableResponse
-  = GetTableResponse { "Table" :: NullOrUndefined (Table) }
+  = GetTableResponse { "Table" :: Maybe (Table) }
 ```
 
 ##### Instances
@@ -5095,7 +5095,7 @@ Constructs GetTableResponse from required parameters
 #### `newGetTableResponse'`
 
 ``` purescript
-newGetTableResponse' :: ({ "Table" :: NullOrUndefined (Table) } -> { "Table" :: NullOrUndefined (Table) }) -> GetTableResponse
+newGetTableResponse' :: ({ "Table" :: Maybe (Table) } -> { "Table" :: Maybe (Table) }) -> GetTableResponse
 ```
 
 Constructs GetTableResponse's fields from required parameters
@@ -5104,7 +5104,7 @@ Constructs GetTableResponse's fields from required parameters
 
 ``` purescript
 newtype GetTableVersionRequest
-  = GetTableVersionRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "VersionId" :: NullOrUndefined (VersionString) }
+  = GetTableVersionRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "VersionId" :: Maybe (VersionString) }
 ```
 
 ##### Instances
@@ -5127,7 +5127,7 @@ Constructs GetTableVersionRequest from required parameters
 #### `newGetTableVersionRequest'`
 
 ``` purescript
-newGetTableVersionRequest' :: NameString -> NameString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "VersionId" :: NullOrUndefined (VersionString) } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "VersionId" :: NullOrUndefined (VersionString) }) -> GetTableVersionRequest
+newGetTableVersionRequest' :: NameString -> NameString -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "VersionId" :: Maybe (VersionString) } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "VersionId" :: Maybe (VersionString) }) -> GetTableVersionRequest
 ```
 
 Constructs GetTableVersionRequest's fields from required parameters
@@ -5136,7 +5136,7 @@ Constructs GetTableVersionRequest's fields from required parameters
 
 ``` purescript
 newtype GetTableVersionResponse
-  = GetTableVersionResponse { "TableVersion" :: NullOrUndefined (TableVersion) }
+  = GetTableVersionResponse { "TableVersion" :: Maybe (TableVersion) }
 ```
 
 ##### Instances
@@ -5159,7 +5159,7 @@ Constructs GetTableVersionResponse from required parameters
 #### `newGetTableVersionResponse'`
 
 ``` purescript
-newGetTableVersionResponse' :: ({ "TableVersion" :: NullOrUndefined (TableVersion) } -> { "TableVersion" :: NullOrUndefined (TableVersion) }) -> GetTableVersionResponse
+newGetTableVersionResponse' :: ({ "TableVersion" :: Maybe (TableVersion) } -> { "TableVersion" :: Maybe (TableVersion) }) -> GetTableVersionResponse
 ```
 
 Constructs GetTableVersionResponse's fields from required parameters
@@ -5184,7 +5184,7 @@ Encode GetTableVersionsList
 
 ``` purescript
 newtype GetTableVersionsRequest
-  = GetTableVersionsRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "NextToken" :: NullOrUndefined (Token), "MaxResults" :: NullOrUndefined (PageSize) }
+  = GetTableVersionsRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "NextToken" :: Maybe (Token), "MaxResults" :: Maybe (PageSize) }
 ```
 
 ##### Instances
@@ -5207,7 +5207,7 @@ Constructs GetTableVersionsRequest from required parameters
 #### `newGetTableVersionsRequest'`
 
 ``` purescript
-newGetTableVersionsRequest' :: NameString -> NameString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "NextToken" :: NullOrUndefined (Token), "MaxResults" :: NullOrUndefined (PageSize) } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "NextToken" :: NullOrUndefined (Token), "MaxResults" :: NullOrUndefined (PageSize) }) -> GetTableVersionsRequest
+newGetTableVersionsRequest' :: NameString -> NameString -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "NextToken" :: Maybe (Token), "MaxResults" :: Maybe (PageSize) } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "NextToken" :: Maybe (Token), "MaxResults" :: Maybe (PageSize) }) -> GetTableVersionsRequest
 ```
 
 Constructs GetTableVersionsRequest's fields from required parameters
@@ -5216,7 +5216,7 @@ Constructs GetTableVersionsRequest's fields from required parameters
 
 ``` purescript
 newtype GetTableVersionsResponse
-  = GetTableVersionsResponse { "TableVersions" :: NullOrUndefined (GetTableVersionsList), "NextToken" :: NullOrUndefined (Token) }
+  = GetTableVersionsResponse { "TableVersions" :: Maybe (GetTableVersionsList), "NextToken" :: Maybe (Token) }
 ```
 
 ##### Instances
@@ -5239,7 +5239,7 @@ Constructs GetTableVersionsResponse from required parameters
 #### `newGetTableVersionsResponse'`
 
 ``` purescript
-newGetTableVersionsResponse' :: ({ "TableVersions" :: NullOrUndefined (GetTableVersionsList), "NextToken" :: NullOrUndefined (Token) } -> { "TableVersions" :: NullOrUndefined (GetTableVersionsList), "NextToken" :: NullOrUndefined (Token) }) -> GetTableVersionsResponse
+newGetTableVersionsResponse' :: ({ "TableVersions" :: Maybe (GetTableVersionsList), "NextToken" :: Maybe (Token) } -> { "TableVersions" :: Maybe (GetTableVersionsList), "NextToken" :: Maybe (Token) }) -> GetTableVersionsResponse
 ```
 
 Constructs GetTableVersionsResponse's fields from required parameters
@@ -5248,7 +5248,7 @@ Constructs GetTableVersionsResponse's fields from required parameters
 
 ``` purescript
 newtype GetTablesRequest
-  = GetTablesRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "Expression" :: NullOrUndefined (FilterString), "NextToken" :: NullOrUndefined (Token), "MaxResults" :: NullOrUndefined (PageSize) }
+  = GetTablesRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "Expression" :: Maybe (FilterString), "NextToken" :: Maybe (Token), "MaxResults" :: Maybe (PageSize) }
 ```
 
 ##### Instances
@@ -5271,7 +5271,7 @@ Constructs GetTablesRequest from required parameters
 #### `newGetTablesRequest'`
 
 ``` purescript
-newGetTablesRequest' :: NameString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "Expression" :: NullOrUndefined (FilterString), "NextToken" :: NullOrUndefined (Token), "MaxResults" :: NullOrUndefined (PageSize) } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "Expression" :: NullOrUndefined (FilterString), "NextToken" :: NullOrUndefined (Token), "MaxResults" :: NullOrUndefined (PageSize) }) -> GetTablesRequest
+newGetTablesRequest' :: NameString -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "Expression" :: Maybe (FilterString), "NextToken" :: Maybe (Token), "MaxResults" :: Maybe (PageSize) } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "Expression" :: Maybe (FilterString), "NextToken" :: Maybe (Token), "MaxResults" :: Maybe (PageSize) }) -> GetTablesRequest
 ```
 
 Constructs GetTablesRequest's fields from required parameters
@@ -5280,7 +5280,7 @@ Constructs GetTablesRequest's fields from required parameters
 
 ``` purescript
 newtype GetTablesResponse
-  = GetTablesResponse { "TableList" :: NullOrUndefined (TableList), "NextToken" :: NullOrUndefined (Token) }
+  = GetTablesResponse { "TableList" :: Maybe (TableList), "NextToken" :: Maybe (Token) }
 ```
 
 ##### Instances
@@ -5303,7 +5303,7 @@ Constructs GetTablesResponse from required parameters
 #### `newGetTablesResponse'`
 
 ``` purescript
-newGetTablesResponse' :: ({ "TableList" :: NullOrUndefined (TableList), "NextToken" :: NullOrUndefined (Token) } -> { "TableList" :: NullOrUndefined (TableList), "NextToken" :: NullOrUndefined (Token) }) -> GetTablesResponse
+newGetTablesResponse' :: ({ "TableList" :: Maybe (TableList), "NextToken" :: Maybe (Token) } -> { "TableList" :: Maybe (TableList), "NextToken" :: Maybe (Token) }) -> GetTablesResponse
 ```
 
 Constructs GetTablesResponse's fields from required parameters
@@ -5344,7 +5344,7 @@ Constructs GetTriggerRequest's fields from required parameters
 
 ``` purescript
 newtype GetTriggerResponse
-  = GetTriggerResponse { "Trigger" :: NullOrUndefined (Trigger) }
+  = GetTriggerResponse { "Trigger" :: Maybe (Trigger) }
 ```
 
 ##### Instances
@@ -5367,7 +5367,7 @@ Constructs GetTriggerResponse from required parameters
 #### `newGetTriggerResponse'`
 
 ``` purescript
-newGetTriggerResponse' :: ({ "Trigger" :: NullOrUndefined (Trigger) } -> { "Trigger" :: NullOrUndefined (Trigger) }) -> GetTriggerResponse
+newGetTriggerResponse' :: ({ "Trigger" :: Maybe (Trigger) } -> { "Trigger" :: Maybe (Trigger) }) -> GetTriggerResponse
 ```
 
 Constructs GetTriggerResponse's fields from required parameters
@@ -5376,7 +5376,7 @@ Constructs GetTriggerResponse's fields from required parameters
 
 ``` purescript
 newtype GetTriggersRequest
-  = GetTriggersRequest { "NextToken" :: NullOrUndefined (GenericString), "DependentJobName" :: NullOrUndefined (NameString), "MaxResults" :: NullOrUndefined (PageSize) }
+  = GetTriggersRequest { "NextToken" :: Maybe (GenericString), "DependentJobName" :: Maybe (NameString), "MaxResults" :: Maybe (PageSize) }
 ```
 
 ##### Instances
@@ -5399,7 +5399,7 @@ Constructs GetTriggersRequest from required parameters
 #### `newGetTriggersRequest'`
 
 ``` purescript
-newGetTriggersRequest' :: ({ "NextToken" :: NullOrUndefined (GenericString), "DependentJobName" :: NullOrUndefined (NameString), "MaxResults" :: NullOrUndefined (PageSize) } -> { "NextToken" :: NullOrUndefined (GenericString), "DependentJobName" :: NullOrUndefined (NameString), "MaxResults" :: NullOrUndefined (PageSize) }) -> GetTriggersRequest
+newGetTriggersRequest' :: ({ "NextToken" :: Maybe (GenericString), "DependentJobName" :: Maybe (NameString), "MaxResults" :: Maybe (PageSize) } -> { "NextToken" :: Maybe (GenericString), "DependentJobName" :: Maybe (NameString), "MaxResults" :: Maybe (PageSize) }) -> GetTriggersRequest
 ```
 
 Constructs GetTriggersRequest's fields from required parameters
@@ -5408,7 +5408,7 @@ Constructs GetTriggersRequest's fields from required parameters
 
 ``` purescript
 newtype GetTriggersResponse
-  = GetTriggersResponse { "Triggers" :: NullOrUndefined (TriggerList), "NextToken" :: NullOrUndefined (GenericString) }
+  = GetTriggersResponse { "Triggers" :: Maybe (TriggerList), "NextToken" :: Maybe (GenericString) }
 ```
 
 ##### Instances
@@ -5431,7 +5431,7 @@ Constructs GetTriggersResponse from required parameters
 #### `newGetTriggersResponse'`
 
 ``` purescript
-newGetTriggersResponse' :: ({ "Triggers" :: NullOrUndefined (TriggerList), "NextToken" :: NullOrUndefined (GenericString) } -> { "Triggers" :: NullOrUndefined (TriggerList), "NextToken" :: NullOrUndefined (GenericString) }) -> GetTriggersResponse
+newGetTriggersResponse' :: ({ "Triggers" :: Maybe (TriggerList), "NextToken" :: Maybe (GenericString) } -> { "Triggers" :: Maybe (TriggerList), "NextToken" :: Maybe (GenericString) }) -> GetTriggersResponse
 ```
 
 Constructs GetTriggersResponse's fields from required parameters
@@ -5440,7 +5440,7 @@ Constructs GetTriggersResponse's fields from required parameters
 
 ``` purescript
 newtype GetUserDefinedFunctionRequest
-  = GetUserDefinedFunctionRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "FunctionName" :: NameString }
+  = GetUserDefinedFunctionRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "FunctionName" :: NameString }
 ```
 
 ##### Instances
@@ -5463,7 +5463,7 @@ Constructs GetUserDefinedFunctionRequest from required parameters
 #### `newGetUserDefinedFunctionRequest'`
 
 ``` purescript
-newGetUserDefinedFunctionRequest' :: NameString -> NameString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "FunctionName" :: NameString } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "FunctionName" :: NameString }) -> GetUserDefinedFunctionRequest
+newGetUserDefinedFunctionRequest' :: NameString -> NameString -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "FunctionName" :: NameString } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "FunctionName" :: NameString }) -> GetUserDefinedFunctionRequest
 ```
 
 Constructs GetUserDefinedFunctionRequest's fields from required parameters
@@ -5472,7 +5472,7 @@ Constructs GetUserDefinedFunctionRequest's fields from required parameters
 
 ``` purescript
 newtype GetUserDefinedFunctionResponse
-  = GetUserDefinedFunctionResponse { "UserDefinedFunction" :: NullOrUndefined (UserDefinedFunction) }
+  = GetUserDefinedFunctionResponse { "UserDefinedFunction" :: Maybe (UserDefinedFunction) }
 ```
 
 ##### Instances
@@ -5495,7 +5495,7 @@ Constructs GetUserDefinedFunctionResponse from required parameters
 #### `newGetUserDefinedFunctionResponse'`
 
 ``` purescript
-newGetUserDefinedFunctionResponse' :: ({ "UserDefinedFunction" :: NullOrUndefined (UserDefinedFunction) } -> { "UserDefinedFunction" :: NullOrUndefined (UserDefinedFunction) }) -> GetUserDefinedFunctionResponse
+newGetUserDefinedFunctionResponse' :: ({ "UserDefinedFunction" :: Maybe (UserDefinedFunction) } -> { "UserDefinedFunction" :: Maybe (UserDefinedFunction) }) -> GetUserDefinedFunctionResponse
 ```
 
 Constructs GetUserDefinedFunctionResponse's fields from required parameters
@@ -5504,7 +5504,7 @@ Constructs GetUserDefinedFunctionResponse's fields from required parameters
 
 ``` purescript
 newtype GetUserDefinedFunctionsRequest
-  = GetUserDefinedFunctionsRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "Pattern" :: NameString, "NextToken" :: NullOrUndefined (Token), "MaxResults" :: NullOrUndefined (PageSize) }
+  = GetUserDefinedFunctionsRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "Pattern" :: NameString, "NextToken" :: Maybe (Token), "MaxResults" :: Maybe (PageSize) }
 ```
 
 ##### Instances
@@ -5527,7 +5527,7 @@ Constructs GetUserDefinedFunctionsRequest from required parameters
 #### `newGetUserDefinedFunctionsRequest'`
 
 ``` purescript
-newGetUserDefinedFunctionsRequest' :: NameString -> NameString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "Pattern" :: NameString, "NextToken" :: NullOrUndefined (Token), "MaxResults" :: NullOrUndefined (PageSize) } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "Pattern" :: NameString, "NextToken" :: NullOrUndefined (Token), "MaxResults" :: NullOrUndefined (PageSize) }) -> GetUserDefinedFunctionsRequest
+newGetUserDefinedFunctionsRequest' :: NameString -> NameString -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "Pattern" :: NameString, "NextToken" :: Maybe (Token), "MaxResults" :: Maybe (PageSize) } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "Pattern" :: NameString, "NextToken" :: Maybe (Token), "MaxResults" :: Maybe (PageSize) }) -> GetUserDefinedFunctionsRequest
 ```
 
 Constructs GetUserDefinedFunctionsRequest's fields from required parameters
@@ -5536,7 +5536,7 @@ Constructs GetUserDefinedFunctionsRequest's fields from required parameters
 
 ``` purescript
 newtype GetUserDefinedFunctionsResponse
-  = GetUserDefinedFunctionsResponse { "UserDefinedFunctions" :: NullOrUndefined (UserDefinedFunctionList), "NextToken" :: NullOrUndefined (Token) }
+  = GetUserDefinedFunctionsResponse { "UserDefinedFunctions" :: Maybe (UserDefinedFunctionList), "NextToken" :: Maybe (Token) }
 ```
 
 ##### Instances
@@ -5559,7 +5559,7 @@ Constructs GetUserDefinedFunctionsResponse from required parameters
 #### `newGetUserDefinedFunctionsResponse'`
 
 ``` purescript
-newGetUserDefinedFunctionsResponse' :: ({ "UserDefinedFunctions" :: NullOrUndefined (UserDefinedFunctionList), "NextToken" :: NullOrUndefined (Token) } -> { "UserDefinedFunctions" :: NullOrUndefined (UserDefinedFunctionList), "NextToken" :: NullOrUndefined (Token) }) -> GetUserDefinedFunctionsResponse
+newGetUserDefinedFunctionsResponse' :: ({ "UserDefinedFunctions" :: Maybe (UserDefinedFunctionList), "NextToken" :: Maybe (Token) } -> { "UserDefinedFunctions" :: Maybe (UserDefinedFunctionList), "NextToken" :: Maybe (Token) }) -> GetUserDefinedFunctionsResponse
 ```
 
 Constructs GetUserDefinedFunctionsResponse's fields from required parameters
@@ -5568,7 +5568,7 @@ Constructs GetUserDefinedFunctionsResponse's fields from required parameters
 
 ``` purescript
 newtype GrokClassifier
-  = GrokClassifier { "Name" :: NameString, "Classification" :: Classification, "CreationTime" :: NullOrUndefined (Timestamp), "LastUpdated" :: NullOrUndefined (Timestamp), "Version" :: NullOrUndefined (VersionId), "GrokPattern" :: GrokPattern, "CustomPatterns" :: NullOrUndefined (CustomPatterns) }
+  = GrokClassifier { "Name" :: NameString, "Classification" :: Classification, "CreationTime" :: Maybe (Timestamp), "LastUpdated" :: Maybe (Timestamp), "Version" :: Maybe (VersionId), "GrokPattern" :: GrokPattern, "CustomPatterns" :: Maybe (CustomPatterns) }
 ```
 
 <p>A classifier that uses <code>grok</code> patterns.</p>
@@ -5593,7 +5593,7 @@ Constructs GrokClassifier from required parameters
 #### `newGrokClassifier'`
 
 ``` purescript
-newGrokClassifier' :: Classification -> GrokPattern -> NameString -> ({ "Name" :: NameString, "Classification" :: Classification, "CreationTime" :: NullOrUndefined (Timestamp), "LastUpdated" :: NullOrUndefined (Timestamp), "Version" :: NullOrUndefined (VersionId), "GrokPattern" :: GrokPattern, "CustomPatterns" :: NullOrUndefined (CustomPatterns) } -> { "Name" :: NameString, "Classification" :: Classification, "CreationTime" :: NullOrUndefined (Timestamp), "LastUpdated" :: NullOrUndefined (Timestamp), "Version" :: NullOrUndefined (VersionId), "GrokPattern" :: GrokPattern, "CustomPatterns" :: NullOrUndefined (CustomPatterns) }) -> GrokClassifier
+newGrokClassifier' :: Classification -> GrokPattern -> NameString -> ({ "Name" :: NameString, "Classification" :: Classification, "CreationTime" :: Maybe (Timestamp), "LastUpdated" :: Maybe (Timestamp), "Version" :: Maybe (VersionId), "GrokPattern" :: GrokPattern, "CustomPatterns" :: Maybe (CustomPatterns) } -> { "Name" :: NameString, "Classification" :: Classification, "CreationTime" :: Maybe (Timestamp), "LastUpdated" :: Maybe (Timestamp), "Version" :: Maybe (VersionId), "GrokPattern" :: GrokPattern, "CustomPatterns" :: Maybe (CustomPatterns) }) -> GrokClassifier
 ```
 
 Constructs GrokClassifier's fields from required parameters
@@ -5634,7 +5634,7 @@ Encode IdString
 
 ``` purescript
 newtype IdempotentParameterMismatchException
-  = IdempotentParameterMismatchException { "Message" :: NullOrUndefined (MessageString) }
+  = IdempotentParameterMismatchException { "Message" :: Maybe (MessageString) }
 ```
 
 <p>The same unique identifier was associated with two different records.</p>
@@ -5659,7 +5659,7 @@ Constructs IdempotentParameterMismatchException from required parameters
 #### `newIdempotentParameterMismatchException'`
 
 ``` purescript
-newIdempotentParameterMismatchException' :: ({ "Message" :: NullOrUndefined (MessageString) } -> { "Message" :: NullOrUndefined (MessageString) }) -> IdempotentParameterMismatchException
+newIdempotentParameterMismatchException' :: ({ "Message" :: Maybe (MessageString) } -> { "Message" :: Maybe (MessageString) }) -> IdempotentParameterMismatchException
 ```
 
 Constructs IdempotentParameterMismatchException's fields from required parameters
@@ -5668,7 +5668,7 @@ Constructs IdempotentParameterMismatchException's fields from required parameter
 
 ``` purescript
 newtype ImportCatalogToGlueRequest
-  = ImportCatalogToGlueRequest { "CatalogId" :: NullOrUndefined (CatalogIdString) }
+  = ImportCatalogToGlueRequest { "CatalogId" :: Maybe (CatalogIdString) }
 ```
 
 ##### Instances
@@ -5691,7 +5691,7 @@ Constructs ImportCatalogToGlueRequest from required parameters
 #### `newImportCatalogToGlueRequest'`
 
 ``` purescript
-newImportCatalogToGlueRequest' :: ({ "CatalogId" :: NullOrUndefined (CatalogIdString) } -> { "CatalogId" :: NullOrUndefined (CatalogIdString) }) -> ImportCatalogToGlueRequest
+newImportCatalogToGlueRequest' :: ({ "CatalogId" :: Maybe (CatalogIdString) } -> { "CatalogId" :: Maybe (CatalogIdString) }) -> ImportCatalogToGlueRequest
 ```
 
 Constructs ImportCatalogToGlueRequest's fields from required parameters
@@ -5748,7 +5748,7 @@ Encode IntegerValue
 
 ``` purescript
 newtype InternalServiceException
-  = InternalServiceException { "Message" :: NullOrUndefined (MessageString) }
+  = InternalServiceException { "Message" :: Maybe (MessageString) }
 ```
 
 <p>An internal service error occurred.</p>
@@ -5773,7 +5773,7 @@ Constructs InternalServiceException from required parameters
 #### `newInternalServiceException'`
 
 ``` purescript
-newInternalServiceException' :: ({ "Message" :: NullOrUndefined (MessageString) } -> { "Message" :: NullOrUndefined (MessageString) }) -> InternalServiceException
+newInternalServiceException' :: ({ "Message" :: Maybe (MessageString) } -> { "Message" :: Maybe (MessageString) }) -> InternalServiceException
 ```
 
 Constructs InternalServiceException's fields from required parameters
@@ -5782,7 +5782,7 @@ Constructs InternalServiceException's fields from required parameters
 
 ``` purescript
 newtype InvalidInputException
-  = InvalidInputException { "Message" :: NullOrUndefined (MessageString) }
+  = InvalidInputException { "Message" :: Maybe (MessageString) }
 ```
 
 <p>The input provided was not valid.</p>
@@ -5807,7 +5807,7 @@ Constructs InvalidInputException from required parameters
 #### `newInvalidInputException'`
 
 ``` purescript
-newInvalidInputException' :: ({ "Message" :: NullOrUndefined (MessageString) } -> { "Message" :: NullOrUndefined (MessageString) }) -> InvalidInputException
+newInvalidInputException' :: ({ "Message" :: Maybe (MessageString) } -> { "Message" :: Maybe (MessageString) }) -> InvalidInputException
 ```
 
 Constructs InvalidInputException's fields from required parameters
@@ -5816,7 +5816,7 @@ Constructs InvalidInputException's fields from required parameters
 
 ``` purescript
 newtype JdbcTarget
-  = JdbcTarget { "ConnectionName" :: NullOrUndefined (ConnectionName), "Path" :: NullOrUndefined (Path), "Exclusions" :: NullOrUndefined (PathList) }
+  = JdbcTarget { "ConnectionName" :: Maybe (ConnectionName), "Path" :: Maybe (Path), "Exclusions" :: Maybe (PathList) }
 ```
 
 <p>Specifies a JDBC data store to crawl.</p>
@@ -5841,7 +5841,7 @@ Constructs JdbcTarget from required parameters
 #### `newJdbcTarget'`
 
 ``` purescript
-newJdbcTarget' :: ({ "ConnectionName" :: NullOrUndefined (ConnectionName), "Path" :: NullOrUndefined (Path), "Exclusions" :: NullOrUndefined (PathList) } -> { "ConnectionName" :: NullOrUndefined (ConnectionName), "Path" :: NullOrUndefined (Path), "Exclusions" :: NullOrUndefined (PathList) }) -> JdbcTarget
+newJdbcTarget' :: ({ "ConnectionName" :: Maybe (ConnectionName), "Path" :: Maybe (Path), "Exclusions" :: Maybe (PathList) } -> { "ConnectionName" :: Maybe (ConnectionName), "Path" :: Maybe (Path), "Exclusions" :: Maybe (PathList) }) -> JdbcTarget
 ```
 
 Constructs JdbcTarget's fields from required parameters
@@ -5866,7 +5866,7 @@ Encode JdbcTargetList
 
 ``` purescript
 newtype Job
-  = Job { "Name" :: NullOrUndefined (NameString), "Description" :: NullOrUndefined (DescriptionString), "LogUri" :: NullOrUndefined (UriString), "Role" :: NullOrUndefined (RoleString), "CreatedOn" :: NullOrUndefined (TimestampValue), "LastModifiedOn" :: NullOrUndefined (TimestampValue), "ExecutionProperty" :: NullOrUndefined (ExecutionProperty), "Command" :: NullOrUndefined (JobCommand), "DefaultArguments" :: NullOrUndefined (GenericMap), "Connections" :: NullOrUndefined (ConnectionsList), "MaxRetries" :: NullOrUndefined (MaxRetries), "AllocatedCapacity" :: NullOrUndefined (IntegerValue) }
+  = Job { "Name" :: Maybe (NameString), "Description" :: Maybe (DescriptionString), "LogUri" :: Maybe (UriString), "Role" :: Maybe (RoleString), "CreatedOn" :: Maybe (TimestampValue), "LastModifiedOn" :: Maybe (TimestampValue), "ExecutionProperty" :: Maybe (ExecutionProperty), "Command" :: Maybe (JobCommand), "DefaultArguments" :: Maybe (GenericMap), "Connections" :: Maybe (ConnectionsList), "MaxRetries" :: Maybe (MaxRetries), "AllocatedCapacity" :: Maybe (IntegerValue) }
 ```
 
 <p>Specifies a job.</p>
@@ -5891,7 +5891,7 @@ Constructs Job from required parameters
 #### `newJob'`
 
 ``` purescript
-newJob' :: ({ "Name" :: NullOrUndefined (NameString), "Description" :: NullOrUndefined (DescriptionString), "LogUri" :: NullOrUndefined (UriString), "Role" :: NullOrUndefined (RoleString), "CreatedOn" :: NullOrUndefined (TimestampValue), "LastModifiedOn" :: NullOrUndefined (TimestampValue), "ExecutionProperty" :: NullOrUndefined (ExecutionProperty), "Command" :: NullOrUndefined (JobCommand), "DefaultArguments" :: NullOrUndefined (GenericMap), "Connections" :: NullOrUndefined (ConnectionsList), "MaxRetries" :: NullOrUndefined (MaxRetries), "AllocatedCapacity" :: NullOrUndefined (IntegerValue) } -> { "Name" :: NullOrUndefined (NameString), "Description" :: NullOrUndefined (DescriptionString), "LogUri" :: NullOrUndefined (UriString), "Role" :: NullOrUndefined (RoleString), "CreatedOn" :: NullOrUndefined (TimestampValue), "LastModifiedOn" :: NullOrUndefined (TimestampValue), "ExecutionProperty" :: NullOrUndefined (ExecutionProperty), "Command" :: NullOrUndefined (JobCommand), "DefaultArguments" :: NullOrUndefined (GenericMap), "Connections" :: NullOrUndefined (ConnectionsList), "MaxRetries" :: NullOrUndefined (MaxRetries), "AllocatedCapacity" :: NullOrUndefined (IntegerValue) }) -> Job
+newJob' :: ({ "Name" :: Maybe (NameString), "Description" :: Maybe (DescriptionString), "LogUri" :: Maybe (UriString), "Role" :: Maybe (RoleString), "CreatedOn" :: Maybe (TimestampValue), "LastModifiedOn" :: Maybe (TimestampValue), "ExecutionProperty" :: Maybe (ExecutionProperty), "Command" :: Maybe (JobCommand), "DefaultArguments" :: Maybe (GenericMap), "Connections" :: Maybe (ConnectionsList), "MaxRetries" :: Maybe (MaxRetries), "AllocatedCapacity" :: Maybe (IntegerValue) } -> { "Name" :: Maybe (NameString), "Description" :: Maybe (DescriptionString), "LogUri" :: Maybe (UriString), "Role" :: Maybe (RoleString), "CreatedOn" :: Maybe (TimestampValue), "LastModifiedOn" :: Maybe (TimestampValue), "ExecutionProperty" :: Maybe (ExecutionProperty), "Command" :: Maybe (JobCommand), "DefaultArguments" :: Maybe (GenericMap), "Connections" :: Maybe (ConnectionsList), "MaxRetries" :: Maybe (MaxRetries), "AllocatedCapacity" :: Maybe (IntegerValue) }) -> Job
 ```
 
 Constructs Job's fields from required parameters
@@ -5900,7 +5900,7 @@ Constructs Job's fields from required parameters
 
 ``` purescript
 newtype JobBookmarkEntry
-  = JobBookmarkEntry { "JobName" :: NullOrUndefined (JobName), "Version" :: NullOrUndefined (IntegerValue), "Run" :: NullOrUndefined (IntegerValue), "Attempt" :: NullOrUndefined (IntegerValue), "JobBookmark" :: NullOrUndefined (JsonValue) }
+  = JobBookmarkEntry { "JobName" :: Maybe (JobName), "Version" :: Maybe (IntegerValue), "Run" :: Maybe (IntegerValue), "Attempt" :: Maybe (IntegerValue), "JobBookmark" :: Maybe (JsonValue) }
 ```
 
 <p>Defines a point which a job can resume processing.</p>
@@ -5925,7 +5925,7 @@ Constructs JobBookmarkEntry from required parameters
 #### `newJobBookmarkEntry'`
 
 ``` purescript
-newJobBookmarkEntry' :: ({ "JobName" :: NullOrUndefined (JobName), "Version" :: NullOrUndefined (IntegerValue), "Run" :: NullOrUndefined (IntegerValue), "Attempt" :: NullOrUndefined (IntegerValue), "JobBookmark" :: NullOrUndefined (JsonValue) } -> { "JobName" :: NullOrUndefined (JobName), "Version" :: NullOrUndefined (IntegerValue), "Run" :: NullOrUndefined (IntegerValue), "Attempt" :: NullOrUndefined (IntegerValue), "JobBookmark" :: NullOrUndefined (JsonValue) }) -> JobBookmarkEntry
+newJobBookmarkEntry' :: ({ "JobName" :: Maybe (JobName), "Version" :: Maybe (IntegerValue), "Run" :: Maybe (IntegerValue), "Attempt" :: Maybe (IntegerValue), "JobBookmark" :: Maybe (JsonValue) } -> { "JobName" :: Maybe (JobName), "Version" :: Maybe (IntegerValue), "Run" :: Maybe (IntegerValue), "Attempt" :: Maybe (IntegerValue), "JobBookmark" :: Maybe (JsonValue) }) -> JobBookmarkEntry
 ```
 
 Constructs JobBookmarkEntry's fields from required parameters
@@ -5934,7 +5934,7 @@ Constructs JobBookmarkEntry's fields from required parameters
 
 ``` purescript
 newtype JobCommand
-  = JobCommand { "Name" :: NullOrUndefined (GenericString), "ScriptLocation" :: NullOrUndefined (ScriptLocationString) }
+  = JobCommand { "Name" :: Maybe (GenericString), "ScriptLocation" :: Maybe (ScriptLocationString) }
 ```
 
 <p>Specifies code that executes a job.</p>
@@ -5959,7 +5959,7 @@ Constructs JobCommand from required parameters
 #### `newJobCommand'`
 
 ``` purescript
-newJobCommand' :: ({ "Name" :: NullOrUndefined (GenericString), "ScriptLocation" :: NullOrUndefined (ScriptLocationString) } -> { "Name" :: NullOrUndefined (GenericString), "ScriptLocation" :: NullOrUndefined (ScriptLocationString) }) -> JobCommand
+newJobCommand' :: ({ "Name" :: Maybe (GenericString), "ScriptLocation" :: Maybe (ScriptLocationString) } -> { "Name" :: Maybe (GenericString), "ScriptLocation" :: Maybe (ScriptLocationString) }) -> JobCommand
 ```
 
 Constructs JobCommand's fields from required parameters
@@ -6000,7 +6000,7 @@ Encode JobName
 
 ``` purescript
 newtype JobRun
-  = JobRun { "Id" :: NullOrUndefined (IdString), "Attempt" :: NullOrUndefined (AttemptCount), "PreviousRunId" :: NullOrUndefined (IdString), "TriggerName" :: NullOrUndefined (NameString), "JobName" :: NullOrUndefined (NameString), "StartedOn" :: NullOrUndefined (TimestampValue), "LastModifiedOn" :: NullOrUndefined (TimestampValue), "CompletedOn" :: NullOrUndefined (TimestampValue), "JobRunState" :: NullOrUndefined (JobRunState), "Arguments" :: NullOrUndefined (GenericMap), "ErrorMessage" :: NullOrUndefined (ErrorString), "PredecessorRuns" :: NullOrUndefined (PredecessorList), "AllocatedCapacity" :: NullOrUndefined (IntegerValue) }
+  = JobRun { "Id" :: Maybe (IdString), "Attempt" :: Maybe (AttemptCount), "PreviousRunId" :: Maybe (IdString), "TriggerName" :: Maybe (NameString), "JobName" :: Maybe (NameString), "StartedOn" :: Maybe (TimestampValue), "LastModifiedOn" :: Maybe (TimestampValue), "CompletedOn" :: Maybe (TimestampValue), "JobRunState" :: Maybe (JobRunState), "Arguments" :: Maybe (GenericMap), "ErrorMessage" :: Maybe (ErrorString), "PredecessorRuns" :: Maybe (PredecessorList), "AllocatedCapacity" :: Maybe (IntegerValue) }
 ```
 
 <p>Contains information about a job run.</p>
@@ -6025,7 +6025,7 @@ Constructs JobRun from required parameters
 #### `newJobRun'`
 
 ``` purescript
-newJobRun' :: ({ "Id" :: NullOrUndefined (IdString), "Attempt" :: NullOrUndefined (AttemptCount), "PreviousRunId" :: NullOrUndefined (IdString), "TriggerName" :: NullOrUndefined (NameString), "JobName" :: NullOrUndefined (NameString), "StartedOn" :: NullOrUndefined (TimestampValue), "LastModifiedOn" :: NullOrUndefined (TimestampValue), "CompletedOn" :: NullOrUndefined (TimestampValue), "JobRunState" :: NullOrUndefined (JobRunState), "Arguments" :: NullOrUndefined (GenericMap), "ErrorMessage" :: NullOrUndefined (ErrorString), "PredecessorRuns" :: NullOrUndefined (PredecessorList), "AllocatedCapacity" :: NullOrUndefined (IntegerValue) } -> { "Id" :: NullOrUndefined (IdString), "Attempt" :: NullOrUndefined (AttemptCount), "PreviousRunId" :: NullOrUndefined (IdString), "TriggerName" :: NullOrUndefined (NameString), "JobName" :: NullOrUndefined (NameString), "StartedOn" :: NullOrUndefined (TimestampValue), "LastModifiedOn" :: NullOrUndefined (TimestampValue), "CompletedOn" :: NullOrUndefined (TimestampValue), "JobRunState" :: NullOrUndefined (JobRunState), "Arguments" :: NullOrUndefined (GenericMap), "ErrorMessage" :: NullOrUndefined (ErrorString), "PredecessorRuns" :: NullOrUndefined (PredecessorList), "AllocatedCapacity" :: NullOrUndefined (IntegerValue) }) -> JobRun
+newJobRun' :: ({ "Id" :: Maybe (IdString), "Attempt" :: Maybe (AttemptCount), "PreviousRunId" :: Maybe (IdString), "TriggerName" :: Maybe (NameString), "JobName" :: Maybe (NameString), "StartedOn" :: Maybe (TimestampValue), "LastModifiedOn" :: Maybe (TimestampValue), "CompletedOn" :: Maybe (TimestampValue), "JobRunState" :: Maybe (JobRunState), "Arguments" :: Maybe (GenericMap), "ErrorMessage" :: Maybe (ErrorString), "PredecessorRuns" :: Maybe (PredecessorList), "AllocatedCapacity" :: Maybe (IntegerValue) } -> { "Id" :: Maybe (IdString), "Attempt" :: Maybe (AttemptCount), "PreviousRunId" :: Maybe (IdString), "TriggerName" :: Maybe (NameString), "JobName" :: Maybe (NameString), "StartedOn" :: Maybe (TimestampValue), "LastModifiedOn" :: Maybe (TimestampValue), "CompletedOn" :: Maybe (TimestampValue), "JobRunState" :: Maybe (JobRunState), "Arguments" :: Maybe (GenericMap), "ErrorMessage" :: Maybe (ErrorString), "PredecessorRuns" :: Maybe (PredecessorList), "AllocatedCapacity" :: Maybe (IntegerValue) }) -> JobRun
 ```
 
 Constructs JobRun's fields from required parameters
@@ -6066,7 +6066,7 @@ Encode JobRunState
 
 ``` purescript
 newtype JobUpdate
-  = JobUpdate { "Description" :: NullOrUndefined (DescriptionString), "LogUri" :: NullOrUndefined (UriString), "Role" :: NullOrUndefined (RoleString), "ExecutionProperty" :: NullOrUndefined (ExecutionProperty), "Command" :: NullOrUndefined (JobCommand), "DefaultArguments" :: NullOrUndefined (GenericMap), "Connections" :: NullOrUndefined (ConnectionsList), "MaxRetries" :: NullOrUndefined (MaxRetries), "AllocatedCapacity" :: NullOrUndefined (IntegerValue) }
+  = JobUpdate { "Description" :: Maybe (DescriptionString), "LogUri" :: Maybe (UriString), "Role" :: Maybe (RoleString), "ExecutionProperty" :: Maybe (ExecutionProperty), "Command" :: Maybe (JobCommand), "DefaultArguments" :: Maybe (GenericMap), "Connections" :: Maybe (ConnectionsList), "MaxRetries" :: Maybe (MaxRetries), "AllocatedCapacity" :: Maybe (IntegerValue) }
 ```
 
 <p>Specifies information used to update an existing job. Note that the previous job definition will be completely overwritten by this information.</p>
@@ -6091,7 +6091,7 @@ Constructs JobUpdate from required parameters
 #### `newJobUpdate'`
 
 ``` purescript
-newJobUpdate' :: ({ "Description" :: NullOrUndefined (DescriptionString), "LogUri" :: NullOrUndefined (UriString), "Role" :: NullOrUndefined (RoleString), "ExecutionProperty" :: NullOrUndefined (ExecutionProperty), "Command" :: NullOrUndefined (JobCommand), "DefaultArguments" :: NullOrUndefined (GenericMap), "Connections" :: NullOrUndefined (ConnectionsList), "MaxRetries" :: NullOrUndefined (MaxRetries), "AllocatedCapacity" :: NullOrUndefined (IntegerValue) } -> { "Description" :: NullOrUndefined (DescriptionString), "LogUri" :: NullOrUndefined (UriString), "Role" :: NullOrUndefined (RoleString), "ExecutionProperty" :: NullOrUndefined (ExecutionProperty), "Command" :: NullOrUndefined (JobCommand), "DefaultArguments" :: NullOrUndefined (GenericMap), "Connections" :: NullOrUndefined (ConnectionsList), "MaxRetries" :: NullOrUndefined (MaxRetries), "AllocatedCapacity" :: NullOrUndefined (IntegerValue) }) -> JobUpdate
+newJobUpdate' :: ({ "Description" :: Maybe (DescriptionString), "LogUri" :: Maybe (UriString), "Role" :: Maybe (RoleString), "ExecutionProperty" :: Maybe (ExecutionProperty), "Command" :: Maybe (JobCommand), "DefaultArguments" :: Maybe (GenericMap), "Connections" :: Maybe (ConnectionsList), "MaxRetries" :: Maybe (MaxRetries), "AllocatedCapacity" :: Maybe (IntegerValue) } -> { "Description" :: Maybe (DescriptionString), "LogUri" :: Maybe (UriString), "Role" :: Maybe (RoleString), "ExecutionProperty" :: Maybe (ExecutionProperty), "Command" :: Maybe (JobCommand), "DefaultArguments" :: Maybe (GenericMap), "Connections" :: Maybe (ConnectionsList), "MaxRetries" :: Maybe (MaxRetries), "AllocatedCapacity" :: Maybe (IntegerValue) }) -> JobUpdate
 ```
 
 Constructs JobUpdate's fields from required parameters
@@ -6100,7 +6100,7 @@ Constructs JobUpdate's fields from required parameters
 
 ``` purescript
 newtype JsonClassifier
-  = JsonClassifier { "Name" :: NameString, "CreationTime" :: NullOrUndefined (Timestamp), "LastUpdated" :: NullOrUndefined (Timestamp), "Version" :: NullOrUndefined (VersionId), "JsonPath" :: JsonPath }
+  = JsonClassifier { "Name" :: NameString, "CreationTime" :: Maybe (Timestamp), "LastUpdated" :: Maybe (Timestamp), "Version" :: Maybe (VersionId), "JsonPath" :: JsonPath }
 ```
 
 <p>A classifier for <code>JSON</code> content.</p>
@@ -6125,7 +6125,7 @@ Constructs JsonClassifier from required parameters
 #### `newJsonClassifier'`
 
 ``` purescript
-newJsonClassifier' :: JsonPath -> NameString -> ({ "Name" :: NameString, "CreationTime" :: NullOrUndefined (Timestamp), "LastUpdated" :: NullOrUndefined (Timestamp), "Version" :: NullOrUndefined (VersionId), "JsonPath" :: JsonPath } -> { "Name" :: NameString, "CreationTime" :: NullOrUndefined (Timestamp), "LastUpdated" :: NullOrUndefined (Timestamp), "Version" :: NullOrUndefined (VersionId), "JsonPath" :: JsonPath }) -> JsonClassifier
+newJsonClassifier' :: JsonPath -> NameString -> ({ "Name" :: NameString, "CreationTime" :: Maybe (Timestamp), "LastUpdated" :: Maybe (Timestamp), "Version" :: Maybe (VersionId), "JsonPath" :: JsonPath } -> { "Name" :: NameString, "CreationTime" :: Maybe (Timestamp), "LastUpdated" :: Maybe (Timestamp), "Version" :: Maybe (VersionId), "JsonPath" :: JsonPath }) -> JsonClassifier
 ```
 
 Constructs JsonClassifier's fields from required parameters
@@ -6198,7 +6198,7 @@ Encode Language
 
 ``` purescript
 newtype LastCrawlInfo
-  = LastCrawlInfo { "Status" :: NullOrUndefined (LastCrawlStatus), "ErrorMessage" :: NullOrUndefined (DescriptionString), "LogGroup" :: NullOrUndefined (LogGroup), "LogStream" :: NullOrUndefined (LogStream), "MessagePrefix" :: NullOrUndefined (MessagePrefix), "StartTime" :: NullOrUndefined (Timestamp) }
+  = LastCrawlInfo { "Status" :: Maybe (LastCrawlStatus), "ErrorMessage" :: Maybe (DescriptionString), "LogGroup" :: Maybe (LogGroup), "LogStream" :: Maybe (LogStream), "MessagePrefix" :: Maybe (MessagePrefix), "StartTime" :: Maybe (Timestamp) }
 ```
 
 <p>Status and error information about the most recent crawl.</p>
@@ -6223,7 +6223,7 @@ Constructs LastCrawlInfo from required parameters
 #### `newLastCrawlInfo'`
 
 ``` purescript
-newLastCrawlInfo' :: ({ "Status" :: NullOrUndefined (LastCrawlStatus), "ErrorMessage" :: NullOrUndefined (DescriptionString), "LogGroup" :: NullOrUndefined (LogGroup), "LogStream" :: NullOrUndefined (LogStream), "MessagePrefix" :: NullOrUndefined (MessagePrefix), "StartTime" :: NullOrUndefined (Timestamp) } -> { "Status" :: NullOrUndefined (LastCrawlStatus), "ErrorMessage" :: NullOrUndefined (DescriptionString), "LogGroup" :: NullOrUndefined (LogGroup), "LogStream" :: NullOrUndefined (LogStream), "MessagePrefix" :: NullOrUndefined (MessagePrefix), "StartTime" :: NullOrUndefined (Timestamp) }) -> LastCrawlInfo
+newLastCrawlInfo' :: ({ "Status" :: Maybe (LastCrawlStatus), "ErrorMessage" :: Maybe (DescriptionString), "LogGroup" :: Maybe (LogGroup), "LogStream" :: Maybe (LogStream), "MessagePrefix" :: Maybe (MessagePrefix), "StartTime" :: Maybe (Timestamp) } -> { "Status" :: Maybe (LastCrawlStatus), "ErrorMessage" :: Maybe (DescriptionString), "LogGroup" :: Maybe (LogGroup), "LogStream" :: Maybe (LogStream), "MessagePrefix" :: Maybe (MessagePrefix), "StartTime" :: Maybe (Timestamp) }) -> LastCrawlInfo
 ```
 
 Constructs LastCrawlInfo's fields from required parameters
@@ -6248,7 +6248,7 @@ Encode LastCrawlStatus
 
 ``` purescript
 newtype Location
-  = Location { "Jdbc" :: NullOrUndefined (CodeGenNodeArgs), "S3" :: NullOrUndefined (CodeGenNodeArgs) }
+  = Location { "Jdbc" :: Maybe (CodeGenNodeArgs), "S3" :: Maybe (CodeGenNodeArgs) }
 ```
 
 <p>The location of resources.</p>
@@ -6273,7 +6273,7 @@ Constructs Location from required parameters
 #### `newLocation'`
 
 ``` purescript
-newLocation' :: ({ "Jdbc" :: NullOrUndefined (CodeGenNodeArgs), "S3" :: NullOrUndefined (CodeGenNodeArgs) } -> { "Jdbc" :: NullOrUndefined (CodeGenNodeArgs), "S3" :: NullOrUndefined (CodeGenNodeArgs) }) -> Location
+newLocation' :: ({ "Jdbc" :: Maybe (CodeGenNodeArgs), "S3" :: Maybe (CodeGenNodeArgs) } -> { "Jdbc" :: Maybe (CodeGenNodeArgs), "S3" :: Maybe (CodeGenNodeArgs) }) -> Location
 ```
 
 Constructs Location's fields from required parameters
@@ -6378,7 +6378,7 @@ Encode LogicalOperator
 
 ``` purescript
 newtype MappingEntry
-  = MappingEntry { "SourceTable" :: NullOrUndefined (TableName), "SourcePath" :: NullOrUndefined (SchemaPathString), "SourceType" :: NullOrUndefined (FieldType), "TargetTable" :: NullOrUndefined (TableName), "TargetPath" :: NullOrUndefined (SchemaPathString), "TargetType" :: NullOrUndefined (FieldType) }
+  = MappingEntry { "SourceTable" :: Maybe (TableName), "SourcePath" :: Maybe (SchemaPathString), "SourceType" :: Maybe (FieldType), "TargetTable" :: Maybe (TableName), "TargetPath" :: Maybe (SchemaPathString), "TargetType" :: Maybe (FieldType) }
 ```
 
 <p>Defines a mapping.</p>
@@ -6403,7 +6403,7 @@ Constructs MappingEntry from required parameters
 #### `newMappingEntry'`
 
 ``` purescript
-newMappingEntry' :: ({ "SourceTable" :: NullOrUndefined (TableName), "SourcePath" :: NullOrUndefined (SchemaPathString), "SourceType" :: NullOrUndefined (FieldType), "TargetTable" :: NullOrUndefined (TableName), "TargetPath" :: NullOrUndefined (SchemaPathString), "TargetType" :: NullOrUndefined (FieldType) } -> { "SourceTable" :: NullOrUndefined (TableName), "SourcePath" :: NullOrUndefined (SchemaPathString), "SourceType" :: NullOrUndefined (FieldType), "TargetTable" :: NullOrUndefined (TableName), "TargetPath" :: NullOrUndefined (SchemaPathString), "TargetType" :: NullOrUndefined (FieldType) }) -> MappingEntry
+newMappingEntry' :: ({ "SourceTable" :: Maybe (TableName), "SourcePath" :: Maybe (SchemaPathString), "SourceType" :: Maybe (FieldType), "TargetTable" :: Maybe (TableName), "TargetPath" :: Maybe (SchemaPathString), "TargetType" :: Maybe (FieldType) } -> { "SourceTable" :: Maybe (TableName), "SourcePath" :: Maybe (SchemaPathString), "SourceType" :: Maybe (FieldType), "TargetTable" :: Maybe (TableName), "TargetPath" :: Maybe (SchemaPathString), "TargetType" :: Maybe (FieldType) }) -> MappingEntry
 ```
 
 Constructs MappingEntry's fields from required parameters
@@ -6556,7 +6556,7 @@ Encode NameStringList
 
 ``` purescript
 newtype NoScheduleException
-  = NoScheduleException { "Message" :: NullOrUndefined (MessageString) }
+  = NoScheduleException { "Message" :: Maybe (MessageString) }
 ```
 
 <p>There is no applicable schedule.</p>
@@ -6581,7 +6581,7 @@ Constructs NoScheduleException from required parameters
 #### `newNoScheduleException'`
 
 ``` purescript
-newNoScheduleException' :: ({ "Message" :: NullOrUndefined (MessageString) } -> { "Message" :: NullOrUndefined (MessageString) }) -> NoScheduleException
+newNoScheduleException' :: ({ "Message" :: Maybe (MessageString) } -> { "Message" :: Maybe (MessageString) }) -> NoScheduleException
 ```
 
 Constructs NoScheduleException's fields from required parameters
@@ -6622,7 +6622,7 @@ Encode NonNegativeInteger
 
 ``` purescript
 newtype OperationTimeoutException
-  = OperationTimeoutException { "Message" :: NullOrUndefined (MessageString) }
+  = OperationTimeoutException { "Message" :: Maybe (MessageString) }
 ```
 
 <p>The operation timed out.</p>
@@ -6647,7 +6647,7 @@ Constructs OperationTimeoutException from required parameters
 #### `newOperationTimeoutException'`
 
 ``` purescript
-newOperationTimeoutException' :: ({ "Message" :: NullOrUndefined (MessageString) } -> { "Message" :: NullOrUndefined (MessageString) }) -> OperationTimeoutException
+newOperationTimeoutException' :: ({ "Message" :: Maybe (MessageString) } -> { "Message" :: Maybe (MessageString) }) -> OperationTimeoutException
 ```
 
 Constructs OperationTimeoutException's fields from required parameters
@@ -6754,7 +6754,7 @@ Encode ParametersMapValue
 
 ``` purescript
 newtype Partition
-  = Partition { "Values" :: NullOrUndefined (ValueStringList), "DatabaseName" :: NullOrUndefined (NameString), "TableName" :: NullOrUndefined (NameString), "CreationTime" :: NullOrUndefined (Timestamp), "LastAccessTime" :: NullOrUndefined (Timestamp), "StorageDescriptor" :: NullOrUndefined (StorageDescriptor), "Parameters" :: NullOrUndefined (ParametersMap), "LastAnalyzedTime" :: NullOrUndefined (Timestamp) }
+  = Partition { "Values" :: Maybe (ValueStringList), "DatabaseName" :: Maybe (NameString), "TableName" :: Maybe (NameString), "CreationTime" :: Maybe (Timestamp), "LastAccessTime" :: Maybe (Timestamp), "StorageDescriptor" :: Maybe (StorageDescriptor), "Parameters" :: Maybe (ParametersMap), "LastAnalyzedTime" :: Maybe (Timestamp) }
 ```
 
 <p>Represents a slice of table data.</p>
@@ -6779,7 +6779,7 @@ Constructs Partition from required parameters
 #### `newPartition'`
 
 ``` purescript
-newPartition' :: ({ "Values" :: NullOrUndefined (ValueStringList), "DatabaseName" :: NullOrUndefined (NameString), "TableName" :: NullOrUndefined (NameString), "CreationTime" :: NullOrUndefined (Timestamp), "LastAccessTime" :: NullOrUndefined (Timestamp), "StorageDescriptor" :: NullOrUndefined (StorageDescriptor), "Parameters" :: NullOrUndefined (ParametersMap), "LastAnalyzedTime" :: NullOrUndefined (Timestamp) } -> { "Values" :: NullOrUndefined (ValueStringList), "DatabaseName" :: NullOrUndefined (NameString), "TableName" :: NullOrUndefined (NameString), "CreationTime" :: NullOrUndefined (Timestamp), "LastAccessTime" :: NullOrUndefined (Timestamp), "StorageDescriptor" :: NullOrUndefined (StorageDescriptor), "Parameters" :: NullOrUndefined (ParametersMap), "LastAnalyzedTime" :: NullOrUndefined (Timestamp) }) -> Partition
+newPartition' :: ({ "Values" :: Maybe (ValueStringList), "DatabaseName" :: Maybe (NameString), "TableName" :: Maybe (NameString), "CreationTime" :: Maybe (Timestamp), "LastAccessTime" :: Maybe (Timestamp), "StorageDescriptor" :: Maybe (StorageDescriptor), "Parameters" :: Maybe (ParametersMap), "LastAnalyzedTime" :: Maybe (Timestamp) } -> { "Values" :: Maybe (ValueStringList), "DatabaseName" :: Maybe (NameString), "TableName" :: Maybe (NameString), "CreationTime" :: Maybe (Timestamp), "LastAccessTime" :: Maybe (Timestamp), "StorageDescriptor" :: Maybe (StorageDescriptor), "Parameters" :: Maybe (ParametersMap), "LastAnalyzedTime" :: Maybe (Timestamp) }) -> Partition
 ```
 
 Constructs Partition's fields from required parameters
@@ -6788,7 +6788,7 @@ Constructs Partition's fields from required parameters
 
 ``` purescript
 newtype PartitionError
-  = PartitionError { "PartitionValues" :: NullOrUndefined (ValueStringList), "ErrorDetail" :: NullOrUndefined (ErrorDetail) }
+  = PartitionError { "PartitionValues" :: Maybe (ValueStringList), "ErrorDetail" :: Maybe (ErrorDetail) }
 ```
 
 <p>Contains information about a partition error.</p>
@@ -6813,7 +6813,7 @@ Constructs PartitionError from required parameters
 #### `newPartitionError'`
 
 ``` purescript
-newPartitionError' :: ({ "PartitionValues" :: NullOrUndefined (ValueStringList), "ErrorDetail" :: NullOrUndefined (ErrorDetail) } -> { "PartitionValues" :: NullOrUndefined (ValueStringList), "ErrorDetail" :: NullOrUndefined (ErrorDetail) }) -> PartitionError
+newPartitionError' :: ({ "PartitionValues" :: Maybe (ValueStringList), "ErrorDetail" :: Maybe (ErrorDetail) } -> { "PartitionValues" :: Maybe (ValueStringList), "ErrorDetail" :: Maybe (ErrorDetail) }) -> PartitionError
 ```
 
 Constructs PartitionError's fields from required parameters
@@ -6838,7 +6838,7 @@ Encode PartitionErrors
 
 ``` purescript
 newtype PartitionInput
-  = PartitionInput { "Values" :: NullOrUndefined (ValueStringList), "LastAccessTime" :: NullOrUndefined (Timestamp), "StorageDescriptor" :: NullOrUndefined (StorageDescriptor), "Parameters" :: NullOrUndefined (ParametersMap), "LastAnalyzedTime" :: NullOrUndefined (Timestamp) }
+  = PartitionInput { "Values" :: Maybe (ValueStringList), "LastAccessTime" :: Maybe (Timestamp), "StorageDescriptor" :: Maybe (StorageDescriptor), "Parameters" :: Maybe (ParametersMap), "LastAnalyzedTime" :: Maybe (Timestamp) }
 ```
 
 <p>The structure used to create and update a partion.</p>
@@ -6863,7 +6863,7 @@ Constructs PartitionInput from required parameters
 #### `newPartitionInput'`
 
 ``` purescript
-newPartitionInput' :: ({ "Values" :: NullOrUndefined (ValueStringList), "LastAccessTime" :: NullOrUndefined (Timestamp), "StorageDescriptor" :: NullOrUndefined (StorageDescriptor), "Parameters" :: NullOrUndefined (ParametersMap), "LastAnalyzedTime" :: NullOrUndefined (Timestamp) } -> { "Values" :: NullOrUndefined (ValueStringList), "LastAccessTime" :: NullOrUndefined (Timestamp), "StorageDescriptor" :: NullOrUndefined (StorageDescriptor), "Parameters" :: NullOrUndefined (ParametersMap), "LastAnalyzedTime" :: NullOrUndefined (Timestamp) }) -> PartitionInput
+newPartitionInput' :: ({ "Values" :: Maybe (ValueStringList), "LastAccessTime" :: Maybe (Timestamp), "StorageDescriptor" :: Maybe (StorageDescriptor), "Parameters" :: Maybe (ParametersMap), "LastAnalyzedTime" :: Maybe (Timestamp) } -> { "Values" :: Maybe (ValueStringList), "LastAccessTime" :: Maybe (Timestamp), "StorageDescriptor" :: Maybe (StorageDescriptor), "Parameters" :: Maybe (ParametersMap), "LastAnalyzedTime" :: Maybe (Timestamp) }) -> PartitionInput
 ```
 
 Constructs PartitionInput's fields from required parameters
@@ -6970,7 +6970,7 @@ Encode PathList
 
 ``` purescript
 newtype PhysicalConnectionRequirements
-  = PhysicalConnectionRequirements { "SubnetId" :: NullOrUndefined (NameString), "SecurityGroupIdList" :: NullOrUndefined (SecurityGroupIdList), "AvailabilityZone" :: NullOrUndefined (NameString) }
+  = PhysicalConnectionRequirements { "SubnetId" :: Maybe (NameString), "SecurityGroupIdList" :: Maybe (SecurityGroupIdList), "AvailabilityZone" :: Maybe (NameString) }
 ```
 
 <p>Specifies the physical requirements for a connection.</p>
@@ -6995,7 +6995,7 @@ Constructs PhysicalConnectionRequirements from required parameters
 #### `newPhysicalConnectionRequirements'`
 
 ``` purescript
-newPhysicalConnectionRequirements' :: ({ "SubnetId" :: NullOrUndefined (NameString), "SecurityGroupIdList" :: NullOrUndefined (SecurityGroupIdList), "AvailabilityZone" :: NullOrUndefined (NameString) } -> { "SubnetId" :: NullOrUndefined (NameString), "SecurityGroupIdList" :: NullOrUndefined (SecurityGroupIdList), "AvailabilityZone" :: NullOrUndefined (NameString) }) -> PhysicalConnectionRequirements
+newPhysicalConnectionRequirements' :: ({ "SubnetId" :: Maybe (NameString), "SecurityGroupIdList" :: Maybe (SecurityGroupIdList), "AvailabilityZone" :: Maybe (NameString) } -> { "SubnetId" :: Maybe (NameString), "SecurityGroupIdList" :: Maybe (SecurityGroupIdList), "AvailabilityZone" :: Maybe (NameString) }) -> PhysicalConnectionRequirements
 ```
 
 Constructs PhysicalConnectionRequirements's fields from required parameters
@@ -7004,7 +7004,7 @@ Constructs PhysicalConnectionRequirements's fields from required parameters
 
 ``` purescript
 newtype Predecessor
-  = Predecessor { "JobName" :: NullOrUndefined (NameString), "RunId" :: NullOrUndefined (IdString) }
+  = Predecessor { "JobName" :: Maybe (NameString), "RunId" :: Maybe (IdString) }
 ```
 
 <p>A job run that was used in the predicate of a conditional trigger that triggered this job run.</p>
@@ -7029,7 +7029,7 @@ Constructs Predecessor from required parameters
 #### `newPredecessor'`
 
 ``` purescript
-newPredecessor' :: ({ "JobName" :: NullOrUndefined (NameString), "RunId" :: NullOrUndefined (IdString) } -> { "JobName" :: NullOrUndefined (NameString), "RunId" :: NullOrUndefined (IdString) }) -> Predecessor
+newPredecessor' :: ({ "JobName" :: Maybe (NameString), "RunId" :: Maybe (IdString) } -> { "JobName" :: Maybe (NameString), "RunId" :: Maybe (IdString) }) -> Predecessor
 ```
 
 Constructs Predecessor's fields from required parameters
@@ -7054,7 +7054,7 @@ Encode PredecessorList
 
 ``` purescript
 newtype Predicate
-  = Predicate { "Logical" :: NullOrUndefined (Logical), "Conditions" :: NullOrUndefined (ConditionList) }
+  = Predicate { "Logical" :: Maybe (Logical), "Conditions" :: Maybe (ConditionList) }
 ```
 
 <p>Defines the predicate of the trigger, which determines when it fires.</p>
@@ -7079,7 +7079,7 @@ Constructs Predicate from required parameters
 #### `newPredicate'`
 
 ``` purescript
-newPredicate' :: ({ "Logical" :: NullOrUndefined (Logical), "Conditions" :: NullOrUndefined (ConditionList) } -> { "Logical" :: NullOrUndefined (Logical), "Conditions" :: NullOrUndefined (ConditionList) }) -> Predicate
+newPredicate' :: ({ "Logical" :: Maybe (Logical), "Conditions" :: Maybe (ConditionList) } -> { "Logical" :: Maybe (Logical), "Conditions" :: Maybe (ConditionList) }) -> Predicate
 ```
 
 Constructs Predicate's fields from required parameters
@@ -7168,7 +7168,7 @@ Constructs ResetJobBookmarkRequest's fields from required parameters
 
 ``` purescript
 newtype ResetJobBookmarkResponse
-  = ResetJobBookmarkResponse { "JobBookmarkEntry" :: NullOrUndefined (JobBookmarkEntry) }
+  = ResetJobBookmarkResponse { "JobBookmarkEntry" :: Maybe (JobBookmarkEntry) }
 ```
 
 ##### Instances
@@ -7191,7 +7191,7 @@ Constructs ResetJobBookmarkResponse from required parameters
 #### `newResetJobBookmarkResponse'`
 
 ``` purescript
-newResetJobBookmarkResponse' :: ({ "JobBookmarkEntry" :: NullOrUndefined (JobBookmarkEntry) } -> { "JobBookmarkEntry" :: NullOrUndefined (JobBookmarkEntry) }) -> ResetJobBookmarkResponse
+newResetJobBookmarkResponse' :: ({ "JobBookmarkEntry" :: Maybe (JobBookmarkEntry) } -> { "JobBookmarkEntry" :: Maybe (JobBookmarkEntry) }) -> ResetJobBookmarkResponse
 ```
 
 Constructs ResetJobBookmarkResponse's fields from required parameters
@@ -7200,7 +7200,7 @@ Constructs ResetJobBookmarkResponse's fields from required parameters
 
 ``` purescript
 newtype ResourceNumberLimitExceededException
-  = ResourceNumberLimitExceededException { "Message" :: NullOrUndefined (MessageString) }
+  = ResourceNumberLimitExceededException { "Message" :: Maybe (MessageString) }
 ```
 
 <p>A resource numerical limit was exceeded.</p>
@@ -7225,7 +7225,7 @@ Constructs ResourceNumberLimitExceededException from required parameters
 #### `newResourceNumberLimitExceededException'`
 
 ``` purescript
-newResourceNumberLimitExceededException' :: ({ "Message" :: NullOrUndefined (MessageString) } -> { "Message" :: NullOrUndefined (MessageString) }) -> ResourceNumberLimitExceededException
+newResourceNumberLimitExceededException' :: ({ "Message" :: Maybe (MessageString) } -> { "Message" :: Maybe (MessageString) }) -> ResourceNumberLimitExceededException
 ```
 
 Constructs ResourceNumberLimitExceededException's fields from required parameters
@@ -7250,7 +7250,7 @@ Encode ResourceType
 
 ``` purescript
 newtype ResourceUri
-  = ResourceUri { "ResourceType" :: NullOrUndefined (ResourceType), "Uri" :: NullOrUndefined (URI) }
+  = ResourceUri { "ResourceType" :: Maybe (ResourceType), "Uri" :: Maybe (URI) }
 ```
 
 <p>URIs for function resources.</p>
@@ -7275,7 +7275,7 @@ Constructs ResourceUri from required parameters
 #### `newResourceUri'`
 
 ``` purescript
-newResourceUri' :: ({ "ResourceType" :: NullOrUndefined (ResourceType), "Uri" :: NullOrUndefined (URI) } -> { "ResourceType" :: NullOrUndefined (ResourceType), "Uri" :: NullOrUndefined (URI) }) -> ResourceUri
+newResourceUri' :: ({ "ResourceType" :: Maybe (ResourceType), "Uri" :: Maybe (URI) } -> { "ResourceType" :: Maybe (ResourceType), "Uri" :: Maybe (URI) }) -> ResourceUri
 ```
 
 Constructs ResourceUri's fields from required parameters
@@ -7364,7 +7364,7 @@ Encode RowTag
 
 ``` purescript
 newtype S3Target
-  = S3Target { "Path" :: NullOrUndefined (Path), "Exclusions" :: NullOrUndefined (PathList) }
+  = S3Target { "Path" :: Maybe (Path), "Exclusions" :: Maybe (PathList) }
 ```
 
 <p>Specifies a data store in Amazon S3.</p>
@@ -7389,7 +7389,7 @@ Constructs S3Target from required parameters
 #### `newS3Target'`
 
 ``` purescript
-newS3Target' :: ({ "Path" :: NullOrUndefined (Path), "Exclusions" :: NullOrUndefined (PathList) } -> { "Path" :: NullOrUndefined (Path), "Exclusions" :: NullOrUndefined (PathList) }) -> S3Target
+newS3Target' :: ({ "Path" :: Maybe (Path), "Exclusions" :: Maybe (PathList) } -> { "Path" :: Maybe (Path), "Exclusions" :: Maybe (PathList) }) -> S3Target
 ```
 
 Constructs S3Target's fields from required parameters
@@ -7430,7 +7430,7 @@ Encode ScalaCode
 
 ``` purescript
 newtype Schedule
-  = Schedule { "ScheduleExpression" :: NullOrUndefined (CronExpression), "State" :: NullOrUndefined (ScheduleState) }
+  = Schedule { "ScheduleExpression" :: Maybe (CronExpression), "State" :: Maybe (ScheduleState) }
 ```
 
 <p>A scheduling object using a <code>cron</code> statement to schedule an event.</p>
@@ -7455,7 +7455,7 @@ Constructs Schedule from required parameters
 #### `newSchedule'`
 
 ``` purescript
-newSchedule' :: ({ "ScheduleExpression" :: NullOrUndefined (CronExpression), "State" :: NullOrUndefined (ScheduleState) } -> { "ScheduleExpression" :: NullOrUndefined (CronExpression), "State" :: NullOrUndefined (ScheduleState) }) -> Schedule
+newSchedule' :: ({ "ScheduleExpression" :: Maybe (CronExpression), "State" :: Maybe (ScheduleState) } -> { "ScheduleExpression" :: Maybe (CronExpression), "State" :: Maybe (ScheduleState) }) -> Schedule
 ```
 
 Constructs Schedule's fields from required parameters
@@ -7480,7 +7480,7 @@ Encode ScheduleState
 
 ``` purescript
 newtype SchedulerNotRunningException
-  = SchedulerNotRunningException { "Message" :: NullOrUndefined (MessageString) }
+  = SchedulerNotRunningException { "Message" :: Maybe (MessageString) }
 ```
 
 <p>The specified scheduler is not running.</p>
@@ -7505,7 +7505,7 @@ Constructs SchedulerNotRunningException from required parameters
 #### `newSchedulerNotRunningException'`
 
 ``` purescript
-newSchedulerNotRunningException' :: ({ "Message" :: NullOrUndefined (MessageString) } -> { "Message" :: NullOrUndefined (MessageString) }) -> SchedulerNotRunningException
+newSchedulerNotRunningException' :: ({ "Message" :: Maybe (MessageString) } -> { "Message" :: Maybe (MessageString) }) -> SchedulerNotRunningException
 ```
 
 Constructs SchedulerNotRunningException's fields from required parameters
@@ -7514,7 +7514,7 @@ Constructs SchedulerNotRunningException's fields from required parameters
 
 ``` purescript
 newtype SchedulerRunningException
-  = SchedulerRunningException { "Message" :: NullOrUndefined (MessageString) }
+  = SchedulerRunningException { "Message" :: Maybe (MessageString) }
 ```
 
 <p>The specified scheduler is already running.</p>
@@ -7539,7 +7539,7 @@ Constructs SchedulerRunningException from required parameters
 #### `newSchedulerRunningException'`
 
 ``` purescript
-newSchedulerRunningException' :: ({ "Message" :: NullOrUndefined (MessageString) } -> { "Message" :: NullOrUndefined (MessageString) }) -> SchedulerRunningException
+newSchedulerRunningException' :: ({ "Message" :: Maybe (MessageString) } -> { "Message" :: Maybe (MessageString) }) -> SchedulerRunningException
 ```
 
 Constructs SchedulerRunningException's fields from required parameters
@@ -7548,7 +7548,7 @@ Constructs SchedulerRunningException's fields from required parameters
 
 ``` purescript
 newtype SchedulerTransitioningException
-  = SchedulerTransitioningException { "Message" :: NullOrUndefined (MessageString) }
+  = SchedulerTransitioningException { "Message" :: Maybe (MessageString) }
 ```
 
 <p>The specified scheduler is transitioning.</p>
@@ -7573,7 +7573,7 @@ Constructs SchedulerTransitioningException from required parameters
 #### `newSchedulerTransitioningException'`
 
 ``` purescript
-newSchedulerTransitioningException' :: ({ "Message" :: NullOrUndefined (MessageString) } -> { "Message" :: NullOrUndefined (MessageString) }) -> SchedulerTransitioningException
+newSchedulerTransitioningException' :: ({ "Message" :: Maybe (MessageString) } -> { "Message" :: Maybe (MessageString) }) -> SchedulerTransitioningException
 ```
 
 Constructs SchedulerTransitioningException's fields from required parameters
@@ -7582,7 +7582,7 @@ Constructs SchedulerTransitioningException's fields from required parameters
 
 ``` purescript
 newtype SchemaChangePolicy
-  = SchemaChangePolicy { "UpdateBehavior" :: NullOrUndefined (UpdateBehavior), "DeleteBehavior" :: NullOrUndefined (DeleteBehavior) }
+  = SchemaChangePolicy { "UpdateBehavior" :: Maybe (UpdateBehavior), "DeleteBehavior" :: Maybe (DeleteBehavior) }
 ```
 
 <p>Crawler policy for update and deletion behavior.</p>
@@ -7607,7 +7607,7 @@ Constructs SchemaChangePolicy from required parameters
 #### `newSchemaChangePolicy'`
 
 ``` purescript
-newSchemaChangePolicy' :: ({ "UpdateBehavior" :: NullOrUndefined (UpdateBehavior), "DeleteBehavior" :: NullOrUndefined (DeleteBehavior) } -> { "UpdateBehavior" :: NullOrUndefined (UpdateBehavior), "DeleteBehavior" :: NullOrUndefined (DeleteBehavior) }) -> SchemaChangePolicy
+newSchemaChangePolicy' :: ({ "UpdateBehavior" :: Maybe (UpdateBehavior), "DeleteBehavior" :: Maybe (DeleteBehavior) } -> { "UpdateBehavior" :: Maybe (UpdateBehavior), "DeleteBehavior" :: Maybe (DeleteBehavior) }) -> SchemaChangePolicy
 ```
 
 Constructs SchemaChangePolicy's fields from required parameters
@@ -7698,7 +7698,7 @@ Constructs Segment's fields from required parameters
 
 ``` purescript
 newtype SerDeInfo
-  = SerDeInfo { "Name" :: NullOrUndefined (NameString), "SerializationLibrary" :: NullOrUndefined (NameString), "Parameters" :: NullOrUndefined (ParametersMap) }
+  = SerDeInfo { "Name" :: Maybe (NameString), "SerializationLibrary" :: Maybe (NameString), "Parameters" :: Maybe (ParametersMap) }
 ```
 
 <p>Information about a serialization/deserialization program (SerDe) which serves as an extractor and loader.</p>
@@ -7723,7 +7723,7 @@ Constructs SerDeInfo from required parameters
 #### `newSerDeInfo'`
 
 ``` purescript
-newSerDeInfo' :: ({ "Name" :: NullOrUndefined (NameString), "SerializationLibrary" :: NullOrUndefined (NameString), "Parameters" :: NullOrUndefined (ParametersMap) } -> { "Name" :: NullOrUndefined (NameString), "SerializationLibrary" :: NullOrUndefined (NameString), "Parameters" :: NullOrUndefined (ParametersMap) }) -> SerDeInfo
+newSerDeInfo' :: ({ "Name" :: Maybe (NameString), "SerializationLibrary" :: Maybe (NameString), "Parameters" :: Maybe (ParametersMap) } -> { "Name" :: Maybe (NameString), "SerializationLibrary" :: Maybe (NameString), "Parameters" :: Maybe (ParametersMap) }) -> SerDeInfo
 ```
 
 Constructs SerDeInfo's fields from required parameters
@@ -7732,7 +7732,7 @@ Constructs SerDeInfo's fields from required parameters
 
 ``` purescript
 newtype SkewedInfo
-  = SkewedInfo { "SkewedColumnNames" :: NullOrUndefined (NameStringList), "SkewedColumnValues" :: NullOrUndefined (ColumnValueStringList), "SkewedColumnValueLocationMaps" :: NullOrUndefined (LocationMap) }
+  = SkewedInfo { "SkewedColumnNames" :: Maybe (NameStringList), "SkewedColumnValues" :: Maybe (ColumnValueStringList), "SkewedColumnValueLocationMaps" :: Maybe (LocationMap) }
 ```
 
 <p>Specifies skewed values in a table. Skewed are ones that occur with very high frequency.</p>
@@ -7757,7 +7757,7 @@ Constructs SkewedInfo from required parameters
 #### `newSkewedInfo'`
 
 ``` purescript
-newSkewedInfo' :: ({ "SkewedColumnNames" :: NullOrUndefined (NameStringList), "SkewedColumnValues" :: NullOrUndefined (ColumnValueStringList), "SkewedColumnValueLocationMaps" :: NullOrUndefined (LocationMap) } -> { "SkewedColumnNames" :: NullOrUndefined (NameStringList), "SkewedColumnValues" :: NullOrUndefined (ColumnValueStringList), "SkewedColumnValueLocationMaps" :: NullOrUndefined (LocationMap) }) -> SkewedInfo
+newSkewedInfo' :: ({ "SkewedColumnNames" :: Maybe (NameStringList), "SkewedColumnValues" :: Maybe (ColumnValueStringList), "SkewedColumnValueLocationMaps" :: Maybe (LocationMap) } -> { "SkewedColumnNames" :: Maybe (NameStringList), "SkewedColumnValues" :: Maybe (ColumnValueStringList), "SkewedColumnValueLocationMaps" :: Maybe (LocationMap) }) -> SkewedInfo
 ```
 
 Constructs SkewedInfo's fields from required parameters
@@ -7862,7 +7862,7 @@ Encode StartCrawlerScheduleResponse
 
 ``` purescript
 newtype StartJobRunRequest
-  = StartJobRunRequest { "JobName" :: NameString, "JobRunId" :: NullOrUndefined (IdString), "Arguments" :: NullOrUndefined (GenericMap), "AllocatedCapacity" :: NullOrUndefined (IntegerValue) }
+  = StartJobRunRequest { "JobName" :: NameString, "JobRunId" :: Maybe (IdString), "Arguments" :: Maybe (GenericMap), "AllocatedCapacity" :: Maybe (IntegerValue) }
 ```
 
 ##### Instances
@@ -7885,7 +7885,7 @@ Constructs StartJobRunRequest from required parameters
 #### `newStartJobRunRequest'`
 
 ``` purescript
-newStartJobRunRequest' :: NameString -> ({ "JobName" :: NameString, "JobRunId" :: NullOrUndefined (IdString), "Arguments" :: NullOrUndefined (GenericMap), "AllocatedCapacity" :: NullOrUndefined (IntegerValue) } -> { "JobName" :: NameString, "JobRunId" :: NullOrUndefined (IdString), "Arguments" :: NullOrUndefined (GenericMap), "AllocatedCapacity" :: NullOrUndefined (IntegerValue) }) -> StartJobRunRequest
+newStartJobRunRequest' :: NameString -> ({ "JobName" :: NameString, "JobRunId" :: Maybe (IdString), "Arguments" :: Maybe (GenericMap), "AllocatedCapacity" :: Maybe (IntegerValue) } -> { "JobName" :: NameString, "JobRunId" :: Maybe (IdString), "Arguments" :: Maybe (GenericMap), "AllocatedCapacity" :: Maybe (IntegerValue) }) -> StartJobRunRequest
 ```
 
 Constructs StartJobRunRequest's fields from required parameters
@@ -7894,7 +7894,7 @@ Constructs StartJobRunRequest's fields from required parameters
 
 ``` purescript
 newtype StartJobRunResponse
-  = StartJobRunResponse { "JobRunId" :: NullOrUndefined (IdString) }
+  = StartJobRunResponse { "JobRunId" :: Maybe (IdString) }
 ```
 
 ##### Instances
@@ -7917,7 +7917,7 @@ Constructs StartJobRunResponse from required parameters
 #### `newStartJobRunResponse'`
 
 ``` purescript
-newStartJobRunResponse' :: ({ "JobRunId" :: NullOrUndefined (IdString) } -> { "JobRunId" :: NullOrUndefined (IdString) }) -> StartJobRunResponse
+newStartJobRunResponse' :: ({ "JobRunId" :: Maybe (IdString) } -> { "JobRunId" :: Maybe (IdString) }) -> StartJobRunResponse
 ```
 
 Constructs StartJobRunResponse's fields from required parameters
@@ -7958,7 +7958,7 @@ Constructs StartTriggerRequest's fields from required parameters
 
 ``` purescript
 newtype StartTriggerResponse
-  = StartTriggerResponse { "Name" :: NullOrUndefined (NameString) }
+  = StartTriggerResponse { "Name" :: Maybe (NameString) }
 ```
 
 ##### Instances
@@ -7981,7 +7981,7 @@ Constructs StartTriggerResponse from required parameters
 #### `newStartTriggerResponse'`
 
 ``` purescript
-newStartTriggerResponse' :: ({ "Name" :: NullOrUndefined (NameString) } -> { "Name" :: NullOrUndefined (NameString) }) -> StartTriggerResponse
+newStartTriggerResponse' :: ({ "Name" :: Maybe (NameString) } -> { "Name" :: Maybe (NameString) }) -> StartTriggerResponse
 ```
 
 Constructs StartTriggerResponse's fields from required parameters
@@ -8118,7 +8118,7 @@ Constructs StopTriggerRequest's fields from required parameters
 
 ``` purescript
 newtype StopTriggerResponse
-  = StopTriggerResponse { "Name" :: NullOrUndefined (NameString) }
+  = StopTriggerResponse { "Name" :: Maybe (NameString) }
 ```
 
 ##### Instances
@@ -8141,7 +8141,7 @@ Constructs StopTriggerResponse from required parameters
 #### `newStopTriggerResponse'`
 
 ``` purescript
-newStopTriggerResponse' :: ({ "Name" :: NullOrUndefined (NameString) } -> { "Name" :: NullOrUndefined (NameString) }) -> StopTriggerResponse
+newStopTriggerResponse' :: ({ "Name" :: Maybe (NameString) } -> { "Name" :: Maybe (NameString) }) -> StopTriggerResponse
 ```
 
 Constructs StopTriggerResponse's fields from required parameters
@@ -8150,7 +8150,7 @@ Constructs StopTriggerResponse's fields from required parameters
 
 ``` purescript
 newtype StorageDescriptor
-  = StorageDescriptor { "Columns" :: NullOrUndefined (ColumnList), "Location" :: NullOrUndefined (LocationString), "InputFormat" :: NullOrUndefined (FormatString), "OutputFormat" :: NullOrUndefined (FormatString), "Compressed" :: NullOrUndefined (Boolean), "NumberOfBuckets" :: NullOrUndefined (Int), "SerdeInfo" :: NullOrUndefined (SerDeInfo), "BucketColumns" :: NullOrUndefined (NameStringList), "SortColumns" :: NullOrUndefined (OrderList), "Parameters" :: NullOrUndefined (ParametersMap), "SkewedInfo" :: NullOrUndefined (SkewedInfo), "StoredAsSubDirectories" :: NullOrUndefined (Boolean) }
+  = StorageDescriptor { "Columns" :: Maybe (ColumnList), "Location" :: Maybe (LocationString), "InputFormat" :: Maybe (FormatString), "OutputFormat" :: Maybe (FormatString), "Compressed" :: Maybe (Boolean), "NumberOfBuckets" :: Maybe (Int), "SerdeInfo" :: Maybe (SerDeInfo), "BucketColumns" :: Maybe (NameStringList), "SortColumns" :: Maybe (OrderList), "Parameters" :: Maybe (ParametersMap), "SkewedInfo" :: Maybe (SkewedInfo), "StoredAsSubDirectories" :: Maybe (Boolean) }
 ```
 
 <p>Describes the physical storage of table data.</p>
@@ -8175,7 +8175,7 @@ Constructs StorageDescriptor from required parameters
 #### `newStorageDescriptor'`
 
 ``` purescript
-newStorageDescriptor' :: ({ "Columns" :: NullOrUndefined (ColumnList), "Location" :: NullOrUndefined (LocationString), "InputFormat" :: NullOrUndefined (FormatString), "OutputFormat" :: NullOrUndefined (FormatString), "Compressed" :: NullOrUndefined (Boolean), "NumberOfBuckets" :: NullOrUndefined (Int), "SerdeInfo" :: NullOrUndefined (SerDeInfo), "BucketColumns" :: NullOrUndefined (NameStringList), "SortColumns" :: NullOrUndefined (OrderList), "Parameters" :: NullOrUndefined (ParametersMap), "SkewedInfo" :: NullOrUndefined (SkewedInfo), "StoredAsSubDirectories" :: NullOrUndefined (Boolean) } -> { "Columns" :: NullOrUndefined (ColumnList), "Location" :: NullOrUndefined (LocationString), "InputFormat" :: NullOrUndefined (FormatString), "OutputFormat" :: NullOrUndefined (FormatString), "Compressed" :: NullOrUndefined (Boolean), "NumberOfBuckets" :: NullOrUndefined (Int), "SerdeInfo" :: NullOrUndefined (SerDeInfo), "BucketColumns" :: NullOrUndefined (NameStringList), "SortColumns" :: NullOrUndefined (OrderList), "Parameters" :: NullOrUndefined (ParametersMap), "SkewedInfo" :: NullOrUndefined (SkewedInfo), "StoredAsSubDirectories" :: NullOrUndefined (Boolean) }) -> StorageDescriptor
+newStorageDescriptor' :: ({ "Columns" :: Maybe (ColumnList), "Location" :: Maybe (LocationString), "InputFormat" :: Maybe (FormatString), "OutputFormat" :: Maybe (FormatString), "Compressed" :: Maybe (Boolean), "NumberOfBuckets" :: Maybe (Int), "SerdeInfo" :: Maybe (SerDeInfo), "BucketColumns" :: Maybe (NameStringList), "SortColumns" :: Maybe (OrderList), "Parameters" :: Maybe (ParametersMap), "SkewedInfo" :: Maybe (SkewedInfo), "StoredAsSubDirectories" :: Maybe (Boolean) } -> { "Columns" :: Maybe (ColumnList), "Location" :: Maybe (LocationString), "InputFormat" :: Maybe (FormatString), "OutputFormat" :: Maybe (FormatString), "Compressed" :: Maybe (Boolean), "NumberOfBuckets" :: Maybe (Int), "SerdeInfo" :: Maybe (SerDeInfo), "BucketColumns" :: Maybe (NameStringList), "SortColumns" :: Maybe (OrderList), "Parameters" :: Maybe (ParametersMap), "SkewedInfo" :: Maybe (SkewedInfo), "StoredAsSubDirectories" :: Maybe (Boolean) }) -> StorageDescriptor
 ```
 
 Constructs StorageDescriptor's fields from required parameters
@@ -8200,7 +8200,7 @@ Encode StringList
 
 ``` purescript
 newtype Table
-  = Table { "Name" :: NameString, "DatabaseName" :: NullOrUndefined (NameString), "Description" :: NullOrUndefined (DescriptionString), "Owner" :: NullOrUndefined (NameString), "CreateTime" :: NullOrUndefined (Timestamp), "UpdateTime" :: NullOrUndefined (Timestamp), "LastAccessTime" :: NullOrUndefined (Timestamp), "LastAnalyzedTime" :: NullOrUndefined (Timestamp), "Retention" :: NullOrUndefined (NonNegativeInteger), "StorageDescriptor" :: NullOrUndefined (StorageDescriptor), "PartitionKeys" :: NullOrUndefined (ColumnList), "ViewOriginalText" :: NullOrUndefined (ViewTextString), "ViewExpandedText" :: NullOrUndefined (ViewTextString), "TableType" :: NullOrUndefined (TableTypeString), "Parameters" :: NullOrUndefined (ParametersMap), "CreatedBy" :: NullOrUndefined (NameString) }
+  = Table { "Name" :: NameString, "DatabaseName" :: Maybe (NameString), "Description" :: Maybe (DescriptionString), "Owner" :: Maybe (NameString), "CreateTime" :: Maybe (Timestamp), "UpdateTime" :: Maybe (Timestamp), "LastAccessTime" :: Maybe (Timestamp), "LastAnalyzedTime" :: Maybe (Timestamp), "Retention" :: Maybe (NonNegativeInteger), "StorageDescriptor" :: Maybe (StorageDescriptor), "PartitionKeys" :: Maybe (ColumnList), "ViewOriginalText" :: Maybe (ViewTextString), "ViewExpandedText" :: Maybe (ViewTextString), "TableType" :: Maybe (TableTypeString), "Parameters" :: Maybe (ParametersMap), "CreatedBy" :: Maybe (NameString) }
 ```
 
 <p>Represents a collection of related data organized in columns and rows.</p>
@@ -8225,7 +8225,7 @@ Constructs Table from required parameters
 #### `newTable'`
 
 ``` purescript
-newTable' :: NameString -> ({ "Name" :: NameString, "DatabaseName" :: NullOrUndefined (NameString), "Description" :: NullOrUndefined (DescriptionString), "Owner" :: NullOrUndefined (NameString), "CreateTime" :: NullOrUndefined (Timestamp), "UpdateTime" :: NullOrUndefined (Timestamp), "LastAccessTime" :: NullOrUndefined (Timestamp), "LastAnalyzedTime" :: NullOrUndefined (Timestamp), "Retention" :: NullOrUndefined (NonNegativeInteger), "StorageDescriptor" :: NullOrUndefined (StorageDescriptor), "PartitionKeys" :: NullOrUndefined (ColumnList), "ViewOriginalText" :: NullOrUndefined (ViewTextString), "ViewExpandedText" :: NullOrUndefined (ViewTextString), "TableType" :: NullOrUndefined (TableTypeString), "Parameters" :: NullOrUndefined (ParametersMap), "CreatedBy" :: NullOrUndefined (NameString) } -> { "Name" :: NameString, "DatabaseName" :: NullOrUndefined (NameString), "Description" :: NullOrUndefined (DescriptionString), "Owner" :: NullOrUndefined (NameString), "CreateTime" :: NullOrUndefined (Timestamp), "UpdateTime" :: NullOrUndefined (Timestamp), "LastAccessTime" :: NullOrUndefined (Timestamp), "LastAnalyzedTime" :: NullOrUndefined (Timestamp), "Retention" :: NullOrUndefined (NonNegativeInteger), "StorageDescriptor" :: NullOrUndefined (StorageDescriptor), "PartitionKeys" :: NullOrUndefined (ColumnList), "ViewOriginalText" :: NullOrUndefined (ViewTextString), "ViewExpandedText" :: NullOrUndefined (ViewTextString), "TableType" :: NullOrUndefined (TableTypeString), "Parameters" :: NullOrUndefined (ParametersMap), "CreatedBy" :: NullOrUndefined (NameString) }) -> Table
+newTable' :: NameString -> ({ "Name" :: NameString, "DatabaseName" :: Maybe (NameString), "Description" :: Maybe (DescriptionString), "Owner" :: Maybe (NameString), "CreateTime" :: Maybe (Timestamp), "UpdateTime" :: Maybe (Timestamp), "LastAccessTime" :: Maybe (Timestamp), "LastAnalyzedTime" :: Maybe (Timestamp), "Retention" :: Maybe (NonNegativeInteger), "StorageDescriptor" :: Maybe (StorageDescriptor), "PartitionKeys" :: Maybe (ColumnList), "ViewOriginalText" :: Maybe (ViewTextString), "ViewExpandedText" :: Maybe (ViewTextString), "TableType" :: Maybe (TableTypeString), "Parameters" :: Maybe (ParametersMap), "CreatedBy" :: Maybe (NameString) } -> { "Name" :: NameString, "DatabaseName" :: Maybe (NameString), "Description" :: Maybe (DescriptionString), "Owner" :: Maybe (NameString), "CreateTime" :: Maybe (Timestamp), "UpdateTime" :: Maybe (Timestamp), "LastAccessTime" :: Maybe (Timestamp), "LastAnalyzedTime" :: Maybe (Timestamp), "Retention" :: Maybe (NonNegativeInteger), "StorageDescriptor" :: Maybe (StorageDescriptor), "PartitionKeys" :: Maybe (ColumnList), "ViewOriginalText" :: Maybe (ViewTextString), "ViewExpandedText" :: Maybe (ViewTextString), "TableType" :: Maybe (TableTypeString), "Parameters" :: Maybe (ParametersMap), "CreatedBy" :: Maybe (NameString) }) -> Table
 ```
 
 Constructs Table's fields from required parameters
@@ -8234,7 +8234,7 @@ Constructs Table's fields from required parameters
 
 ``` purescript
 newtype TableError
-  = TableError { "TableName" :: NullOrUndefined (NameString), "ErrorDetail" :: NullOrUndefined (ErrorDetail) }
+  = TableError { "TableName" :: Maybe (NameString), "ErrorDetail" :: Maybe (ErrorDetail) }
 ```
 
 <p>An error record for table operations.</p>
@@ -8259,7 +8259,7 @@ Constructs TableError from required parameters
 #### `newTableError'`
 
 ``` purescript
-newTableError' :: ({ "TableName" :: NullOrUndefined (NameString), "ErrorDetail" :: NullOrUndefined (ErrorDetail) } -> { "TableName" :: NullOrUndefined (NameString), "ErrorDetail" :: NullOrUndefined (ErrorDetail) }) -> TableError
+newTableError' :: ({ "TableName" :: Maybe (NameString), "ErrorDetail" :: Maybe (ErrorDetail) } -> { "TableName" :: Maybe (NameString), "ErrorDetail" :: Maybe (ErrorDetail) }) -> TableError
 ```
 
 Constructs TableError's fields from required parameters
@@ -8284,7 +8284,7 @@ Encode TableErrors
 
 ``` purescript
 newtype TableInput
-  = TableInput { "Name" :: NameString, "Description" :: NullOrUndefined (DescriptionString), "Owner" :: NullOrUndefined (NameString), "LastAccessTime" :: NullOrUndefined (Timestamp), "LastAnalyzedTime" :: NullOrUndefined (Timestamp), "Retention" :: NullOrUndefined (NonNegativeInteger), "StorageDescriptor" :: NullOrUndefined (StorageDescriptor), "PartitionKeys" :: NullOrUndefined (ColumnList), "ViewOriginalText" :: NullOrUndefined (ViewTextString), "ViewExpandedText" :: NullOrUndefined (ViewTextString), "TableType" :: NullOrUndefined (TableTypeString), "Parameters" :: NullOrUndefined (ParametersMap) }
+  = TableInput { "Name" :: NameString, "Description" :: Maybe (DescriptionString), "Owner" :: Maybe (NameString), "LastAccessTime" :: Maybe (Timestamp), "LastAnalyzedTime" :: Maybe (Timestamp), "Retention" :: Maybe (NonNegativeInteger), "StorageDescriptor" :: Maybe (StorageDescriptor), "PartitionKeys" :: Maybe (ColumnList), "ViewOriginalText" :: Maybe (ViewTextString), "ViewExpandedText" :: Maybe (ViewTextString), "TableType" :: Maybe (TableTypeString), "Parameters" :: Maybe (ParametersMap) }
 ```
 
 <p>Structure used to create or update the table.</p>
@@ -8309,7 +8309,7 @@ Constructs TableInput from required parameters
 #### `newTableInput'`
 
 ``` purescript
-newTableInput' :: NameString -> ({ "Name" :: NameString, "Description" :: NullOrUndefined (DescriptionString), "Owner" :: NullOrUndefined (NameString), "LastAccessTime" :: NullOrUndefined (Timestamp), "LastAnalyzedTime" :: NullOrUndefined (Timestamp), "Retention" :: NullOrUndefined (NonNegativeInteger), "StorageDescriptor" :: NullOrUndefined (StorageDescriptor), "PartitionKeys" :: NullOrUndefined (ColumnList), "ViewOriginalText" :: NullOrUndefined (ViewTextString), "ViewExpandedText" :: NullOrUndefined (ViewTextString), "TableType" :: NullOrUndefined (TableTypeString), "Parameters" :: NullOrUndefined (ParametersMap) } -> { "Name" :: NameString, "Description" :: NullOrUndefined (DescriptionString), "Owner" :: NullOrUndefined (NameString), "LastAccessTime" :: NullOrUndefined (Timestamp), "LastAnalyzedTime" :: NullOrUndefined (Timestamp), "Retention" :: NullOrUndefined (NonNegativeInteger), "StorageDescriptor" :: NullOrUndefined (StorageDescriptor), "PartitionKeys" :: NullOrUndefined (ColumnList), "ViewOriginalText" :: NullOrUndefined (ViewTextString), "ViewExpandedText" :: NullOrUndefined (ViewTextString), "TableType" :: NullOrUndefined (TableTypeString), "Parameters" :: NullOrUndefined (ParametersMap) }) -> TableInput
+newTableInput' :: NameString -> ({ "Name" :: NameString, "Description" :: Maybe (DescriptionString), "Owner" :: Maybe (NameString), "LastAccessTime" :: Maybe (Timestamp), "LastAnalyzedTime" :: Maybe (Timestamp), "Retention" :: Maybe (NonNegativeInteger), "StorageDescriptor" :: Maybe (StorageDescriptor), "PartitionKeys" :: Maybe (ColumnList), "ViewOriginalText" :: Maybe (ViewTextString), "ViewExpandedText" :: Maybe (ViewTextString), "TableType" :: Maybe (TableTypeString), "Parameters" :: Maybe (ParametersMap) } -> { "Name" :: NameString, "Description" :: Maybe (DescriptionString), "Owner" :: Maybe (NameString), "LastAccessTime" :: Maybe (Timestamp), "LastAnalyzedTime" :: Maybe (Timestamp), "Retention" :: Maybe (NonNegativeInteger), "StorageDescriptor" :: Maybe (StorageDescriptor), "PartitionKeys" :: Maybe (ColumnList), "ViewOriginalText" :: Maybe (ViewTextString), "ViewExpandedText" :: Maybe (ViewTextString), "TableType" :: Maybe (TableTypeString), "Parameters" :: Maybe (ParametersMap) }) -> TableInput
 ```
 
 Constructs TableInput's fields from required parameters
@@ -8382,7 +8382,7 @@ Encode TableTypeString
 
 ``` purescript
 newtype TableVersion
-  = TableVersion { "Table" :: NullOrUndefined (Table), "VersionId" :: NullOrUndefined (VersionString) }
+  = TableVersion { "Table" :: Maybe (Table), "VersionId" :: Maybe (VersionString) }
 ```
 
 <p>Specifies a version of a table.</p>
@@ -8407,7 +8407,7 @@ Constructs TableVersion from required parameters
 #### `newTableVersion'`
 
 ``` purescript
-newTableVersion' :: ({ "Table" :: NullOrUndefined (Table), "VersionId" :: NullOrUndefined (VersionString) } -> { "Table" :: NullOrUndefined (Table), "VersionId" :: NullOrUndefined (VersionString) }) -> TableVersion
+newTableVersion' :: ({ "Table" :: Maybe (Table), "VersionId" :: Maybe (VersionString) } -> { "Table" :: Maybe (Table), "VersionId" :: Maybe (VersionString) }) -> TableVersion
 ```
 
 Constructs TableVersion's fields from required parameters
@@ -8416,7 +8416,7 @@ Constructs TableVersion's fields from required parameters
 
 ``` purescript
 newtype TableVersionError
-  = TableVersionError { "TableName" :: NullOrUndefined (NameString), "VersionId" :: NullOrUndefined (VersionString), "ErrorDetail" :: NullOrUndefined (ErrorDetail) }
+  = TableVersionError { "TableName" :: Maybe (NameString), "VersionId" :: Maybe (VersionString), "ErrorDetail" :: Maybe (ErrorDetail) }
 ```
 
 <p>An error record for table-version operations.</p>
@@ -8441,7 +8441,7 @@ Constructs TableVersionError from required parameters
 #### `newTableVersionError'`
 
 ``` purescript
-newTableVersionError' :: ({ "TableName" :: NullOrUndefined (NameString), "VersionId" :: NullOrUndefined (VersionString), "ErrorDetail" :: NullOrUndefined (ErrorDetail) } -> { "TableName" :: NullOrUndefined (NameString), "VersionId" :: NullOrUndefined (VersionString), "ErrorDetail" :: NullOrUndefined (ErrorDetail) }) -> TableVersionError
+newTableVersionError' :: ({ "TableName" :: Maybe (NameString), "VersionId" :: Maybe (VersionString), "ErrorDetail" :: Maybe (ErrorDetail) } -> { "TableName" :: Maybe (NameString), "VersionId" :: Maybe (VersionString), "ErrorDetail" :: Maybe (ErrorDetail) }) -> TableVersionError
 ```
 
 Constructs TableVersionError's fields from required parameters
@@ -8514,7 +8514,7 @@ Encode TotalSegmentsInteger
 
 ``` purescript
 newtype Trigger
-  = Trigger { "Name" :: NullOrUndefined (NameString), "Id" :: NullOrUndefined (IdString), "Type" :: NullOrUndefined (TriggerType), "State" :: NullOrUndefined (TriggerState), "Description" :: NullOrUndefined (DescriptionString), "Schedule" :: NullOrUndefined (GenericString), "Actions" :: NullOrUndefined (ActionList), "Predicate" :: NullOrUndefined (Predicate) }
+  = Trigger { "Name" :: Maybe (NameString), "Id" :: Maybe (IdString), "Type" :: Maybe (TriggerType), "State" :: Maybe (TriggerState), "Description" :: Maybe (DescriptionString), "Schedule" :: Maybe (GenericString), "Actions" :: Maybe (ActionList), "Predicate" :: Maybe (Predicate) }
 ```
 
 <p>Information about a specific trigger.</p>
@@ -8539,7 +8539,7 @@ Constructs Trigger from required parameters
 #### `newTrigger'`
 
 ``` purescript
-newTrigger' :: ({ "Name" :: NullOrUndefined (NameString), "Id" :: NullOrUndefined (IdString), "Type" :: NullOrUndefined (TriggerType), "State" :: NullOrUndefined (TriggerState), "Description" :: NullOrUndefined (DescriptionString), "Schedule" :: NullOrUndefined (GenericString), "Actions" :: NullOrUndefined (ActionList), "Predicate" :: NullOrUndefined (Predicate) } -> { "Name" :: NullOrUndefined (NameString), "Id" :: NullOrUndefined (IdString), "Type" :: NullOrUndefined (TriggerType), "State" :: NullOrUndefined (TriggerState), "Description" :: NullOrUndefined (DescriptionString), "Schedule" :: NullOrUndefined (GenericString), "Actions" :: NullOrUndefined (ActionList), "Predicate" :: NullOrUndefined (Predicate) }) -> Trigger
+newTrigger' :: ({ "Name" :: Maybe (NameString), "Id" :: Maybe (IdString), "Type" :: Maybe (TriggerType), "State" :: Maybe (TriggerState), "Description" :: Maybe (DescriptionString), "Schedule" :: Maybe (GenericString), "Actions" :: Maybe (ActionList), "Predicate" :: Maybe (Predicate) } -> { "Name" :: Maybe (NameString), "Id" :: Maybe (IdString), "Type" :: Maybe (TriggerType), "State" :: Maybe (TriggerState), "Description" :: Maybe (DescriptionString), "Schedule" :: Maybe (GenericString), "Actions" :: Maybe (ActionList), "Predicate" :: Maybe (Predicate) }) -> Trigger
 ```
 
 Constructs Trigger's fields from required parameters
@@ -8596,7 +8596,7 @@ Encode TriggerType
 
 ``` purescript
 newtype TriggerUpdate
-  = TriggerUpdate { "Name" :: NullOrUndefined (NameString), "Description" :: NullOrUndefined (DescriptionString), "Schedule" :: NullOrUndefined (GenericString), "Actions" :: NullOrUndefined (ActionList), "Predicate" :: NullOrUndefined (Predicate) }
+  = TriggerUpdate { "Name" :: Maybe (NameString), "Description" :: Maybe (DescriptionString), "Schedule" :: Maybe (GenericString), "Actions" :: Maybe (ActionList), "Predicate" :: Maybe (Predicate) }
 ```
 
 <p>A structure used to provide information used to update a trigger. This object will update the the previous trigger definition by overwriting it completely.</p>
@@ -8621,7 +8621,7 @@ Constructs TriggerUpdate from required parameters
 #### `newTriggerUpdate'`
 
 ``` purescript
-newTriggerUpdate' :: ({ "Name" :: NullOrUndefined (NameString), "Description" :: NullOrUndefined (DescriptionString), "Schedule" :: NullOrUndefined (GenericString), "Actions" :: NullOrUndefined (ActionList), "Predicate" :: NullOrUndefined (Predicate) } -> { "Name" :: NullOrUndefined (NameString), "Description" :: NullOrUndefined (DescriptionString), "Schedule" :: NullOrUndefined (GenericString), "Actions" :: NullOrUndefined (ActionList), "Predicate" :: NullOrUndefined (Predicate) }) -> TriggerUpdate
+newTriggerUpdate' :: ({ "Name" :: Maybe (NameString), "Description" :: Maybe (DescriptionString), "Schedule" :: Maybe (GenericString), "Actions" :: Maybe (ActionList), "Predicate" :: Maybe (Predicate) } -> { "Name" :: Maybe (NameString), "Description" :: Maybe (DescriptionString), "Schedule" :: Maybe (GenericString), "Actions" :: Maybe (ActionList), "Predicate" :: Maybe (Predicate) }) -> TriggerUpdate
 ```
 
 Constructs TriggerUpdate's fields from required parameters
@@ -8662,7 +8662,7 @@ Encode UpdateBehavior
 
 ``` purescript
 newtype UpdateClassifierRequest
-  = UpdateClassifierRequest { "GrokClassifier" :: NullOrUndefined (UpdateGrokClassifierRequest), "XMLClassifier" :: NullOrUndefined (UpdateXMLClassifierRequest), "JsonClassifier" :: NullOrUndefined (UpdateJsonClassifierRequest) }
+  = UpdateClassifierRequest { "GrokClassifier" :: Maybe (UpdateGrokClassifierRequest), "XMLClassifier" :: Maybe (UpdateXMLClassifierRequest), "JsonClassifier" :: Maybe (UpdateJsonClassifierRequest) }
 ```
 
 ##### Instances
@@ -8685,7 +8685,7 @@ Constructs UpdateClassifierRequest from required parameters
 #### `newUpdateClassifierRequest'`
 
 ``` purescript
-newUpdateClassifierRequest' :: ({ "GrokClassifier" :: NullOrUndefined (UpdateGrokClassifierRequest), "XMLClassifier" :: NullOrUndefined (UpdateXMLClassifierRequest), "JsonClassifier" :: NullOrUndefined (UpdateJsonClassifierRequest) } -> { "GrokClassifier" :: NullOrUndefined (UpdateGrokClassifierRequest), "XMLClassifier" :: NullOrUndefined (UpdateXMLClassifierRequest), "JsonClassifier" :: NullOrUndefined (UpdateJsonClassifierRequest) }) -> UpdateClassifierRequest
+newUpdateClassifierRequest' :: ({ "GrokClassifier" :: Maybe (UpdateGrokClassifierRequest), "XMLClassifier" :: Maybe (UpdateXMLClassifierRequest), "JsonClassifier" :: Maybe (UpdateJsonClassifierRequest) } -> { "GrokClassifier" :: Maybe (UpdateGrokClassifierRequest), "XMLClassifier" :: Maybe (UpdateXMLClassifierRequest), "JsonClassifier" :: Maybe (UpdateJsonClassifierRequest) }) -> UpdateClassifierRequest
 ```
 
 Constructs UpdateClassifierRequest's fields from required parameters
@@ -8710,7 +8710,7 @@ Encode UpdateClassifierResponse
 
 ``` purescript
 newtype UpdateConnectionRequest
-  = UpdateConnectionRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "Name" :: NameString, "ConnectionInput" :: ConnectionInput }
+  = UpdateConnectionRequest { "CatalogId" :: Maybe (CatalogIdString), "Name" :: NameString, "ConnectionInput" :: ConnectionInput }
 ```
 
 ##### Instances
@@ -8733,7 +8733,7 @@ Constructs UpdateConnectionRequest from required parameters
 #### `newUpdateConnectionRequest'`
 
 ``` purescript
-newUpdateConnectionRequest' :: ConnectionInput -> NameString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "Name" :: NameString, "ConnectionInput" :: ConnectionInput } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "Name" :: NameString, "ConnectionInput" :: ConnectionInput }) -> UpdateConnectionRequest
+newUpdateConnectionRequest' :: ConnectionInput -> NameString -> ({ "CatalogId" :: Maybe (CatalogIdString), "Name" :: NameString, "ConnectionInput" :: ConnectionInput } -> { "CatalogId" :: Maybe (CatalogIdString), "Name" :: NameString, "ConnectionInput" :: ConnectionInput }) -> UpdateConnectionRequest
 ```
 
 Constructs UpdateConnectionRequest's fields from required parameters
@@ -8758,7 +8758,7 @@ Encode UpdateConnectionResponse
 
 ``` purescript
 newtype UpdateCrawlerRequest
-  = UpdateCrawlerRequest { "Name" :: NameString, "Role" :: NullOrUndefined (Role), "DatabaseName" :: NullOrUndefined (DatabaseName), "Description" :: NullOrUndefined (DescriptionStringRemovable), "Targets" :: NullOrUndefined (CrawlerTargets), "Schedule" :: NullOrUndefined (CronExpression), "Classifiers" :: NullOrUndefined (ClassifierNameList), "TablePrefix" :: NullOrUndefined (TablePrefix), "SchemaChangePolicy" :: NullOrUndefined (SchemaChangePolicy), "Configuration" :: NullOrUndefined (CrawlerConfiguration) }
+  = UpdateCrawlerRequest { "Name" :: NameString, "Role" :: Maybe (Role), "DatabaseName" :: Maybe (DatabaseName), "Description" :: Maybe (DescriptionStringRemovable), "Targets" :: Maybe (CrawlerTargets), "Schedule" :: Maybe (CronExpression), "Classifiers" :: Maybe (ClassifierNameList), "TablePrefix" :: Maybe (TablePrefix), "SchemaChangePolicy" :: Maybe (SchemaChangePolicy), "Configuration" :: Maybe (CrawlerConfiguration) }
 ```
 
 ##### Instances
@@ -8781,7 +8781,7 @@ Constructs UpdateCrawlerRequest from required parameters
 #### `newUpdateCrawlerRequest'`
 
 ``` purescript
-newUpdateCrawlerRequest' :: NameString -> ({ "Name" :: NameString, "Role" :: NullOrUndefined (Role), "DatabaseName" :: NullOrUndefined (DatabaseName), "Description" :: NullOrUndefined (DescriptionStringRemovable), "Targets" :: NullOrUndefined (CrawlerTargets), "Schedule" :: NullOrUndefined (CronExpression), "Classifiers" :: NullOrUndefined (ClassifierNameList), "TablePrefix" :: NullOrUndefined (TablePrefix), "SchemaChangePolicy" :: NullOrUndefined (SchemaChangePolicy), "Configuration" :: NullOrUndefined (CrawlerConfiguration) } -> { "Name" :: NameString, "Role" :: NullOrUndefined (Role), "DatabaseName" :: NullOrUndefined (DatabaseName), "Description" :: NullOrUndefined (DescriptionStringRemovable), "Targets" :: NullOrUndefined (CrawlerTargets), "Schedule" :: NullOrUndefined (CronExpression), "Classifiers" :: NullOrUndefined (ClassifierNameList), "TablePrefix" :: NullOrUndefined (TablePrefix), "SchemaChangePolicy" :: NullOrUndefined (SchemaChangePolicy), "Configuration" :: NullOrUndefined (CrawlerConfiguration) }) -> UpdateCrawlerRequest
+newUpdateCrawlerRequest' :: NameString -> ({ "Name" :: NameString, "Role" :: Maybe (Role), "DatabaseName" :: Maybe (DatabaseName), "Description" :: Maybe (DescriptionStringRemovable), "Targets" :: Maybe (CrawlerTargets), "Schedule" :: Maybe (CronExpression), "Classifiers" :: Maybe (ClassifierNameList), "TablePrefix" :: Maybe (TablePrefix), "SchemaChangePolicy" :: Maybe (SchemaChangePolicy), "Configuration" :: Maybe (CrawlerConfiguration) } -> { "Name" :: NameString, "Role" :: Maybe (Role), "DatabaseName" :: Maybe (DatabaseName), "Description" :: Maybe (DescriptionStringRemovable), "Targets" :: Maybe (CrawlerTargets), "Schedule" :: Maybe (CronExpression), "Classifiers" :: Maybe (ClassifierNameList), "TablePrefix" :: Maybe (TablePrefix), "SchemaChangePolicy" :: Maybe (SchemaChangePolicy), "Configuration" :: Maybe (CrawlerConfiguration) }) -> UpdateCrawlerRequest
 ```
 
 Constructs UpdateCrawlerRequest's fields from required parameters
@@ -8806,7 +8806,7 @@ Encode UpdateCrawlerResponse
 
 ``` purescript
 newtype UpdateCrawlerScheduleRequest
-  = UpdateCrawlerScheduleRequest { "CrawlerName" :: NameString, "Schedule" :: NullOrUndefined (CronExpression) }
+  = UpdateCrawlerScheduleRequest { "CrawlerName" :: NameString, "Schedule" :: Maybe (CronExpression) }
 ```
 
 ##### Instances
@@ -8829,7 +8829,7 @@ Constructs UpdateCrawlerScheduleRequest from required parameters
 #### `newUpdateCrawlerScheduleRequest'`
 
 ``` purescript
-newUpdateCrawlerScheduleRequest' :: NameString -> ({ "CrawlerName" :: NameString, "Schedule" :: NullOrUndefined (CronExpression) } -> { "CrawlerName" :: NameString, "Schedule" :: NullOrUndefined (CronExpression) }) -> UpdateCrawlerScheduleRequest
+newUpdateCrawlerScheduleRequest' :: NameString -> ({ "CrawlerName" :: NameString, "Schedule" :: Maybe (CronExpression) } -> { "CrawlerName" :: NameString, "Schedule" :: Maybe (CronExpression) }) -> UpdateCrawlerScheduleRequest
 ```
 
 Constructs UpdateCrawlerScheduleRequest's fields from required parameters
@@ -8854,7 +8854,7 @@ Encode UpdateCrawlerScheduleResponse
 
 ``` purescript
 newtype UpdateDatabaseRequest
-  = UpdateDatabaseRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "Name" :: NameString, "DatabaseInput" :: DatabaseInput }
+  = UpdateDatabaseRequest { "CatalogId" :: Maybe (CatalogIdString), "Name" :: NameString, "DatabaseInput" :: DatabaseInput }
 ```
 
 ##### Instances
@@ -8877,7 +8877,7 @@ Constructs UpdateDatabaseRequest from required parameters
 #### `newUpdateDatabaseRequest'`
 
 ``` purescript
-newUpdateDatabaseRequest' :: DatabaseInput -> NameString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "Name" :: NameString, "DatabaseInput" :: DatabaseInput } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "Name" :: NameString, "DatabaseInput" :: DatabaseInput }) -> UpdateDatabaseRequest
+newUpdateDatabaseRequest' :: DatabaseInput -> NameString -> ({ "CatalogId" :: Maybe (CatalogIdString), "Name" :: NameString, "DatabaseInput" :: DatabaseInput } -> { "CatalogId" :: Maybe (CatalogIdString), "Name" :: NameString, "DatabaseInput" :: DatabaseInput }) -> UpdateDatabaseRequest
 ```
 
 Constructs UpdateDatabaseRequest's fields from required parameters
@@ -8902,7 +8902,7 @@ Encode UpdateDatabaseResponse
 
 ``` purescript
 newtype UpdateDevEndpointRequest
-  = UpdateDevEndpointRequest { "EndpointName" :: GenericString, "PublicKey" :: NullOrUndefined (GenericString), "CustomLibraries" :: NullOrUndefined (DevEndpointCustomLibraries), "UpdateEtlLibraries" :: NullOrUndefined (BooleanValue) }
+  = UpdateDevEndpointRequest { "EndpointName" :: GenericString, "PublicKey" :: Maybe (GenericString), "CustomLibraries" :: Maybe (DevEndpointCustomLibraries), "UpdateEtlLibraries" :: Maybe (BooleanValue) }
 ```
 
 ##### Instances
@@ -8925,7 +8925,7 @@ Constructs UpdateDevEndpointRequest from required parameters
 #### `newUpdateDevEndpointRequest'`
 
 ``` purescript
-newUpdateDevEndpointRequest' :: GenericString -> ({ "EndpointName" :: GenericString, "PublicKey" :: NullOrUndefined (GenericString), "CustomLibraries" :: NullOrUndefined (DevEndpointCustomLibraries), "UpdateEtlLibraries" :: NullOrUndefined (BooleanValue) } -> { "EndpointName" :: GenericString, "PublicKey" :: NullOrUndefined (GenericString), "CustomLibraries" :: NullOrUndefined (DevEndpointCustomLibraries), "UpdateEtlLibraries" :: NullOrUndefined (BooleanValue) }) -> UpdateDevEndpointRequest
+newUpdateDevEndpointRequest' :: GenericString -> ({ "EndpointName" :: GenericString, "PublicKey" :: Maybe (GenericString), "CustomLibraries" :: Maybe (DevEndpointCustomLibraries), "UpdateEtlLibraries" :: Maybe (BooleanValue) } -> { "EndpointName" :: GenericString, "PublicKey" :: Maybe (GenericString), "CustomLibraries" :: Maybe (DevEndpointCustomLibraries), "UpdateEtlLibraries" :: Maybe (BooleanValue) }) -> UpdateDevEndpointRequest
 ```
 
 Constructs UpdateDevEndpointRequest's fields from required parameters
@@ -8950,7 +8950,7 @@ Encode UpdateDevEndpointResponse
 
 ``` purescript
 newtype UpdateGrokClassifierRequest
-  = UpdateGrokClassifierRequest { "Name" :: NameString, "Classification" :: NullOrUndefined (Classification), "GrokPattern" :: NullOrUndefined (GrokPattern), "CustomPatterns" :: NullOrUndefined (CustomPatterns) }
+  = UpdateGrokClassifierRequest { "Name" :: NameString, "Classification" :: Maybe (Classification), "GrokPattern" :: Maybe (GrokPattern), "CustomPatterns" :: Maybe (CustomPatterns) }
 ```
 
 <p>Specifies a grok classifier to update when passed to <code>UpdateClassifier</code>.</p>
@@ -8975,7 +8975,7 @@ Constructs UpdateGrokClassifierRequest from required parameters
 #### `newUpdateGrokClassifierRequest'`
 
 ``` purescript
-newUpdateGrokClassifierRequest' :: NameString -> ({ "Name" :: NameString, "Classification" :: NullOrUndefined (Classification), "GrokPattern" :: NullOrUndefined (GrokPattern), "CustomPatterns" :: NullOrUndefined (CustomPatterns) } -> { "Name" :: NameString, "Classification" :: NullOrUndefined (Classification), "GrokPattern" :: NullOrUndefined (GrokPattern), "CustomPatterns" :: NullOrUndefined (CustomPatterns) }) -> UpdateGrokClassifierRequest
+newUpdateGrokClassifierRequest' :: NameString -> ({ "Name" :: NameString, "Classification" :: Maybe (Classification), "GrokPattern" :: Maybe (GrokPattern), "CustomPatterns" :: Maybe (CustomPatterns) } -> { "Name" :: NameString, "Classification" :: Maybe (Classification), "GrokPattern" :: Maybe (GrokPattern), "CustomPatterns" :: Maybe (CustomPatterns) }) -> UpdateGrokClassifierRequest
 ```
 
 Constructs UpdateGrokClassifierRequest's fields from required parameters
@@ -9016,7 +9016,7 @@ Constructs UpdateJobRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateJobResponse
-  = UpdateJobResponse { "JobName" :: NullOrUndefined (NameString) }
+  = UpdateJobResponse { "JobName" :: Maybe (NameString) }
 ```
 
 ##### Instances
@@ -9039,7 +9039,7 @@ Constructs UpdateJobResponse from required parameters
 #### `newUpdateJobResponse'`
 
 ``` purescript
-newUpdateJobResponse' :: ({ "JobName" :: NullOrUndefined (NameString) } -> { "JobName" :: NullOrUndefined (NameString) }) -> UpdateJobResponse
+newUpdateJobResponse' :: ({ "JobName" :: Maybe (NameString) } -> { "JobName" :: Maybe (NameString) }) -> UpdateJobResponse
 ```
 
 Constructs UpdateJobResponse's fields from required parameters
@@ -9048,7 +9048,7 @@ Constructs UpdateJobResponse's fields from required parameters
 
 ``` purescript
 newtype UpdateJsonClassifierRequest
-  = UpdateJsonClassifierRequest { "Name" :: NameString, "JsonPath" :: NullOrUndefined (JsonPath) }
+  = UpdateJsonClassifierRequest { "Name" :: NameString, "JsonPath" :: Maybe (JsonPath) }
 ```
 
 <p>Specifies a JSON classifier to be updated.</p>
@@ -9073,7 +9073,7 @@ Constructs UpdateJsonClassifierRequest from required parameters
 #### `newUpdateJsonClassifierRequest'`
 
 ``` purescript
-newUpdateJsonClassifierRequest' :: NameString -> ({ "Name" :: NameString, "JsonPath" :: NullOrUndefined (JsonPath) } -> { "Name" :: NameString, "JsonPath" :: NullOrUndefined (JsonPath) }) -> UpdateJsonClassifierRequest
+newUpdateJsonClassifierRequest' :: NameString -> ({ "Name" :: NameString, "JsonPath" :: Maybe (JsonPath) } -> { "Name" :: NameString, "JsonPath" :: Maybe (JsonPath) }) -> UpdateJsonClassifierRequest
 ```
 
 Constructs UpdateJsonClassifierRequest's fields from required parameters
@@ -9082,7 +9082,7 @@ Constructs UpdateJsonClassifierRequest's fields from required parameters
 
 ``` purescript
 newtype UpdatePartitionRequest
-  = UpdatePartitionRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionValueList" :: BoundedPartitionValueList, "PartitionInput" :: PartitionInput }
+  = UpdatePartitionRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionValueList" :: BoundedPartitionValueList, "PartitionInput" :: PartitionInput }
 ```
 
 ##### Instances
@@ -9105,7 +9105,7 @@ Constructs UpdatePartitionRequest from required parameters
 #### `newUpdatePartitionRequest'`
 
 ``` purescript
-newUpdatePartitionRequest' :: NameString -> PartitionInput -> BoundedPartitionValueList -> NameString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionValueList" :: BoundedPartitionValueList, "PartitionInput" :: PartitionInput } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionValueList" :: BoundedPartitionValueList, "PartitionInput" :: PartitionInput }) -> UpdatePartitionRequest
+newUpdatePartitionRequest' :: NameString -> PartitionInput -> BoundedPartitionValueList -> NameString -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionValueList" :: BoundedPartitionValueList, "PartitionInput" :: PartitionInput } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableName" :: NameString, "PartitionValueList" :: BoundedPartitionValueList, "PartitionInput" :: PartitionInput }) -> UpdatePartitionRequest
 ```
 
 Constructs UpdatePartitionRequest's fields from required parameters
@@ -9130,7 +9130,7 @@ Encode UpdatePartitionResponse
 
 ``` purescript
 newtype UpdateTableRequest
-  = UpdateTableRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableInput" :: TableInput, "SkipArchive" :: NullOrUndefined (BooleanNullable) }
+  = UpdateTableRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableInput" :: TableInput, "SkipArchive" :: Maybe (BooleanNullable) }
 ```
 
 ##### Instances
@@ -9153,7 +9153,7 @@ Constructs UpdateTableRequest from required parameters
 #### `newUpdateTableRequest'`
 
 ``` purescript
-newUpdateTableRequest' :: NameString -> TableInput -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableInput" :: TableInput, "SkipArchive" :: NullOrUndefined (BooleanNullable) } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "TableInput" :: TableInput, "SkipArchive" :: NullOrUndefined (BooleanNullable) }) -> UpdateTableRequest
+newUpdateTableRequest' :: NameString -> TableInput -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableInput" :: TableInput, "SkipArchive" :: Maybe (BooleanNullable) } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "TableInput" :: TableInput, "SkipArchive" :: Maybe (BooleanNullable) }) -> UpdateTableRequest
 ```
 
 Constructs UpdateTableRequest's fields from required parameters
@@ -9210,7 +9210,7 @@ Constructs UpdateTriggerRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateTriggerResponse
-  = UpdateTriggerResponse { "Trigger" :: NullOrUndefined (Trigger) }
+  = UpdateTriggerResponse { "Trigger" :: Maybe (Trigger) }
 ```
 
 ##### Instances
@@ -9233,7 +9233,7 @@ Constructs UpdateTriggerResponse from required parameters
 #### `newUpdateTriggerResponse'`
 
 ``` purescript
-newUpdateTriggerResponse' :: ({ "Trigger" :: NullOrUndefined (Trigger) } -> { "Trigger" :: NullOrUndefined (Trigger) }) -> UpdateTriggerResponse
+newUpdateTriggerResponse' :: ({ "Trigger" :: Maybe (Trigger) } -> { "Trigger" :: Maybe (Trigger) }) -> UpdateTriggerResponse
 ```
 
 Constructs UpdateTriggerResponse's fields from required parameters
@@ -9242,7 +9242,7 @@ Constructs UpdateTriggerResponse's fields from required parameters
 
 ``` purescript
 newtype UpdateUserDefinedFunctionRequest
-  = UpdateUserDefinedFunctionRequest { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "FunctionName" :: NameString, "FunctionInput" :: UserDefinedFunctionInput }
+  = UpdateUserDefinedFunctionRequest { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "FunctionName" :: NameString, "FunctionInput" :: UserDefinedFunctionInput }
 ```
 
 ##### Instances
@@ -9265,7 +9265,7 @@ Constructs UpdateUserDefinedFunctionRequest from required parameters
 #### `newUpdateUserDefinedFunctionRequest'`
 
 ``` purescript
-newUpdateUserDefinedFunctionRequest' :: NameString -> UserDefinedFunctionInput -> NameString -> ({ "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "FunctionName" :: NameString, "FunctionInput" :: UserDefinedFunctionInput } -> { "CatalogId" :: NullOrUndefined (CatalogIdString), "DatabaseName" :: NameString, "FunctionName" :: NameString, "FunctionInput" :: UserDefinedFunctionInput }) -> UpdateUserDefinedFunctionRequest
+newUpdateUserDefinedFunctionRequest' :: NameString -> UserDefinedFunctionInput -> NameString -> ({ "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "FunctionName" :: NameString, "FunctionInput" :: UserDefinedFunctionInput } -> { "CatalogId" :: Maybe (CatalogIdString), "DatabaseName" :: NameString, "FunctionName" :: NameString, "FunctionInput" :: UserDefinedFunctionInput }) -> UpdateUserDefinedFunctionRequest
 ```
 
 Constructs UpdateUserDefinedFunctionRequest's fields from required parameters
@@ -9290,7 +9290,7 @@ Encode UpdateUserDefinedFunctionResponse
 
 ``` purescript
 newtype UpdateXMLClassifierRequest
-  = UpdateXMLClassifierRequest { "Name" :: NameString, "Classification" :: NullOrUndefined (Classification), "RowTag" :: NullOrUndefined (RowTag) }
+  = UpdateXMLClassifierRequest { "Name" :: NameString, "Classification" :: Maybe (Classification), "RowTag" :: Maybe (RowTag) }
 ```
 
 <p>Specifies an XML classifier to be updated.</p>
@@ -9315,7 +9315,7 @@ Constructs UpdateXMLClassifierRequest from required parameters
 #### `newUpdateXMLClassifierRequest'`
 
 ``` purescript
-newUpdateXMLClassifierRequest' :: NameString -> ({ "Name" :: NameString, "Classification" :: NullOrUndefined (Classification), "RowTag" :: NullOrUndefined (RowTag) } -> { "Name" :: NameString, "Classification" :: NullOrUndefined (Classification), "RowTag" :: NullOrUndefined (RowTag) }) -> UpdateXMLClassifierRequest
+newUpdateXMLClassifierRequest' :: NameString -> ({ "Name" :: NameString, "Classification" :: Maybe (Classification), "RowTag" :: Maybe (RowTag) } -> { "Name" :: NameString, "Classification" :: Maybe (Classification), "RowTag" :: Maybe (RowTag) }) -> UpdateXMLClassifierRequest
 ```
 
 Constructs UpdateXMLClassifierRequest's fields from required parameters
@@ -9340,7 +9340,7 @@ Encode UriString
 
 ``` purescript
 newtype UserDefinedFunction
-  = UserDefinedFunction { "FunctionName" :: NullOrUndefined (NameString), "ClassName" :: NullOrUndefined (NameString), "OwnerName" :: NullOrUndefined (NameString), "OwnerType" :: NullOrUndefined (PrincipalType), "CreateTime" :: NullOrUndefined (Timestamp), "ResourceUris" :: NullOrUndefined (ResourceUriList) }
+  = UserDefinedFunction { "FunctionName" :: Maybe (NameString), "ClassName" :: Maybe (NameString), "OwnerName" :: Maybe (NameString), "OwnerType" :: Maybe (PrincipalType), "CreateTime" :: Maybe (Timestamp), "ResourceUris" :: Maybe (ResourceUriList) }
 ```
 
 <p>Represents the equivalent of a Hive user-defined function (<code>UDF</code>) definition.</p>
@@ -9365,7 +9365,7 @@ Constructs UserDefinedFunction from required parameters
 #### `newUserDefinedFunction'`
 
 ``` purescript
-newUserDefinedFunction' :: ({ "FunctionName" :: NullOrUndefined (NameString), "ClassName" :: NullOrUndefined (NameString), "OwnerName" :: NullOrUndefined (NameString), "OwnerType" :: NullOrUndefined (PrincipalType), "CreateTime" :: NullOrUndefined (Timestamp), "ResourceUris" :: NullOrUndefined (ResourceUriList) } -> { "FunctionName" :: NullOrUndefined (NameString), "ClassName" :: NullOrUndefined (NameString), "OwnerName" :: NullOrUndefined (NameString), "OwnerType" :: NullOrUndefined (PrincipalType), "CreateTime" :: NullOrUndefined (Timestamp), "ResourceUris" :: NullOrUndefined (ResourceUriList) }) -> UserDefinedFunction
+newUserDefinedFunction' :: ({ "FunctionName" :: Maybe (NameString), "ClassName" :: Maybe (NameString), "OwnerName" :: Maybe (NameString), "OwnerType" :: Maybe (PrincipalType), "CreateTime" :: Maybe (Timestamp), "ResourceUris" :: Maybe (ResourceUriList) } -> { "FunctionName" :: Maybe (NameString), "ClassName" :: Maybe (NameString), "OwnerName" :: Maybe (NameString), "OwnerType" :: Maybe (PrincipalType), "CreateTime" :: Maybe (Timestamp), "ResourceUris" :: Maybe (ResourceUriList) }) -> UserDefinedFunction
 ```
 
 Constructs UserDefinedFunction's fields from required parameters
@@ -9374,7 +9374,7 @@ Constructs UserDefinedFunction's fields from required parameters
 
 ``` purescript
 newtype UserDefinedFunctionInput
-  = UserDefinedFunctionInput { "FunctionName" :: NullOrUndefined (NameString), "ClassName" :: NullOrUndefined (NameString), "OwnerName" :: NullOrUndefined (NameString), "OwnerType" :: NullOrUndefined (PrincipalType), "ResourceUris" :: NullOrUndefined (ResourceUriList) }
+  = UserDefinedFunctionInput { "FunctionName" :: Maybe (NameString), "ClassName" :: Maybe (NameString), "OwnerName" :: Maybe (NameString), "OwnerType" :: Maybe (PrincipalType), "ResourceUris" :: Maybe (ResourceUriList) }
 ```
 
 <p>A structure used to create or updata a user-defined function.</p>
@@ -9399,7 +9399,7 @@ Constructs UserDefinedFunctionInput from required parameters
 #### `newUserDefinedFunctionInput'`
 
 ``` purescript
-newUserDefinedFunctionInput' :: ({ "FunctionName" :: NullOrUndefined (NameString), "ClassName" :: NullOrUndefined (NameString), "OwnerName" :: NullOrUndefined (NameString), "OwnerType" :: NullOrUndefined (PrincipalType), "ResourceUris" :: NullOrUndefined (ResourceUriList) } -> { "FunctionName" :: NullOrUndefined (NameString), "ClassName" :: NullOrUndefined (NameString), "OwnerName" :: NullOrUndefined (NameString), "OwnerType" :: NullOrUndefined (PrincipalType), "ResourceUris" :: NullOrUndefined (ResourceUriList) }) -> UserDefinedFunctionInput
+newUserDefinedFunctionInput' :: ({ "FunctionName" :: Maybe (NameString), "ClassName" :: Maybe (NameString), "OwnerName" :: Maybe (NameString), "OwnerType" :: Maybe (PrincipalType), "ResourceUris" :: Maybe (ResourceUriList) } -> { "FunctionName" :: Maybe (NameString), "ClassName" :: Maybe (NameString), "OwnerName" :: Maybe (NameString), "OwnerType" :: Maybe (PrincipalType), "ResourceUris" :: Maybe (ResourceUriList) }) -> UserDefinedFunctionInput
 ```
 
 Constructs UserDefinedFunctionInput's fields from required parameters
@@ -9424,7 +9424,7 @@ Encode UserDefinedFunctionList
 
 ``` purescript
 newtype ValidationException
-  = ValidationException { "Message" :: NullOrUndefined (MessageString) }
+  = ValidationException { "Message" :: Maybe (MessageString) }
 ```
 
 <p>A value could not be validated.</p>
@@ -9449,7 +9449,7 @@ Constructs ValidationException from required parameters
 #### `newValidationException'`
 
 ``` purescript
-newValidationException' :: ({ "Message" :: NullOrUndefined (MessageString) } -> { "Message" :: NullOrUndefined (MessageString) }) -> ValidationException
+newValidationException' :: ({ "Message" :: Maybe (MessageString) } -> { "Message" :: Maybe (MessageString) }) -> ValidationException
 ```
 
 Constructs ValidationException's fields from required parameters
@@ -9506,7 +9506,7 @@ Encode VersionId
 
 ``` purescript
 newtype VersionMismatchException
-  = VersionMismatchException { "Message" :: NullOrUndefined (MessageString) }
+  = VersionMismatchException { "Message" :: Maybe (MessageString) }
 ```
 
 <p>There was a version conflict.</p>
@@ -9531,7 +9531,7 @@ Constructs VersionMismatchException from required parameters
 #### `newVersionMismatchException'`
 
 ``` purescript
-newVersionMismatchException' :: ({ "Message" :: NullOrUndefined (MessageString) } -> { "Message" :: NullOrUndefined (MessageString) }) -> VersionMismatchException
+newVersionMismatchException' :: ({ "Message" :: Maybe (MessageString) } -> { "Message" :: Maybe (MessageString) }) -> VersionMismatchException
 ```
 
 Constructs VersionMismatchException's fields from required parameters
@@ -9572,7 +9572,7 @@ Encode ViewTextString
 
 ``` purescript
 newtype XMLClassifier
-  = XMLClassifier { "Name" :: NameString, "Classification" :: Classification, "CreationTime" :: NullOrUndefined (Timestamp), "LastUpdated" :: NullOrUndefined (Timestamp), "Version" :: NullOrUndefined (VersionId), "RowTag" :: NullOrUndefined (RowTag) }
+  = XMLClassifier { "Name" :: NameString, "Classification" :: Classification, "CreationTime" :: Maybe (Timestamp), "LastUpdated" :: Maybe (Timestamp), "Version" :: Maybe (VersionId), "RowTag" :: Maybe (RowTag) }
 ```
 
 <p>A classifier for <code>XML</code> content.</p>
@@ -9597,7 +9597,7 @@ Constructs XMLClassifier from required parameters
 #### `newXMLClassifier'`
 
 ``` purescript
-newXMLClassifier' :: Classification -> NameString -> ({ "Name" :: NameString, "Classification" :: Classification, "CreationTime" :: NullOrUndefined (Timestamp), "LastUpdated" :: NullOrUndefined (Timestamp), "Version" :: NullOrUndefined (VersionId), "RowTag" :: NullOrUndefined (RowTag) } -> { "Name" :: NameString, "Classification" :: Classification, "CreationTime" :: NullOrUndefined (Timestamp), "LastUpdated" :: NullOrUndefined (Timestamp), "Version" :: NullOrUndefined (VersionId), "RowTag" :: NullOrUndefined (RowTag) }) -> XMLClassifier
+newXMLClassifier' :: Classification -> NameString -> ({ "Name" :: NameString, "Classification" :: Classification, "CreationTime" :: Maybe (Timestamp), "LastUpdated" :: Maybe (Timestamp), "Version" :: Maybe (VersionId), "RowTag" :: Maybe (RowTag) } -> { "Name" :: NameString, "Classification" :: Classification, "CreationTime" :: Maybe (Timestamp), "LastUpdated" :: Maybe (Timestamp), "Version" :: Maybe (VersionId), "RowTag" :: Maybe (RowTag) }) -> XMLClassifier
 ```
 
 Constructs XMLClassifier's fields from required parameters

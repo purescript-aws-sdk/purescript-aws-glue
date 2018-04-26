@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -20,7 +19,7 @@ options = defaultOptions { unwrapSingleConstructors = true }
 
 -- | <p>Access to a resource was denied.</p>
 newtype AccessDeniedException = AccessDeniedException 
-  { "Message" :: NullOrUndefined (MessageString)
+  { "Message" :: Maybe (MessageString)
   }
 derive instance newtypeAccessDeniedException :: Newtype AccessDeniedException _
 derive instance repGenericAccessDeniedException :: Generic AccessDeniedException _
@@ -30,19 +29,19 @@ instance encodeAccessDeniedException :: Encode AccessDeniedException where encod
 
 -- | Constructs AccessDeniedException from required parameters
 newAccessDeniedException :: AccessDeniedException
-newAccessDeniedException  = AccessDeniedException { "Message": (NullOrUndefined Nothing) }
+newAccessDeniedException  = AccessDeniedException { "Message": Nothing }
 
 -- | Constructs AccessDeniedException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAccessDeniedException' :: ( { "Message" :: NullOrUndefined (MessageString) } -> {"Message" :: NullOrUndefined (MessageString) } ) -> AccessDeniedException
-newAccessDeniedException'  customize = (AccessDeniedException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newAccessDeniedException' :: ( { "Message" :: Maybe (MessageString) } -> {"Message" :: Maybe (MessageString) } ) -> AccessDeniedException
+newAccessDeniedException'  customize = (AccessDeniedException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Defines an action to be initiated by a trigger.</p>
 newtype Action = Action 
-  { "JobName" :: NullOrUndefined (NameString)
-  , "Arguments" :: NullOrUndefined (GenericMap)
+  { "JobName" :: Maybe (NameString)
+  , "Arguments" :: Maybe (GenericMap)
   }
 derive instance newtypeAction :: Newtype Action _
 derive instance repGenericAction :: Generic Action _
@@ -52,12 +51,12 @@ instance encodeAction :: Encode Action where encode = genericEncode options
 
 -- | Constructs Action from required parameters
 newAction :: Action
-newAction  = Action { "Arguments": (NullOrUndefined Nothing), "JobName": (NullOrUndefined Nothing) }
+newAction  = Action { "Arguments": Nothing, "JobName": Nothing }
 
 -- | Constructs Action's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAction' :: ( { "JobName" :: NullOrUndefined (NameString) , "Arguments" :: NullOrUndefined (GenericMap) } -> {"JobName" :: NullOrUndefined (NameString) , "Arguments" :: NullOrUndefined (GenericMap) } ) -> Action
-newAction'  customize = (Action <<< customize) { "Arguments": (NullOrUndefined Nothing), "JobName": (NullOrUndefined Nothing) }
+newAction' :: ( { "JobName" :: Maybe (NameString) , "Arguments" :: Maybe (GenericMap) } -> {"JobName" :: Maybe (NameString) , "Arguments" :: Maybe (GenericMap) } ) -> Action
+newAction'  customize = (Action <<< customize) { "Arguments": Nothing, "JobName": Nothing }
 
 
 
@@ -72,7 +71,7 @@ instance encodeActionList :: Encode ActionList where encode = genericEncode opti
 
 -- | <p>A resource to be created or added already exists.</p>
 newtype AlreadyExistsException = AlreadyExistsException 
-  { "Message" :: NullOrUndefined (MessageString)
+  { "Message" :: Maybe (MessageString)
   }
 derive instance newtypeAlreadyExistsException :: Newtype AlreadyExistsException _
 derive instance repGenericAlreadyExistsException :: Generic AlreadyExistsException _
@@ -82,12 +81,12 @@ instance encodeAlreadyExistsException :: Encode AlreadyExistsException where enc
 
 -- | Constructs AlreadyExistsException from required parameters
 newAlreadyExistsException :: AlreadyExistsException
-newAlreadyExistsException  = AlreadyExistsException { "Message": (NullOrUndefined Nothing) }
+newAlreadyExistsException  = AlreadyExistsException { "Message": Nothing }
 
 -- | Constructs AlreadyExistsException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAlreadyExistsException' :: ( { "Message" :: NullOrUndefined (MessageString) } -> {"Message" :: NullOrUndefined (MessageString) } ) -> AlreadyExistsException
-newAlreadyExistsException'  customize = (AlreadyExistsException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newAlreadyExistsException' :: ( { "Message" :: Maybe (MessageString) } -> {"Message" :: Maybe (MessageString) } ) -> AlreadyExistsException
+newAlreadyExistsException'  customize = (AlreadyExistsException <<< customize) { "Message": Nothing }
 
 
 
@@ -101,7 +100,7 @@ instance encodeAttemptCount :: Encode AttemptCount where encode = genericEncode 
 
 
 newtype BatchCreatePartitionRequest = BatchCreatePartitionRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseName" :: (NameString)
   , "TableName" :: (NameString)
   , "PartitionInputList" :: (PartitionInputList)
@@ -114,17 +113,17 @@ instance encodeBatchCreatePartitionRequest :: Encode BatchCreatePartitionRequest
 
 -- | Constructs BatchCreatePartitionRequest from required parameters
 newBatchCreatePartitionRequest :: NameString -> PartitionInputList -> NameString -> BatchCreatePartitionRequest
-newBatchCreatePartitionRequest _DatabaseName _PartitionInputList _TableName = BatchCreatePartitionRequest { "DatabaseName": _DatabaseName, "PartitionInputList": _PartitionInputList, "TableName": _TableName, "CatalogId": (NullOrUndefined Nothing) }
+newBatchCreatePartitionRequest _DatabaseName _PartitionInputList _TableName = BatchCreatePartitionRequest { "DatabaseName": _DatabaseName, "PartitionInputList": _PartitionInputList, "TableName": _TableName, "CatalogId": Nothing }
 
 -- | Constructs BatchCreatePartitionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchCreatePartitionRequest' :: NameString -> PartitionInputList -> NameString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionInputList" :: (PartitionInputList) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionInputList" :: (PartitionInputList) } ) -> BatchCreatePartitionRequest
-newBatchCreatePartitionRequest' _DatabaseName _PartitionInputList _TableName customize = (BatchCreatePartitionRequest <<< customize) { "DatabaseName": _DatabaseName, "PartitionInputList": _PartitionInputList, "TableName": _TableName, "CatalogId": (NullOrUndefined Nothing) }
+newBatchCreatePartitionRequest' :: NameString -> PartitionInputList -> NameString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionInputList" :: (PartitionInputList) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionInputList" :: (PartitionInputList) } ) -> BatchCreatePartitionRequest
+newBatchCreatePartitionRequest' _DatabaseName _PartitionInputList _TableName customize = (BatchCreatePartitionRequest <<< customize) { "DatabaseName": _DatabaseName, "PartitionInputList": _PartitionInputList, "TableName": _TableName, "CatalogId": Nothing }
 
 
 
 newtype BatchCreatePartitionResponse = BatchCreatePartitionResponse 
-  { "Errors" :: NullOrUndefined (PartitionErrors)
+  { "Errors" :: Maybe (PartitionErrors)
   }
 derive instance newtypeBatchCreatePartitionResponse :: Newtype BatchCreatePartitionResponse _
 derive instance repGenericBatchCreatePartitionResponse :: Generic BatchCreatePartitionResponse _
@@ -134,17 +133,17 @@ instance encodeBatchCreatePartitionResponse :: Encode BatchCreatePartitionRespon
 
 -- | Constructs BatchCreatePartitionResponse from required parameters
 newBatchCreatePartitionResponse :: BatchCreatePartitionResponse
-newBatchCreatePartitionResponse  = BatchCreatePartitionResponse { "Errors": (NullOrUndefined Nothing) }
+newBatchCreatePartitionResponse  = BatchCreatePartitionResponse { "Errors": Nothing }
 
 -- | Constructs BatchCreatePartitionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchCreatePartitionResponse' :: ( { "Errors" :: NullOrUndefined (PartitionErrors) } -> {"Errors" :: NullOrUndefined (PartitionErrors) } ) -> BatchCreatePartitionResponse
-newBatchCreatePartitionResponse'  customize = (BatchCreatePartitionResponse <<< customize) { "Errors": (NullOrUndefined Nothing) }
+newBatchCreatePartitionResponse' :: ( { "Errors" :: Maybe (PartitionErrors) } -> {"Errors" :: Maybe (PartitionErrors) } ) -> BatchCreatePartitionResponse
+newBatchCreatePartitionResponse'  customize = (BatchCreatePartitionResponse <<< customize) { "Errors": Nothing }
 
 
 
 newtype BatchDeleteConnectionRequest = BatchDeleteConnectionRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "ConnectionNameList" :: (DeleteConnectionNameList)
   }
 derive instance newtypeBatchDeleteConnectionRequest :: Newtype BatchDeleteConnectionRequest _
@@ -155,18 +154,18 @@ instance encodeBatchDeleteConnectionRequest :: Encode BatchDeleteConnectionReque
 
 -- | Constructs BatchDeleteConnectionRequest from required parameters
 newBatchDeleteConnectionRequest :: DeleteConnectionNameList -> BatchDeleteConnectionRequest
-newBatchDeleteConnectionRequest _ConnectionNameList = BatchDeleteConnectionRequest { "ConnectionNameList": _ConnectionNameList, "CatalogId": (NullOrUndefined Nothing) }
+newBatchDeleteConnectionRequest _ConnectionNameList = BatchDeleteConnectionRequest { "ConnectionNameList": _ConnectionNameList, "CatalogId": Nothing }
 
 -- | Constructs BatchDeleteConnectionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchDeleteConnectionRequest' :: DeleteConnectionNameList -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "ConnectionNameList" :: (DeleteConnectionNameList) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "ConnectionNameList" :: (DeleteConnectionNameList) } ) -> BatchDeleteConnectionRequest
-newBatchDeleteConnectionRequest' _ConnectionNameList customize = (BatchDeleteConnectionRequest <<< customize) { "ConnectionNameList": _ConnectionNameList, "CatalogId": (NullOrUndefined Nothing) }
+newBatchDeleteConnectionRequest' :: DeleteConnectionNameList -> ( { "CatalogId" :: Maybe (CatalogIdString) , "ConnectionNameList" :: (DeleteConnectionNameList) } -> {"CatalogId" :: Maybe (CatalogIdString) , "ConnectionNameList" :: (DeleteConnectionNameList) } ) -> BatchDeleteConnectionRequest
+newBatchDeleteConnectionRequest' _ConnectionNameList customize = (BatchDeleteConnectionRequest <<< customize) { "ConnectionNameList": _ConnectionNameList, "CatalogId": Nothing }
 
 
 
 newtype BatchDeleteConnectionResponse = BatchDeleteConnectionResponse 
-  { "Succeeded" :: NullOrUndefined (NameStringList)
-  , "Errors" :: NullOrUndefined (ErrorByName)
+  { "Succeeded" :: Maybe (NameStringList)
+  , "Errors" :: Maybe (ErrorByName)
   }
 derive instance newtypeBatchDeleteConnectionResponse :: Newtype BatchDeleteConnectionResponse _
 derive instance repGenericBatchDeleteConnectionResponse :: Generic BatchDeleteConnectionResponse _
@@ -176,17 +175,17 @@ instance encodeBatchDeleteConnectionResponse :: Encode BatchDeleteConnectionResp
 
 -- | Constructs BatchDeleteConnectionResponse from required parameters
 newBatchDeleteConnectionResponse :: BatchDeleteConnectionResponse
-newBatchDeleteConnectionResponse  = BatchDeleteConnectionResponse { "Errors": (NullOrUndefined Nothing), "Succeeded": (NullOrUndefined Nothing) }
+newBatchDeleteConnectionResponse  = BatchDeleteConnectionResponse { "Errors": Nothing, "Succeeded": Nothing }
 
 -- | Constructs BatchDeleteConnectionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchDeleteConnectionResponse' :: ( { "Succeeded" :: NullOrUndefined (NameStringList) , "Errors" :: NullOrUndefined (ErrorByName) } -> {"Succeeded" :: NullOrUndefined (NameStringList) , "Errors" :: NullOrUndefined (ErrorByName) } ) -> BatchDeleteConnectionResponse
-newBatchDeleteConnectionResponse'  customize = (BatchDeleteConnectionResponse <<< customize) { "Errors": (NullOrUndefined Nothing), "Succeeded": (NullOrUndefined Nothing) }
+newBatchDeleteConnectionResponse' :: ( { "Succeeded" :: Maybe (NameStringList) , "Errors" :: Maybe (ErrorByName) } -> {"Succeeded" :: Maybe (NameStringList) , "Errors" :: Maybe (ErrorByName) } ) -> BatchDeleteConnectionResponse
+newBatchDeleteConnectionResponse'  customize = (BatchDeleteConnectionResponse <<< customize) { "Errors": Nothing, "Succeeded": Nothing }
 
 
 
 newtype BatchDeletePartitionRequest = BatchDeletePartitionRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseName" :: (NameString)
   , "TableName" :: (NameString)
   , "PartitionsToDelete" :: (BatchDeletePartitionValueList)
@@ -199,17 +198,17 @@ instance encodeBatchDeletePartitionRequest :: Encode BatchDeletePartitionRequest
 
 -- | Constructs BatchDeletePartitionRequest from required parameters
 newBatchDeletePartitionRequest :: NameString -> BatchDeletePartitionValueList -> NameString -> BatchDeletePartitionRequest
-newBatchDeletePartitionRequest _DatabaseName _PartitionsToDelete _TableName = BatchDeletePartitionRequest { "DatabaseName": _DatabaseName, "PartitionsToDelete": _PartitionsToDelete, "TableName": _TableName, "CatalogId": (NullOrUndefined Nothing) }
+newBatchDeletePartitionRequest _DatabaseName _PartitionsToDelete _TableName = BatchDeletePartitionRequest { "DatabaseName": _DatabaseName, "PartitionsToDelete": _PartitionsToDelete, "TableName": _TableName, "CatalogId": Nothing }
 
 -- | Constructs BatchDeletePartitionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchDeletePartitionRequest' :: NameString -> BatchDeletePartitionValueList -> NameString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionsToDelete" :: (BatchDeletePartitionValueList) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionsToDelete" :: (BatchDeletePartitionValueList) } ) -> BatchDeletePartitionRequest
-newBatchDeletePartitionRequest' _DatabaseName _PartitionsToDelete _TableName customize = (BatchDeletePartitionRequest <<< customize) { "DatabaseName": _DatabaseName, "PartitionsToDelete": _PartitionsToDelete, "TableName": _TableName, "CatalogId": (NullOrUndefined Nothing) }
+newBatchDeletePartitionRequest' :: NameString -> BatchDeletePartitionValueList -> NameString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionsToDelete" :: (BatchDeletePartitionValueList) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionsToDelete" :: (BatchDeletePartitionValueList) } ) -> BatchDeletePartitionRequest
+newBatchDeletePartitionRequest' _DatabaseName _PartitionsToDelete _TableName customize = (BatchDeletePartitionRequest <<< customize) { "DatabaseName": _DatabaseName, "PartitionsToDelete": _PartitionsToDelete, "TableName": _TableName, "CatalogId": Nothing }
 
 
 
 newtype BatchDeletePartitionResponse = BatchDeletePartitionResponse 
-  { "Errors" :: NullOrUndefined (PartitionErrors)
+  { "Errors" :: Maybe (PartitionErrors)
   }
 derive instance newtypeBatchDeletePartitionResponse :: Newtype BatchDeletePartitionResponse _
 derive instance repGenericBatchDeletePartitionResponse :: Generic BatchDeletePartitionResponse _
@@ -219,12 +218,12 @@ instance encodeBatchDeletePartitionResponse :: Encode BatchDeletePartitionRespon
 
 -- | Constructs BatchDeletePartitionResponse from required parameters
 newBatchDeletePartitionResponse :: BatchDeletePartitionResponse
-newBatchDeletePartitionResponse  = BatchDeletePartitionResponse { "Errors": (NullOrUndefined Nothing) }
+newBatchDeletePartitionResponse  = BatchDeletePartitionResponse { "Errors": Nothing }
 
 -- | Constructs BatchDeletePartitionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchDeletePartitionResponse' :: ( { "Errors" :: NullOrUndefined (PartitionErrors) } -> {"Errors" :: NullOrUndefined (PartitionErrors) } ) -> BatchDeletePartitionResponse
-newBatchDeletePartitionResponse'  customize = (BatchDeletePartitionResponse <<< customize) { "Errors": (NullOrUndefined Nothing) }
+newBatchDeletePartitionResponse' :: ( { "Errors" :: Maybe (PartitionErrors) } -> {"Errors" :: Maybe (PartitionErrors) } ) -> BatchDeletePartitionResponse
+newBatchDeletePartitionResponse'  customize = (BatchDeletePartitionResponse <<< customize) { "Errors": Nothing }
 
 
 
@@ -247,7 +246,7 @@ instance encodeBatchDeleteTableNameList :: Encode BatchDeleteTableNameList where
 
 
 newtype BatchDeleteTableRequest = BatchDeleteTableRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseName" :: (NameString)
   , "TablesToDelete" :: (BatchDeleteTableNameList)
   }
@@ -259,17 +258,17 @@ instance encodeBatchDeleteTableRequest :: Encode BatchDeleteTableRequest where e
 
 -- | Constructs BatchDeleteTableRequest from required parameters
 newBatchDeleteTableRequest :: NameString -> BatchDeleteTableNameList -> BatchDeleteTableRequest
-newBatchDeleteTableRequest _DatabaseName _TablesToDelete = BatchDeleteTableRequest { "DatabaseName": _DatabaseName, "TablesToDelete": _TablesToDelete, "CatalogId": (NullOrUndefined Nothing) }
+newBatchDeleteTableRequest _DatabaseName _TablesToDelete = BatchDeleteTableRequest { "DatabaseName": _DatabaseName, "TablesToDelete": _TablesToDelete, "CatalogId": Nothing }
 
 -- | Constructs BatchDeleteTableRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchDeleteTableRequest' :: NameString -> BatchDeleteTableNameList -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TablesToDelete" :: (BatchDeleteTableNameList) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TablesToDelete" :: (BatchDeleteTableNameList) } ) -> BatchDeleteTableRequest
-newBatchDeleteTableRequest' _DatabaseName _TablesToDelete customize = (BatchDeleteTableRequest <<< customize) { "DatabaseName": _DatabaseName, "TablesToDelete": _TablesToDelete, "CatalogId": (NullOrUndefined Nothing) }
+newBatchDeleteTableRequest' :: NameString -> BatchDeleteTableNameList -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TablesToDelete" :: (BatchDeleteTableNameList) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TablesToDelete" :: (BatchDeleteTableNameList) } ) -> BatchDeleteTableRequest
+newBatchDeleteTableRequest' _DatabaseName _TablesToDelete customize = (BatchDeleteTableRequest <<< customize) { "DatabaseName": _DatabaseName, "TablesToDelete": _TablesToDelete, "CatalogId": Nothing }
 
 
 
 newtype BatchDeleteTableResponse = BatchDeleteTableResponse 
-  { "Errors" :: NullOrUndefined (TableErrors)
+  { "Errors" :: Maybe (TableErrors)
   }
 derive instance newtypeBatchDeleteTableResponse :: Newtype BatchDeleteTableResponse _
 derive instance repGenericBatchDeleteTableResponse :: Generic BatchDeleteTableResponse _
@@ -279,12 +278,12 @@ instance encodeBatchDeleteTableResponse :: Encode BatchDeleteTableResponse where
 
 -- | Constructs BatchDeleteTableResponse from required parameters
 newBatchDeleteTableResponse :: BatchDeleteTableResponse
-newBatchDeleteTableResponse  = BatchDeleteTableResponse { "Errors": (NullOrUndefined Nothing) }
+newBatchDeleteTableResponse  = BatchDeleteTableResponse { "Errors": Nothing }
 
 -- | Constructs BatchDeleteTableResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchDeleteTableResponse' :: ( { "Errors" :: NullOrUndefined (TableErrors) } -> {"Errors" :: NullOrUndefined (TableErrors) } ) -> BatchDeleteTableResponse
-newBatchDeleteTableResponse'  customize = (BatchDeleteTableResponse <<< customize) { "Errors": (NullOrUndefined Nothing) }
+newBatchDeleteTableResponse' :: ( { "Errors" :: Maybe (TableErrors) } -> {"Errors" :: Maybe (TableErrors) } ) -> BatchDeleteTableResponse
+newBatchDeleteTableResponse'  customize = (BatchDeleteTableResponse <<< customize) { "Errors": Nothing }
 
 
 
@@ -298,7 +297,7 @@ instance encodeBatchDeleteTableVersionList :: Encode BatchDeleteTableVersionList
 
 
 newtype BatchDeleteTableVersionRequest = BatchDeleteTableVersionRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseName" :: (NameString)
   , "TableName" :: (NameString)
   , "VersionIds" :: (BatchDeleteTableVersionList)
@@ -311,17 +310,17 @@ instance encodeBatchDeleteTableVersionRequest :: Encode BatchDeleteTableVersionR
 
 -- | Constructs BatchDeleteTableVersionRequest from required parameters
 newBatchDeleteTableVersionRequest :: NameString -> NameString -> BatchDeleteTableVersionList -> BatchDeleteTableVersionRequest
-newBatchDeleteTableVersionRequest _DatabaseName _TableName _VersionIds = BatchDeleteTableVersionRequest { "DatabaseName": _DatabaseName, "TableName": _TableName, "VersionIds": _VersionIds, "CatalogId": (NullOrUndefined Nothing) }
+newBatchDeleteTableVersionRequest _DatabaseName _TableName _VersionIds = BatchDeleteTableVersionRequest { "DatabaseName": _DatabaseName, "TableName": _TableName, "VersionIds": _VersionIds, "CatalogId": Nothing }
 
 -- | Constructs BatchDeleteTableVersionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchDeleteTableVersionRequest' :: NameString -> NameString -> BatchDeleteTableVersionList -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "VersionIds" :: (BatchDeleteTableVersionList) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "VersionIds" :: (BatchDeleteTableVersionList) } ) -> BatchDeleteTableVersionRequest
-newBatchDeleteTableVersionRequest' _DatabaseName _TableName _VersionIds customize = (BatchDeleteTableVersionRequest <<< customize) { "DatabaseName": _DatabaseName, "TableName": _TableName, "VersionIds": _VersionIds, "CatalogId": (NullOrUndefined Nothing) }
+newBatchDeleteTableVersionRequest' :: NameString -> NameString -> BatchDeleteTableVersionList -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "VersionIds" :: (BatchDeleteTableVersionList) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "VersionIds" :: (BatchDeleteTableVersionList) } ) -> BatchDeleteTableVersionRequest
+newBatchDeleteTableVersionRequest' _DatabaseName _TableName _VersionIds customize = (BatchDeleteTableVersionRequest <<< customize) { "DatabaseName": _DatabaseName, "TableName": _TableName, "VersionIds": _VersionIds, "CatalogId": Nothing }
 
 
 
 newtype BatchDeleteTableVersionResponse = BatchDeleteTableVersionResponse 
-  { "Errors" :: NullOrUndefined (TableVersionErrors)
+  { "Errors" :: Maybe (TableVersionErrors)
   }
 derive instance newtypeBatchDeleteTableVersionResponse :: Newtype BatchDeleteTableVersionResponse _
 derive instance repGenericBatchDeleteTableVersionResponse :: Generic BatchDeleteTableVersionResponse _
@@ -331,17 +330,17 @@ instance encodeBatchDeleteTableVersionResponse :: Encode BatchDeleteTableVersion
 
 -- | Constructs BatchDeleteTableVersionResponse from required parameters
 newBatchDeleteTableVersionResponse :: BatchDeleteTableVersionResponse
-newBatchDeleteTableVersionResponse  = BatchDeleteTableVersionResponse { "Errors": (NullOrUndefined Nothing) }
+newBatchDeleteTableVersionResponse  = BatchDeleteTableVersionResponse { "Errors": Nothing }
 
 -- | Constructs BatchDeleteTableVersionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchDeleteTableVersionResponse' :: ( { "Errors" :: NullOrUndefined (TableVersionErrors) } -> {"Errors" :: NullOrUndefined (TableVersionErrors) } ) -> BatchDeleteTableVersionResponse
-newBatchDeleteTableVersionResponse'  customize = (BatchDeleteTableVersionResponse <<< customize) { "Errors": (NullOrUndefined Nothing) }
+newBatchDeleteTableVersionResponse' :: ( { "Errors" :: Maybe (TableVersionErrors) } -> {"Errors" :: Maybe (TableVersionErrors) } ) -> BatchDeleteTableVersionResponse
+newBatchDeleteTableVersionResponse'  customize = (BatchDeleteTableVersionResponse <<< customize) { "Errors": Nothing }
 
 
 
 newtype BatchGetPartitionRequest = BatchGetPartitionRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseName" :: (NameString)
   , "TableName" :: (NameString)
   , "PartitionsToGet" :: (BatchGetPartitionValueList)
@@ -354,18 +353,18 @@ instance encodeBatchGetPartitionRequest :: Encode BatchGetPartitionRequest where
 
 -- | Constructs BatchGetPartitionRequest from required parameters
 newBatchGetPartitionRequest :: NameString -> BatchGetPartitionValueList -> NameString -> BatchGetPartitionRequest
-newBatchGetPartitionRequest _DatabaseName _PartitionsToGet _TableName = BatchGetPartitionRequest { "DatabaseName": _DatabaseName, "PartitionsToGet": _PartitionsToGet, "TableName": _TableName, "CatalogId": (NullOrUndefined Nothing) }
+newBatchGetPartitionRequest _DatabaseName _PartitionsToGet _TableName = BatchGetPartitionRequest { "DatabaseName": _DatabaseName, "PartitionsToGet": _PartitionsToGet, "TableName": _TableName, "CatalogId": Nothing }
 
 -- | Constructs BatchGetPartitionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchGetPartitionRequest' :: NameString -> BatchGetPartitionValueList -> NameString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionsToGet" :: (BatchGetPartitionValueList) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionsToGet" :: (BatchGetPartitionValueList) } ) -> BatchGetPartitionRequest
-newBatchGetPartitionRequest' _DatabaseName _PartitionsToGet _TableName customize = (BatchGetPartitionRequest <<< customize) { "DatabaseName": _DatabaseName, "PartitionsToGet": _PartitionsToGet, "TableName": _TableName, "CatalogId": (NullOrUndefined Nothing) }
+newBatchGetPartitionRequest' :: NameString -> BatchGetPartitionValueList -> NameString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionsToGet" :: (BatchGetPartitionValueList) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionsToGet" :: (BatchGetPartitionValueList) } ) -> BatchGetPartitionRequest
+newBatchGetPartitionRequest' _DatabaseName _PartitionsToGet _TableName customize = (BatchGetPartitionRequest <<< customize) { "DatabaseName": _DatabaseName, "PartitionsToGet": _PartitionsToGet, "TableName": _TableName, "CatalogId": Nothing }
 
 
 
 newtype BatchGetPartitionResponse = BatchGetPartitionResponse 
-  { "Partitions" :: NullOrUndefined (PartitionList)
-  , "UnprocessedKeys" :: NullOrUndefined (BatchGetPartitionValueList)
+  { "Partitions" :: Maybe (PartitionList)
+  , "UnprocessedKeys" :: Maybe (BatchGetPartitionValueList)
   }
 derive instance newtypeBatchGetPartitionResponse :: Newtype BatchGetPartitionResponse _
 derive instance repGenericBatchGetPartitionResponse :: Generic BatchGetPartitionResponse _
@@ -375,12 +374,12 @@ instance encodeBatchGetPartitionResponse :: Encode BatchGetPartitionResponse whe
 
 -- | Constructs BatchGetPartitionResponse from required parameters
 newBatchGetPartitionResponse :: BatchGetPartitionResponse
-newBatchGetPartitionResponse  = BatchGetPartitionResponse { "Partitions": (NullOrUndefined Nothing), "UnprocessedKeys": (NullOrUndefined Nothing) }
+newBatchGetPartitionResponse  = BatchGetPartitionResponse { "Partitions": Nothing, "UnprocessedKeys": Nothing }
 
 -- | Constructs BatchGetPartitionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchGetPartitionResponse' :: ( { "Partitions" :: NullOrUndefined (PartitionList) , "UnprocessedKeys" :: NullOrUndefined (BatchGetPartitionValueList) } -> {"Partitions" :: NullOrUndefined (PartitionList) , "UnprocessedKeys" :: NullOrUndefined (BatchGetPartitionValueList) } ) -> BatchGetPartitionResponse
-newBatchGetPartitionResponse'  customize = (BatchGetPartitionResponse <<< customize) { "Partitions": (NullOrUndefined Nothing), "UnprocessedKeys": (NullOrUndefined Nothing) }
+newBatchGetPartitionResponse' :: ( { "Partitions" :: Maybe (PartitionList) , "UnprocessedKeys" :: Maybe (BatchGetPartitionValueList) } -> {"Partitions" :: Maybe (PartitionList) , "UnprocessedKeys" :: Maybe (BatchGetPartitionValueList) } ) -> BatchGetPartitionResponse
+newBatchGetPartitionResponse'  customize = (BatchGetPartitionResponse <<< customize) { "Partitions": Nothing, "UnprocessedKeys": Nothing }
 
 
 
@@ -395,9 +394,9 @@ instance encodeBatchGetPartitionValueList :: Encode BatchGetPartitionValueList w
 
 -- | <p>Records an error that occurred when attempting to stop a specified JobRun.</p>
 newtype BatchStopJobRunError = BatchStopJobRunError 
-  { "JobName" :: NullOrUndefined (NameString)
-  , "JobRunId" :: NullOrUndefined (IdString)
-  , "ErrorDetail" :: NullOrUndefined (ErrorDetail)
+  { "JobName" :: Maybe (NameString)
+  , "JobRunId" :: Maybe (IdString)
+  , "ErrorDetail" :: Maybe (ErrorDetail)
   }
 derive instance newtypeBatchStopJobRunError :: Newtype BatchStopJobRunError _
 derive instance repGenericBatchStopJobRunError :: Generic BatchStopJobRunError _
@@ -407,12 +406,12 @@ instance encodeBatchStopJobRunError :: Encode BatchStopJobRunError where encode 
 
 -- | Constructs BatchStopJobRunError from required parameters
 newBatchStopJobRunError :: BatchStopJobRunError
-newBatchStopJobRunError  = BatchStopJobRunError { "ErrorDetail": (NullOrUndefined Nothing), "JobName": (NullOrUndefined Nothing), "JobRunId": (NullOrUndefined Nothing) }
+newBatchStopJobRunError  = BatchStopJobRunError { "ErrorDetail": Nothing, "JobName": Nothing, "JobRunId": Nothing }
 
 -- | Constructs BatchStopJobRunError's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchStopJobRunError' :: ( { "JobName" :: NullOrUndefined (NameString) , "JobRunId" :: NullOrUndefined (IdString) , "ErrorDetail" :: NullOrUndefined (ErrorDetail) } -> {"JobName" :: NullOrUndefined (NameString) , "JobRunId" :: NullOrUndefined (IdString) , "ErrorDetail" :: NullOrUndefined (ErrorDetail) } ) -> BatchStopJobRunError
-newBatchStopJobRunError'  customize = (BatchStopJobRunError <<< customize) { "ErrorDetail": (NullOrUndefined Nothing), "JobName": (NullOrUndefined Nothing), "JobRunId": (NullOrUndefined Nothing) }
+newBatchStopJobRunError' :: ( { "JobName" :: Maybe (NameString) , "JobRunId" :: Maybe (IdString) , "ErrorDetail" :: Maybe (ErrorDetail) } -> {"JobName" :: Maybe (NameString) , "JobRunId" :: Maybe (IdString) , "ErrorDetail" :: Maybe (ErrorDetail) } ) -> BatchStopJobRunError
+newBatchStopJobRunError'  customize = (BatchStopJobRunError <<< customize) { "ErrorDetail": Nothing, "JobName": Nothing, "JobRunId": Nothing }
 
 
 
@@ -456,8 +455,8 @@ newBatchStopJobRunRequest' _JobName _JobRunIds customize = (BatchStopJobRunReque
 
 
 newtype BatchStopJobRunResponse = BatchStopJobRunResponse 
-  { "SuccessfulSubmissions" :: NullOrUndefined (BatchStopJobRunSuccessfulSubmissionList)
-  , "Errors" :: NullOrUndefined (BatchStopJobRunErrorList)
+  { "SuccessfulSubmissions" :: Maybe (BatchStopJobRunSuccessfulSubmissionList)
+  , "Errors" :: Maybe (BatchStopJobRunErrorList)
   }
 derive instance newtypeBatchStopJobRunResponse :: Newtype BatchStopJobRunResponse _
 derive instance repGenericBatchStopJobRunResponse :: Generic BatchStopJobRunResponse _
@@ -467,19 +466,19 @@ instance encodeBatchStopJobRunResponse :: Encode BatchStopJobRunResponse where e
 
 -- | Constructs BatchStopJobRunResponse from required parameters
 newBatchStopJobRunResponse :: BatchStopJobRunResponse
-newBatchStopJobRunResponse  = BatchStopJobRunResponse { "Errors": (NullOrUndefined Nothing), "SuccessfulSubmissions": (NullOrUndefined Nothing) }
+newBatchStopJobRunResponse  = BatchStopJobRunResponse { "Errors": Nothing, "SuccessfulSubmissions": Nothing }
 
 -- | Constructs BatchStopJobRunResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchStopJobRunResponse' :: ( { "SuccessfulSubmissions" :: NullOrUndefined (BatchStopJobRunSuccessfulSubmissionList) , "Errors" :: NullOrUndefined (BatchStopJobRunErrorList) } -> {"SuccessfulSubmissions" :: NullOrUndefined (BatchStopJobRunSuccessfulSubmissionList) , "Errors" :: NullOrUndefined (BatchStopJobRunErrorList) } ) -> BatchStopJobRunResponse
-newBatchStopJobRunResponse'  customize = (BatchStopJobRunResponse <<< customize) { "Errors": (NullOrUndefined Nothing), "SuccessfulSubmissions": (NullOrUndefined Nothing) }
+newBatchStopJobRunResponse' :: ( { "SuccessfulSubmissions" :: Maybe (BatchStopJobRunSuccessfulSubmissionList) , "Errors" :: Maybe (BatchStopJobRunErrorList) } -> {"SuccessfulSubmissions" :: Maybe (BatchStopJobRunSuccessfulSubmissionList) , "Errors" :: Maybe (BatchStopJobRunErrorList) } ) -> BatchStopJobRunResponse
+newBatchStopJobRunResponse'  customize = (BatchStopJobRunResponse <<< customize) { "Errors": Nothing, "SuccessfulSubmissions": Nothing }
 
 
 
 -- | <p>Records a successful request to stop a specified JobRun.</p>
 newtype BatchStopJobRunSuccessfulSubmission = BatchStopJobRunSuccessfulSubmission 
-  { "JobName" :: NullOrUndefined (NameString)
-  , "JobRunId" :: NullOrUndefined (IdString)
+  { "JobName" :: Maybe (NameString)
+  , "JobRunId" :: Maybe (IdString)
   }
 derive instance newtypeBatchStopJobRunSuccessfulSubmission :: Newtype BatchStopJobRunSuccessfulSubmission _
 derive instance repGenericBatchStopJobRunSuccessfulSubmission :: Generic BatchStopJobRunSuccessfulSubmission _
@@ -489,12 +488,12 @@ instance encodeBatchStopJobRunSuccessfulSubmission :: Encode BatchStopJobRunSucc
 
 -- | Constructs BatchStopJobRunSuccessfulSubmission from required parameters
 newBatchStopJobRunSuccessfulSubmission :: BatchStopJobRunSuccessfulSubmission
-newBatchStopJobRunSuccessfulSubmission  = BatchStopJobRunSuccessfulSubmission { "JobName": (NullOrUndefined Nothing), "JobRunId": (NullOrUndefined Nothing) }
+newBatchStopJobRunSuccessfulSubmission  = BatchStopJobRunSuccessfulSubmission { "JobName": Nothing, "JobRunId": Nothing }
 
 -- | Constructs BatchStopJobRunSuccessfulSubmission's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBatchStopJobRunSuccessfulSubmission' :: ( { "JobName" :: NullOrUndefined (NameString) , "JobRunId" :: NullOrUndefined (IdString) } -> {"JobName" :: NullOrUndefined (NameString) , "JobRunId" :: NullOrUndefined (IdString) } ) -> BatchStopJobRunSuccessfulSubmission
-newBatchStopJobRunSuccessfulSubmission'  customize = (BatchStopJobRunSuccessfulSubmission <<< customize) { "JobName": (NullOrUndefined Nothing), "JobRunId": (NullOrUndefined Nothing) }
+newBatchStopJobRunSuccessfulSubmission' :: ( { "JobName" :: Maybe (NameString) , "JobRunId" :: Maybe (IdString) } -> {"JobName" :: Maybe (NameString) , "JobRunId" :: Maybe (IdString) } ) -> BatchStopJobRunSuccessfulSubmission
+newBatchStopJobRunSuccessfulSubmission'  customize = (BatchStopJobRunSuccessfulSubmission <<< customize) { "JobName": Nothing, "JobRunId": Nothing }
 
 
 
@@ -576,9 +575,9 @@ instance encodeCatalogIdString :: Encode CatalogIdString where encode = genericE
 
 -- | <p>A structure containing migration status information.</p>
 newtype CatalogImportStatus = CatalogImportStatus 
-  { "ImportCompleted" :: NullOrUndefined (Boolean)
-  , "ImportTime" :: NullOrUndefined (Types.Timestamp)
-  , "ImportedBy" :: NullOrUndefined (NameString)
+  { "ImportCompleted" :: Maybe (Boolean)
+  , "ImportTime" :: Maybe (Types.Timestamp)
+  , "ImportedBy" :: Maybe (NameString)
   }
 derive instance newtypeCatalogImportStatus :: Newtype CatalogImportStatus _
 derive instance repGenericCatalogImportStatus :: Generic CatalogImportStatus _
@@ -588,12 +587,12 @@ instance encodeCatalogImportStatus :: Encode CatalogImportStatus where encode = 
 
 -- | Constructs CatalogImportStatus from required parameters
 newCatalogImportStatus :: CatalogImportStatus
-newCatalogImportStatus  = CatalogImportStatus { "ImportCompleted": (NullOrUndefined Nothing), "ImportTime": (NullOrUndefined Nothing), "ImportedBy": (NullOrUndefined Nothing) }
+newCatalogImportStatus  = CatalogImportStatus { "ImportCompleted": Nothing, "ImportTime": Nothing, "ImportedBy": Nothing }
 
 -- | Constructs CatalogImportStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCatalogImportStatus' :: ( { "ImportCompleted" :: NullOrUndefined (Boolean) , "ImportTime" :: NullOrUndefined (Types.Timestamp) , "ImportedBy" :: NullOrUndefined (NameString) } -> {"ImportCompleted" :: NullOrUndefined (Boolean) , "ImportTime" :: NullOrUndefined (Types.Timestamp) , "ImportedBy" :: NullOrUndefined (NameString) } ) -> CatalogImportStatus
-newCatalogImportStatus'  customize = (CatalogImportStatus <<< customize) { "ImportCompleted": (NullOrUndefined Nothing), "ImportTime": (NullOrUndefined Nothing), "ImportedBy": (NullOrUndefined Nothing) }
+newCatalogImportStatus' :: ( { "ImportCompleted" :: Maybe (Boolean) , "ImportTime" :: Maybe (Types.Timestamp) , "ImportedBy" :: Maybe (NameString) } -> {"ImportCompleted" :: Maybe (Boolean) , "ImportTime" :: Maybe (Types.Timestamp) , "ImportedBy" :: Maybe (NameString) } ) -> CatalogImportStatus
+newCatalogImportStatus'  customize = (CatalogImportStatus <<< customize) { "ImportCompleted": Nothing, "ImportTime": Nothing, "ImportedBy": Nothing }
 
 
 
@@ -608,9 +607,9 @@ instance encodeClassification :: Encode Classification where encode = genericEnc
 
 -- | <p>Classifiers are written in Python and triggered during a crawl task. You can write your own classifiers to best categorize your data sources and specify the appropriate schemas to use for them. A classifier checks whether a given file is in a format it can handle, and if it is, the classifier creates a schema in the form of a <code>StructType</code> object that matches that data format.</p> <p>A classifier can be a <code>grok</code> classifier, an XML classifier, or a JSON classifier, asspecified in one of the fields in the <code>Classifier</code> object.</p>
 newtype Classifier = Classifier 
-  { "GrokClassifier" :: NullOrUndefined (GrokClassifier)
-  , "XMLClassifier" :: NullOrUndefined (XMLClassifier)
-  , "JsonClassifier" :: NullOrUndefined (JsonClassifier)
+  { "GrokClassifier" :: Maybe (GrokClassifier)
+  , "XMLClassifier" :: Maybe (XMLClassifier)
+  , "JsonClassifier" :: Maybe (JsonClassifier)
   }
 derive instance newtypeClassifier :: Newtype Classifier _
 derive instance repGenericClassifier :: Generic Classifier _
@@ -620,12 +619,12 @@ instance encodeClassifier :: Encode Classifier where encode = genericEncode opti
 
 -- | Constructs Classifier from required parameters
 newClassifier :: Classifier
-newClassifier  = Classifier { "GrokClassifier": (NullOrUndefined Nothing), "JsonClassifier": (NullOrUndefined Nothing), "XMLClassifier": (NullOrUndefined Nothing) }
+newClassifier  = Classifier { "GrokClassifier": Nothing, "JsonClassifier": Nothing, "XMLClassifier": Nothing }
 
 -- | Constructs Classifier's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClassifier' :: ( { "GrokClassifier" :: NullOrUndefined (GrokClassifier) , "XMLClassifier" :: NullOrUndefined (XMLClassifier) , "JsonClassifier" :: NullOrUndefined (JsonClassifier) } -> {"GrokClassifier" :: NullOrUndefined (GrokClassifier) , "XMLClassifier" :: NullOrUndefined (XMLClassifier) , "JsonClassifier" :: NullOrUndefined (JsonClassifier) } ) -> Classifier
-newClassifier'  customize = (Classifier <<< customize) { "GrokClassifier": (NullOrUndefined Nothing), "JsonClassifier": (NullOrUndefined Nothing), "XMLClassifier": (NullOrUndefined Nothing) }
+newClassifier' :: ( { "GrokClassifier" :: Maybe (GrokClassifier) , "XMLClassifier" :: Maybe (XMLClassifier) , "JsonClassifier" :: Maybe (JsonClassifier) } -> {"GrokClassifier" :: Maybe (GrokClassifier) , "XMLClassifier" :: Maybe (XMLClassifier) , "JsonClassifier" :: Maybe (JsonClassifier) } ) -> Classifier
+newClassifier'  customize = (Classifier <<< customize) { "GrokClassifier": Nothing, "JsonClassifier": Nothing, "XMLClassifier": Nothing }
 
 
 
@@ -669,7 +668,7 @@ instance encodeCodeGenArgValue :: Encode CodeGenArgValue where encode = genericE
 newtype CodeGenEdge = CodeGenEdge 
   { "Source" :: (CodeGenIdentifier)
   , "Target" :: (CodeGenIdentifier)
-  , "TargetParameter" :: NullOrUndefined (CodeGenArgName)
+  , "TargetParameter" :: Maybe (CodeGenArgName)
   }
 derive instance newtypeCodeGenEdge :: Newtype CodeGenEdge _
 derive instance repGenericCodeGenEdge :: Generic CodeGenEdge _
@@ -679,12 +678,12 @@ instance encodeCodeGenEdge :: Encode CodeGenEdge where encode = genericEncode op
 
 -- | Constructs CodeGenEdge from required parameters
 newCodeGenEdge :: CodeGenIdentifier -> CodeGenIdentifier -> CodeGenEdge
-newCodeGenEdge _Source _Target = CodeGenEdge { "Source": _Source, "Target": _Target, "TargetParameter": (NullOrUndefined Nothing) }
+newCodeGenEdge _Source _Target = CodeGenEdge { "Source": _Source, "Target": _Target, "TargetParameter": Nothing }
 
 -- | Constructs CodeGenEdge's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCodeGenEdge' :: CodeGenIdentifier -> CodeGenIdentifier -> ( { "Source" :: (CodeGenIdentifier) , "Target" :: (CodeGenIdentifier) , "TargetParameter" :: NullOrUndefined (CodeGenArgName) } -> {"Source" :: (CodeGenIdentifier) , "Target" :: (CodeGenIdentifier) , "TargetParameter" :: NullOrUndefined (CodeGenArgName) } ) -> CodeGenEdge
-newCodeGenEdge' _Source _Target customize = (CodeGenEdge <<< customize) { "Source": _Source, "Target": _Target, "TargetParameter": (NullOrUndefined Nothing) }
+newCodeGenEdge' :: CodeGenIdentifier -> CodeGenIdentifier -> ( { "Source" :: (CodeGenIdentifier) , "Target" :: (CodeGenIdentifier) , "TargetParameter" :: Maybe (CodeGenArgName) } -> {"Source" :: (CodeGenIdentifier) , "Target" :: (CodeGenIdentifier) , "TargetParameter" :: Maybe (CodeGenArgName) } ) -> CodeGenEdge
+newCodeGenEdge' _Source _Target customize = (CodeGenEdge <<< customize) { "Source": _Source, "Target": _Target, "TargetParameter": Nothing }
 
 
 
@@ -702,7 +701,7 @@ newtype CodeGenNode = CodeGenNode
   { "Id" :: (CodeGenIdentifier)
   , "NodeType" :: (CodeGenNodeType)
   , "Args" :: (CodeGenNodeArgs)
-  , "LineNumber" :: NullOrUndefined (Int)
+  , "LineNumber" :: Maybe (Int)
   }
 derive instance newtypeCodeGenNode :: Newtype CodeGenNode _
 derive instance repGenericCodeGenNode :: Generic CodeGenNode _
@@ -712,12 +711,12 @@ instance encodeCodeGenNode :: Encode CodeGenNode where encode = genericEncode op
 
 -- | Constructs CodeGenNode from required parameters
 newCodeGenNode :: CodeGenNodeArgs -> CodeGenIdentifier -> CodeGenNodeType -> CodeGenNode
-newCodeGenNode _Args _Id _NodeType = CodeGenNode { "Args": _Args, "Id": _Id, "NodeType": _NodeType, "LineNumber": (NullOrUndefined Nothing) }
+newCodeGenNode _Args _Id _NodeType = CodeGenNode { "Args": _Args, "Id": _Id, "NodeType": _NodeType, "LineNumber": Nothing }
 
 -- | Constructs CodeGenNode's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCodeGenNode' :: CodeGenNodeArgs -> CodeGenIdentifier -> CodeGenNodeType -> ( { "Id" :: (CodeGenIdentifier) , "NodeType" :: (CodeGenNodeType) , "Args" :: (CodeGenNodeArgs) , "LineNumber" :: NullOrUndefined (Int) } -> {"Id" :: (CodeGenIdentifier) , "NodeType" :: (CodeGenNodeType) , "Args" :: (CodeGenNodeArgs) , "LineNumber" :: NullOrUndefined (Int) } ) -> CodeGenNode
-newCodeGenNode' _Args _Id _NodeType customize = (CodeGenNode <<< customize) { "Args": _Args, "Id": _Id, "NodeType": _NodeType, "LineNumber": (NullOrUndefined Nothing) }
+newCodeGenNode' :: CodeGenNodeArgs -> CodeGenIdentifier -> CodeGenNodeType -> ( { "Id" :: (CodeGenIdentifier) , "NodeType" :: (CodeGenNodeType) , "Args" :: (CodeGenNodeArgs) , "LineNumber" :: Maybe (Int) } -> {"Id" :: (CodeGenIdentifier) , "NodeType" :: (CodeGenNodeType) , "Args" :: (CodeGenNodeArgs) , "LineNumber" :: Maybe (Int) } ) -> CodeGenNode
+newCodeGenNode' _Args _Id _NodeType customize = (CodeGenNode <<< customize) { "Args": _Args, "Id": _Id, "NodeType": _NodeType, "LineNumber": Nothing }
 
 
 
@@ -725,7 +724,7 @@ newCodeGenNode' _Args _Id _NodeType customize = (CodeGenNode <<< customize) { "A
 newtype CodeGenNodeArg = CodeGenNodeArg 
   { "Name" :: (CodeGenArgName)
   , "Value" :: (CodeGenArgValue)
-  , "Param" :: NullOrUndefined (Boolean)
+  , "Param" :: Maybe (Boolean)
   }
 derive instance newtypeCodeGenNodeArg :: Newtype CodeGenNodeArg _
 derive instance repGenericCodeGenNodeArg :: Generic CodeGenNodeArg _
@@ -735,12 +734,12 @@ instance encodeCodeGenNodeArg :: Encode CodeGenNodeArg where encode = genericEnc
 
 -- | Constructs CodeGenNodeArg from required parameters
 newCodeGenNodeArg :: CodeGenArgName -> CodeGenArgValue -> CodeGenNodeArg
-newCodeGenNodeArg _Name _Value = CodeGenNodeArg { "Name": _Name, "Value": _Value, "Param": (NullOrUndefined Nothing) }
+newCodeGenNodeArg _Name _Value = CodeGenNodeArg { "Name": _Name, "Value": _Value, "Param": Nothing }
 
 -- | Constructs CodeGenNodeArg's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCodeGenNodeArg' :: CodeGenArgName -> CodeGenArgValue -> ( { "Name" :: (CodeGenArgName) , "Value" :: (CodeGenArgValue) , "Param" :: NullOrUndefined (Boolean) } -> {"Name" :: (CodeGenArgName) , "Value" :: (CodeGenArgValue) , "Param" :: NullOrUndefined (Boolean) } ) -> CodeGenNodeArg
-newCodeGenNodeArg' _Name _Value customize = (CodeGenNodeArg <<< customize) { "Name": _Name, "Value": _Value, "Param": (NullOrUndefined Nothing) }
+newCodeGenNodeArg' :: CodeGenArgName -> CodeGenArgValue -> ( { "Name" :: (CodeGenArgName) , "Value" :: (CodeGenArgValue) , "Param" :: Maybe (Boolean) } -> {"Name" :: (CodeGenArgName) , "Value" :: (CodeGenArgValue) , "Param" :: Maybe (Boolean) } ) -> CodeGenNodeArg
+newCodeGenNodeArg' _Name _Value customize = (CodeGenNodeArg <<< customize) { "Name": _Name, "Value": _Value, "Param": Nothing }
 
 
 
@@ -765,8 +764,8 @@ instance encodeCodeGenNodeType :: Encode CodeGenNodeType where encode = genericE
 -- | <p>A column in a <code>Table</code>.</p>
 newtype Column = Column 
   { "Name" :: (NameString)
-  , "Type" :: NullOrUndefined (ColumnTypeString)
-  , "Comment" :: NullOrUndefined (CommentString)
+  , "Type" :: Maybe (ColumnTypeString)
+  , "Comment" :: Maybe (CommentString)
   }
 derive instance newtypeColumn :: Newtype Column _
 derive instance repGenericColumn :: Generic Column _
@@ -776,12 +775,12 @@ instance encodeColumn :: Encode Column where encode = genericEncode options
 
 -- | Constructs Column from required parameters
 newColumn :: NameString -> Column
-newColumn _Name = Column { "Name": _Name, "Comment": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newColumn _Name = Column { "Name": _Name, "Comment": Nothing, "Type": Nothing }
 
 -- | Constructs Column's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newColumn' :: NameString -> ( { "Name" :: (NameString) , "Type" :: NullOrUndefined (ColumnTypeString) , "Comment" :: NullOrUndefined (CommentString) } -> {"Name" :: (NameString) , "Type" :: NullOrUndefined (ColumnTypeString) , "Comment" :: NullOrUndefined (CommentString) } ) -> Column
-newColumn' _Name customize = (Column <<< customize) { "Name": _Name, "Comment": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newColumn' :: NameString -> ( { "Name" :: (NameString) , "Type" :: Maybe (ColumnTypeString) , "Comment" :: Maybe (CommentString) } -> {"Name" :: (NameString) , "Type" :: Maybe (ColumnTypeString) , "Comment" :: Maybe (CommentString) } ) -> Column
+newColumn' _Name customize = (Column <<< customize) { "Name": _Name, "Comment": Nothing, "Type": Nothing }
 
 
 
@@ -832,7 +831,7 @@ instance encodeCommentString :: Encode CommentString where encode = genericEncod
 
 -- | <p>Two processes are trying to modify a resource simultaneously.</p>
 newtype ConcurrentModificationException = ConcurrentModificationException 
-  { "Message" :: NullOrUndefined (MessageString)
+  { "Message" :: Maybe (MessageString)
   }
 derive instance newtypeConcurrentModificationException :: Newtype ConcurrentModificationException _
 derive instance repGenericConcurrentModificationException :: Generic ConcurrentModificationException _
@@ -842,18 +841,18 @@ instance encodeConcurrentModificationException :: Encode ConcurrentModificationE
 
 -- | Constructs ConcurrentModificationException from required parameters
 newConcurrentModificationException :: ConcurrentModificationException
-newConcurrentModificationException  = ConcurrentModificationException { "Message": (NullOrUndefined Nothing) }
+newConcurrentModificationException  = ConcurrentModificationException { "Message": Nothing }
 
 -- | Constructs ConcurrentModificationException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newConcurrentModificationException' :: ( { "Message" :: NullOrUndefined (MessageString) } -> {"Message" :: NullOrUndefined (MessageString) } ) -> ConcurrentModificationException
-newConcurrentModificationException'  customize = (ConcurrentModificationException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newConcurrentModificationException' :: ( { "Message" :: Maybe (MessageString) } -> {"Message" :: Maybe (MessageString) } ) -> ConcurrentModificationException
+newConcurrentModificationException'  customize = (ConcurrentModificationException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Too many jobs are being run concurrently.</p>
 newtype ConcurrentRunsExceededException = ConcurrentRunsExceededException 
-  { "Message" :: NullOrUndefined (MessageString)
+  { "Message" :: Maybe (MessageString)
   }
 derive instance newtypeConcurrentRunsExceededException :: Newtype ConcurrentRunsExceededException _
 derive instance repGenericConcurrentRunsExceededException :: Generic ConcurrentRunsExceededException _
@@ -863,20 +862,20 @@ instance encodeConcurrentRunsExceededException :: Encode ConcurrentRunsExceededE
 
 -- | Constructs ConcurrentRunsExceededException from required parameters
 newConcurrentRunsExceededException :: ConcurrentRunsExceededException
-newConcurrentRunsExceededException  = ConcurrentRunsExceededException { "Message": (NullOrUndefined Nothing) }
+newConcurrentRunsExceededException  = ConcurrentRunsExceededException { "Message": Nothing }
 
 -- | Constructs ConcurrentRunsExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newConcurrentRunsExceededException' :: ( { "Message" :: NullOrUndefined (MessageString) } -> {"Message" :: NullOrUndefined (MessageString) } ) -> ConcurrentRunsExceededException
-newConcurrentRunsExceededException'  customize = (ConcurrentRunsExceededException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newConcurrentRunsExceededException' :: ( { "Message" :: Maybe (MessageString) } -> {"Message" :: Maybe (MessageString) } ) -> ConcurrentRunsExceededException
+newConcurrentRunsExceededException'  customize = (ConcurrentRunsExceededException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Defines a condition under which a trigger fires.</p>
 newtype Condition = Condition 
-  { "LogicalOperator" :: NullOrUndefined (LogicalOperator)
-  , "JobName" :: NullOrUndefined (NameString)
-  , "State" :: NullOrUndefined (JobRunState)
+  { "LogicalOperator" :: Maybe (LogicalOperator)
+  , "JobName" :: Maybe (NameString)
+  , "State" :: Maybe (JobRunState)
   }
 derive instance newtypeCondition :: Newtype Condition _
 derive instance repGenericCondition :: Generic Condition _
@@ -886,12 +885,12 @@ instance encodeCondition :: Encode Condition where encode = genericEncode option
 
 -- | Constructs Condition from required parameters
 newCondition :: Condition
-newCondition  = Condition { "JobName": (NullOrUndefined Nothing), "LogicalOperator": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newCondition  = Condition { "JobName": Nothing, "LogicalOperator": Nothing, "State": Nothing }
 
 -- | Constructs Condition's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCondition' :: ( { "LogicalOperator" :: NullOrUndefined (LogicalOperator) , "JobName" :: NullOrUndefined (NameString) , "State" :: NullOrUndefined (JobRunState) } -> {"LogicalOperator" :: NullOrUndefined (LogicalOperator) , "JobName" :: NullOrUndefined (NameString) , "State" :: NullOrUndefined (JobRunState) } ) -> Condition
-newCondition'  customize = (Condition <<< customize) { "JobName": (NullOrUndefined Nothing), "LogicalOperator": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newCondition' :: ( { "LogicalOperator" :: Maybe (LogicalOperator) , "JobName" :: Maybe (NameString) , "State" :: Maybe (JobRunState) } -> {"LogicalOperator" :: Maybe (LogicalOperator) , "JobName" :: Maybe (NameString) , "State" :: Maybe (JobRunState) } ) -> Condition
+newCondition'  customize = (Condition <<< customize) { "JobName": Nothing, "LogicalOperator": Nothing, "State": Nothing }
 
 
 
@@ -906,15 +905,15 @@ instance encodeConditionList :: Encode ConditionList where encode = genericEncod
 
 -- | <p>Defines a connection to a data source.</p>
 newtype Connection = Connection 
-  { "Name" :: NullOrUndefined (NameString)
-  , "Description" :: NullOrUndefined (DescriptionString)
-  , "ConnectionType" :: NullOrUndefined (ConnectionType)
-  , "MatchCriteria" :: NullOrUndefined (MatchCriteria)
-  , "ConnectionProperties" :: NullOrUndefined (ConnectionProperties)
-  , "PhysicalConnectionRequirements" :: NullOrUndefined (PhysicalConnectionRequirements)
-  , "CreationTime" :: NullOrUndefined (Types.Timestamp)
-  , "LastUpdatedTime" :: NullOrUndefined (Types.Timestamp)
-  , "LastUpdatedBy" :: NullOrUndefined (NameString)
+  { "Name" :: Maybe (NameString)
+  , "Description" :: Maybe (DescriptionString)
+  , "ConnectionType" :: Maybe (ConnectionType)
+  , "MatchCriteria" :: Maybe (MatchCriteria)
+  , "ConnectionProperties" :: Maybe (ConnectionProperties)
+  , "PhysicalConnectionRequirements" :: Maybe (PhysicalConnectionRequirements)
+  , "CreationTime" :: Maybe (Types.Timestamp)
+  , "LastUpdatedTime" :: Maybe (Types.Timestamp)
+  , "LastUpdatedBy" :: Maybe (NameString)
   }
 derive instance newtypeConnection :: Newtype Connection _
 derive instance repGenericConnection :: Generic Connection _
@@ -924,23 +923,23 @@ instance encodeConnection :: Encode Connection where encode = genericEncode opti
 
 -- | Constructs Connection from required parameters
 newConnection :: Connection
-newConnection  = Connection { "ConnectionProperties": (NullOrUndefined Nothing), "ConnectionType": (NullOrUndefined Nothing), "CreationTime": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "LastUpdatedBy": (NullOrUndefined Nothing), "LastUpdatedTime": (NullOrUndefined Nothing), "MatchCriteria": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PhysicalConnectionRequirements": (NullOrUndefined Nothing) }
+newConnection  = Connection { "ConnectionProperties": Nothing, "ConnectionType": Nothing, "CreationTime": Nothing, "Description": Nothing, "LastUpdatedBy": Nothing, "LastUpdatedTime": Nothing, "MatchCriteria": Nothing, "Name": Nothing, "PhysicalConnectionRequirements": Nothing }
 
 -- | Constructs Connection's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newConnection' :: ( { "Name" :: NullOrUndefined (NameString) , "Description" :: NullOrUndefined (DescriptionString) , "ConnectionType" :: NullOrUndefined (ConnectionType) , "MatchCriteria" :: NullOrUndefined (MatchCriteria) , "ConnectionProperties" :: NullOrUndefined (ConnectionProperties) , "PhysicalConnectionRequirements" :: NullOrUndefined (PhysicalConnectionRequirements) , "CreationTime" :: NullOrUndefined (Types.Timestamp) , "LastUpdatedTime" :: NullOrUndefined (Types.Timestamp) , "LastUpdatedBy" :: NullOrUndefined (NameString) } -> {"Name" :: NullOrUndefined (NameString) , "Description" :: NullOrUndefined (DescriptionString) , "ConnectionType" :: NullOrUndefined (ConnectionType) , "MatchCriteria" :: NullOrUndefined (MatchCriteria) , "ConnectionProperties" :: NullOrUndefined (ConnectionProperties) , "PhysicalConnectionRequirements" :: NullOrUndefined (PhysicalConnectionRequirements) , "CreationTime" :: NullOrUndefined (Types.Timestamp) , "LastUpdatedTime" :: NullOrUndefined (Types.Timestamp) , "LastUpdatedBy" :: NullOrUndefined (NameString) } ) -> Connection
-newConnection'  customize = (Connection <<< customize) { "ConnectionProperties": (NullOrUndefined Nothing), "ConnectionType": (NullOrUndefined Nothing), "CreationTime": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "LastUpdatedBy": (NullOrUndefined Nothing), "LastUpdatedTime": (NullOrUndefined Nothing), "MatchCriteria": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PhysicalConnectionRequirements": (NullOrUndefined Nothing) }
+newConnection' :: ( { "Name" :: Maybe (NameString) , "Description" :: Maybe (DescriptionString) , "ConnectionType" :: Maybe (ConnectionType) , "MatchCriteria" :: Maybe (MatchCriteria) , "ConnectionProperties" :: Maybe (ConnectionProperties) , "PhysicalConnectionRequirements" :: Maybe (PhysicalConnectionRequirements) , "CreationTime" :: Maybe (Types.Timestamp) , "LastUpdatedTime" :: Maybe (Types.Timestamp) , "LastUpdatedBy" :: Maybe (NameString) } -> {"Name" :: Maybe (NameString) , "Description" :: Maybe (DescriptionString) , "ConnectionType" :: Maybe (ConnectionType) , "MatchCriteria" :: Maybe (MatchCriteria) , "ConnectionProperties" :: Maybe (ConnectionProperties) , "PhysicalConnectionRequirements" :: Maybe (PhysicalConnectionRequirements) , "CreationTime" :: Maybe (Types.Timestamp) , "LastUpdatedTime" :: Maybe (Types.Timestamp) , "LastUpdatedBy" :: Maybe (NameString) } ) -> Connection
+newConnection'  customize = (Connection <<< customize) { "ConnectionProperties": Nothing, "ConnectionType": Nothing, "CreationTime": Nothing, "Description": Nothing, "LastUpdatedBy": Nothing, "LastUpdatedTime": Nothing, "MatchCriteria": Nothing, "Name": Nothing, "PhysicalConnectionRequirements": Nothing }
 
 
 
 -- | <p>A structure used to specify a connection to create or update.</p>
 newtype ConnectionInput = ConnectionInput 
   { "Name" :: (NameString)
-  , "Description" :: NullOrUndefined (DescriptionString)
+  , "Description" :: Maybe (DescriptionString)
   , "ConnectionType" :: (ConnectionType)
-  , "MatchCriteria" :: NullOrUndefined (MatchCriteria)
+  , "MatchCriteria" :: Maybe (MatchCriteria)
   , "ConnectionProperties" :: (ConnectionProperties)
-  , "PhysicalConnectionRequirements" :: NullOrUndefined (PhysicalConnectionRequirements)
+  , "PhysicalConnectionRequirements" :: Maybe (PhysicalConnectionRequirements)
   }
 derive instance newtypeConnectionInput :: Newtype ConnectionInput _
 derive instance repGenericConnectionInput :: Generic ConnectionInput _
@@ -950,12 +949,12 @@ instance encodeConnectionInput :: Encode ConnectionInput where encode = genericE
 
 -- | Constructs ConnectionInput from required parameters
 newConnectionInput :: ConnectionProperties -> ConnectionType -> NameString -> ConnectionInput
-newConnectionInput _ConnectionProperties _ConnectionType _Name = ConnectionInput { "ConnectionProperties": _ConnectionProperties, "ConnectionType": _ConnectionType, "Name": _Name, "Description": (NullOrUndefined Nothing), "MatchCriteria": (NullOrUndefined Nothing), "PhysicalConnectionRequirements": (NullOrUndefined Nothing) }
+newConnectionInput _ConnectionProperties _ConnectionType _Name = ConnectionInput { "ConnectionProperties": _ConnectionProperties, "ConnectionType": _ConnectionType, "Name": _Name, "Description": Nothing, "MatchCriteria": Nothing, "PhysicalConnectionRequirements": Nothing }
 
 -- | Constructs ConnectionInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newConnectionInput' :: ConnectionProperties -> ConnectionType -> NameString -> ( { "Name" :: (NameString) , "Description" :: NullOrUndefined (DescriptionString) , "ConnectionType" :: (ConnectionType) , "MatchCriteria" :: NullOrUndefined (MatchCriteria) , "ConnectionProperties" :: (ConnectionProperties) , "PhysicalConnectionRequirements" :: NullOrUndefined (PhysicalConnectionRequirements) } -> {"Name" :: (NameString) , "Description" :: NullOrUndefined (DescriptionString) , "ConnectionType" :: (ConnectionType) , "MatchCriteria" :: NullOrUndefined (MatchCriteria) , "ConnectionProperties" :: (ConnectionProperties) , "PhysicalConnectionRequirements" :: NullOrUndefined (PhysicalConnectionRequirements) } ) -> ConnectionInput
-newConnectionInput' _ConnectionProperties _ConnectionType _Name customize = (ConnectionInput <<< customize) { "ConnectionProperties": _ConnectionProperties, "ConnectionType": _ConnectionType, "Name": _Name, "Description": (NullOrUndefined Nothing), "MatchCriteria": (NullOrUndefined Nothing), "PhysicalConnectionRequirements": (NullOrUndefined Nothing) }
+newConnectionInput' :: ConnectionProperties -> ConnectionType -> NameString -> ( { "Name" :: (NameString) , "Description" :: Maybe (DescriptionString) , "ConnectionType" :: (ConnectionType) , "MatchCriteria" :: Maybe (MatchCriteria) , "ConnectionProperties" :: (ConnectionProperties) , "PhysicalConnectionRequirements" :: Maybe (PhysicalConnectionRequirements) } -> {"Name" :: (NameString) , "Description" :: Maybe (DescriptionString) , "ConnectionType" :: (ConnectionType) , "MatchCriteria" :: Maybe (MatchCriteria) , "ConnectionProperties" :: (ConnectionProperties) , "PhysicalConnectionRequirements" :: Maybe (PhysicalConnectionRequirements) } ) -> ConnectionInput
+newConnectionInput' _ConnectionProperties _ConnectionType _Name customize = (ConnectionInput <<< customize) { "ConnectionProperties": _ConnectionProperties, "ConnectionType": _ConnectionType, "Name": _Name, "Description": Nothing, "MatchCriteria": Nothing, "PhysicalConnectionRequirements": Nothing }
 
 
 
@@ -1006,7 +1005,7 @@ instance encodeConnectionType :: Encode ConnectionType where encode = genericEnc
 
 -- | <p>Specifies the connections used by a job.</p>
 newtype ConnectionsList = ConnectionsList 
-  { "Connections" :: NullOrUndefined (StringList)
+  { "Connections" :: Maybe (StringList)
   }
 derive instance newtypeConnectionsList :: Newtype ConnectionsList _
 derive instance repGenericConnectionsList :: Generic ConnectionsList _
@@ -1016,33 +1015,33 @@ instance encodeConnectionsList :: Encode ConnectionsList where encode = genericE
 
 -- | Constructs ConnectionsList from required parameters
 newConnectionsList :: ConnectionsList
-newConnectionsList  = ConnectionsList { "Connections": (NullOrUndefined Nothing) }
+newConnectionsList  = ConnectionsList { "Connections": Nothing }
 
 -- | Constructs ConnectionsList's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newConnectionsList' :: ( { "Connections" :: NullOrUndefined (StringList) } -> {"Connections" :: NullOrUndefined (StringList) } ) -> ConnectionsList
-newConnectionsList'  customize = (ConnectionsList <<< customize) { "Connections": (NullOrUndefined Nothing) }
+newConnectionsList' :: ( { "Connections" :: Maybe (StringList) } -> {"Connections" :: Maybe (StringList) } ) -> ConnectionsList
+newConnectionsList'  customize = (ConnectionsList <<< customize) { "Connections": Nothing }
 
 
 
 -- | <p>Specifies a crawler program that examines a data source and uses classifiers to try to determine its schema. If successful, the crawler records metadata concerning the data source in the AWS Glue Data Catalog.</p>
 newtype Crawler = Crawler 
-  { "Name" :: NullOrUndefined (NameString)
-  , "Role" :: NullOrUndefined (Role)
-  , "Targets" :: NullOrUndefined (CrawlerTargets)
-  , "DatabaseName" :: NullOrUndefined (DatabaseName)
-  , "Description" :: NullOrUndefined (DescriptionString)
-  , "Classifiers" :: NullOrUndefined (ClassifierNameList)
-  , "SchemaChangePolicy" :: NullOrUndefined (SchemaChangePolicy)
-  , "State" :: NullOrUndefined (CrawlerState)
-  , "TablePrefix" :: NullOrUndefined (TablePrefix)
-  , "Schedule" :: NullOrUndefined (Schedule)
-  , "CrawlElapsedTime" :: NullOrUndefined (MillisecondsCount)
-  , "CreationTime" :: NullOrUndefined (Types.Timestamp)
-  , "LastUpdated" :: NullOrUndefined (Types.Timestamp)
-  , "LastCrawl" :: NullOrUndefined (LastCrawlInfo)
-  , "Version" :: NullOrUndefined (VersionId)
-  , "Configuration" :: NullOrUndefined (CrawlerConfiguration)
+  { "Name" :: Maybe (NameString)
+  , "Role" :: Maybe (Role)
+  , "Targets" :: Maybe (CrawlerTargets)
+  , "DatabaseName" :: Maybe (DatabaseName)
+  , "Description" :: Maybe (DescriptionString)
+  , "Classifiers" :: Maybe (ClassifierNameList)
+  , "SchemaChangePolicy" :: Maybe (SchemaChangePolicy)
+  , "State" :: Maybe (CrawlerState)
+  , "TablePrefix" :: Maybe (TablePrefix)
+  , "Schedule" :: Maybe (Schedule)
+  , "CrawlElapsedTime" :: Maybe (MillisecondsCount)
+  , "CreationTime" :: Maybe (Types.Timestamp)
+  , "LastUpdated" :: Maybe (Types.Timestamp)
+  , "LastCrawl" :: Maybe (LastCrawlInfo)
+  , "Version" :: Maybe (VersionId)
+  , "Configuration" :: Maybe (CrawlerConfiguration)
   }
 derive instance newtypeCrawler :: Newtype Crawler _
 derive instance repGenericCrawler :: Generic Crawler _
@@ -1052,12 +1051,12 @@ instance encodeCrawler :: Encode Crawler where encode = genericEncode options
 
 -- | Constructs Crawler from required parameters
 newCrawler :: Crawler
-newCrawler  = Crawler { "Classifiers": (NullOrUndefined Nothing), "Configuration": (NullOrUndefined Nothing), "CrawlElapsedTime": (NullOrUndefined Nothing), "CreationTime": (NullOrUndefined Nothing), "DatabaseName": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "LastCrawl": (NullOrUndefined Nothing), "LastUpdated": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Role": (NullOrUndefined Nothing), "Schedule": (NullOrUndefined Nothing), "SchemaChangePolicy": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "TablePrefix": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newCrawler  = Crawler { "Classifiers": Nothing, "Configuration": Nothing, "CrawlElapsedTime": Nothing, "CreationTime": Nothing, "DatabaseName": Nothing, "Description": Nothing, "LastCrawl": Nothing, "LastUpdated": Nothing, "Name": Nothing, "Role": Nothing, "Schedule": Nothing, "SchemaChangePolicy": Nothing, "State": Nothing, "TablePrefix": Nothing, "Targets": Nothing, "Version": Nothing }
 
 -- | Constructs Crawler's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCrawler' :: ( { "Name" :: NullOrUndefined (NameString) , "Role" :: NullOrUndefined (Role) , "Targets" :: NullOrUndefined (CrawlerTargets) , "DatabaseName" :: NullOrUndefined (DatabaseName) , "Description" :: NullOrUndefined (DescriptionString) , "Classifiers" :: NullOrUndefined (ClassifierNameList) , "SchemaChangePolicy" :: NullOrUndefined (SchemaChangePolicy) , "State" :: NullOrUndefined (CrawlerState) , "TablePrefix" :: NullOrUndefined (TablePrefix) , "Schedule" :: NullOrUndefined (Schedule) , "CrawlElapsedTime" :: NullOrUndefined (MillisecondsCount) , "CreationTime" :: NullOrUndefined (Types.Timestamp) , "LastUpdated" :: NullOrUndefined (Types.Timestamp) , "LastCrawl" :: NullOrUndefined (LastCrawlInfo) , "Version" :: NullOrUndefined (VersionId) , "Configuration" :: NullOrUndefined (CrawlerConfiguration) } -> {"Name" :: NullOrUndefined (NameString) , "Role" :: NullOrUndefined (Role) , "Targets" :: NullOrUndefined (CrawlerTargets) , "DatabaseName" :: NullOrUndefined (DatabaseName) , "Description" :: NullOrUndefined (DescriptionString) , "Classifiers" :: NullOrUndefined (ClassifierNameList) , "SchemaChangePolicy" :: NullOrUndefined (SchemaChangePolicy) , "State" :: NullOrUndefined (CrawlerState) , "TablePrefix" :: NullOrUndefined (TablePrefix) , "Schedule" :: NullOrUndefined (Schedule) , "CrawlElapsedTime" :: NullOrUndefined (MillisecondsCount) , "CreationTime" :: NullOrUndefined (Types.Timestamp) , "LastUpdated" :: NullOrUndefined (Types.Timestamp) , "LastCrawl" :: NullOrUndefined (LastCrawlInfo) , "Version" :: NullOrUndefined (VersionId) , "Configuration" :: NullOrUndefined (CrawlerConfiguration) } ) -> Crawler
-newCrawler'  customize = (Crawler <<< customize) { "Classifiers": (NullOrUndefined Nothing), "Configuration": (NullOrUndefined Nothing), "CrawlElapsedTime": (NullOrUndefined Nothing), "CreationTime": (NullOrUndefined Nothing), "DatabaseName": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "LastCrawl": (NullOrUndefined Nothing), "LastUpdated": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Role": (NullOrUndefined Nothing), "Schedule": (NullOrUndefined Nothing), "SchemaChangePolicy": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "TablePrefix": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newCrawler' :: ( { "Name" :: Maybe (NameString) , "Role" :: Maybe (Role) , "Targets" :: Maybe (CrawlerTargets) , "DatabaseName" :: Maybe (DatabaseName) , "Description" :: Maybe (DescriptionString) , "Classifiers" :: Maybe (ClassifierNameList) , "SchemaChangePolicy" :: Maybe (SchemaChangePolicy) , "State" :: Maybe (CrawlerState) , "TablePrefix" :: Maybe (TablePrefix) , "Schedule" :: Maybe (Schedule) , "CrawlElapsedTime" :: Maybe (MillisecondsCount) , "CreationTime" :: Maybe (Types.Timestamp) , "LastUpdated" :: Maybe (Types.Timestamp) , "LastCrawl" :: Maybe (LastCrawlInfo) , "Version" :: Maybe (VersionId) , "Configuration" :: Maybe (CrawlerConfiguration) } -> {"Name" :: Maybe (NameString) , "Role" :: Maybe (Role) , "Targets" :: Maybe (CrawlerTargets) , "DatabaseName" :: Maybe (DatabaseName) , "Description" :: Maybe (DescriptionString) , "Classifiers" :: Maybe (ClassifierNameList) , "SchemaChangePolicy" :: Maybe (SchemaChangePolicy) , "State" :: Maybe (CrawlerState) , "TablePrefix" :: Maybe (TablePrefix) , "Schedule" :: Maybe (Schedule) , "CrawlElapsedTime" :: Maybe (MillisecondsCount) , "CreationTime" :: Maybe (Types.Timestamp) , "LastUpdated" :: Maybe (Types.Timestamp) , "LastCrawl" :: Maybe (LastCrawlInfo) , "Version" :: Maybe (VersionId) , "Configuration" :: Maybe (CrawlerConfiguration) } ) -> Crawler
+newCrawler'  customize = (Crawler <<< customize) { "Classifiers": Nothing, "Configuration": Nothing, "CrawlElapsedTime": Nothing, "CreationTime": Nothing, "DatabaseName": Nothing, "Description": Nothing, "LastCrawl": Nothing, "LastUpdated": Nothing, "Name": Nothing, "Role": Nothing, "Schedule": Nothing, "SchemaChangePolicy": Nothing, "State": Nothing, "TablePrefix": Nothing, "Targets": Nothing, "Version": Nothing }
 
 
 
@@ -1081,14 +1080,14 @@ instance encodeCrawlerList :: Encode CrawlerList where encode = genericEncode op
 
 -- | <p>Metrics for a specified crawler.</p>
 newtype CrawlerMetrics = CrawlerMetrics 
-  { "CrawlerName" :: NullOrUndefined (NameString)
-  , "TimeLeftSeconds" :: NullOrUndefined (NonNegativeDouble)
-  , "StillEstimating" :: NullOrUndefined (Boolean)
-  , "LastRuntimeSeconds" :: NullOrUndefined (NonNegativeDouble)
-  , "MedianRuntimeSeconds" :: NullOrUndefined (NonNegativeDouble)
-  , "TablesCreated" :: NullOrUndefined (NonNegativeInteger)
-  , "TablesUpdated" :: NullOrUndefined (NonNegativeInteger)
-  , "TablesDeleted" :: NullOrUndefined (NonNegativeInteger)
+  { "CrawlerName" :: Maybe (NameString)
+  , "TimeLeftSeconds" :: Maybe (NonNegativeDouble)
+  , "StillEstimating" :: Maybe (Boolean)
+  , "LastRuntimeSeconds" :: Maybe (NonNegativeDouble)
+  , "MedianRuntimeSeconds" :: Maybe (NonNegativeDouble)
+  , "TablesCreated" :: Maybe (NonNegativeInteger)
+  , "TablesUpdated" :: Maybe (NonNegativeInteger)
+  , "TablesDeleted" :: Maybe (NonNegativeInteger)
   }
 derive instance newtypeCrawlerMetrics :: Newtype CrawlerMetrics _
 derive instance repGenericCrawlerMetrics :: Generic CrawlerMetrics _
@@ -1098,12 +1097,12 @@ instance encodeCrawlerMetrics :: Encode CrawlerMetrics where encode = genericEnc
 
 -- | Constructs CrawlerMetrics from required parameters
 newCrawlerMetrics :: CrawlerMetrics
-newCrawlerMetrics  = CrawlerMetrics { "CrawlerName": (NullOrUndefined Nothing), "LastRuntimeSeconds": (NullOrUndefined Nothing), "MedianRuntimeSeconds": (NullOrUndefined Nothing), "StillEstimating": (NullOrUndefined Nothing), "TablesCreated": (NullOrUndefined Nothing), "TablesDeleted": (NullOrUndefined Nothing), "TablesUpdated": (NullOrUndefined Nothing), "TimeLeftSeconds": (NullOrUndefined Nothing) }
+newCrawlerMetrics  = CrawlerMetrics { "CrawlerName": Nothing, "LastRuntimeSeconds": Nothing, "MedianRuntimeSeconds": Nothing, "StillEstimating": Nothing, "TablesCreated": Nothing, "TablesDeleted": Nothing, "TablesUpdated": Nothing, "TimeLeftSeconds": Nothing }
 
 -- | Constructs CrawlerMetrics's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCrawlerMetrics' :: ( { "CrawlerName" :: NullOrUndefined (NameString) , "TimeLeftSeconds" :: NullOrUndefined (NonNegativeDouble) , "StillEstimating" :: NullOrUndefined (Boolean) , "LastRuntimeSeconds" :: NullOrUndefined (NonNegativeDouble) , "MedianRuntimeSeconds" :: NullOrUndefined (NonNegativeDouble) , "TablesCreated" :: NullOrUndefined (NonNegativeInteger) , "TablesUpdated" :: NullOrUndefined (NonNegativeInteger) , "TablesDeleted" :: NullOrUndefined (NonNegativeInteger) } -> {"CrawlerName" :: NullOrUndefined (NameString) , "TimeLeftSeconds" :: NullOrUndefined (NonNegativeDouble) , "StillEstimating" :: NullOrUndefined (Boolean) , "LastRuntimeSeconds" :: NullOrUndefined (NonNegativeDouble) , "MedianRuntimeSeconds" :: NullOrUndefined (NonNegativeDouble) , "TablesCreated" :: NullOrUndefined (NonNegativeInteger) , "TablesUpdated" :: NullOrUndefined (NonNegativeInteger) , "TablesDeleted" :: NullOrUndefined (NonNegativeInteger) } ) -> CrawlerMetrics
-newCrawlerMetrics'  customize = (CrawlerMetrics <<< customize) { "CrawlerName": (NullOrUndefined Nothing), "LastRuntimeSeconds": (NullOrUndefined Nothing), "MedianRuntimeSeconds": (NullOrUndefined Nothing), "StillEstimating": (NullOrUndefined Nothing), "TablesCreated": (NullOrUndefined Nothing), "TablesDeleted": (NullOrUndefined Nothing), "TablesUpdated": (NullOrUndefined Nothing), "TimeLeftSeconds": (NullOrUndefined Nothing) }
+newCrawlerMetrics' :: ( { "CrawlerName" :: Maybe (NameString) , "TimeLeftSeconds" :: Maybe (NonNegativeDouble) , "StillEstimating" :: Maybe (Boolean) , "LastRuntimeSeconds" :: Maybe (NonNegativeDouble) , "MedianRuntimeSeconds" :: Maybe (NonNegativeDouble) , "TablesCreated" :: Maybe (NonNegativeInteger) , "TablesUpdated" :: Maybe (NonNegativeInteger) , "TablesDeleted" :: Maybe (NonNegativeInteger) } -> {"CrawlerName" :: Maybe (NameString) , "TimeLeftSeconds" :: Maybe (NonNegativeDouble) , "StillEstimating" :: Maybe (Boolean) , "LastRuntimeSeconds" :: Maybe (NonNegativeDouble) , "MedianRuntimeSeconds" :: Maybe (NonNegativeDouble) , "TablesCreated" :: Maybe (NonNegativeInteger) , "TablesUpdated" :: Maybe (NonNegativeInteger) , "TablesDeleted" :: Maybe (NonNegativeInteger) } ) -> CrawlerMetrics
+newCrawlerMetrics'  customize = (CrawlerMetrics <<< customize) { "CrawlerName": Nothing, "LastRuntimeSeconds": Nothing, "MedianRuntimeSeconds": Nothing, "StillEstimating": Nothing, "TablesCreated": Nothing, "TablesDeleted": Nothing, "TablesUpdated": Nothing, "TimeLeftSeconds": Nothing }
 
 
 
@@ -1127,7 +1126,7 @@ instance encodeCrawlerNameList :: Encode CrawlerNameList where encode = genericE
 
 -- | <p>The specified crawler is not running.</p>
 newtype CrawlerNotRunningException = CrawlerNotRunningException 
-  { "Message" :: NullOrUndefined (MessageString)
+  { "Message" :: Maybe (MessageString)
   }
 derive instance newtypeCrawlerNotRunningException :: Newtype CrawlerNotRunningException _
 derive instance repGenericCrawlerNotRunningException :: Generic CrawlerNotRunningException _
@@ -1137,18 +1136,18 @@ instance encodeCrawlerNotRunningException :: Encode CrawlerNotRunningException w
 
 -- | Constructs CrawlerNotRunningException from required parameters
 newCrawlerNotRunningException :: CrawlerNotRunningException
-newCrawlerNotRunningException  = CrawlerNotRunningException { "Message": (NullOrUndefined Nothing) }
+newCrawlerNotRunningException  = CrawlerNotRunningException { "Message": Nothing }
 
 -- | Constructs CrawlerNotRunningException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCrawlerNotRunningException' :: ( { "Message" :: NullOrUndefined (MessageString) } -> {"Message" :: NullOrUndefined (MessageString) } ) -> CrawlerNotRunningException
-newCrawlerNotRunningException'  customize = (CrawlerNotRunningException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newCrawlerNotRunningException' :: ( { "Message" :: Maybe (MessageString) } -> {"Message" :: Maybe (MessageString) } ) -> CrawlerNotRunningException
+newCrawlerNotRunningException'  customize = (CrawlerNotRunningException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The operation cannot be performed because the crawler is already running.</p>
 newtype CrawlerRunningException = CrawlerRunningException 
-  { "Message" :: NullOrUndefined (MessageString)
+  { "Message" :: Maybe (MessageString)
   }
 derive instance newtypeCrawlerRunningException :: Newtype CrawlerRunningException _
 derive instance repGenericCrawlerRunningException :: Generic CrawlerRunningException _
@@ -1158,12 +1157,12 @@ instance encodeCrawlerRunningException :: Encode CrawlerRunningException where e
 
 -- | Constructs CrawlerRunningException from required parameters
 newCrawlerRunningException :: CrawlerRunningException
-newCrawlerRunningException  = CrawlerRunningException { "Message": (NullOrUndefined Nothing) }
+newCrawlerRunningException  = CrawlerRunningException { "Message": Nothing }
 
 -- | Constructs CrawlerRunningException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCrawlerRunningException' :: ( { "Message" :: NullOrUndefined (MessageString) } -> {"Message" :: NullOrUndefined (MessageString) } ) -> CrawlerRunningException
-newCrawlerRunningException'  customize = (CrawlerRunningException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newCrawlerRunningException' :: ( { "Message" :: Maybe (MessageString) } -> {"Message" :: Maybe (MessageString) } ) -> CrawlerRunningException
+newCrawlerRunningException'  customize = (CrawlerRunningException <<< customize) { "Message": Nothing }
 
 
 
@@ -1178,7 +1177,7 @@ instance encodeCrawlerState :: Encode CrawlerState where encode = genericEncode 
 
 -- | <p>The specified crawler is stopping.</p>
 newtype CrawlerStoppingException = CrawlerStoppingException 
-  { "Message" :: NullOrUndefined (MessageString)
+  { "Message" :: Maybe (MessageString)
   }
 derive instance newtypeCrawlerStoppingException :: Newtype CrawlerStoppingException _
 derive instance repGenericCrawlerStoppingException :: Generic CrawlerStoppingException _
@@ -1188,19 +1187,19 @@ instance encodeCrawlerStoppingException :: Encode CrawlerStoppingException where
 
 -- | Constructs CrawlerStoppingException from required parameters
 newCrawlerStoppingException :: CrawlerStoppingException
-newCrawlerStoppingException  = CrawlerStoppingException { "Message": (NullOrUndefined Nothing) }
+newCrawlerStoppingException  = CrawlerStoppingException { "Message": Nothing }
 
 -- | Constructs CrawlerStoppingException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCrawlerStoppingException' :: ( { "Message" :: NullOrUndefined (MessageString) } -> {"Message" :: NullOrUndefined (MessageString) } ) -> CrawlerStoppingException
-newCrawlerStoppingException'  customize = (CrawlerStoppingException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newCrawlerStoppingException' :: ( { "Message" :: Maybe (MessageString) } -> {"Message" :: Maybe (MessageString) } ) -> CrawlerStoppingException
+newCrawlerStoppingException'  customize = (CrawlerStoppingException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Specifies data stores to crawl.</p>
 newtype CrawlerTargets = CrawlerTargets 
-  { "S3Targets" :: NullOrUndefined (S3TargetList)
-  , "JdbcTargets" :: NullOrUndefined (JdbcTargetList)
+  { "S3Targets" :: Maybe (S3TargetList)
+  , "JdbcTargets" :: Maybe (JdbcTargetList)
   }
 derive instance newtypeCrawlerTargets :: Newtype CrawlerTargets _
 derive instance repGenericCrawlerTargets :: Generic CrawlerTargets _
@@ -1210,19 +1209,19 @@ instance encodeCrawlerTargets :: Encode CrawlerTargets where encode = genericEnc
 
 -- | Constructs CrawlerTargets from required parameters
 newCrawlerTargets :: CrawlerTargets
-newCrawlerTargets  = CrawlerTargets { "JdbcTargets": (NullOrUndefined Nothing), "S3Targets": (NullOrUndefined Nothing) }
+newCrawlerTargets  = CrawlerTargets { "JdbcTargets": Nothing, "S3Targets": Nothing }
 
 -- | Constructs CrawlerTargets's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCrawlerTargets' :: ( { "S3Targets" :: NullOrUndefined (S3TargetList) , "JdbcTargets" :: NullOrUndefined (JdbcTargetList) } -> {"S3Targets" :: NullOrUndefined (S3TargetList) , "JdbcTargets" :: NullOrUndefined (JdbcTargetList) } ) -> CrawlerTargets
-newCrawlerTargets'  customize = (CrawlerTargets <<< customize) { "JdbcTargets": (NullOrUndefined Nothing), "S3Targets": (NullOrUndefined Nothing) }
+newCrawlerTargets' :: ( { "S3Targets" :: Maybe (S3TargetList) , "JdbcTargets" :: Maybe (JdbcTargetList) } -> {"S3Targets" :: Maybe (S3TargetList) , "JdbcTargets" :: Maybe (JdbcTargetList) } ) -> CrawlerTargets
+newCrawlerTargets'  customize = (CrawlerTargets <<< customize) { "JdbcTargets": Nothing, "S3Targets": Nothing }
 
 
 
 newtype CreateClassifierRequest = CreateClassifierRequest 
-  { "GrokClassifier" :: NullOrUndefined (CreateGrokClassifierRequest)
-  , "XMLClassifier" :: NullOrUndefined (CreateXMLClassifierRequest)
-  , "JsonClassifier" :: NullOrUndefined (CreateJsonClassifierRequest)
+  { "GrokClassifier" :: Maybe (CreateGrokClassifierRequest)
+  , "XMLClassifier" :: Maybe (CreateXMLClassifierRequest)
+  , "JsonClassifier" :: Maybe (CreateJsonClassifierRequest)
   }
 derive instance newtypeCreateClassifierRequest :: Newtype CreateClassifierRequest _
 derive instance repGenericCreateClassifierRequest :: Generic CreateClassifierRequest _
@@ -1232,12 +1231,12 @@ instance encodeCreateClassifierRequest :: Encode CreateClassifierRequest where e
 
 -- | Constructs CreateClassifierRequest from required parameters
 newCreateClassifierRequest :: CreateClassifierRequest
-newCreateClassifierRequest  = CreateClassifierRequest { "GrokClassifier": (NullOrUndefined Nothing), "JsonClassifier": (NullOrUndefined Nothing), "XMLClassifier": (NullOrUndefined Nothing) }
+newCreateClassifierRequest  = CreateClassifierRequest { "GrokClassifier": Nothing, "JsonClassifier": Nothing, "XMLClassifier": Nothing }
 
 -- | Constructs CreateClassifierRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateClassifierRequest' :: ( { "GrokClassifier" :: NullOrUndefined (CreateGrokClassifierRequest) , "XMLClassifier" :: NullOrUndefined (CreateXMLClassifierRequest) , "JsonClassifier" :: NullOrUndefined (CreateJsonClassifierRequest) } -> {"GrokClassifier" :: NullOrUndefined (CreateGrokClassifierRequest) , "XMLClassifier" :: NullOrUndefined (CreateXMLClassifierRequest) , "JsonClassifier" :: NullOrUndefined (CreateJsonClassifierRequest) } ) -> CreateClassifierRequest
-newCreateClassifierRequest'  customize = (CreateClassifierRequest <<< customize) { "GrokClassifier": (NullOrUndefined Nothing), "JsonClassifier": (NullOrUndefined Nothing), "XMLClassifier": (NullOrUndefined Nothing) }
+newCreateClassifierRequest' :: ( { "GrokClassifier" :: Maybe (CreateGrokClassifierRequest) , "XMLClassifier" :: Maybe (CreateXMLClassifierRequest) , "JsonClassifier" :: Maybe (CreateJsonClassifierRequest) } -> {"GrokClassifier" :: Maybe (CreateGrokClassifierRequest) , "XMLClassifier" :: Maybe (CreateXMLClassifierRequest) , "JsonClassifier" :: Maybe (CreateJsonClassifierRequest) } ) -> CreateClassifierRequest
+newCreateClassifierRequest'  customize = (CreateClassifierRequest <<< customize) { "GrokClassifier": Nothing, "JsonClassifier": Nothing, "XMLClassifier": Nothing }
 
 
 
@@ -1251,7 +1250,7 @@ instance encodeCreateClassifierResponse :: Encode CreateClassifierResponse where
 
 
 newtype CreateConnectionRequest = CreateConnectionRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "ConnectionInput" :: (ConnectionInput)
   }
 derive instance newtypeCreateConnectionRequest :: Newtype CreateConnectionRequest _
@@ -1262,12 +1261,12 @@ instance encodeCreateConnectionRequest :: Encode CreateConnectionRequest where e
 
 -- | Constructs CreateConnectionRequest from required parameters
 newCreateConnectionRequest :: ConnectionInput -> CreateConnectionRequest
-newCreateConnectionRequest _ConnectionInput = CreateConnectionRequest { "ConnectionInput": _ConnectionInput, "CatalogId": (NullOrUndefined Nothing) }
+newCreateConnectionRequest _ConnectionInput = CreateConnectionRequest { "ConnectionInput": _ConnectionInput, "CatalogId": Nothing }
 
 -- | Constructs CreateConnectionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateConnectionRequest' :: ConnectionInput -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "ConnectionInput" :: (ConnectionInput) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "ConnectionInput" :: (ConnectionInput) } ) -> CreateConnectionRequest
-newCreateConnectionRequest' _ConnectionInput customize = (CreateConnectionRequest <<< customize) { "ConnectionInput": _ConnectionInput, "CatalogId": (NullOrUndefined Nothing) }
+newCreateConnectionRequest' :: ConnectionInput -> ( { "CatalogId" :: Maybe (CatalogIdString) , "ConnectionInput" :: (ConnectionInput) } -> {"CatalogId" :: Maybe (CatalogIdString) , "ConnectionInput" :: (ConnectionInput) } ) -> CreateConnectionRequest
+newCreateConnectionRequest' _ConnectionInput customize = (CreateConnectionRequest <<< customize) { "ConnectionInput": _ConnectionInput, "CatalogId": Nothing }
 
 
 
@@ -1284,13 +1283,13 @@ newtype CreateCrawlerRequest = CreateCrawlerRequest
   { "Name" :: (NameString)
   , "Role" :: (Role)
   , "DatabaseName" :: (DatabaseName)
-  , "Description" :: NullOrUndefined (DescriptionString)
+  , "Description" :: Maybe (DescriptionString)
   , "Targets" :: (CrawlerTargets)
-  , "Schedule" :: NullOrUndefined (CronExpression)
-  , "Classifiers" :: NullOrUndefined (ClassifierNameList)
-  , "TablePrefix" :: NullOrUndefined (TablePrefix)
-  , "SchemaChangePolicy" :: NullOrUndefined (SchemaChangePolicy)
-  , "Configuration" :: NullOrUndefined (CrawlerConfiguration)
+  , "Schedule" :: Maybe (CronExpression)
+  , "Classifiers" :: Maybe (ClassifierNameList)
+  , "TablePrefix" :: Maybe (TablePrefix)
+  , "SchemaChangePolicy" :: Maybe (SchemaChangePolicy)
+  , "Configuration" :: Maybe (CrawlerConfiguration)
   }
 derive instance newtypeCreateCrawlerRequest :: Newtype CreateCrawlerRequest _
 derive instance repGenericCreateCrawlerRequest :: Generic CreateCrawlerRequest _
@@ -1300,12 +1299,12 @@ instance encodeCreateCrawlerRequest :: Encode CreateCrawlerRequest where encode 
 
 -- | Constructs CreateCrawlerRequest from required parameters
 newCreateCrawlerRequest :: DatabaseName -> NameString -> Role -> CrawlerTargets -> CreateCrawlerRequest
-newCreateCrawlerRequest _DatabaseName _Name _Role _Targets = CreateCrawlerRequest { "DatabaseName": _DatabaseName, "Name": _Name, "Role": _Role, "Targets": _Targets, "Classifiers": (NullOrUndefined Nothing), "Configuration": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Schedule": (NullOrUndefined Nothing), "SchemaChangePolicy": (NullOrUndefined Nothing), "TablePrefix": (NullOrUndefined Nothing) }
+newCreateCrawlerRequest _DatabaseName _Name _Role _Targets = CreateCrawlerRequest { "DatabaseName": _DatabaseName, "Name": _Name, "Role": _Role, "Targets": _Targets, "Classifiers": Nothing, "Configuration": Nothing, "Description": Nothing, "Schedule": Nothing, "SchemaChangePolicy": Nothing, "TablePrefix": Nothing }
 
 -- | Constructs CreateCrawlerRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateCrawlerRequest' :: DatabaseName -> NameString -> Role -> CrawlerTargets -> ( { "Name" :: (NameString) , "Role" :: (Role) , "DatabaseName" :: (DatabaseName) , "Description" :: NullOrUndefined (DescriptionString) , "Targets" :: (CrawlerTargets) , "Schedule" :: NullOrUndefined (CronExpression) , "Classifiers" :: NullOrUndefined (ClassifierNameList) , "TablePrefix" :: NullOrUndefined (TablePrefix) , "SchemaChangePolicy" :: NullOrUndefined (SchemaChangePolicy) , "Configuration" :: NullOrUndefined (CrawlerConfiguration) } -> {"Name" :: (NameString) , "Role" :: (Role) , "DatabaseName" :: (DatabaseName) , "Description" :: NullOrUndefined (DescriptionString) , "Targets" :: (CrawlerTargets) , "Schedule" :: NullOrUndefined (CronExpression) , "Classifiers" :: NullOrUndefined (ClassifierNameList) , "TablePrefix" :: NullOrUndefined (TablePrefix) , "SchemaChangePolicy" :: NullOrUndefined (SchemaChangePolicy) , "Configuration" :: NullOrUndefined (CrawlerConfiguration) } ) -> CreateCrawlerRequest
-newCreateCrawlerRequest' _DatabaseName _Name _Role _Targets customize = (CreateCrawlerRequest <<< customize) { "DatabaseName": _DatabaseName, "Name": _Name, "Role": _Role, "Targets": _Targets, "Classifiers": (NullOrUndefined Nothing), "Configuration": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Schedule": (NullOrUndefined Nothing), "SchemaChangePolicy": (NullOrUndefined Nothing), "TablePrefix": (NullOrUndefined Nothing) }
+newCreateCrawlerRequest' :: DatabaseName -> NameString -> Role -> CrawlerTargets -> ( { "Name" :: (NameString) , "Role" :: (Role) , "DatabaseName" :: (DatabaseName) , "Description" :: Maybe (DescriptionString) , "Targets" :: (CrawlerTargets) , "Schedule" :: Maybe (CronExpression) , "Classifiers" :: Maybe (ClassifierNameList) , "TablePrefix" :: Maybe (TablePrefix) , "SchemaChangePolicy" :: Maybe (SchemaChangePolicy) , "Configuration" :: Maybe (CrawlerConfiguration) } -> {"Name" :: (NameString) , "Role" :: (Role) , "DatabaseName" :: (DatabaseName) , "Description" :: Maybe (DescriptionString) , "Targets" :: (CrawlerTargets) , "Schedule" :: Maybe (CronExpression) , "Classifiers" :: Maybe (ClassifierNameList) , "TablePrefix" :: Maybe (TablePrefix) , "SchemaChangePolicy" :: Maybe (SchemaChangePolicy) , "Configuration" :: Maybe (CrawlerConfiguration) } ) -> CreateCrawlerRequest
+newCreateCrawlerRequest' _DatabaseName _Name _Role _Targets customize = (CreateCrawlerRequest <<< customize) { "DatabaseName": _DatabaseName, "Name": _Name, "Role": _Role, "Targets": _Targets, "Classifiers": Nothing, "Configuration": Nothing, "Description": Nothing, "Schedule": Nothing, "SchemaChangePolicy": Nothing, "TablePrefix": Nothing }
 
 
 
@@ -1319,7 +1318,7 @@ instance encodeCreateCrawlerResponse :: Encode CreateCrawlerResponse where encod
 
 
 newtype CreateDatabaseRequest = CreateDatabaseRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseInput" :: (DatabaseInput)
   }
 derive instance newtypeCreateDatabaseRequest :: Newtype CreateDatabaseRequest _
@@ -1330,12 +1329,12 @@ instance encodeCreateDatabaseRequest :: Encode CreateDatabaseRequest where encod
 
 -- | Constructs CreateDatabaseRequest from required parameters
 newCreateDatabaseRequest :: DatabaseInput -> CreateDatabaseRequest
-newCreateDatabaseRequest _DatabaseInput = CreateDatabaseRequest { "DatabaseInput": _DatabaseInput, "CatalogId": (NullOrUndefined Nothing) }
+newCreateDatabaseRequest _DatabaseInput = CreateDatabaseRequest { "DatabaseInput": _DatabaseInput, "CatalogId": Nothing }
 
 -- | Constructs CreateDatabaseRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateDatabaseRequest' :: DatabaseInput -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseInput" :: (DatabaseInput) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseInput" :: (DatabaseInput) } ) -> CreateDatabaseRequest
-newCreateDatabaseRequest' _DatabaseInput customize = (CreateDatabaseRequest <<< customize) { "DatabaseInput": _DatabaseInput, "CatalogId": (NullOrUndefined Nothing) }
+newCreateDatabaseRequest' :: DatabaseInput -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseInput" :: (DatabaseInput) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseInput" :: (DatabaseInput) } ) -> CreateDatabaseRequest
+newCreateDatabaseRequest' _DatabaseInput customize = (CreateDatabaseRequest <<< customize) { "DatabaseInput": _DatabaseInput, "CatalogId": Nothing }
 
 
 
@@ -1351,12 +1350,12 @@ instance encodeCreateDatabaseResponse :: Encode CreateDatabaseResponse where enc
 newtype CreateDevEndpointRequest = CreateDevEndpointRequest 
   { "EndpointName" :: (GenericString)
   , "RoleArn" :: (RoleArn)
-  , "SecurityGroupIds" :: NullOrUndefined (StringList)
-  , "SubnetId" :: NullOrUndefined (GenericString)
+  , "SecurityGroupIds" :: Maybe (StringList)
+  , "SubnetId" :: Maybe (GenericString)
   , "PublicKey" :: (GenericString)
-  , "NumberOfNodes" :: NullOrUndefined (IntegerValue)
-  , "ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString)
-  , "ExtraJarsS3Path" :: NullOrUndefined (GenericString)
+  , "NumberOfNodes" :: Maybe (IntegerValue)
+  , "ExtraPythonLibsS3Path" :: Maybe (GenericString)
+  , "ExtraJarsS3Path" :: Maybe (GenericString)
   }
 derive instance newtypeCreateDevEndpointRequest :: Newtype CreateDevEndpointRequest _
 derive instance repGenericCreateDevEndpointRequest :: Generic CreateDevEndpointRequest _
@@ -1366,30 +1365,30 @@ instance encodeCreateDevEndpointRequest :: Encode CreateDevEndpointRequest where
 
 -- | Constructs CreateDevEndpointRequest from required parameters
 newCreateDevEndpointRequest :: GenericString -> GenericString -> RoleArn -> CreateDevEndpointRequest
-newCreateDevEndpointRequest _EndpointName _PublicKey _RoleArn = CreateDevEndpointRequest { "EndpointName": _EndpointName, "PublicKey": _PublicKey, "RoleArn": _RoleArn, "ExtraJarsS3Path": (NullOrUndefined Nothing), "ExtraPythonLibsS3Path": (NullOrUndefined Nothing), "NumberOfNodes": (NullOrUndefined Nothing), "SecurityGroupIds": (NullOrUndefined Nothing), "SubnetId": (NullOrUndefined Nothing) }
+newCreateDevEndpointRequest _EndpointName _PublicKey _RoleArn = CreateDevEndpointRequest { "EndpointName": _EndpointName, "PublicKey": _PublicKey, "RoleArn": _RoleArn, "ExtraJarsS3Path": Nothing, "ExtraPythonLibsS3Path": Nothing, "NumberOfNodes": Nothing, "SecurityGroupIds": Nothing, "SubnetId": Nothing }
 
 -- | Constructs CreateDevEndpointRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateDevEndpointRequest' :: GenericString -> GenericString -> RoleArn -> ( { "EndpointName" :: (GenericString) , "RoleArn" :: (RoleArn) , "SecurityGroupIds" :: NullOrUndefined (StringList) , "SubnetId" :: NullOrUndefined (GenericString) , "PublicKey" :: (GenericString) , "NumberOfNodes" :: NullOrUndefined (IntegerValue) , "ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString) , "ExtraJarsS3Path" :: NullOrUndefined (GenericString) } -> {"EndpointName" :: (GenericString) , "RoleArn" :: (RoleArn) , "SecurityGroupIds" :: NullOrUndefined (StringList) , "SubnetId" :: NullOrUndefined (GenericString) , "PublicKey" :: (GenericString) , "NumberOfNodes" :: NullOrUndefined (IntegerValue) , "ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString) , "ExtraJarsS3Path" :: NullOrUndefined (GenericString) } ) -> CreateDevEndpointRequest
-newCreateDevEndpointRequest' _EndpointName _PublicKey _RoleArn customize = (CreateDevEndpointRequest <<< customize) { "EndpointName": _EndpointName, "PublicKey": _PublicKey, "RoleArn": _RoleArn, "ExtraJarsS3Path": (NullOrUndefined Nothing), "ExtraPythonLibsS3Path": (NullOrUndefined Nothing), "NumberOfNodes": (NullOrUndefined Nothing), "SecurityGroupIds": (NullOrUndefined Nothing), "SubnetId": (NullOrUndefined Nothing) }
+newCreateDevEndpointRequest' :: GenericString -> GenericString -> RoleArn -> ( { "EndpointName" :: (GenericString) , "RoleArn" :: (RoleArn) , "SecurityGroupIds" :: Maybe (StringList) , "SubnetId" :: Maybe (GenericString) , "PublicKey" :: (GenericString) , "NumberOfNodes" :: Maybe (IntegerValue) , "ExtraPythonLibsS3Path" :: Maybe (GenericString) , "ExtraJarsS3Path" :: Maybe (GenericString) } -> {"EndpointName" :: (GenericString) , "RoleArn" :: (RoleArn) , "SecurityGroupIds" :: Maybe (StringList) , "SubnetId" :: Maybe (GenericString) , "PublicKey" :: (GenericString) , "NumberOfNodes" :: Maybe (IntegerValue) , "ExtraPythonLibsS3Path" :: Maybe (GenericString) , "ExtraJarsS3Path" :: Maybe (GenericString) } ) -> CreateDevEndpointRequest
+newCreateDevEndpointRequest' _EndpointName _PublicKey _RoleArn customize = (CreateDevEndpointRequest <<< customize) { "EndpointName": _EndpointName, "PublicKey": _PublicKey, "RoleArn": _RoleArn, "ExtraJarsS3Path": Nothing, "ExtraPythonLibsS3Path": Nothing, "NumberOfNodes": Nothing, "SecurityGroupIds": Nothing, "SubnetId": Nothing }
 
 
 
 newtype CreateDevEndpointResponse = CreateDevEndpointResponse 
-  { "EndpointName" :: NullOrUndefined (GenericString)
-  , "Status" :: NullOrUndefined (GenericString)
-  , "SecurityGroupIds" :: NullOrUndefined (StringList)
-  , "SubnetId" :: NullOrUndefined (GenericString)
-  , "RoleArn" :: NullOrUndefined (RoleArn)
-  , "YarnEndpointAddress" :: NullOrUndefined (GenericString)
-  , "ZeppelinRemoteSparkInterpreterPort" :: NullOrUndefined (IntegerValue)
-  , "NumberOfNodes" :: NullOrUndefined (IntegerValue)
-  , "AvailabilityZone" :: NullOrUndefined (GenericString)
-  , "VpcId" :: NullOrUndefined (GenericString)
-  , "ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString)
-  , "ExtraJarsS3Path" :: NullOrUndefined (GenericString)
-  , "FailureReason" :: NullOrUndefined (GenericString)
-  , "CreatedTimestamp" :: NullOrUndefined (TimestampValue)
+  { "EndpointName" :: Maybe (GenericString)
+  , "Status" :: Maybe (GenericString)
+  , "SecurityGroupIds" :: Maybe (StringList)
+  , "SubnetId" :: Maybe (GenericString)
+  , "RoleArn" :: Maybe (RoleArn)
+  , "YarnEndpointAddress" :: Maybe (GenericString)
+  , "ZeppelinRemoteSparkInterpreterPort" :: Maybe (IntegerValue)
+  , "NumberOfNodes" :: Maybe (IntegerValue)
+  , "AvailabilityZone" :: Maybe (GenericString)
+  , "VpcId" :: Maybe (GenericString)
+  , "ExtraPythonLibsS3Path" :: Maybe (GenericString)
+  , "ExtraJarsS3Path" :: Maybe (GenericString)
+  , "FailureReason" :: Maybe (GenericString)
+  , "CreatedTimestamp" :: Maybe (TimestampValue)
   }
 derive instance newtypeCreateDevEndpointResponse :: Newtype CreateDevEndpointResponse _
 derive instance repGenericCreateDevEndpointResponse :: Generic CreateDevEndpointResponse _
@@ -1399,12 +1398,12 @@ instance encodeCreateDevEndpointResponse :: Encode CreateDevEndpointResponse whe
 
 -- | Constructs CreateDevEndpointResponse from required parameters
 newCreateDevEndpointResponse :: CreateDevEndpointResponse
-newCreateDevEndpointResponse  = CreateDevEndpointResponse { "AvailabilityZone": (NullOrUndefined Nothing), "CreatedTimestamp": (NullOrUndefined Nothing), "EndpointName": (NullOrUndefined Nothing), "ExtraJarsS3Path": (NullOrUndefined Nothing), "ExtraPythonLibsS3Path": (NullOrUndefined Nothing), "FailureReason": (NullOrUndefined Nothing), "NumberOfNodes": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing), "SecurityGroupIds": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "SubnetId": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing), "YarnEndpointAddress": (NullOrUndefined Nothing), "ZeppelinRemoteSparkInterpreterPort": (NullOrUndefined Nothing) }
+newCreateDevEndpointResponse  = CreateDevEndpointResponse { "AvailabilityZone": Nothing, "CreatedTimestamp": Nothing, "EndpointName": Nothing, "ExtraJarsS3Path": Nothing, "ExtraPythonLibsS3Path": Nothing, "FailureReason": Nothing, "NumberOfNodes": Nothing, "RoleArn": Nothing, "SecurityGroupIds": Nothing, "Status": Nothing, "SubnetId": Nothing, "VpcId": Nothing, "YarnEndpointAddress": Nothing, "ZeppelinRemoteSparkInterpreterPort": Nothing }
 
 -- | Constructs CreateDevEndpointResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateDevEndpointResponse' :: ( { "EndpointName" :: NullOrUndefined (GenericString) , "Status" :: NullOrUndefined (GenericString) , "SecurityGroupIds" :: NullOrUndefined (StringList) , "SubnetId" :: NullOrUndefined (GenericString) , "RoleArn" :: NullOrUndefined (RoleArn) , "YarnEndpointAddress" :: NullOrUndefined (GenericString) , "ZeppelinRemoteSparkInterpreterPort" :: NullOrUndefined (IntegerValue) , "NumberOfNodes" :: NullOrUndefined (IntegerValue) , "AvailabilityZone" :: NullOrUndefined (GenericString) , "VpcId" :: NullOrUndefined (GenericString) , "ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString) , "ExtraJarsS3Path" :: NullOrUndefined (GenericString) , "FailureReason" :: NullOrUndefined (GenericString) , "CreatedTimestamp" :: NullOrUndefined (TimestampValue) } -> {"EndpointName" :: NullOrUndefined (GenericString) , "Status" :: NullOrUndefined (GenericString) , "SecurityGroupIds" :: NullOrUndefined (StringList) , "SubnetId" :: NullOrUndefined (GenericString) , "RoleArn" :: NullOrUndefined (RoleArn) , "YarnEndpointAddress" :: NullOrUndefined (GenericString) , "ZeppelinRemoteSparkInterpreterPort" :: NullOrUndefined (IntegerValue) , "NumberOfNodes" :: NullOrUndefined (IntegerValue) , "AvailabilityZone" :: NullOrUndefined (GenericString) , "VpcId" :: NullOrUndefined (GenericString) , "ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString) , "ExtraJarsS3Path" :: NullOrUndefined (GenericString) , "FailureReason" :: NullOrUndefined (GenericString) , "CreatedTimestamp" :: NullOrUndefined (TimestampValue) } ) -> CreateDevEndpointResponse
-newCreateDevEndpointResponse'  customize = (CreateDevEndpointResponse <<< customize) { "AvailabilityZone": (NullOrUndefined Nothing), "CreatedTimestamp": (NullOrUndefined Nothing), "EndpointName": (NullOrUndefined Nothing), "ExtraJarsS3Path": (NullOrUndefined Nothing), "ExtraPythonLibsS3Path": (NullOrUndefined Nothing), "FailureReason": (NullOrUndefined Nothing), "NumberOfNodes": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing), "SecurityGroupIds": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "SubnetId": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing), "YarnEndpointAddress": (NullOrUndefined Nothing), "ZeppelinRemoteSparkInterpreterPort": (NullOrUndefined Nothing) }
+newCreateDevEndpointResponse' :: ( { "EndpointName" :: Maybe (GenericString) , "Status" :: Maybe (GenericString) , "SecurityGroupIds" :: Maybe (StringList) , "SubnetId" :: Maybe (GenericString) , "RoleArn" :: Maybe (RoleArn) , "YarnEndpointAddress" :: Maybe (GenericString) , "ZeppelinRemoteSparkInterpreterPort" :: Maybe (IntegerValue) , "NumberOfNodes" :: Maybe (IntegerValue) , "AvailabilityZone" :: Maybe (GenericString) , "VpcId" :: Maybe (GenericString) , "ExtraPythonLibsS3Path" :: Maybe (GenericString) , "ExtraJarsS3Path" :: Maybe (GenericString) , "FailureReason" :: Maybe (GenericString) , "CreatedTimestamp" :: Maybe (TimestampValue) } -> {"EndpointName" :: Maybe (GenericString) , "Status" :: Maybe (GenericString) , "SecurityGroupIds" :: Maybe (StringList) , "SubnetId" :: Maybe (GenericString) , "RoleArn" :: Maybe (RoleArn) , "YarnEndpointAddress" :: Maybe (GenericString) , "ZeppelinRemoteSparkInterpreterPort" :: Maybe (IntegerValue) , "NumberOfNodes" :: Maybe (IntegerValue) , "AvailabilityZone" :: Maybe (GenericString) , "VpcId" :: Maybe (GenericString) , "ExtraPythonLibsS3Path" :: Maybe (GenericString) , "ExtraJarsS3Path" :: Maybe (GenericString) , "FailureReason" :: Maybe (GenericString) , "CreatedTimestamp" :: Maybe (TimestampValue) } ) -> CreateDevEndpointResponse
+newCreateDevEndpointResponse'  customize = (CreateDevEndpointResponse <<< customize) { "AvailabilityZone": Nothing, "CreatedTimestamp": Nothing, "EndpointName": Nothing, "ExtraJarsS3Path": Nothing, "ExtraPythonLibsS3Path": Nothing, "FailureReason": Nothing, "NumberOfNodes": Nothing, "RoleArn": Nothing, "SecurityGroupIds": Nothing, "Status": Nothing, "SubnetId": Nothing, "VpcId": Nothing, "YarnEndpointAddress": Nothing, "ZeppelinRemoteSparkInterpreterPort": Nothing }
 
 
 
@@ -1413,7 +1412,7 @@ newtype CreateGrokClassifierRequest = CreateGrokClassifierRequest
   { "Classification" :: (Classification)
   , "Name" :: (NameString)
   , "GrokPattern" :: (GrokPattern)
-  , "CustomPatterns" :: NullOrUndefined (CustomPatterns)
+  , "CustomPatterns" :: Maybe (CustomPatterns)
   }
 derive instance newtypeCreateGrokClassifierRequest :: Newtype CreateGrokClassifierRequest _
 derive instance repGenericCreateGrokClassifierRequest :: Generic CreateGrokClassifierRequest _
@@ -1423,26 +1422,26 @@ instance encodeCreateGrokClassifierRequest :: Encode CreateGrokClassifierRequest
 
 -- | Constructs CreateGrokClassifierRequest from required parameters
 newCreateGrokClassifierRequest :: Classification -> GrokPattern -> NameString -> CreateGrokClassifierRequest
-newCreateGrokClassifierRequest _Classification _GrokPattern _Name = CreateGrokClassifierRequest { "Classification": _Classification, "GrokPattern": _GrokPattern, "Name": _Name, "CustomPatterns": (NullOrUndefined Nothing) }
+newCreateGrokClassifierRequest _Classification _GrokPattern _Name = CreateGrokClassifierRequest { "Classification": _Classification, "GrokPattern": _GrokPattern, "Name": _Name, "CustomPatterns": Nothing }
 
 -- | Constructs CreateGrokClassifierRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateGrokClassifierRequest' :: Classification -> GrokPattern -> NameString -> ( { "Classification" :: (Classification) , "Name" :: (NameString) , "GrokPattern" :: (GrokPattern) , "CustomPatterns" :: NullOrUndefined (CustomPatterns) } -> {"Classification" :: (Classification) , "Name" :: (NameString) , "GrokPattern" :: (GrokPattern) , "CustomPatterns" :: NullOrUndefined (CustomPatterns) } ) -> CreateGrokClassifierRequest
-newCreateGrokClassifierRequest' _Classification _GrokPattern _Name customize = (CreateGrokClassifierRequest <<< customize) { "Classification": _Classification, "GrokPattern": _GrokPattern, "Name": _Name, "CustomPatterns": (NullOrUndefined Nothing) }
+newCreateGrokClassifierRequest' :: Classification -> GrokPattern -> NameString -> ( { "Classification" :: (Classification) , "Name" :: (NameString) , "GrokPattern" :: (GrokPattern) , "CustomPatterns" :: Maybe (CustomPatterns) } -> {"Classification" :: (Classification) , "Name" :: (NameString) , "GrokPattern" :: (GrokPattern) , "CustomPatterns" :: Maybe (CustomPatterns) } ) -> CreateGrokClassifierRequest
+newCreateGrokClassifierRequest' _Classification _GrokPattern _Name customize = (CreateGrokClassifierRequest <<< customize) { "Classification": _Classification, "GrokPattern": _GrokPattern, "Name": _Name, "CustomPatterns": Nothing }
 
 
 
 newtype CreateJobRequest = CreateJobRequest 
   { "Name" :: (NameString)
-  , "Description" :: NullOrUndefined (DescriptionString)
-  , "LogUri" :: NullOrUndefined (UriString)
+  , "Description" :: Maybe (DescriptionString)
+  , "LogUri" :: Maybe (UriString)
   , "Role" :: (RoleString)
-  , "ExecutionProperty" :: NullOrUndefined (ExecutionProperty)
+  , "ExecutionProperty" :: Maybe (ExecutionProperty)
   , "Command" :: (JobCommand)
-  , "DefaultArguments" :: NullOrUndefined (GenericMap)
-  , "Connections" :: NullOrUndefined (ConnectionsList)
-  , "MaxRetries" :: NullOrUndefined (MaxRetries)
-  , "AllocatedCapacity" :: NullOrUndefined (IntegerValue)
+  , "DefaultArguments" :: Maybe (GenericMap)
+  , "Connections" :: Maybe (ConnectionsList)
+  , "MaxRetries" :: Maybe (MaxRetries)
+  , "AllocatedCapacity" :: Maybe (IntegerValue)
   }
 derive instance newtypeCreateJobRequest :: Newtype CreateJobRequest _
 derive instance repGenericCreateJobRequest :: Generic CreateJobRequest _
@@ -1452,17 +1451,17 @@ instance encodeCreateJobRequest :: Encode CreateJobRequest where encode = generi
 
 -- | Constructs CreateJobRequest from required parameters
 newCreateJobRequest :: JobCommand -> NameString -> RoleString -> CreateJobRequest
-newCreateJobRequest _Command _Name _Role = CreateJobRequest { "Command": _Command, "Name": _Name, "Role": _Role, "AllocatedCapacity": (NullOrUndefined Nothing), "Connections": (NullOrUndefined Nothing), "DefaultArguments": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "ExecutionProperty": (NullOrUndefined Nothing), "LogUri": (NullOrUndefined Nothing), "MaxRetries": (NullOrUndefined Nothing) }
+newCreateJobRequest _Command _Name _Role = CreateJobRequest { "Command": _Command, "Name": _Name, "Role": _Role, "AllocatedCapacity": Nothing, "Connections": Nothing, "DefaultArguments": Nothing, "Description": Nothing, "ExecutionProperty": Nothing, "LogUri": Nothing, "MaxRetries": Nothing }
 
 -- | Constructs CreateJobRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateJobRequest' :: JobCommand -> NameString -> RoleString -> ( { "Name" :: (NameString) , "Description" :: NullOrUndefined (DescriptionString) , "LogUri" :: NullOrUndefined (UriString) , "Role" :: (RoleString) , "ExecutionProperty" :: NullOrUndefined (ExecutionProperty) , "Command" :: (JobCommand) , "DefaultArguments" :: NullOrUndefined (GenericMap) , "Connections" :: NullOrUndefined (ConnectionsList) , "MaxRetries" :: NullOrUndefined (MaxRetries) , "AllocatedCapacity" :: NullOrUndefined (IntegerValue) } -> {"Name" :: (NameString) , "Description" :: NullOrUndefined (DescriptionString) , "LogUri" :: NullOrUndefined (UriString) , "Role" :: (RoleString) , "ExecutionProperty" :: NullOrUndefined (ExecutionProperty) , "Command" :: (JobCommand) , "DefaultArguments" :: NullOrUndefined (GenericMap) , "Connections" :: NullOrUndefined (ConnectionsList) , "MaxRetries" :: NullOrUndefined (MaxRetries) , "AllocatedCapacity" :: NullOrUndefined (IntegerValue) } ) -> CreateJobRequest
-newCreateJobRequest' _Command _Name _Role customize = (CreateJobRequest <<< customize) { "Command": _Command, "Name": _Name, "Role": _Role, "AllocatedCapacity": (NullOrUndefined Nothing), "Connections": (NullOrUndefined Nothing), "DefaultArguments": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "ExecutionProperty": (NullOrUndefined Nothing), "LogUri": (NullOrUndefined Nothing), "MaxRetries": (NullOrUndefined Nothing) }
+newCreateJobRequest' :: JobCommand -> NameString -> RoleString -> ( { "Name" :: (NameString) , "Description" :: Maybe (DescriptionString) , "LogUri" :: Maybe (UriString) , "Role" :: (RoleString) , "ExecutionProperty" :: Maybe (ExecutionProperty) , "Command" :: (JobCommand) , "DefaultArguments" :: Maybe (GenericMap) , "Connections" :: Maybe (ConnectionsList) , "MaxRetries" :: Maybe (MaxRetries) , "AllocatedCapacity" :: Maybe (IntegerValue) } -> {"Name" :: (NameString) , "Description" :: Maybe (DescriptionString) , "LogUri" :: Maybe (UriString) , "Role" :: (RoleString) , "ExecutionProperty" :: Maybe (ExecutionProperty) , "Command" :: (JobCommand) , "DefaultArguments" :: Maybe (GenericMap) , "Connections" :: Maybe (ConnectionsList) , "MaxRetries" :: Maybe (MaxRetries) , "AllocatedCapacity" :: Maybe (IntegerValue) } ) -> CreateJobRequest
+newCreateJobRequest' _Command _Name _Role customize = (CreateJobRequest <<< customize) { "Command": _Command, "Name": _Name, "Role": _Role, "AllocatedCapacity": Nothing, "Connections": Nothing, "DefaultArguments": Nothing, "Description": Nothing, "ExecutionProperty": Nothing, "LogUri": Nothing, "MaxRetries": Nothing }
 
 
 
 newtype CreateJobResponse = CreateJobResponse 
-  { "Name" :: NullOrUndefined (NameString)
+  { "Name" :: Maybe (NameString)
   }
 derive instance newtypeCreateJobResponse :: Newtype CreateJobResponse _
 derive instance repGenericCreateJobResponse :: Generic CreateJobResponse _
@@ -1472,12 +1471,12 @@ instance encodeCreateJobResponse :: Encode CreateJobResponse where encode = gene
 
 -- | Constructs CreateJobResponse from required parameters
 newCreateJobResponse :: CreateJobResponse
-newCreateJobResponse  = CreateJobResponse { "Name": (NullOrUndefined Nothing) }
+newCreateJobResponse  = CreateJobResponse { "Name": Nothing }
 
 -- | Constructs CreateJobResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateJobResponse' :: ( { "Name" :: NullOrUndefined (NameString) } -> {"Name" :: NullOrUndefined (NameString) } ) -> CreateJobResponse
-newCreateJobResponse'  customize = (CreateJobResponse <<< customize) { "Name": (NullOrUndefined Nothing) }
+newCreateJobResponse' :: ( { "Name" :: Maybe (NameString) } -> {"Name" :: Maybe (NameString) } ) -> CreateJobResponse
+newCreateJobResponse'  customize = (CreateJobResponse <<< customize) { "Name": Nothing }
 
 
 
@@ -1504,7 +1503,7 @@ newCreateJsonClassifierRequest' _JsonPath _Name customize = (CreateJsonClassifie
 
 
 newtype CreatePartitionRequest = CreatePartitionRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseName" :: (NameString)
   , "TableName" :: (NameString)
   , "PartitionInput" :: (PartitionInput)
@@ -1517,12 +1516,12 @@ instance encodeCreatePartitionRequest :: Encode CreatePartitionRequest where enc
 
 -- | Constructs CreatePartitionRequest from required parameters
 newCreatePartitionRequest :: NameString -> PartitionInput -> NameString -> CreatePartitionRequest
-newCreatePartitionRequest _DatabaseName _PartitionInput _TableName = CreatePartitionRequest { "DatabaseName": _DatabaseName, "PartitionInput": _PartitionInput, "TableName": _TableName, "CatalogId": (NullOrUndefined Nothing) }
+newCreatePartitionRequest _DatabaseName _PartitionInput _TableName = CreatePartitionRequest { "DatabaseName": _DatabaseName, "PartitionInput": _PartitionInput, "TableName": _TableName, "CatalogId": Nothing }
 
 -- | Constructs CreatePartitionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreatePartitionRequest' :: NameString -> PartitionInput -> NameString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionInput" :: (PartitionInput) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionInput" :: (PartitionInput) } ) -> CreatePartitionRequest
-newCreatePartitionRequest' _DatabaseName _PartitionInput _TableName customize = (CreatePartitionRequest <<< customize) { "DatabaseName": _DatabaseName, "PartitionInput": _PartitionInput, "TableName": _TableName, "CatalogId": (NullOrUndefined Nothing) }
+newCreatePartitionRequest' :: NameString -> PartitionInput -> NameString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionInput" :: (PartitionInput) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionInput" :: (PartitionInput) } ) -> CreatePartitionRequest
+newCreatePartitionRequest' _DatabaseName _PartitionInput _TableName customize = (CreatePartitionRequest <<< customize) { "DatabaseName": _DatabaseName, "PartitionInput": _PartitionInput, "TableName": _TableName, "CatalogId": Nothing }
 
 
 
@@ -1536,9 +1535,9 @@ instance encodeCreatePartitionResponse :: Encode CreatePartitionResponse where e
 
 
 newtype CreateScriptRequest = CreateScriptRequest 
-  { "DagNodes" :: NullOrUndefined (DagNodes)
-  , "DagEdges" :: NullOrUndefined (DagEdges)
-  , "Language" :: NullOrUndefined (Language)
+  { "DagNodes" :: Maybe (DagNodes)
+  , "DagEdges" :: Maybe (DagEdges)
+  , "Language" :: Maybe (Language)
   }
 derive instance newtypeCreateScriptRequest :: Newtype CreateScriptRequest _
 derive instance repGenericCreateScriptRequest :: Generic CreateScriptRequest _
@@ -1548,18 +1547,18 @@ instance encodeCreateScriptRequest :: Encode CreateScriptRequest where encode = 
 
 -- | Constructs CreateScriptRequest from required parameters
 newCreateScriptRequest :: CreateScriptRequest
-newCreateScriptRequest  = CreateScriptRequest { "DagEdges": (NullOrUndefined Nothing), "DagNodes": (NullOrUndefined Nothing), "Language": (NullOrUndefined Nothing) }
+newCreateScriptRequest  = CreateScriptRequest { "DagEdges": Nothing, "DagNodes": Nothing, "Language": Nothing }
 
 -- | Constructs CreateScriptRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateScriptRequest' :: ( { "DagNodes" :: NullOrUndefined (DagNodes) , "DagEdges" :: NullOrUndefined (DagEdges) , "Language" :: NullOrUndefined (Language) } -> {"DagNodes" :: NullOrUndefined (DagNodes) , "DagEdges" :: NullOrUndefined (DagEdges) , "Language" :: NullOrUndefined (Language) } ) -> CreateScriptRequest
-newCreateScriptRequest'  customize = (CreateScriptRequest <<< customize) { "DagEdges": (NullOrUndefined Nothing), "DagNodes": (NullOrUndefined Nothing), "Language": (NullOrUndefined Nothing) }
+newCreateScriptRequest' :: ( { "DagNodes" :: Maybe (DagNodes) , "DagEdges" :: Maybe (DagEdges) , "Language" :: Maybe (Language) } -> {"DagNodes" :: Maybe (DagNodes) , "DagEdges" :: Maybe (DagEdges) , "Language" :: Maybe (Language) } ) -> CreateScriptRequest
+newCreateScriptRequest'  customize = (CreateScriptRequest <<< customize) { "DagEdges": Nothing, "DagNodes": Nothing, "Language": Nothing }
 
 
 
 newtype CreateScriptResponse = CreateScriptResponse 
-  { "PythonScript" :: NullOrUndefined (PythonScript)
-  , "ScalaCode" :: NullOrUndefined (ScalaCode)
+  { "PythonScript" :: Maybe (PythonScript)
+  , "ScalaCode" :: Maybe (ScalaCode)
   }
 derive instance newtypeCreateScriptResponse :: Newtype CreateScriptResponse _
 derive instance repGenericCreateScriptResponse :: Generic CreateScriptResponse _
@@ -1569,17 +1568,17 @@ instance encodeCreateScriptResponse :: Encode CreateScriptResponse where encode 
 
 -- | Constructs CreateScriptResponse from required parameters
 newCreateScriptResponse :: CreateScriptResponse
-newCreateScriptResponse  = CreateScriptResponse { "PythonScript": (NullOrUndefined Nothing), "ScalaCode": (NullOrUndefined Nothing) }
+newCreateScriptResponse  = CreateScriptResponse { "PythonScript": Nothing, "ScalaCode": Nothing }
 
 -- | Constructs CreateScriptResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateScriptResponse' :: ( { "PythonScript" :: NullOrUndefined (PythonScript) , "ScalaCode" :: NullOrUndefined (ScalaCode) } -> {"PythonScript" :: NullOrUndefined (PythonScript) , "ScalaCode" :: NullOrUndefined (ScalaCode) } ) -> CreateScriptResponse
-newCreateScriptResponse'  customize = (CreateScriptResponse <<< customize) { "PythonScript": (NullOrUndefined Nothing), "ScalaCode": (NullOrUndefined Nothing) }
+newCreateScriptResponse' :: ( { "PythonScript" :: Maybe (PythonScript) , "ScalaCode" :: Maybe (ScalaCode) } -> {"PythonScript" :: Maybe (PythonScript) , "ScalaCode" :: Maybe (ScalaCode) } ) -> CreateScriptResponse
+newCreateScriptResponse'  customize = (CreateScriptResponse <<< customize) { "PythonScript": Nothing, "ScalaCode": Nothing }
 
 
 
 newtype CreateTableRequest = CreateTableRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseName" :: (NameString)
   , "TableInput" :: (TableInput)
   }
@@ -1591,12 +1590,12 @@ instance encodeCreateTableRequest :: Encode CreateTableRequest where encode = ge
 
 -- | Constructs CreateTableRequest from required parameters
 newCreateTableRequest :: NameString -> TableInput -> CreateTableRequest
-newCreateTableRequest _DatabaseName _TableInput = CreateTableRequest { "DatabaseName": _DatabaseName, "TableInput": _TableInput, "CatalogId": (NullOrUndefined Nothing) }
+newCreateTableRequest _DatabaseName _TableInput = CreateTableRequest { "DatabaseName": _DatabaseName, "TableInput": _TableInput, "CatalogId": Nothing }
 
 -- | Constructs CreateTableRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateTableRequest' :: NameString -> TableInput -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableInput" :: (TableInput) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableInput" :: (TableInput) } ) -> CreateTableRequest
-newCreateTableRequest' _DatabaseName _TableInput customize = (CreateTableRequest <<< customize) { "DatabaseName": _DatabaseName, "TableInput": _TableInput, "CatalogId": (NullOrUndefined Nothing) }
+newCreateTableRequest' :: NameString -> TableInput -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableInput" :: (TableInput) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableInput" :: (TableInput) } ) -> CreateTableRequest
+newCreateTableRequest' _DatabaseName _TableInput customize = (CreateTableRequest <<< customize) { "DatabaseName": _DatabaseName, "TableInput": _TableInput, "CatalogId": Nothing }
 
 
 
@@ -1612,10 +1611,10 @@ instance encodeCreateTableResponse :: Encode CreateTableResponse where encode = 
 newtype CreateTriggerRequest = CreateTriggerRequest 
   { "Name" :: (NameString)
   , "Type" :: (TriggerType)
-  , "Schedule" :: NullOrUndefined (GenericString)
-  , "Predicate" :: NullOrUndefined (Predicate)
+  , "Schedule" :: Maybe (GenericString)
+  , "Predicate" :: Maybe (Predicate)
   , "Actions" :: (ActionList)
-  , "Description" :: NullOrUndefined (DescriptionString)
+  , "Description" :: Maybe (DescriptionString)
   }
 derive instance newtypeCreateTriggerRequest :: Newtype CreateTriggerRequest _
 derive instance repGenericCreateTriggerRequest :: Generic CreateTriggerRequest _
@@ -1625,17 +1624,17 @@ instance encodeCreateTriggerRequest :: Encode CreateTriggerRequest where encode 
 
 -- | Constructs CreateTriggerRequest from required parameters
 newCreateTriggerRequest :: ActionList -> NameString -> TriggerType -> CreateTriggerRequest
-newCreateTriggerRequest _Actions _Name _Type = CreateTriggerRequest { "Actions": _Actions, "Name": _Name, "Type": _Type, "Description": (NullOrUndefined Nothing), "Predicate": (NullOrUndefined Nothing), "Schedule": (NullOrUndefined Nothing) }
+newCreateTriggerRequest _Actions _Name _Type = CreateTriggerRequest { "Actions": _Actions, "Name": _Name, "Type": _Type, "Description": Nothing, "Predicate": Nothing, "Schedule": Nothing }
 
 -- | Constructs CreateTriggerRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateTriggerRequest' :: ActionList -> NameString -> TriggerType -> ( { "Name" :: (NameString) , "Type" :: (TriggerType) , "Schedule" :: NullOrUndefined (GenericString) , "Predicate" :: NullOrUndefined (Predicate) , "Actions" :: (ActionList) , "Description" :: NullOrUndefined (DescriptionString) } -> {"Name" :: (NameString) , "Type" :: (TriggerType) , "Schedule" :: NullOrUndefined (GenericString) , "Predicate" :: NullOrUndefined (Predicate) , "Actions" :: (ActionList) , "Description" :: NullOrUndefined (DescriptionString) } ) -> CreateTriggerRequest
-newCreateTriggerRequest' _Actions _Name _Type customize = (CreateTriggerRequest <<< customize) { "Actions": _Actions, "Name": _Name, "Type": _Type, "Description": (NullOrUndefined Nothing), "Predicate": (NullOrUndefined Nothing), "Schedule": (NullOrUndefined Nothing) }
+newCreateTriggerRequest' :: ActionList -> NameString -> TriggerType -> ( { "Name" :: (NameString) , "Type" :: (TriggerType) , "Schedule" :: Maybe (GenericString) , "Predicate" :: Maybe (Predicate) , "Actions" :: (ActionList) , "Description" :: Maybe (DescriptionString) } -> {"Name" :: (NameString) , "Type" :: (TriggerType) , "Schedule" :: Maybe (GenericString) , "Predicate" :: Maybe (Predicate) , "Actions" :: (ActionList) , "Description" :: Maybe (DescriptionString) } ) -> CreateTriggerRequest
+newCreateTriggerRequest' _Actions _Name _Type customize = (CreateTriggerRequest <<< customize) { "Actions": _Actions, "Name": _Name, "Type": _Type, "Description": Nothing, "Predicate": Nothing, "Schedule": Nothing }
 
 
 
 newtype CreateTriggerResponse = CreateTriggerResponse 
-  { "Name" :: NullOrUndefined (NameString)
+  { "Name" :: Maybe (NameString)
   }
 derive instance newtypeCreateTriggerResponse :: Newtype CreateTriggerResponse _
 derive instance repGenericCreateTriggerResponse :: Generic CreateTriggerResponse _
@@ -1645,17 +1644,17 @@ instance encodeCreateTriggerResponse :: Encode CreateTriggerResponse where encod
 
 -- | Constructs CreateTriggerResponse from required parameters
 newCreateTriggerResponse :: CreateTriggerResponse
-newCreateTriggerResponse  = CreateTriggerResponse { "Name": (NullOrUndefined Nothing) }
+newCreateTriggerResponse  = CreateTriggerResponse { "Name": Nothing }
 
 -- | Constructs CreateTriggerResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateTriggerResponse' :: ( { "Name" :: NullOrUndefined (NameString) } -> {"Name" :: NullOrUndefined (NameString) } ) -> CreateTriggerResponse
-newCreateTriggerResponse'  customize = (CreateTriggerResponse <<< customize) { "Name": (NullOrUndefined Nothing) }
+newCreateTriggerResponse' :: ( { "Name" :: Maybe (NameString) } -> {"Name" :: Maybe (NameString) } ) -> CreateTriggerResponse
+newCreateTriggerResponse'  customize = (CreateTriggerResponse <<< customize) { "Name": Nothing }
 
 
 
 newtype CreateUserDefinedFunctionRequest = CreateUserDefinedFunctionRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseName" :: (NameString)
   , "FunctionInput" :: (UserDefinedFunctionInput)
   }
@@ -1667,12 +1666,12 @@ instance encodeCreateUserDefinedFunctionRequest :: Encode CreateUserDefinedFunct
 
 -- | Constructs CreateUserDefinedFunctionRequest from required parameters
 newCreateUserDefinedFunctionRequest :: NameString -> UserDefinedFunctionInput -> CreateUserDefinedFunctionRequest
-newCreateUserDefinedFunctionRequest _DatabaseName _FunctionInput = CreateUserDefinedFunctionRequest { "DatabaseName": _DatabaseName, "FunctionInput": _FunctionInput, "CatalogId": (NullOrUndefined Nothing) }
+newCreateUserDefinedFunctionRequest _DatabaseName _FunctionInput = CreateUserDefinedFunctionRequest { "DatabaseName": _DatabaseName, "FunctionInput": _FunctionInput, "CatalogId": Nothing }
 
 -- | Constructs CreateUserDefinedFunctionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateUserDefinedFunctionRequest' :: NameString -> UserDefinedFunctionInput -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "FunctionInput" :: (UserDefinedFunctionInput) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "FunctionInput" :: (UserDefinedFunctionInput) } ) -> CreateUserDefinedFunctionRequest
-newCreateUserDefinedFunctionRequest' _DatabaseName _FunctionInput customize = (CreateUserDefinedFunctionRequest <<< customize) { "DatabaseName": _DatabaseName, "FunctionInput": _FunctionInput, "CatalogId": (NullOrUndefined Nothing) }
+newCreateUserDefinedFunctionRequest' :: NameString -> UserDefinedFunctionInput -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "FunctionInput" :: (UserDefinedFunctionInput) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "FunctionInput" :: (UserDefinedFunctionInput) } ) -> CreateUserDefinedFunctionRequest
+newCreateUserDefinedFunctionRequest' _DatabaseName _FunctionInput customize = (CreateUserDefinedFunctionRequest <<< customize) { "DatabaseName": _DatabaseName, "FunctionInput": _FunctionInput, "CatalogId": Nothing }
 
 
 
@@ -1689,7 +1688,7 @@ instance encodeCreateUserDefinedFunctionResponse :: Encode CreateUserDefinedFunc
 newtype CreateXMLClassifierRequest = CreateXMLClassifierRequest 
   { "Classification" :: (Classification)
   , "Name" :: (NameString)
-  , "RowTag" :: NullOrUndefined (RowTag)
+  , "RowTag" :: Maybe (RowTag)
   }
 derive instance newtypeCreateXMLClassifierRequest :: Newtype CreateXMLClassifierRequest _
 derive instance repGenericCreateXMLClassifierRequest :: Generic CreateXMLClassifierRequest _
@@ -1699,12 +1698,12 @@ instance encodeCreateXMLClassifierRequest :: Encode CreateXMLClassifierRequest w
 
 -- | Constructs CreateXMLClassifierRequest from required parameters
 newCreateXMLClassifierRequest :: Classification -> NameString -> CreateXMLClassifierRequest
-newCreateXMLClassifierRequest _Classification _Name = CreateXMLClassifierRequest { "Classification": _Classification, "Name": _Name, "RowTag": (NullOrUndefined Nothing) }
+newCreateXMLClassifierRequest _Classification _Name = CreateXMLClassifierRequest { "Classification": _Classification, "Name": _Name, "RowTag": Nothing }
 
 -- | Constructs CreateXMLClassifierRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateXMLClassifierRequest' :: Classification -> NameString -> ( { "Classification" :: (Classification) , "Name" :: (NameString) , "RowTag" :: NullOrUndefined (RowTag) } -> {"Classification" :: (Classification) , "Name" :: (NameString) , "RowTag" :: NullOrUndefined (RowTag) } ) -> CreateXMLClassifierRequest
-newCreateXMLClassifierRequest' _Classification _Name customize = (CreateXMLClassifierRequest <<< customize) { "Classification": _Classification, "Name": _Name, "RowTag": (NullOrUndefined Nothing) }
+newCreateXMLClassifierRequest' :: Classification -> NameString -> ( { "Classification" :: (Classification) , "Name" :: (NameString) , "RowTag" :: Maybe (RowTag) } -> {"Classification" :: (Classification) , "Name" :: (NameString) , "RowTag" :: Maybe (RowTag) } ) -> CreateXMLClassifierRequest
+newCreateXMLClassifierRequest' _Classification _Name customize = (CreateXMLClassifierRequest <<< customize) { "Classification": _Classification, "Name": _Name, "RowTag": Nothing }
 
 
 
@@ -1747,10 +1746,10 @@ instance encodeDagNodes :: Encode DagNodes where encode = genericEncode options
 -- | <p>The <code>Database</code> object represents a logical grouping of tables that may reside in a Hive metastore or an RDBMS.</p>
 newtype Database = Database 
   { "Name" :: (NameString)
-  , "Description" :: NullOrUndefined (DescriptionString)
-  , "LocationUri" :: NullOrUndefined (URI)
-  , "Parameters" :: NullOrUndefined (ParametersMap)
-  , "CreateTime" :: NullOrUndefined (Types.Timestamp)
+  , "Description" :: Maybe (DescriptionString)
+  , "LocationUri" :: Maybe (URI)
+  , "Parameters" :: Maybe (ParametersMap)
+  , "CreateTime" :: Maybe (Types.Timestamp)
   }
 derive instance newtypeDatabase :: Newtype Database _
 derive instance repGenericDatabase :: Generic Database _
@@ -1760,21 +1759,21 @@ instance encodeDatabase :: Encode Database where encode = genericEncode options
 
 -- | Constructs Database from required parameters
 newDatabase :: NameString -> Database
-newDatabase _Name = Database { "Name": _Name, "CreateTime": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "LocationUri": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newDatabase _Name = Database { "Name": _Name, "CreateTime": Nothing, "Description": Nothing, "LocationUri": Nothing, "Parameters": Nothing }
 
 -- | Constructs Database's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDatabase' :: NameString -> ( { "Name" :: (NameString) , "Description" :: NullOrUndefined (DescriptionString) , "LocationUri" :: NullOrUndefined (URI) , "Parameters" :: NullOrUndefined (ParametersMap) , "CreateTime" :: NullOrUndefined (Types.Timestamp) } -> {"Name" :: (NameString) , "Description" :: NullOrUndefined (DescriptionString) , "LocationUri" :: NullOrUndefined (URI) , "Parameters" :: NullOrUndefined (ParametersMap) , "CreateTime" :: NullOrUndefined (Types.Timestamp) } ) -> Database
-newDatabase' _Name customize = (Database <<< customize) { "Name": _Name, "CreateTime": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "LocationUri": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newDatabase' :: NameString -> ( { "Name" :: (NameString) , "Description" :: Maybe (DescriptionString) , "LocationUri" :: Maybe (URI) , "Parameters" :: Maybe (ParametersMap) , "CreateTime" :: Maybe (Types.Timestamp) } -> {"Name" :: (NameString) , "Description" :: Maybe (DescriptionString) , "LocationUri" :: Maybe (URI) , "Parameters" :: Maybe (ParametersMap) , "CreateTime" :: Maybe (Types.Timestamp) } ) -> Database
+newDatabase' _Name customize = (Database <<< customize) { "Name": _Name, "CreateTime": Nothing, "Description": Nothing, "LocationUri": Nothing, "Parameters": Nothing }
 
 
 
 -- | <p>The structure used to create or update a database.</p>
 newtype DatabaseInput = DatabaseInput 
   { "Name" :: (NameString)
-  , "Description" :: NullOrUndefined (DescriptionString)
-  , "LocationUri" :: NullOrUndefined (URI)
-  , "Parameters" :: NullOrUndefined (ParametersMap)
+  , "Description" :: Maybe (DescriptionString)
+  , "LocationUri" :: Maybe (URI)
+  , "Parameters" :: Maybe (ParametersMap)
   }
 derive instance newtypeDatabaseInput :: Newtype DatabaseInput _
 derive instance repGenericDatabaseInput :: Generic DatabaseInput _
@@ -1784,12 +1783,12 @@ instance encodeDatabaseInput :: Encode DatabaseInput where encode = genericEncod
 
 -- | Constructs DatabaseInput from required parameters
 newDatabaseInput :: NameString -> DatabaseInput
-newDatabaseInput _Name = DatabaseInput { "Name": _Name, "Description": (NullOrUndefined Nothing), "LocationUri": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newDatabaseInput _Name = DatabaseInput { "Name": _Name, "Description": Nothing, "LocationUri": Nothing, "Parameters": Nothing }
 
 -- | Constructs DatabaseInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDatabaseInput' :: NameString -> ( { "Name" :: (NameString) , "Description" :: NullOrUndefined (DescriptionString) , "LocationUri" :: NullOrUndefined (URI) , "Parameters" :: NullOrUndefined (ParametersMap) } -> {"Name" :: (NameString) , "Description" :: NullOrUndefined (DescriptionString) , "LocationUri" :: NullOrUndefined (URI) , "Parameters" :: NullOrUndefined (ParametersMap) } ) -> DatabaseInput
-newDatabaseInput' _Name customize = (DatabaseInput <<< customize) { "Name": _Name, "Description": (NullOrUndefined Nothing), "LocationUri": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing) }
+newDatabaseInput' :: NameString -> ( { "Name" :: (NameString) , "Description" :: Maybe (DescriptionString) , "LocationUri" :: Maybe (URI) , "Parameters" :: Maybe (ParametersMap) } -> {"Name" :: (NameString) , "Description" :: Maybe (DescriptionString) , "LocationUri" :: Maybe (URI) , "Parameters" :: Maybe (ParametersMap) } ) -> DatabaseInput
+newDatabaseInput' _Name customize = (DatabaseInput <<< customize) { "Name": _Name, "Description": Nothing, "LocationUri": Nothing, "Parameters": Nothing }
 
 
 
@@ -1859,7 +1858,7 @@ instance encodeDeleteConnectionNameList :: Encode DeleteConnectionNameList where
 
 
 newtype DeleteConnectionRequest = DeleteConnectionRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "ConnectionName" :: (NameString)
   }
 derive instance newtypeDeleteConnectionRequest :: Newtype DeleteConnectionRequest _
@@ -1870,12 +1869,12 @@ instance encodeDeleteConnectionRequest :: Encode DeleteConnectionRequest where e
 
 -- | Constructs DeleteConnectionRequest from required parameters
 newDeleteConnectionRequest :: NameString -> DeleteConnectionRequest
-newDeleteConnectionRequest _ConnectionName = DeleteConnectionRequest { "ConnectionName": _ConnectionName, "CatalogId": (NullOrUndefined Nothing) }
+newDeleteConnectionRequest _ConnectionName = DeleteConnectionRequest { "ConnectionName": _ConnectionName, "CatalogId": Nothing }
 
 -- | Constructs DeleteConnectionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteConnectionRequest' :: NameString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "ConnectionName" :: (NameString) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "ConnectionName" :: (NameString) } ) -> DeleteConnectionRequest
-newDeleteConnectionRequest' _ConnectionName customize = (DeleteConnectionRequest <<< customize) { "ConnectionName": _ConnectionName, "CatalogId": (NullOrUndefined Nothing) }
+newDeleteConnectionRequest' :: NameString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "ConnectionName" :: (NameString) } -> {"CatalogId" :: Maybe (CatalogIdString) , "ConnectionName" :: (NameString) } ) -> DeleteConnectionRequest
+newDeleteConnectionRequest' _ConnectionName customize = (DeleteConnectionRequest <<< customize) { "ConnectionName": _ConnectionName, "CatalogId": Nothing }
 
 
 
@@ -1918,7 +1917,7 @@ instance encodeDeleteCrawlerResponse :: Encode DeleteCrawlerResponse where encod
 
 
 newtype DeleteDatabaseRequest = DeleteDatabaseRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "Name" :: (NameString)
   }
 derive instance newtypeDeleteDatabaseRequest :: Newtype DeleteDatabaseRequest _
@@ -1929,12 +1928,12 @@ instance encodeDeleteDatabaseRequest :: Encode DeleteDatabaseRequest where encod
 
 -- | Constructs DeleteDatabaseRequest from required parameters
 newDeleteDatabaseRequest :: NameString -> DeleteDatabaseRequest
-newDeleteDatabaseRequest _Name = DeleteDatabaseRequest { "Name": _Name, "CatalogId": (NullOrUndefined Nothing) }
+newDeleteDatabaseRequest _Name = DeleteDatabaseRequest { "Name": _Name, "CatalogId": Nothing }
 
 -- | Constructs DeleteDatabaseRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteDatabaseRequest' :: NameString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "Name" :: (NameString) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "Name" :: (NameString) } ) -> DeleteDatabaseRequest
-newDeleteDatabaseRequest' _Name customize = (DeleteDatabaseRequest <<< customize) { "Name": _Name, "CatalogId": (NullOrUndefined Nothing) }
+newDeleteDatabaseRequest' :: NameString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "Name" :: (NameString) } -> {"CatalogId" :: Maybe (CatalogIdString) , "Name" :: (NameString) } ) -> DeleteDatabaseRequest
+newDeleteDatabaseRequest' _Name customize = (DeleteDatabaseRequest <<< customize) { "Name": _Name, "CatalogId": Nothing }
 
 
 
@@ -1997,7 +1996,7 @@ newDeleteJobRequest' _JobName customize = (DeleteJobRequest <<< customize) { "Jo
 
 
 newtype DeleteJobResponse = DeleteJobResponse 
-  { "JobName" :: NullOrUndefined (NameString)
+  { "JobName" :: Maybe (NameString)
   }
 derive instance newtypeDeleteJobResponse :: Newtype DeleteJobResponse _
 derive instance repGenericDeleteJobResponse :: Generic DeleteJobResponse _
@@ -2007,17 +2006,17 @@ instance encodeDeleteJobResponse :: Encode DeleteJobResponse where encode = gene
 
 -- | Constructs DeleteJobResponse from required parameters
 newDeleteJobResponse :: DeleteJobResponse
-newDeleteJobResponse  = DeleteJobResponse { "JobName": (NullOrUndefined Nothing) }
+newDeleteJobResponse  = DeleteJobResponse { "JobName": Nothing }
 
 -- | Constructs DeleteJobResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteJobResponse' :: ( { "JobName" :: NullOrUndefined (NameString) } -> {"JobName" :: NullOrUndefined (NameString) } ) -> DeleteJobResponse
-newDeleteJobResponse'  customize = (DeleteJobResponse <<< customize) { "JobName": (NullOrUndefined Nothing) }
+newDeleteJobResponse' :: ( { "JobName" :: Maybe (NameString) } -> {"JobName" :: Maybe (NameString) } ) -> DeleteJobResponse
+newDeleteJobResponse'  customize = (DeleteJobResponse <<< customize) { "JobName": Nothing }
 
 
 
 newtype DeletePartitionRequest = DeletePartitionRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseName" :: (NameString)
   , "TableName" :: (NameString)
   , "PartitionValues" :: (ValueStringList)
@@ -2030,12 +2029,12 @@ instance encodeDeletePartitionRequest :: Encode DeletePartitionRequest where enc
 
 -- | Constructs DeletePartitionRequest from required parameters
 newDeletePartitionRequest :: NameString -> ValueStringList -> NameString -> DeletePartitionRequest
-newDeletePartitionRequest _DatabaseName _PartitionValues _TableName = DeletePartitionRequest { "DatabaseName": _DatabaseName, "PartitionValues": _PartitionValues, "TableName": _TableName, "CatalogId": (NullOrUndefined Nothing) }
+newDeletePartitionRequest _DatabaseName _PartitionValues _TableName = DeletePartitionRequest { "DatabaseName": _DatabaseName, "PartitionValues": _PartitionValues, "TableName": _TableName, "CatalogId": Nothing }
 
 -- | Constructs DeletePartitionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeletePartitionRequest' :: NameString -> ValueStringList -> NameString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionValues" :: (ValueStringList) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionValues" :: (ValueStringList) } ) -> DeletePartitionRequest
-newDeletePartitionRequest' _DatabaseName _PartitionValues _TableName customize = (DeletePartitionRequest <<< customize) { "DatabaseName": _DatabaseName, "PartitionValues": _PartitionValues, "TableName": _TableName, "CatalogId": (NullOrUndefined Nothing) }
+newDeletePartitionRequest' :: NameString -> ValueStringList -> NameString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionValues" :: (ValueStringList) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionValues" :: (ValueStringList) } ) -> DeletePartitionRequest
+newDeletePartitionRequest' _DatabaseName _PartitionValues _TableName customize = (DeletePartitionRequest <<< customize) { "DatabaseName": _DatabaseName, "PartitionValues": _PartitionValues, "TableName": _TableName, "CatalogId": Nothing }
 
 
 
@@ -2049,7 +2048,7 @@ instance encodeDeletePartitionResponse :: Encode DeletePartitionResponse where e
 
 
 newtype DeleteTableRequest = DeleteTableRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseName" :: (NameString)
   , "Name" :: (NameString)
   }
@@ -2061,12 +2060,12 @@ instance encodeDeleteTableRequest :: Encode DeleteTableRequest where encode = ge
 
 -- | Constructs DeleteTableRequest from required parameters
 newDeleteTableRequest :: NameString -> NameString -> DeleteTableRequest
-newDeleteTableRequest _DatabaseName _Name = DeleteTableRequest { "DatabaseName": _DatabaseName, "Name": _Name, "CatalogId": (NullOrUndefined Nothing) }
+newDeleteTableRequest _DatabaseName _Name = DeleteTableRequest { "DatabaseName": _DatabaseName, "Name": _Name, "CatalogId": Nothing }
 
 -- | Constructs DeleteTableRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteTableRequest' :: NameString -> NameString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "Name" :: (NameString) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "Name" :: (NameString) } ) -> DeleteTableRequest
-newDeleteTableRequest' _DatabaseName _Name customize = (DeleteTableRequest <<< customize) { "DatabaseName": _DatabaseName, "Name": _Name, "CatalogId": (NullOrUndefined Nothing) }
+newDeleteTableRequest' :: NameString -> NameString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "Name" :: (NameString) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "Name" :: (NameString) } ) -> DeleteTableRequest
+newDeleteTableRequest' _DatabaseName _Name customize = (DeleteTableRequest <<< customize) { "DatabaseName": _DatabaseName, "Name": _Name, "CatalogId": Nothing }
 
 
 
@@ -2080,7 +2079,7 @@ instance encodeDeleteTableResponse :: Encode DeleteTableResponse where encode = 
 
 
 newtype DeleteTableVersionRequest = DeleteTableVersionRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseName" :: (NameString)
   , "TableName" :: (NameString)
   , "VersionId" :: (VersionString)
@@ -2093,12 +2092,12 @@ instance encodeDeleteTableVersionRequest :: Encode DeleteTableVersionRequest whe
 
 -- | Constructs DeleteTableVersionRequest from required parameters
 newDeleteTableVersionRequest :: NameString -> NameString -> VersionString -> DeleteTableVersionRequest
-newDeleteTableVersionRequest _DatabaseName _TableName _VersionId = DeleteTableVersionRequest { "DatabaseName": _DatabaseName, "TableName": _TableName, "VersionId": _VersionId, "CatalogId": (NullOrUndefined Nothing) }
+newDeleteTableVersionRequest _DatabaseName _TableName _VersionId = DeleteTableVersionRequest { "DatabaseName": _DatabaseName, "TableName": _TableName, "VersionId": _VersionId, "CatalogId": Nothing }
 
 -- | Constructs DeleteTableVersionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteTableVersionRequest' :: NameString -> NameString -> VersionString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "VersionId" :: (VersionString) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "VersionId" :: (VersionString) } ) -> DeleteTableVersionRequest
-newDeleteTableVersionRequest' _DatabaseName _TableName _VersionId customize = (DeleteTableVersionRequest <<< customize) { "DatabaseName": _DatabaseName, "TableName": _TableName, "VersionId": _VersionId, "CatalogId": (NullOrUndefined Nothing) }
+newDeleteTableVersionRequest' :: NameString -> NameString -> VersionString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "VersionId" :: (VersionString) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "VersionId" :: (VersionString) } ) -> DeleteTableVersionRequest
+newDeleteTableVersionRequest' _DatabaseName _TableName _VersionId customize = (DeleteTableVersionRequest <<< customize) { "DatabaseName": _DatabaseName, "TableName": _TableName, "VersionId": _VersionId, "CatalogId": Nothing }
 
 
 
@@ -2132,7 +2131,7 @@ newDeleteTriggerRequest' _Name customize = (DeleteTriggerRequest <<< customize) 
 
 
 newtype DeleteTriggerResponse = DeleteTriggerResponse 
-  { "Name" :: NullOrUndefined (NameString)
+  { "Name" :: Maybe (NameString)
   }
 derive instance newtypeDeleteTriggerResponse :: Newtype DeleteTriggerResponse _
 derive instance repGenericDeleteTriggerResponse :: Generic DeleteTriggerResponse _
@@ -2142,17 +2141,17 @@ instance encodeDeleteTriggerResponse :: Encode DeleteTriggerResponse where encod
 
 -- | Constructs DeleteTriggerResponse from required parameters
 newDeleteTriggerResponse :: DeleteTriggerResponse
-newDeleteTriggerResponse  = DeleteTriggerResponse { "Name": (NullOrUndefined Nothing) }
+newDeleteTriggerResponse  = DeleteTriggerResponse { "Name": Nothing }
 
 -- | Constructs DeleteTriggerResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteTriggerResponse' :: ( { "Name" :: NullOrUndefined (NameString) } -> {"Name" :: NullOrUndefined (NameString) } ) -> DeleteTriggerResponse
-newDeleteTriggerResponse'  customize = (DeleteTriggerResponse <<< customize) { "Name": (NullOrUndefined Nothing) }
+newDeleteTriggerResponse' :: ( { "Name" :: Maybe (NameString) } -> {"Name" :: Maybe (NameString) } ) -> DeleteTriggerResponse
+newDeleteTriggerResponse'  customize = (DeleteTriggerResponse <<< customize) { "Name": Nothing }
 
 
 
 newtype DeleteUserDefinedFunctionRequest = DeleteUserDefinedFunctionRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseName" :: (NameString)
   , "FunctionName" :: (NameString)
   }
@@ -2164,12 +2163,12 @@ instance encodeDeleteUserDefinedFunctionRequest :: Encode DeleteUserDefinedFunct
 
 -- | Constructs DeleteUserDefinedFunctionRequest from required parameters
 newDeleteUserDefinedFunctionRequest :: NameString -> NameString -> DeleteUserDefinedFunctionRequest
-newDeleteUserDefinedFunctionRequest _DatabaseName _FunctionName = DeleteUserDefinedFunctionRequest { "DatabaseName": _DatabaseName, "FunctionName": _FunctionName, "CatalogId": (NullOrUndefined Nothing) }
+newDeleteUserDefinedFunctionRequest _DatabaseName _FunctionName = DeleteUserDefinedFunctionRequest { "DatabaseName": _DatabaseName, "FunctionName": _FunctionName, "CatalogId": Nothing }
 
 -- | Constructs DeleteUserDefinedFunctionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteUserDefinedFunctionRequest' :: NameString -> NameString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "FunctionName" :: (NameString) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "FunctionName" :: (NameString) } ) -> DeleteUserDefinedFunctionRequest
-newDeleteUserDefinedFunctionRequest' _DatabaseName _FunctionName customize = (DeleteUserDefinedFunctionRequest <<< customize) { "DatabaseName": _DatabaseName, "FunctionName": _FunctionName, "CatalogId": (NullOrUndefined Nothing) }
+newDeleteUserDefinedFunctionRequest' :: NameString -> NameString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "FunctionName" :: (NameString) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "FunctionName" :: (NameString) } ) -> DeleteUserDefinedFunctionRequest
+newDeleteUserDefinedFunctionRequest' _DatabaseName _FunctionName customize = (DeleteUserDefinedFunctionRequest <<< customize) { "DatabaseName": _DatabaseName, "FunctionName": _FunctionName, "CatalogId": Nothing }
 
 
 
@@ -2202,24 +2201,24 @@ instance encodeDescriptionStringRemovable :: Encode DescriptionStringRemovable w
 
 -- | <p>A development endpoint where a developer can remotely debug ETL scripts.</p>
 newtype DevEndpoint = DevEndpoint 
-  { "EndpointName" :: NullOrUndefined (GenericString)
-  , "RoleArn" :: NullOrUndefined (RoleArn)
-  , "SecurityGroupIds" :: NullOrUndefined (StringList)
-  , "SubnetId" :: NullOrUndefined (GenericString)
-  , "YarnEndpointAddress" :: NullOrUndefined (GenericString)
-  , "ZeppelinRemoteSparkInterpreterPort" :: NullOrUndefined (IntegerValue)
-  , "PublicAddress" :: NullOrUndefined (GenericString)
-  , "Status" :: NullOrUndefined (GenericString)
-  , "NumberOfNodes" :: NullOrUndefined (IntegerValue)
-  , "AvailabilityZone" :: NullOrUndefined (GenericString)
-  , "VpcId" :: NullOrUndefined (GenericString)
-  , "ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString)
-  , "ExtraJarsS3Path" :: NullOrUndefined (GenericString)
-  , "FailureReason" :: NullOrUndefined (GenericString)
-  , "LastUpdateStatus" :: NullOrUndefined (GenericString)
-  , "CreatedTimestamp" :: NullOrUndefined (TimestampValue)
-  , "LastModifiedTimestamp" :: NullOrUndefined (TimestampValue)
-  , "PublicKey" :: NullOrUndefined (GenericString)
+  { "EndpointName" :: Maybe (GenericString)
+  , "RoleArn" :: Maybe (RoleArn)
+  , "SecurityGroupIds" :: Maybe (StringList)
+  , "SubnetId" :: Maybe (GenericString)
+  , "YarnEndpointAddress" :: Maybe (GenericString)
+  , "ZeppelinRemoteSparkInterpreterPort" :: Maybe (IntegerValue)
+  , "PublicAddress" :: Maybe (GenericString)
+  , "Status" :: Maybe (GenericString)
+  , "NumberOfNodes" :: Maybe (IntegerValue)
+  , "AvailabilityZone" :: Maybe (GenericString)
+  , "VpcId" :: Maybe (GenericString)
+  , "ExtraPythonLibsS3Path" :: Maybe (GenericString)
+  , "ExtraJarsS3Path" :: Maybe (GenericString)
+  , "FailureReason" :: Maybe (GenericString)
+  , "LastUpdateStatus" :: Maybe (GenericString)
+  , "CreatedTimestamp" :: Maybe (TimestampValue)
+  , "LastModifiedTimestamp" :: Maybe (TimestampValue)
+  , "PublicKey" :: Maybe (GenericString)
   }
 derive instance newtypeDevEndpoint :: Newtype DevEndpoint _
 derive instance repGenericDevEndpoint :: Generic DevEndpoint _
@@ -2229,19 +2228,19 @@ instance encodeDevEndpoint :: Encode DevEndpoint where encode = genericEncode op
 
 -- | Constructs DevEndpoint from required parameters
 newDevEndpoint :: DevEndpoint
-newDevEndpoint  = DevEndpoint { "AvailabilityZone": (NullOrUndefined Nothing), "CreatedTimestamp": (NullOrUndefined Nothing), "EndpointName": (NullOrUndefined Nothing), "ExtraJarsS3Path": (NullOrUndefined Nothing), "ExtraPythonLibsS3Path": (NullOrUndefined Nothing), "FailureReason": (NullOrUndefined Nothing), "LastModifiedTimestamp": (NullOrUndefined Nothing), "LastUpdateStatus": (NullOrUndefined Nothing), "NumberOfNodes": (NullOrUndefined Nothing), "PublicAddress": (NullOrUndefined Nothing), "PublicKey": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing), "SecurityGroupIds": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "SubnetId": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing), "YarnEndpointAddress": (NullOrUndefined Nothing), "ZeppelinRemoteSparkInterpreterPort": (NullOrUndefined Nothing) }
+newDevEndpoint  = DevEndpoint { "AvailabilityZone": Nothing, "CreatedTimestamp": Nothing, "EndpointName": Nothing, "ExtraJarsS3Path": Nothing, "ExtraPythonLibsS3Path": Nothing, "FailureReason": Nothing, "LastModifiedTimestamp": Nothing, "LastUpdateStatus": Nothing, "NumberOfNodes": Nothing, "PublicAddress": Nothing, "PublicKey": Nothing, "RoleArn": Nothing, "SecurityGroupIds": Nothing, "Status": Nothing, "SubnetId": Nothing, "VpcId": Nothing, "YarnEndpointAddress": Nothing, "ZeppelinRemoteSparkInterpreterPort": Nothing }
 
 -- | Constructs DevEndpoint's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDevEndpoint' :: ( { "EndpointName" :: NullOrUndefined (GenericString) , "RoleArn" :: NullOrUndefined (RoleArn) , "SecurityGroupIds" :: NullOrUndefined (StringList) , "SubnetId" :: NullOrUndefined (GenericString) , "YarnEndpointAddress" :: NullOrUndefined (GenericString) , "ZeppelinRemoteSparkInterpreterPort" :: NullOrUndefined (IntegerValue) , "PublicAddress" :: NullOrUndefined (GenericString) , "Status" :: NullOrUndefined (GenericString) , "NumberOfNodes" :: NullOrUndefined (IntegerValue) , "AvailabilityZone" :: NullOrUndefined (GenericString) , "VpcId" :: NullOrUndefined (GenericString) , "ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString) , "ExtraJarsS3Path" :: NullOrUndefined (GenericString) , "FailureReason" :: NullOrUndefined (GenericString) , "LastUpdateStatus" :: NullOrUndefined (GenericString) , "CreatedTimestamp" :: NullOrUndefined (TimestampValue) , "LastModifiedTimestamp" :: NullOrUndefined (TimestampValue) , "PublicKey" :: NullOrUndefined (GenericString) } -> {"EndpointName" :: NullOrUndefined (GenericString) , "RoleArn" :: NullOrUndefined (RoleArn) , "SecurityGroupIds" :: NullOrUndefined (StringList) , "SubnetId" :: NullOrUndefined (GenericString) , "YarnEndpointAddress" :: NullOrUndefined (GenericString) , "ZeppelinRemoteSparkInterpreterPort" :: NullOrUndefined (IntegerValue) , "PublicAddress" :: NullOrUndefined (GenericString) , "Status" :: NullOrUndefined (GenericString) , "NumberOfNodes" :: NullOrUndefined (IntegerValue) , "AvailabilityZone" :: NullOrUndefined (GenericString) , "VpcId" :: NullOrUndefined (GenericString) , "ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString) , "ExtraJarsS3Path" :: NullOrUndefined (GenericString) , "FailureReason" :: NullOrUndefined (GenericString) , "LastUpdateStatus" :: NullOrUndefined (GenericString) , "CreatedTimestamp" :: NullOrUndefined (TimestampValue) , "LastModifiedTimestamp" :: NullOrUndefined (TimestampValue) , "PublicKey" :: NullOrUndefined (GenericString) } ) -> DevEndpoint
-newDevEndpoint'  customize = (DevEndpoint <<< customize) { "AvailabilityZone": (NullOrUndefined Nothing), "CreatedTimestamp": (NullOrUndefined Nothing), "EndpointName": (NullOrUndefined Nothing), "ExtraJarsS3Path": (NullOrUndefined Nothing), "ExtraPythonLibsS3Path": (NullOrUndefined Nothing), "FailureReason": (NullOrUndefined Nothing), "LastModifiedTimestamp": (NullOrUndefined Nothing), "LastUpdateStatus": (NullOrUndefined Nothing), "NumberOfNodes": (NullOrUndefined Nothing), "PublicAddress": (NullOrUndefined Nothing), "PublicKey": (NullOrUndefined Nothing), "RoleArn": (NullOrUndefined Nothing), "SecurityGroupIds": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "SubnetId": (NullOrUndefined Nothing), "VpcId": (NullOrUndefined Nothing), "YarnEndpointAddress": (NullOrUndefined Nothing), "ZeppelinRemoteSparkInterpreterPort": (NullOrUndefined Nothing) }
+newDevEndpoint' :: ( { "EndpointName" :: Maybe (GenericString) , "RoleArn" :: Maybe (RoleArn) , "SecurityGroupIds" :: Maybe (StringList) , "SubnetId" :: Maybe (GenericString) , "YarnEndpointAddress" :: Maybe (GenericString) , "ZeppelinRemoteSparkInterpreterPort" :: Maybe (IntegerValue) , "PublicAddress" :: Maybe (GenericString) , "Status" :: Maybe (GenericString) , "NumberOfNodes" :: Maybe (IntegerValue) , "AvailabilityZone" :: Maybe (GenericString) , "VpcId" :: Maybe (GenericString) , "ExtraPythonLibsS3Path" :: Maybe (GenericString) , "ExtraJarsS3Path" :: Maybe (GenericString) , "FailureReason" :: Maybe (GenericString) , "LastUpdateStatus" :: Maybe (GenericString) , "CreatedTimestamp" :: Maybe (TimestampValue) , "LastModifiedTimestamp" :: Maybe (TimestampValue) , "PublicKey" :: Maybe (GenericString) } -> {"EndpointName" :: Maybe (GenericString) , "RoleArn" :: Maybe (RoleArn) , "SecurityGroupIds" :: Maybe (StringList) , "SubnetId" :: Maybe (GenericString) , "YarnEndpointAddress" :: Maybe (GenericString) , "ZeppelinRemoteSparkInterpreterPort" :: Maybe (IntegerValue) , "PublicAddress" :: Maybe (GenericString) , "Status" :: Maybe (GenericString) , "NumberOfNodes" :: Maybe (IntegerValue) , "AvailabilityZone" :: Maybe (GenericString) , "VpcId" :: Maybe (GenericString) , "ExtraPythonLibsS3Path" :: Maybe (GenericString) , "ExtraJarsS3Path" :: Maybe (GenericString) , "FailureReason" :: Maybe (GenericString) , "LastUpdateStatus" :: Maybe (GenericString) , "CreatedTimestamp" :: Maybe (TimestampValue) , "LastModifiedTimestamp" :: Maybe (TimestampValue) , "PublicKey" :: Maybe (GenericString) } ) -> DevEndpoint
+newDevEndpoint'  customize = (DevEndpoint <<< customize) { "AvailabilityZone": Nothing, "CreatedTimestamp": Nothing, "EndpointName": Nothing, "ExtraJarsS3Path": Nothing, "ExtraPythonLibsS3Path": Nothing, "FailureReason": Nothing, "LastModifiedTimestamp": Nothing, "LastUpdateStatus": Nothing, "NumberOfNodes": Nothing, "PublicAddress": Nothing, "PublicKey": Nothing, "RoleArn": Nothing, "SecurityGroupIds": Nothing, "Status": Nothing, "SubnetId": Nothing, "VpcId": Nothing, "YarnEndpointAddress": Nothing, "ZeppelinRemoteSparkInterpreterPort": Nothing }
 
 
 
 -- | <p>Custom libraries to be loaded into a DevEndpoint.</p>
 newtype DevEndpointCustomLibraries = DevEndpointCustomLibraries 
-  { "ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString)
-  , "ExtraJarsS3Path" :: NullOrUndefined (GenericString)
+  { "ExtraPythonLibsS3Path" :: Maybe (GenericString)
+  , "ExtraJarsS3Path" :: Maybe (GenericString)
   }
 derive instance newtypeDevEndpointCustomLibraries :: Newtype DevEndpointCustomLibraries _
 derive instance repGenericDevEndpointCustomLibraries :: Generic DevEndpointCustomLibraries _
@@ -2251,12 +2250,12 @@ instance encodeDevEndpointCustomLibraries :: Encode DevEndpointCustomLibraries w
 
 -- | Constructs DevEndpointCustomLibraries from required parameters
 newDevEndpointCustomLibraries :: DevEndpointCustomLibraries
-newDevEndpointCustomLibraries  = DevEndpointCustomLibraries { "ExtraJarsS3Path": (NullOrUndefined Nothing), "ExtraPythonLibsS3Path": (NullOrUndefined Nothing) }
+newDevEndpointCustomLibraries  = DevEndpointCustomLibraries { "ExtraJarsS3Path": Nothing, "ExtraPythonLibsS3Path": Nothing }
 
 -- | Constructs DevEndpointCustomLibraries's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDevEndpointCustomLibraries' :: ( { "ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString) , "ExtraJarsS3Path" :: NullOrUndefined (GenericString) } -> {"ExtraPythonLibsS3Path" :: NullOrUndefined (GenericString) , "ExtraJarsS3Path" :: NullOrUndefined (GenericString) } ) -> DevEndpointCustomLibraries
-newDevEndpointCustomLibraries'  customize = (DevEndpointCustomLibraries <<< customize) { "ExtraJarsS3Path": (NullOrUndefined Nothing), "ExtraPythonLibsS3Path": (NullOrUndefined Nothing) }
+newDevEndpointCustomLibraries' :: ( { "ExtraPythonLibsS3Path" :: Maybe (GenericString) , "ExtraJarsS3Path" :: Maybe (GenericString) } -> {"ExtraPythonLibsS3Path" :: Maybe (GenericString) , "ExtraJarsS3Path" :: Maybe (GenericString) } ) -> DevEndpointCustomLibraries
+newDevEndpointCustomLibraries'  customize = (DevEndpointCustomLibraries <<< customize) { "ExtraJarsS3Path": Nothing, "ExtraPythonLibsS3Path": Nothing }
 
 
 
@@ -2271,7 +2270,7 @@ instance encodeDevEndpointList :: Encode DevEndpointList where encode = genericE
 
 -- | <p>A specified entity does not exist</p>
 newtype EntityNotFoundException = EntityNotFoundException 
-  { "Message" :: NullOrUndefined (MessageString)
+  { "Message" :: Maybe (MessageString)
   }
 derive instance newtypeEntityNotFoundException :: Newtype EntityNotFoundException _
 derive instance repGenericEntityNotFoundException :: Generic EntityNotFoundException _
@@ -2281,12 +2280,12 @@ instance encodeEntityNotFoundException :: Encode EntityNotFoundException where e
 
 -- | Constructs EntityNotFoundException from required parameters
 newEntityNotFoundException :: EntityNotFoundException
-newEntityNotFoundException  = EntityNotFoundException { "Message": (NullOrUndefined Nothing) }
+newEntityNotFoundException  = EntityNotFoundException { "Message": Nothing }
 
 -- | Constructs EntityNotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEntityNotFoundException' :: ( { "Message" :: NullOrUndefined (MessageString) } -> {"Message" :: NullOrUndefined (MessageString) } ) -> EntityNotFoundException
-newEntityNotFoundException'  customize = (EntityNotFoundException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newEntityNotFoundException' :: ( { "Message" :: Maybe (MessageString) } -> {"Message" :: Maybe (MessageString) } ) -> EntityNotFoundException
+newEntityNotFoundException'  customize = (EntityNotFoundException <<< customize) { "Message": Nothing }
 
 
 
@@ -2301,8 +2300,8 @@ instance encodeErrorByName :: Encode ErrorByName where encode = genericEncode op
 
 -- | <p>Contains details about an error.</p>
 newtype ErrorDetail = ErrorDetail 
-  { "ErrorCode" :: NullOrUndefined (NameString)
-  , "ErrorMessage" :: NullOrUndefined (DescriptionString)
+  { "ErrorCode" :: Maybe (NameString)
+  , "ErrorMessage" :: Maybe (DescriptionString)
   }
 derive instance newtypeErrorDetail :: Newtype ErrorDetail _
 derive instance repGenericErrorDetail :: Generic ErrorDetail _
@@ -2312,12 +2311,12 @@ instance encodeErrorDetail :: Encode ErrorDetail where encode = genericEncode op
 
 -- | Constructs ErrorDetail from required parameters
 newErrorDetail :: ErrorDetail
-newErrorDetail  = ErrorDetail { "ErrorCode": (NullOrUndefined Nothing), "ErrorMessage": (NullOrUndefined Nothing) }
+newErrorDetail  = ErrorDetail { "ErrorCode": Nothing, "ErrorMessage": Nothing }
 
 -- | Constructs ErrorDetail's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newErrorDetail' :: ( { "ErrorCode" :: NullOrUndefined (NameString) , "ErrorMessage" :: NullOrUndefined (DescriptionString) } -> {"ErrorCode" :: NullOrUndefined (NameString) , "ErrorMessage" :: NullOrUndefined (DescriptionString) } ) -> ErrorDetail
-newErrorDetail'  customize = (ErrorDetail <<< customize) { "ErrorCode": (NullOrUndefined Nothing), "ErrorMessage": (NullOrUndefined Nothing) }
+newErrorDetail' :: ( { "ErrorCode" :: Maybe (NameString) , "ErrorMessage" :: Maybe (DescriptionString) } -> {"ErrorCode" :: Maybe (NameString) , "ErrorMessage" :: Maybe (DescriptionString) } ) -> ErrorDetail
+newErrorDetail'  customize = (ErrorDetail <<< customize) { "ErrorCode": Nothing, "ErrorMessage": Nothing }
 
 
 
@@ -2332,7 +2331,7 @@ instance encodeErrorString :: Encode ErrorString where encode = genericEncode op
 
 -- | <p>An execution property of a job.</p>
 newtype ExecutionProperty = ExecutionProperty 
-  { "MaxConcurrentRuns" :: NullOrUndefined (MaxConcurrentRuns)
+  { "MaxConcurrentRuns" :: Maybe (MaxConcurrentRuns)
   }
 derive instance newtypeExecutionProperty :: Newtype ExecutionProperty _
 derive instance repGenericExecutionProperty :: Generic ExecutionProperty _
@@ -2342,12 +2341,12 @@ instance encodeExecutionProperty :: Encode ExecutionProperty where encode = gene
 
 -- | Constructs ExecutionProperty from required parameters
 newExecutionProperty :: ExecutionProperty
-newExecutionProperty  = ExecutionProperty { "MaxConcurrentRuns": (NullOrUndefined Nothing) }
+newExecutionProperty  = ExecutionProperty { "MaxConcurrentRuns": Nothing }
 
 -- | Constructs ExecutionProperty's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newExecutionProperty' :: ( { "MaxConcurrentRuns" :: NullOrUndefined (MaxConcurrentRuns) } -> {"MaxConcurrentRuns" :: NullOrUndefined (MaxConcurrentRuns) } ) -> ExecutionProperty
-newExecutionProperty'  customize = (ExecutionProperty <<< customize) { "MaxConcurrentRuns": (NullOrUndefined Nothing) }
+newExecutionProperty' :: ( { "MaxConcurrentRuns" :: Maybe (MaxConcurrentRuns) } -> {"MaxConcurrentRuns" :: Maybe (MaxConcurrentRuns) } ) -> ExecutionProperty
+newExecutionProperty'  customize = (ExecutionProperty <<< customize) { "MaxConcurrentRuns": Nothing }
 
 
 
@@ -2397,7 +2396,7 @@ instance encodeGenericString :: Encode GenericString where encode = genericEncod
 
 
 newtype GetCatalogImportStatusRequest = GetCatalogImportStatusRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   }
 derive instance newtypeGetCatalogImportStatusRequest :: Newtype GetCatalogImportStatusRequest _
 derive instance repGenericGetCatalogImportStatusRequest :: Generic GetCatalogImportStatusRequest _
@@ -2407,17 +2406,17 @@ instance encodeGetCatalogImportStatusRequest :: Encode GetCatalogImportStatusReq
 
 -- | Constructs GetCatalogImportStatusRequest from required parameters
 newGetCatalogImportStatusRequest :: GetCatalogImportStatusRequest
-newGetCatalogImportStatusRequest  = GetCatalogImportStatusRequest { "CatalogId": (NullOrUndefined Nothing) }
+newGetCatalogImportStatusRequest  = GetCatalogImportStatusRequest { "CatalogId": Nothing }
 
 -- | Constructs GetCatalogImportStatusRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetCatalogImportStatusRequest' :: ( { "CatalogId" :: NullOrUndefined (CatalogIdString) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) } ) -> GetCatalogImportStatusRequest
-newGetCatalogImportStatusRequest'  customize = (GetCatalogImportStatusRequest <<< customize) { "CatalogId": (NullOrUndefined Nothing) }
+newGetCatalogImportStatusRequest' :: ( { "CatalogId" :: Maybe (CatalogIdString) } -> {"CatalogId" :: Maybe (CatalogIdString) } ) -> GetCatalogImportStatusRequest
+newGetCatalogImportStatusRequest'  customize = (GetCatalogImportStatusRequest <<< customize) { "CatalogId": Nothing }
 
 
 
 newtype GetCatalogImportStatusResponse = GetCatalogImportStatusResponse 
-  { "ImportStatus" :: NullOrUndefined (CatalogImportStatus)
+  { "ImportStatus" :: Maybe (CatalogImportStatus)
   }
 derive instance newtypeGetCatalogImportStatusResponse :: Newtype GetCatalogImportStatusResponse _
 derive instance repGenericGetCatalogImportStatusResponse :: Generic GetCatalogImportStatusResponse _
@@ -2427,12 +2426,12 @@ instance encodeGetCatalogImportStatusResponse :: Encode GetCatalogImportStatusRe
 
 -- | Constructs GetCatalogImportStatusResponse from required parameters
 newGetCatalogImportStatusResponse :: GetCatalogImportStatusResponse
-newGetCatalogImportStatusResponse  = GetCatalogImportStatusResponse { "ImportStatus": (NullOrUndefined Nothing) }
+newGetCatalogImportStatusResponse  = GetCatalogImportStatusResponse { "ImportStatus": Nothing }
 
 -- | Constructs GetCatalogImportStatusResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetCatalogImportStatusResponse' :: ( { "ImportStatus" :: NullOrUndefined (CatalogImportStatus) } -> {"ImportStatus" :: NullOrUndefined (CatalogImportStatus) } ) -> GetCatalogImportStatusResponse
-newGetCatalogImportStatusResponse'  customize = (GetCatalogImportStatusResponse <<< customize) { "ImportStatus": (NullOrUndefined Nothing) }
+newGetCatalogImportStatusResponse' :: ( { "ImportStatus" :: Maybe (CatalogImportStatus) } -> {"ImportStatus" :: Maybe (CatalogImportStatus) } ) -> GetCatalogImportStatusResponse
+newGetCatalogImportStatusResponse'  customize = (GetCatalogImportStatusResponse <<< customize) { "ImportStatus": Nothing }
 
 
 
@@ -2457,7 +2456,7 @@ newGetClassifierRequest' _Name customize = (GetClassifierRequest <<< customize) 
 
 
 newtype GetClassifierResponse = GetClassifierResponse 
-  { "Classifier" :: NullOrUndefined (Classifier)
+  { "Classifier" :: Maybe (Classifier)
   }
 derive instance newtypeGetClassifierResponse :: Newtype GetClassifierResponse _
 derive instance repGenericGetClassifierResponse :: Generic GetClassifierResponse _
@@ -2467,18 +2466,18 @@ instance encodeGetClassifierResponse :: Encode GetClassifierResponse where encod
 
 -- | Constructs GetClassifierResponse from required parameters
 newGetClassifierResponse :: GetClassifierResponse
-newGetClassifierResponse  = GetClassifierResponse { "Classifier": (NullOrUndefined Nothing) }
+newGetClassifierResponse  = GetClassifierResponse { "Classifier": Nothing }
 
 -- | Constructs GetClassifierResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetClassifierResponse' :: ( { "Classifier" :: NullOrUndefined (Classifier) } -> {"Classifier" :: NullOrUndefined (Classifier) } ) -> GetClassifierResponse
-newGetClassifierResponse'  customize = (GetClassifierResponse <<< customize) { "Classifier": (NullOrUndefined Nothing) }
+newGetClassifierResponse' :: ( { "Classifier" :: Maybe (Classifier) } -> {"Classifier" :: Maybe (Classifier) } ) -> GetClassifierResponse
+newGetClassifierResponse'  customize = (GetClassifierResponse <<< customize) { "Classifier": Nothing }
 
 
 
 newtype GetClassifiersRequest = GetClassifiersRequest 
-  { "MaxResults" :: NullOrUndefined (PageSize)
-  , "NextToken" :: NullOrUndefined (Token)
+  { "MaxResults" :: Maybe (PageSize)
+  , "NextToken" :: Maybe (Token)
   }
 derive instance newtypeGetClassifiersRequest :: Newtype GetClassifiersRequest _
 derive instance repGenericGetClassifiersRequest :: Generic GetClassifiersRequest _
@@ -2488,18 +2487,18 @@ instance encodeGetClassifiersRequest :: Encode GetClassifiersRequest where encod
 
 -- | Constructs GetClassifiersRequest from required parameters
 newGetClassifiersRequest :: GetClassifiersRequest
-newGetClassifiersRequest  = GetClassifiersRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetClassifiersRequest  = GetClassifiersRequest { "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs GetClassifiersRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetClassifiersRequest' :: ( { "MaxResults" :: NullOrUndefined (PageSize) , "NextToken" :: NullOrUndefined (Token) } -> {"MaxResults" :: NullOrUndefined (PageSize) , "NextToken" :: NullOrUndefined (Token) } ) -> GetClassifiersRequest
-newGetClassifiersRequest'  customize = (GetClassifiersRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetClassifiersRequest' :: ( { "MaxResults" :: Maybe (PageSize) , "NextToken" :: Maybe (Token) } -> {"MaxResults" :: Maybe (PageSize) , "NextToken" :: Maybe (Token) } ) -> GetClassifiersRequest
+newGetClassifiersRequest'  customize = (GetClassifiersRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype GetClassifiersResponse = GetClassifiersResponse 
-  { "Classifiers" :: NullOrUndefined (ClassifierList)
-  , "NextToken" :: NullOrUndefined (Token)
+  { "Classifiers" :: Maybe (ClassifierList)
+  , "NextToken" :: Maybe (Token)
   }
 derive instance newtypeGetClassifiersResponse :: Newtype GetClassifiersResponse _
 derive instance repGenericGetClassifiersResponse :: Generic GetClassifiersResponse _
@@ -2509,17 +2508,17 @@ instance encodeGetClassifiersResponse :: Encode GetClassifiersResponse where enc
 
 -- | Constructs GetClassifiersResponse from required parameters
 newGetClassifiersResponse :: GetClassifiersResponse
-newGetClassifiersResponse  = GetClassifiersResponse { "Classifiers": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetClassifiersResponse  = GetClassifiersResponse { "Classifiers": Nothing, "NextToken": Nothing }
 
 -- | Constructs GetClassifiersResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetClassifiersResponse' :: ( { "Classifiers" :: NullOrUndefined (ClassifierList) , "NextToken" :: NullOrUndefined (Token) } -> {"Classifiers" :: NullOrUndefined (ClassifierList) , "NextToken" :: NullOrUndefined (Token) } ) -> GetClassifiersResponse
-newGetClassifiersResponse'  customize = (GetClassifiersResponse <<< customize) { "Classifiers": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetClassifiersResponse' :: ( { "Classifiers" :: Maybe (ClassifierList) , "NextToken" :: Maybe (Token) } -> {"Classifiers" :: Maybe (ClassifierList) , "NextToken" :: Maybe (Token) } ) -> GetClassifiersResponse
+newGetClassifiersResponse'  customize = (GetClassifiersResponse <<< customize) { "Classifiers": Nothing, "NextToken": Nothing }
 
 
 
 newtype GetConnectionRequest = GetConnectionRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "Name" :: (NameString)
   }
 derive instance newtypeGetConnectionRequest :: Newtype GetConnectionRequest _
@@ -2530,17 +2529,17 @@ instance encodeGetConnectionRequest :: Encode GetConnectionRequest where encode 
 
 -- | Constructs GetConnectionRequest from required parameters
 newGetConnectionRequest :: NameString -> GetConnectionRequest
-newGetConnectionRequest _Name = GetConnectionRequest { "Name": _Name, "CatalogId": (NullOrUndefined Nothing) }
+newGetConnectionRequest _Name = GetConnectionRequest { "Name": _Name, "CatalogId": Nothing }
 
 -- | Constructs GetConnectionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetConnectionRequest' :: NameString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "Name" :: (NameString) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "Name" :: (NameString) } ) -> GetConnectionRequest
-newGetConnectionRequest' _Name customize = (GetConnectionRequest <<< customize) { "Name": _Name, "CatalogId": (NullOrUndefined Nothing) }
+newGetConnectionRequest' :: NameString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "Name" :: (NameString) } -> {"CatalogId" :: Maybe (CatalogIdString) , "Name" :: (NameString) } ) -> GetConnectionRequest
+newGetConnectionRequest' _Name customize = (GetConnectionRequest <<< customize) { "Name": _Name, "CatalogId": Nothing }
 
 
 
 newtype GetConnectionResponse = GetConnectionResponse 
-  { "Connection" :: NullOrUndefined (Connection)
+  { "Connection" :: Maybe (Connection)
   }
 derive instance newtypeGetConnectionResponse :: Newtype GetConnectionResponse _
 derive instance repGenericGetConnectionResponse :: Generic GetConnectionResponse _
@@ -2550,19 +2549,19 @@ instance encodeGetConnectionResponse :: Encode GetConnectionResponse where encod
 
 -- | Constructs GetConnectionResponse from required parameters
 newGetConnectionResponse :: GetConnectionResponse
-newGetConnectionResponse  = GetConnectionResponse { "Connection": (NullOrUndefined Nothing) }
+newGetConnectionResponse  = GetConnectionResponse { "Connection": Nothing }
 
 -- | Constructs GetConnectionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetConnectionResponse' :: ( { "Connection" :: NullOrUndefined (Connection) } -> {"Connection" :: NullOrUndefined (Connection) } ) -> GetConnectionResponse
-newGetConnectionResponse'  customize = (GetConnectionResponse <<< customize) { "Connection": (NullOrUndefined Nothing) }
+newGetConnectionResponse' :: ( { "Connection" :: Maybe (Connection) } -> {"Connection" :: Maybe (Connection) } ) -> GetConnectionResponse
+newGetConnectionResponse'  customize = (GetConnectionResponse <<< customize) { "Connection": Nothing }
 
 
 
 -- | <p>Filters the connection definitions returned by the <code>GetConnections</code> API.</p>
 newtype GetConnectionsFilter = GetConnectionsFilter 
-  { "MatchCriteria" :: NullOrUndefined (MatchCriteria)
-  , "ConnectionType" :: NullOrUndefined (ConnectionType)
+  { "MatchCriteria" :: Maybe (MatchCriteria)
+  , "ConnectionType" :: Maybe (ConnectionType)
   }
 derive instance newtypeGetConnectionsFilter :: Newtype GetConnectionsFilter _
 derive instance repGenericGetConnectionsFilter :: Generic GetConnectionsFilter _
@@ -2572,20 +2571,20 @@ instance encodeGetConnectionsFilter :: Encode GetConnectionsFilter where encode 
 
 -- | Constructs GetConnectionsFilter from required parameters
 newGetConnectionsFilter :: GetConnectionsFilter
-newGetConnectionsFilter  = GetConnectionsFilter { "ConnectionType": (NullOrUndefined Nothing), "MatchCriteria": (NullOrUndefined Nothing) }
+newGetConnectionsFilter  = GetConnectionsFilter { "ConnectionType": Nothing, "MatchCriteria": Nothing }
 
 -- | Constructs GetConnectionsFilter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetConnectionsFilter' :: ( { "MatchCriteria" :: NullOrUndefined (MatchCriteria) , "ConnectionType" :: NullOrUndefined (ConnectionType) } -> {"MatchCriteria" :: NullOrUndefined (MatchCriteria) , "ConnectionType" :: NullOrUndefined (ConnectionType) } ) -> GetConnectionsFilter
-newGetConnectionsFilter'  customize = (GetConnectionsFilter <<< customize) { "ConnectionType": (NullOrUndefined Nothing), "MatchCriteria": (NullOrUndefined Nothing) }
+newGetConnectionsFilter' :: ( { "MatchCriteria" :: Maybe (MatchCriteria) , "ConnectionType" :: Maybe (ConnectionType) } -> {"MatchCriteria" :: Maybe (MatchCriteria) , "ConnectionType" :: Maybe (ConnectionType) } ) -> GetConnectionsFilter
+newGetConnectionsFilter'  customize = (GetConnectionsFilter <<< customize) { "ConnectionType": Nothing, "MatchCriteria": Nothing }
 
 
 
 newtype GetConnectionsRequest = GetConnectionsRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
-  , "Filter" :: NullOrUndefined (GetConnectionsFilter)
-  , "NextToken" :: NullOrUndefined (Token)
-  , "MaxResults" :: NullOrUndefined (PageSize)
+  { "CatalogId" :: Maybe (CatalogIdString)
+  , "Filter" :: Maybe (GetConnectionsFilter)
+  , "NextToken" :: Maybe (Token)
+  , "MaxResults" :: Maybe (PageSize)
   }
 derive instance newtypeGetConnectionsRequest :: Newtype GetConnectionsRequest _
 derive instance repGenericGetConnectionsRequest :: Generic GetConnectionsRequest _
@@ -2595,18 +2594,18 @@ instance encodeGetConnectionsRequest :: Encode GetConnectionsRequest where encod
 
 -- | Constructs GetConnectionsRequest from required parameters
 newGetConnectionsRequest :: GetConnectionsRequest
-newGetConnectionsRequest  = GetConnectionsRequest { "CatalogId": (NullOrUndefined Nothing), "Filter": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetConnectionsRequest  = GetConnectionsRequest { "CatalogId": Nothing, "Filter": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs GetConnectionsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetConnectionsRequest' :: ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "Filter" :: NullOrUndefined (GetConnectionsFilter) , "NextToken" :: NullOrUndefined (Token) , "MaxResults" :: NullOrUndefined (PageSize) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "Filter" :: NullOrUndefined (GetConnectionsFilter) , "NextToken" :: NullOrUndefined (Token) , "MaxResults" :: NullOrUndefined (PageSize) } ) -> GetConnectionsRequest
-newGetConnectionsRequest'  customize = (GetConnectionsRequest <<< customize) { "CatalogId": (NullOrUndefined Nothing), "Filter": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetConnectionsRequest' :: ( { "CatalogId" :: Maybe (CatalogIdString) , "Filter" :: Maybe (GetConnectionsFilter) , "NextToken" :: Maybe (Token) , "MaxResults" :: Maybe (PageSize) } -> {"CatalogId" :: Maybe (CatalogIdString) , "Filter" :: Maybe (GetConnectionsFilter) , "NextToken" :: Maybe (Token) , "MaxResults" :: Maybe (PageSize) } ) -> GetConnectionsRequest
+newGetConnectionsRequest'  customize = (GetConnectionsRequest <<< customize) { "CatalogId": Nothing, "Filter": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype GetConnectionsResponse = GetConnectionsResponse 
-  { "ConnectionList" :: NullOrUndefined (ConnectionList)
-  , "NextToken" :: NullOrUndefined (Token)
+  { "ConnectionList" :: Maybe (ConnectionList)
+  , "NextToken" :: Maybe (Token)
   }
 derive instance newtypeGetConnectionsResponse :: Newtype GetConnectionsResponse _
 derive instance repGenericGetConnectionsResponse :: Generic GetConnectionsResponse _
@@ -2616,19 +2615,19 @@ instance encodeGetConnectionsResponse :: Encode GetConnectionsResponse where enc
 
 -- | Constructs GetConnectionsResponse from required parameters
 newGetConnectionsResponse :: GetConnectionsResponse
-newGetConnectionsResponse  = GetConnectionsResponse { "ConnectionList": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetConnectionsResponse  = GetConnectionsResponse { "ConnectionList": Nothing, "NextToken": Nothing }
 
 -- | Constructs GetConnectionsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetConnectionsResponse' :: ( { "ConnectionList" :: NullOrUndefined (ConnectionList) , "NextToken" :: NullOrUndefined (Token) } -> {"ConnectionList" :: NullOrUndefined (ConnectionList) , "NextToken" :: NullOrUndefined (Token) } ) -> GetConnectionsResponse
-newGetConnectionsResponse'  customize = (GetConnectionsResponse <<< customize) { "ConnectionList": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetConnectionsResponse' :: ( { "ConnectionList" :: Maybe (ConnectionList) , "NextToken" :: Maybe (Token) } -> {"ConnectionList" :: Maybe (ConnectionList) , "NextToken" :: Maybe (Token) } ) -> GetConnectionsResponse
+newGetConnectionsResponse'  customize = (GetConnectionsResponse <<< customize) { "ConnectionList": Nothing, "NextToken": Nothing }
 
 
 
 newtype GetCrawlerMetricsRequest = GetCrawlerMetricsRequest 
-  { "CrawlerNameList" :: NullOrUndefined (CrawlerNameList)
-  , "MaxResults" :: NullOrUndefined (PageSize)
-  , "NextToken" :: NullOrUndefined (Token)
+  { "CrawlerNameList" :: Maybe (CrawlerNameList)
+  , "MaxResults" :: Maybe (PageSize)
+  , "NextToken" :: Maybe (Token)
   }
 derive instance newtypeGetCrawlerMetricsRequest :: Newtype GetCrawlerMetricsRequest _
 derive instance repGenericGetCrawlerMetricsRequest :: Generic GetCrawlerMetricsRequest _
@@ -2638,18 +2637,18 @@ instance encodeGetCrawlerMetricsRequest :: Encode GetCrawlerMetricsRequest where
 
 -- | Constructs GetCrawlerMetricsRequest from required parameters
 newGetCrawlerMetricsRequest :: GetCrawlerMetricsRequest
-newGetCrawlerMetricsRequest  = GetCrawlerMetricsRequest { "CrawlerNameList": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetCrawlerMetricsRequest  = GetCrawlerMetricsRequest { "CrawlerNameList": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs GetCrawlerMetricsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetCrawlerMetricsRequest' :: ( { "CrawlerNameList" :: NullOrUndefined (CrawlerNameList) , "MaxResults" :: NullOrUndefined (PageSize) , "NextToken" :: NullOrUndefined (Token) } -> {"CrawlerNameList" :: NullOrUndefined (CrawlerNameList) , "MaxResults" :: NullOrUndefined (PageSize) , "NextToken" :: NullOrUndefined (Token) } ) -> GetCrawlerMetricsRequest
-newGetCrawlerMetricsRequest'  customize = (GetCrawlerMetricsRequest <<< customize) { "CrawlerNameList": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetCrawlerMetricsRequest' :: ( { "CrawlerNameList" :: Maybe (CrawlerNameList) , "MaxResults" :: Maybe (PageSize) , "NextToken" :: Maybe (Token) } -> {"CrawlerNameList" :: Maybe (CrawlerNameList) , "MaxResults" :: Maybe (PageSize) , "NextToken" :: Maybe (Token) } ) -> GetCrawlerMetricsRequest
+newGetCrawlerMetricsRequest'  customize = (GetCrawlerMetricsRequest <<< customize) { "CrawlerNameList": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype GetCrawlerMetricsResponse = GetCrawlerMetricsResponse 
-  { "CrawlerMetricsList" :: NullOrUndefined (CrawlerMetricsList)
-  , "NextToken" :: NullOrUndefined (Token)
+  { "CrawlerMetricsList" :: Maybe (CrawlerMetricsList)
+  , "NextToken" :: Maybe (Token)
   }
 derive instance newtypeGetCrawlerMetricsResponse :: Newtype GetCrawlerMetricsResponse _
 derive instance repGenericGetCrawlerMetricsResponse :: Generic GetCrawlerMetricsResponse _
@@ -2659,12 +2658,12 @@ instance encodeGetCrawlerMetricsResponse :: Encode GetCrawlerMetricsResponse whe
 
 -- | Constructs GetCrawlerMetricsResponse from required parameters
 newGetCrawlerMetricsResponse :: GetCrawlerMetricsResponse
-newGetCrawlerMetricsResponse  = GetCrawlerMetricsResponse { "CrawlerMetricsList": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetCrawlerMetricsResponse  = GetCrawlerMetricsResponse { "CrawlerMetricsList": Nothing, "NextToken": Nothing }
 
 -- | Constructs GetCrawlerMetricsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetCrawlerMetricsResponse' :: ( { "CrawlerMetricsList" :: NullOrUndefined (CrawlerMetricsList) , "NextToken" :: NullOrUndefined (Token) } -> {"CrawlerMetricsList" :: NullOrUndefined (CrawlerMetricsList) , "NextToken" :: NullOrUndefined (Token) } ) -> GetCrawlerMetricsResponse
-newGetCrawlerMetricsResponse'  customize = (GetCrawlerMetricsResponse <<< customize) { "CrawlerMetricsList": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetCrawlerMetricsResponse' :: ( { "CrawlerMetricsList" :: Maybe (CrawlerMetricsList) , "NextToken" :: Maybe (Token) } -> {"CrawlerMetricsList" :: Maybe (CrawlerMetricsList) , "NextToken" :: Maybe (Token) } ) -> GetCrawlerMetricsResponse
+newGetCrawlerMetricsResponse'  customize = (GetCrawlerMetricsResponse <<< customize) { "CrawlerMetricsList": Nothing, "NextToken": Nothing }
 
 
 
@@ -2689,7 +2688,7 @@ newGetCrawlerRequest' _Name customize = (GetCrawlerRequest <<< customize) { "Nam
 
 
 newtype GetCrawlerResponse = GetCrawlerResponse 
-  { "Crawler" :: NullOrUndefined (Crawler)
+  { "Crawler" :: Maybe (Crawler)
   }
 derive instance newtypeGetCrawlerResponse :: Newtype GetCrawlerResponse _
 derive instance repGenericGetCrawlerResponse :: Generic GetCrawlerResponse _
@@ -2699,18 +2698,18 @@ instance encodeGetCrawlerResponse :: Encode GetCrawlerResponse where encode = ge
 
 -- | Constructs GetCrawlerResponse from required parameters
 newGetCrawlerResponse :: GetCrawlerResponse
-newGetCrawlerResponse  = GetCrawlerResponse { "Crawler": (NullOrUndefined Nothing) }
+newGetCrawlerResponse  = GetCrawlerResponse { "Crawler": Nothing }
 
 -- | Constructs GetCrawlerResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetCrawlerResponse' :: ( { "Crawler" :: NullOrUndefined (Crawler) } -> {"Crawler" :: NullOrUndefined (Crawler) } ) -> GetCrawlerResponse
-newGetCrawlerResponse'  customize = (GetCrawlerResponse <<< customize) { "Crawler": (NullOrUndefined Nothing) }
+newGetCrawlerResponse' :: ( { "Crawler" :: Maybe (Crawler) } -> {"Crawler" :: Maybe (Crawler) } ) -> GetCrawlerResponse
+newGetCrawlerResponse'  customize = (GetCrawlerResponse <<< customize) { "Crawler": Nothing }
 
 
 
 newtype GetCrawlersRequest = GetCrawlersRequest 
-  { "MaxResults" :: NullOrUndefined (PageSize)
-  , "NextToken" :: NullOrUndefined (Token)
+  { "MaxResults" :: Maybe (PageSize)
+  , "NextToken" :: Maybe (Token)
   }
 derive instance newtypeGetCrawlersRequest :: Newtype GetCrawlersRequest _
 derive instance repGenericGetCrawlersRequest :: Generic GetCrawlersRequest _
@@ -2720,18 +2719,18 @@ instance encodeGetCrawlersRequest :: Encode GetCrawlersRequest where encode = ge
 
 -- | Constructs GetCrawlersRequest from required parameters
 newGetCrawlersRequest :: GetCrawlersRequest
-newGetCrawlersRequest  = GetCrawlersRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetCrawlersRequest  = GetCrawlersRequest { "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs GetCrawlersRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetCrawlersRequest' :: ( { "MaxResults" :: NullOrUndefined (PageSize) , "NextToken" :: NullOrUndefined (Token) } -> {"MaxResults" :: NullOrUndefined (PageSize) , "NextToken" :: NullOrUndefined (Token) } ) -> GetCrawlersRequest
-newGetCrawlersRequest'  customize = (GetCrawlersRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetCrawlersRequest' :: ( { "MaxResults" :: Maybe (PageSize) , "NextToken" :: Maybe (Token) } -> {"MaxResults" :: Maybe (PageSize) , "NextToken" :: Maybe (Token) } ) -> GetCrawlersRequest
+newGetCrawlersRequest'  customize = (GetCrawlersRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype GetCrawlersResponse = GetCrawlersResponse 
-  { "Crawlers" :: NullOrUndefined (CrawlerList)
-  , "NextToken" :: NullOrUndefined (Token)
+  { "Crawlers" :: Maybe (CrawlerList)
+  , "NextToken" :: Maybe (Token)
   }
 derive instance newtypeGetCrawlersResponse :: Newtype GetCrawlersResponse _
 derive instance repGenericGetCrawlersResponse :: Generic GetCrawlersResponse _
@@ -2741,17 +2740,17 @@ instance encodeGetCrawlersResponse :: Encode GetCrawlersResponse where encode = 
 
 -- | Constructs GetCrawlersResponse from required parameters
 newGetCrawlersResponse :: GetCrawlersResponse
-newGetCrawlersResponse  = GetCrawlersResponse { "Crawlers": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetCrawlersResponse  = GetCrawlersResponse { "Crawlers": Nothing, "NextToken": Nothing }
 
 -- | Constructs GetCrawlersResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetCrawlersResponse' :: ( { "Crawlers" :: NullOrUndefined (CrawlerList) , "NextToken" :: NullOrUndefined (Token) } -> {"Crawlers" :: NullOrUndefined (CrawlerList) , "NextToken" :: NullOrUndefined (Token) } ) -> GetCrawlersResponse
-newGetCrawlersResponse'  customize = (GetCrawlersResponse <<< customize) { "Crawlers": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetCrawlersResponse' :: ( { "Crawlers" :: Maybe (CrawlerList) , "NextToken" :: Maybe (Token) } -> {"Crawlers" :: Maybe (CrawlerList) , "NextToken" :: Maybe (Token) } ) -> GetCrawlersResponse
+newGetCrawlersResponse'  customize = (GetCrawlersResponse <<< customize) { "Crawlers": Nothing, "NextToken": Nothing }
 
 
 
 newtype GetDatabaseRequest = GetDatabaseRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "Name" :: (NameString)
   }
 derive instance newtypeGetDatabaseRequest :: Newtype GetDatabaseRequest _
@@ -2762,17 +2761,17 @@ instance encodeGetDatabaseRequest :: Encode GetDatabaseRequest where encode = ge
 
 -- | Constructs GetDatabaseRequest from required parameters
 newGetDatabaseRequest :: NameString -> GetDatabaseRequest
-newGetDatabaseRequest _Name = GetDatabaseRequest { "Name": _Name, "CatalogId": (NullOrUndefined Nothing) }
+newGetDatabaseRequest _Name = GetDatabaseRequest { "Name": _Name, "CatalogId": Nothing }
 
 -- | Constructs GetDatabaseRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDatabaseRequest' :: NameString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "Name" :: (NameString) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "Name" :: (NameString) } ) -> GetDatabaseRequest
-newGetDatabaseRequest' _Name customize = (GetDatabaseRequest <<< customize) { "Name": _Name, "CatalogId": (NullOrUndefined Nothing) }
+newGetDatabaseRequest' :: NameString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "Name" :: (NameString) } -> {"CatalogId" :: Maybe (CatalogIdString) , "Name" :: (NameString) } ) -> GetDatabaseRequest
+newGetDatabaseRequest' _Name customize = (GetDatabaseRequest <<< customize) { "Name": _Name, "CatalogId": Nothing }
 
 
 
 newtype GetDatabaseResponse = GetDatabaseResponse 
-  { "Database" :: NullOrUndefined (Database)
+  { "Database" :: Maybe (Database)
   }
 derive instance newtypeGetDatabaseResponse :: Newtype GetDatabaseResponse _
 derive instance repGenericGetDatabaseResponse :: Generic GetDatabaseResponse _
@@ -2782,19 +2781,19 @@ instance encodeGetDatabaseResponse :: Encode GetDatabaseResponse where encode = 
 
 -- | Constructs GetDatabaseResponse from required parameters
 newGetDatabaseResponse :: GetDatabaseResponse
-newGetDatabaseResponse  = GetDatabaseResponse { "Database": (NullOrUndefined Nothing) }
+newGetDatabaseResponse  = GetDatabaseResponse { "Database": Nothing }
 
 -- | Constructs GetDatabaseResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDatabaseResponse' :: ( { "Database" :: NullOrUndefined (Database) } -> {"Database" :: NullOrUndefined (Database) } ) -> GetDatabaseResponse
-newGetDatabaseResponse'  customize = (GetDatabaseResponse <<< customize) { "Database": (NullOrUndefined Nothing) }
+newGetDatabaseResponse' :: ( { "Database" :: Maybe (Database) } -> {"Database" :: Maybe (Database) } ) -> GetDatabaseResponse
+newGetDatabaseResponse'  customize = (GetDatabaseResponse <<< customize) { "Database": Nothing }
 
 
 
 newtype GetDatabasesRequest = GetDatabasesRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
-  , "NextToken" :: NullOrUndefined (Token)
-  , "MaxResults" :: NullOrUndefined (PageSize)
+  { "CatalogId" :: Maybe (CatalogIdString)
+  , "NextToken" :: Maybe (Token)
+  , "MaxResults" :: Maybe (PageSize)
   }
 derive instance newtypeGetDatabasesRequest :: Newtype GetDatabasesRequest _
 derive instance repGenericGetDatabasesRequest :: Generic GetDatabasesRequest _
@@ -2804,18 +2803,18 @@ instance encodeGetDatabasesRequest :: Encode GetDatabasesRequest where encode = 
 
 -- | Constructs GetDatabasesRequest from required parameters
 newGetDatabasesRequest :: GetDatabasesRequest
-newGetDatabasesRequest  = GetDatabasesRequest { "CatalogId": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetDatabasesRequest  = GetDatabasesRequest { "CatalogId": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs GetDatabasesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDatabasesRequest' :: ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "NextToken" :: NullOrUndefined (Token) , "MaxResults" :: NullOrUndefined (PageSize) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "NextToken" :: NullOrUndefined (Token) , "MaxResults" :: NullOrUndefined (PageSize) } ) -> GetDatabasesRequest
-newGetDatabasesRequest'  customize = (GetDatabasesRequest <<< customize) { "CatalogId": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetDatabasesRequest' :: ( { "CatalogId" :: Maybe (CatalogIdString) , "NextToken" :: Maybe (Token) , "MaxResults" :: Maybe (PageSize) } -> {"CatalogId" :: Maybe (CatalogIdString) , "NextToken" :: Maybe (Token) , "MaxResults" :: Maybe (PageSize) } ) -> GetDatabasesRequest
+newGetDatabasesRequest'  customize = (GetDatabasesRequest <<< customize) { "CatalogId": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype GetDatabasesResponse = GetDatabasesResponse 
   { "DatabaseList" :: (DatabaseList)
-  , "NextToken" :: NullOrUndefined (Token)
+  , "NextToken" :: Maybe (Token)
   }
 derive instance newtypeGetDatabasesResponse :: Newtype GetDatabasesResponse _
 derive instance repGenericGetDatabasesResponse :: Generic GetDatabasesResponse _
@@ -2825,17 +2824,17 @@ instance encodeGetDatabasesResponse :: Encode GetDatabasesResponse where encode 
 
 -- | Constructs GetDatabasesResponse from required parameters
 newGetDatabasesResponse :: DatabaseList -> GetDatabasesResponse
-newGetDatabasesResponse _DatabaseList = GetDatabasesResponse { "DatabaseList": _DatabaseList, "NextToken": (NullOrUndefined Nothing) }
+newGetDatabasesResponse _DatabaseList = GetDatabasesResponse { "DatabaseList": _DatabaseList, "NextToken": Nothing }
 
 -- | Constructs GetDatabasesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDatabasesResponse' :: DatabaseList -> ( { "DatabaseList" :: (DatabaseList) , "NextToken" :: NullOrUndefined (Token) } -> {"DatabaseList" :: (DatabaseList) , "NextToken" :: NullOrUndefined (Token) } ) -> GetDatabasesResponse
-newGetDatabasesResponse' _DatabaseList customize = (GetDatabasesResponse <<< customize) { "DatabaseList": _DatabaseList, "NextToken": (NullOrUndefined Nothing) }
+newGetDatabasesResponse' :: DatabaseList -> ( { "DatabaseList" :: (DatabaseList) , "NextToken" :: Maybe (Token) } -> {"DatabaseList" :: (DatabaseList) , "NextToken" :: Maybe (Token) } ) -> GetDatabasesResponse
+newGetDatabasesResponse' _DatabaseList customize = (GetDatabasesResponse <<< customize) { "DatabaseList": _DatabaseList, "NextToken": Nothing }
 
 
 
 newtype GetDataflowGraphRequest = GetDataflowGraphRequest 
-  { "PythonScript" :: NullOrUndefined (PythonScript)
+  { "PythonScript" :: Maybe (PythonScript)
   }
 derive instance newtypeGetDataflowGraphRequest :: Newtype GetDataflowGraphRequest _
 derive instance repGenericGetDataflowGraphRequest :: Generic GetDataflowGraphRequest _
@@ -2845,18 +2844,18 @@ instance encodeGetDataflowGraphRequest :: Encode GetDataflowGraphRequest where e
 
 -- | Constructs GetDataflowGraphRequest from required parameters
 newGetDataflowGraphRequest :: GetDataflowGraphRequest
-newGetDataflowGraphRequest  = GetDataflowGraphRequest { "PythonScript": (NullOrUndefined Nothing) }
+newGetDataflowGraphRequest  = GetDataflowGraphRequest { "PythonScript": Nothing }
 
 -- | Constructs GetDataflowGraphRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDataflowGraphRequest' :: ( { "PythonScript" :: NullOrUndefined (PythonScript) } -> {"PythonScript" :: NullOrUndefined (PythonScript) } ) -> GetDataflowGraphRequest
-newGetDataflowGraphRequest'  customize = (GetDataflowGraphRequest <<< customize) { "PythonScript": (NullOrUndefined Nothing) }
+newGetDataflowGraphRequest' :: ( { "PythonScript" :: Maybe (PythonScript) } -> {"PythonScript" :: Maybe (PythonScript) } ) -> GetDataflowGraphRequest
+newGetDataflowGraphRequest'  customize = (GetDataflowGraphRequest <<< customize) { "PythonScript": Nothing }
 
 
 
 newtype GetDataflowGraphResponse = GetDataflowGraphResponse 
-  { "DagNodes" :: NullOrUndefined (DagNodes)
-  , "DagEdges" :: NullOrUndefined (DagEdges)
+  { "DagNodes" :: Maybe (DagNodes)
+  , "DagEdges" :: Maybe (DagEdges)
   }
 derive instance newtypeGetDataflowGraphResponse :: Newtype GetDataflowGraphResponse _
 derive instance repGenericGetDataflowGraphResponse :: Generic GetDataflowGraphResponse _
@@ -2866,12 +2865,12 @@ instance encodeGetDataflowGraphResponse :: Encode GetDataflowGraphResponse where
 
 -- | Constructs GetDataflowGraphResponse from required parameters
 newGetDataflowGraphResponse :: GetDataflowGraphResponse
-newGetDataflowGraphResponse  = GetDataflowGraphResponse { "DagEdges": (NullOrUndefined Nothing), "DagNodes": (NullOrUndefined Nothing) }
+newGetDataflowGraphResponse  = GetDataflowGraphResponse { "DagEdges": Nothing, "DagNodes": Nothing }
 
 -- | Constructs GetDataflowGraphResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDataflowGraphResponse' :: ( { "DagNodes" :: NullOrUndefined (DagNodes) , "DagEdges" :: NullOrUndefined (DagEdges) } -> {"DagNodes" :: NullOrUndefined (DagNodes) , "DagEdges" :: NullOrUndefined (DagEdges) } ) -> GetDataflowGraphResponse
-newGetDataflowGraphResponse'  customize = (GetDataflowGraphResponse <<< customize) { "DagEdges": (NullOrUndefined Nothing), "DagNodes": (NullOrUndefined Nothing) }
+newGetDataflowGraphResponse' :: ( { "DagNodes" :: Maybe (DagNodes) , "DagEdges" :: Maybe (DagEdges) } -> {"DagNodes" :: Maybe (DagNodes) , "DagEdges" :: Maybe (DagEdges) } ) -> GetDataflowGraphResponse
+newGetDataflowGraphResponse'  customize = (GetDataflowGraphResponse <<< customize) { "DagEdges": Nothing, "DagNodes": Nothing }
 
 
 
@@ -2896,7 +2895,7 @@ newGetDevEndpointRequest' _EndpointName customize = (GetDevEndpointRequest <<< c
 
 
 newtype GetDevEndpointResponse = GetDevEndpointResponse 
-  { "DevEndpoint" :: NullOrUndefined (DevEndpoint)
+  { "DevEndpoint" :: Maybe (DevEndpoint)
   }
 derive instance newtypeGetDevEndpointResponse :: Newtype GetDevEndpointResponse _
 derive instance repGenericGetDevEndpointResponse :: Generic GetDevEndpointResponse _
@@ -2906,18 +2905,18 @@ instance encodeGetDevEndpointResponse :: Encode GetDevEndpointResponse where enc
 
 -- | Constructs GetDevEndpointResponse from required parameters
 newGetDevEndpointResponse :: GetDevEndpointResponse
-newGetDevEndpointResponse  = GetDevEndpointResponse { "DevEndpoint": (NullOrUndefined Nothing) }
+newGetDevEndpointResponse  = GetDevEndpointResponse { "DevEndpoint": Nothing }
 
 -- | Constructs GetDevEndpointResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDevEndpointResponse' :: ( { "DevEndpoint" :: NullOrUndefined (DevEndpoint) } -> {"DevEndpoint" :: NullOrUndefined (DevEndpoint) } ) -> GetDevEndpointResponse
-newGetDevEndpointResponse'  customize = (GetDevEndpointResponse <<< customize) { "DevEndpoint": (NullOrUndefined Nothing) }
+newGetDevEndpointResponse' :: ( { "DevEndpoint" :: Maybe (DevEndpoint) } -> {"DevEndpoint" :: Maybe (DevEndpoint) } ) -> GetDevEndpointResponse
+newGetDevEndpointResponse'  customize = (GetDevEndpointResponse <<< customize) { "DevEndpoint": Nothing }
 
 
 
 newtype GetDevEndpointsRequest = GetDevEndpointsRequest 
-  { "MaxResults" :: NullOrUndefined (PageSize)
-  , "NextToken" :: NullOrUndefined (GenericString)
+  { "MaxResults" :: Maybe (PageSize)
+  , "NextToken" :: Maybe (GenericString)
   }
 derive instance newtypeGetDevEndpointsRequest :: Newtype GetDevEndpointsRequest _
 derive instance repGenericGetDevEndpointsRequest :: Generic GetDevEndpointsRequest _
@@ -2927,18 +2926,18 @@ instance encodeGetDevEndpointsRequest :: Encode GetDevEndpointsRequest where enc
 
 -- | Constructs GetDevEndpointsRequest from required parameters
 newGetDevEndpointsRequest :: GetDevEndpointsRequest
-newGetDevEndpointsRequest  = GetDevEndpointsRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetDevEndpointsRequest  = GetDevEndpointsRequest { "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs GetDevEndpointsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDevEndpointsRequest' :: ( { "MaxResults" :: NullOrUndefined (PageSize) , "NextToken" :: NullOrUndefined (GenericString) } -> {"MaxResults" :: NullOrUndefined (PageSize) , "NextToken" :: NullOrUndefined (GenericString) } ) -> GetDevEndpointsRequest
-newGetDevEndpointsRequest'  customize = (GetDevEndpointsRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetDevEndpointsRequest' :: ( { "MaxResults" :: Maybe (PageSize) , "NextToken" :: Maybe (GenericString) } -> {"MaxResults" :: Maybe (PageSize) , "NextToken" :: Maybe (GenericString) } ) -> GetDevEndpointsRequest
+newGetDevEndpointsRequest'  customize = (GetDevEndpointsRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype GetDevEndpointsResponse = GetDevEndpointsResponse 
-  { "DevEndpoints" :: NullOrUndefined (DevEndpointList)
-  , "NextToken" :: NullOrUndefined (GenericString)
+  { "DevEndpoints" :: Maybe (DevEndpointList)
+  , "NextToken" :: Maybe (GenericString)
   }
 derive instance newtypeGetDevEndpointsResponse :: Newtype GetDevEndpointsResponse _
 derive instance repGenericGetDevEndpointsResponse :: Generic GetDevEndpointsResponse _
@@ -2948,12 +2947,12 @@ instance encodeGetDevEndpointsResponse :: Encode GetDevEndpointsResponse where e
 
 -- | Constructs GetDevEndpointsResponse from required parameters
 newGetDevEndpointsResponse :: GetDevEndpointsResponse
-newGetDevEndpointsResponse  = GetDevEndpointsResponse { "DevEndpoints": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetDevEndpointsResponse  = GetDevEndpointsResponse { "DevEndpoints": Nothing, "NextToken": Nothing }
 
 -- | Constructs GetDevEndpointsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetDevEndpointsResponse' :: ( { "DevEndpoints" :: NullOrUndefined (DevEndpointList) , "NextToken" :: NullOrUndefined (GenericString) } -> {"DevEndpoints" :: NullOrUndefined (DevEndpointList) , "NextToken" :: NullOrUndefined (GenericString) } ) -> GetDevEndpointsResponse
-newGetDevEndpointsResponse'  customize = (GetDevEndpointsResponse <<< customize) { "DevEndpoints": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetDevEndpointsResponse' :: ( { "DevEndpoints" :: Maybe (DevEndpointList) , "NextToken" :: Maybe (GenericString) } -> {"DevEndpoints" :: Maybe (DevEndpointList) , "NextToken" :: Maybe (GenericString) } ) -> GetDevEndpointsResponse
+newGetDevEndpointsResponse'  customize = (GetDevEndpointsResponse <<< customize) { "DevEndpoints": Nothing, "NextToken": Nothing }
 
 
 
@@ -2978,7 +2977,7 @@ newGetJobRequest' _JobName customize = (GetJobRequest <<< customize) { "JobName"
 
 
 newtype GetJobResponse = GetJobResponse 
-  { "Job" :: NullOrUndefined (Job)
+  { "Job" :: Maybe (Job)
   }
 derive instance newtypeGetJobResponse :: Newtype GetJobResponse _
 derive instance repGenericGetJobResponse :: Generic GetJobResponse _
@@ -2988,19 +2987,19 @@ instance encodeGetJobResponse :: Encode GetJobResponse where encode = genericEnc
 
 -- | Constructs GetJobResponse from required parameters
 newGetJobResponse :: GetJobResponse
-newGetJobResponse  = GetJobResponse { "Job": (NullOrUndefined Nothing) }
+newGetJobResponse  = GetJobResponse { "Job": Nothing }
 
 -- | Constructs GetJobResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetJobResponse' :: ( { "Job" :: NullOrUndefined (Job) } -> {"Job" :: NullOrUndefined (Job) } ) -> GetJobResponse
-newGetJobResponse'  customize = (GetJobResponse <<< customize) { "Job": (NullOrUndefined Nothing) }
+newGetJobResponse' :: ( { "Job" :: Maybe (Job) } -> {"Job" :: Maybe (Job) } ) -> GetJobResponse
+newGetJobResponse'  customize = (GetJobResponse <<< customize) { "Job": Nothing }
 
 
 
 newtype GetJobRunRequest = GetJobRunRequest 
   { "JobName" :: (NameString)
   , "RunId" :: (IdString)
-  , "PredecessorsIncluded" :: NullOrUndefined (BooleanValue)
+  , "PredecessorsIncluded" :: Maybe (BooleanValue)
   }
 derive instance newtypeGetJobRunRequest :: Newtype GetJobRunRequest _
 derive instance repGenericGetJobRunRequest :: Generic GetJobRunRequest _
@@ -3010,17 +3009,17 @@ instance encodeGetJobRunRequest :: Encode GetJobRunRequest where encode = generi
 
 -- | Constructs GetJobRunRequest from required parameters
 newGetJobRunRequest :: NameString -> IdString -> GetJobRunRequest
-newGetJobRunRequest _JobName _RunId = GetJobRunRequest { "JobName": _JobName, "RunId": _RunId, "PredecessorsIncluded": (NullOrUndefined Nothing) }
+newGetJobRunRequest _JobName _RunId = GetJobRunRequest { "JobName": _JobName, "RunId": _RunId, "PredecessorsIncluded": Nothing }
 
 -- | Constructs GetJobRunRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetJobRunRequest' :: NameString -> IdString -> ( { "JobName" :: (NameString) , "RunId" :: (IdString) , "PredecessorsIncluded" :: NullOrUndefined (BooleanValue) } -> {"JobName" :: (NameString) , "RunId" :: (IdString) , "PredecessorsIncluded" :: NullOrUndefined (BooleanValue) } ) -> GetJobRunRequest
-newGetJobRunRequest' _JobName _RunId customize = (GetJobRunRequest <<< customize) { "JobName": _JobName, "RunId": _RunId, "PredecessorsIncluded": (NullOrUndefined Nothing) }
+newGetJobRunRequest' :: NameString -> IdString -> ( { "JobName" :: (NameString) , "RunId" :: (IdString) , "PredecessorsIncluded" :: Maybe (BooleanValue) } -> {"JobName" :: (NameString) , "RunId" :: (IdString) , "PredecessorsIncluded" :: Maybe (BooleanValue) } ) -> GetJobRunRequest
+newGetJobRunRequest' _JobName _RunId customize = (GetJobRunRequest <<< customize) { "JobName": _JobName, "RunId": _RunId, "PredecessorsIncluded": Nothing }
 
 
 
 newtype GetJobRunResponse = GetJobRunResponse 
-  { "JobRun" :: NullOrUndefined (JobRun)
+  { "JobRun" :: Maybe (JobRun)
   }
 derive instance newtypeGetJobRunResponse :: Newtype GetJobRunResponse _
 derive instance repGenericGetJobRunResponse :: Generic GetJobRunResponse _
@@ -3030,19 +3029,19 @@ instance encodeGetJobRunResponse :: Encode GetJobRunResponse where encode = gene
 
 -- | Constructs GetJobRunResponse from required parameters
 newGetJobRunResponse :: GetJobRunResponse
-newGetJobRunResponse  = GetJobRunResponse { "JobRun": (NullOrUndefined Nothing) }
+newGetJobRunResponse  = GetJobRunResponse { "JobRun": Nothing }
 
 -- | Constructs GetJobRunResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetJobRunResponse' :: ( { "JobRun" :: NullOrUndefined (JobRun) } -> {"JobRun" :: NullOrUndefined (JobRun) } ) -> GetJobRunResponse
-newGetJobRunResponse'  customize = (GetJobRunResponse <<< customize) { "JobRun": (NullOrUndefined Nothing) }
+newGetJobRunResponse' :: ( { "JobRun" :: Maybe (JobRun) } -> {"JobRun" :: Maybe (JobRun) } ) -> GetJobRunResponse
+newGetJobRunResponse'  customize = (GetJobRunResponse <<< customize) { "JobRun": Nothing }
 
 
 
 newtype GetJobRunsRequest = GetJobRunsRequest 
   { "JobName" :: (NameString)
-  , "NextToken" :: NullOrUndefined (GenericString)
-  , "MaxResults" :: NullOrUndefined (PageSize)
+  , "NextToken" :: Maybe (GenericString)
+  , "MaxResults" :: Maybe (PageSize)
   }
 derive instance newtypeGetJobRunsRequest :: Newtype GetJobRunsRequest _
 derive instance repGenericGetJobRunsRequest :: Generic GetJobRunsRequest _
@@ -3052,18 +3051,18 @@ instance encodeGetJobRunsRequest :: Encode GetJobRunsRequest where encode = gene
 
 -- | Constructs GetJobRunsRequest from required parameters
 newGetJobRunsRequest :: NameString -> GetJobRunsRequest
-newGetJobRunsRequest _JobName = GetJobRunsRequest { "JobName": _JobName, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetJobRunsRequest _JobName = GetJobRunsRequest { "JobName": _JobName, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs GetJobRunsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetJobRunsRequest' :: NameString -> ( { "JobName" :: (NameString) , "NextToken" :: NullOrUndefined (GenericString) , "MaxResults" :: NullOrUndefined (PageSize) } -> {"JobName" :: (NameString) , "NextToken" :: NullOrUndefined (GenericString) , "MaxResults" :: NullOrUndefined (PageSize) } ) -> GetJobRunsRequest
-newGetJobRunsRequest' _JobName customize = (GetJobRunsRequest <<< customize) { "JobName": _JobName, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetJobRunsRequest' :: NameString -> ( { "JobName" :: (NameString) , "NextToken" :: Maybe (GenericString) , "MaxResults" :: Maybe (PageSize) } -> {"JobName" :: (NameString) , "NextToken" :: Maybe (GenericString) , "MaxResults" :: Maybe (PageSize) } ) -> GetJobRunsRequest
+newGetJobRunsRequest' _JobName customize = (GetJobRunsRequest <<< customize) { "JobName": _JobName, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype GetJobRunsResponse = GetJobRunsResponse 
-  { "JobRuns" :: NullOrUndefined (JobRunList)
-  , "NextToken" :: NullOrUndefined (GenericString)
+  { "JobRuns" :: Maybe (JobRunList)
+  , "NextToken" :: Maybe (GenericString)
   }
 derive instance newtypeGetJobRunsResponse :: Newtype GetJobRunsResponse _
 derive instance repGenericGetJobRunsResponse :: Generic GetJobRunsResponse _
@@ -3073,18 +3072,18 @@ instance encodeGetJobRunsResponse :: Encode GetJobRunsResponse where encode = ge
 
 -- | Constructs GetJobRunsResponse from required parameters
 newGetJobRunsResponse :: GetJobRunsResponse
-newGetJobRunsResponse  = GetJobRunsResponse { "JobRuns": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetJobRunsResponse  = GetJobRunsResponse { "JobRuns": Nothing, "NextToken": Nothing }
 
 -- | Constructs GetJobRunsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetJobRunsResponse' :: ( { "JobRuns" :: NullOrUndefined (JobRunList) , "NextToken" :: NullOrUndefined (GenericString) } -> {"JobRuns" :: NullOrUndefined (JobRunList) , "NextToken" :: NullOrUndefined (GenericString) } ) -> GetJobRunsResponse
-newGetJobRunsResponse'  customize = (GetJobRunsResponse <<< customize) { "JobRuns": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetJobRunsResponse' :: ( { "JobRuns" :: Maybe (JobRunList) , "NextToken" :: Maybe (GenericString) } -> {"JobRuns" :: Maybe (JobRunList) , "NextToken" :: Maybe (GenericString) } ) -> GetJobRunsResponse
+newGetJobRunsResponse'  customize = (GetJobRunsResponse <<< customize) { "JobRuns": Nothing, "NextToken": Nothing }
 
 
 
 newtype GetJobsRequest = GetJobsRequest 
-  { "NextToken" :: NullOrUndefined (GenericString)
-  , "MaxResults" :: NullOrUndefined (PageSize)
+  { "NextToken" :: Maybe (GenericString)
+  , "MaxResults" :: Maybe (PageSize)
   }
 derive instance newtypeGetJobsRequest :: Newtype GetJobsRequest _
 derive instance repGenericGetJobsRequest :: Generic GetJobsRequest _
@@ -3094,18 +3093,18 @@ instance encodeGetJobsRequest :: Encode GetJobsRequest where encode = genericEnc
 
 -- | Constructs GetJobsRequest from required parameters
 newGetJobsRequest :: GetJobsRequest
-newGetJobsRequest  = GetJobsRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetJobsRequest  = GetJobsRequest { "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs GetJobsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetJobsRequest' :: ( { "NextToken" :: NullOrUndefined (GenericString) , "MaxResults" :: NullOrUndefined (PageSize) } -> {"NextToken" :: NullOrUndefined (GenericString) , "MaxResults" :: NullOrUndefined (PageSize) } ) -> GetJobsRequest
-newGetJobsRequest'  customize = (GetJobsRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetJobsRequest' :: ( { "NextToken" :: Maybe (GenericString) , "MaxResults" :: Maybe (PageSize) } -> {"NextToken" :: Maybe (GenericString) , "MaxResults" :: Maybe (PageSize) } ) -> GetJobsRequest
+newGetJobsRequest'  customize = (GetJobsRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype GetJobsResponse = GetJobsResponse 
-  { "Jobs" :: NullOrUndefined (JobList)
-  , "NextToken" :: NullOrUndefined (GenericString)
+  { "Jobs" :: Maybe (JobList)
+  , "NextToken" :: Maybe (GenericString)
   }
 derive instance newtypeGetJobsResponse :: Newtype GetJobsResponse _
 derive instance repGenericGetJobsResponse :: Generic GetJobsResponse _
@@ -3115,19 +3114,19 @@ instance encodeGetJobsResponse :: Encode GetJobsResponse where encode = genericE
 
 -- | Constructs GetJobsResponse from required parameters
 newGetJobsResponse :: GetJobsResponse
-newGetJobsResponse  = GetJobsResponse { "Jobs": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetJobsResponse  = GetJobsResponse { "Jobs": Nothing, "NextToken": Nothing }
 
 -- | Constructs GetJobsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetJobsResponse' :: ( { "Jobs" :: NullOrUndefined (JobList) , "NextToken" :: NullOrUndefined (GenericString) } -> {"Jobs" :: NullOrUndefined (JobList) , "NextToken" :: NullOrUndefined (GenericString) } ) -> GetJobsResponse
-newGetJobsResponse'  customize = (GetJobsResponse <<< customize) { "Jobs": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetJobsResponse' :: ( { "Jobs" :: Maybe (JobList) , "NextToken" :: Maybe (GenericString) } -> {"Jobs" :: Maybe (JobList) , "NextToken" :: Maybe (GenericString) } ) -> GetJobsResponse
+newGetJobsResponse'  customize = (GetJobsResponse <<< customize) { "Jobs": Nothing, "NextToken": Nothing }
 
 
 
 newtype GetMappingRequest = GetMappingRequest 
   { "Source" :: (CatalogEntry)
-  , "Sinks" :: NullOrUndefined (CatalogEntries)
-  , "Location" :: NullOrUndefined (Location)
+  , "Sinks" :: Maybe (CatalogEntries)
+  , "Location" :: Maybe (Location)
   }
 derive instance newtypeGetMappingRequest :: Newtype GetMappingRequest _
 derive instance repGenericGetMappingRequest :: Generic GetMappingRequest _
@@ -3137,12 +3136,12 @@ instance encodeGetMappingRequest :: Encode GetMappingRequest where encode = gene
 
 -- | Constructs GetMappingRequest from required parameters
 newGetMappingRequest :: CatalogEntry -> GetMappingRequest
-newGetMappingRequest _Source = GetMappingRequest { "Source": _Source, "Location": (NullOrUndefined Nothing), "Sinks": (NullOrUndefined Nothing) }
+newGetMappingRequest _Source = GetMappingRequest { "Source": _Source, "Location": Nothing, "Sinks": Nothing }
 
 -- | Constructs GetMappingRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetMappingRequest' :: CatalogEntry -> ( { "Source" :: (CatalogEntry) , "Sinks" :: NullOrUndefined (CatalogEntries) , "Location" :: NullOrUndefined (Location) } -> {"Source" :: (CatalogEntry) , "Sinks" :: NullOrUndefined (CatalogEntries) , "Location" :: NullOrUndefined (Location) } ) -> GetMappingRequest
-newGetMappingRequest' _Source customize = (GetMappingRequest <<< customize) { "Source": _Source, "Location": (NullOrUndefined Nothing), "Sinks": (NullOrUndefined Nothing) }
+newGetMappingRequest' :: CatalogEntry -> ( { "Source" :: (CatalogEntry) , "Sinks" :: Maybe (CatalogEntries) , "Location" :: Maybe (Location) } -> {"Source" :: (CatalogEntry) , "Sinks" :: Maybe (CatalogEntries) , "Location" :: Maybe (Location) } ) -> GetMappingRequest
+newGetMappingRequest' _Source customize = (GetMappingRequest <<< customize) { "Source": _Source, "Location": Nothing, "Sinks": Nothing }
 
 
 
@@ -3167,7 +3166,7 @@ newGetMappingResponse' _Mapping customize = (GetMappingResponse <<< customize) {
 
 
 newtype GetPartitionRequest = GetPartitionRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseName" :: (NameString)
   , "TableName" :: (NameString)
   , "PartitionValues" :: (ValueStringList)
@@ -3180,17 +3179,17 @@ instance encodeGetPartitionRequest :: Encode GetPartitionRequest where encode = 
 
 -- | Constructs GetPartitionRequest from required parameters
 newGetPartitionRequest :: NameString -> ValueStringList -> NameString -> GetPartitionRequest
-newGetPartitionRequest _DatabaseName _PartitionValues _TableName = GetPartitionRequest { "DatabaseName": _DatabaseName, "PartitionValues": _PartitionValues, "TableName": _TableName, "CatalogId": (NullOrUndefined Nothing) }
+newGetPartitionRequest _DatabaseName _PartitionValues _TableName = GetPartitionRequest { "DatabaseName": _DatabaseName, "PartitionValues": _PartitionValues, "TableName": _TableName, "CatalogId": Nothing }
 
 -- | Constructs GetPartitionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetPartitionRequest' :: NameString -> ValueStringList -> NameString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionValues" :: (ValueStringList) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionValues" :: (ValueStringList) } ) -> GetPartitionRequest
-newGetPartitionRequest' _DatabaseName _PartitionValues _TableName customize = (GetPartitionRequest <<< customize) { "DatabaseName": _DatabaseName, "PartitionValues": _PartitionValues, "TableName": _TableName, "CatalogId": (NullOrUndefined Nothing) }
+newGetPartitionRequest' :: NameString -> ValueStringList -> NameString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionValues" :: (ValueStringList) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionValues" :: (ValueStringList) } ) -> GetPartitionRequest
+newGetPartitionRequest' _DatabaseName _PartitionValues _TableName customize = (GetPartitionRequest <<< customize) { "DatabaseName": _DatabaseName, "PartitionValues": _PartitionValues, "TableName": _TableName, "CatalogId": Nothing }
 
 
 
 newtype GetPartitionResponse = GetPartitionResponse 
-  { "Partition" :: NullOrUndefined (Partition)
+  { "Partition" :: Maybe (Partition)
   }
 derive instance newtypeGetPartitionResponse :: Newtype GetPartitionResponse _
 derive instance repGenericGetPartitionResponse :: Generic GetPartitionResponse _
@@ -3200,23 +3199,23 @@ instance encodeGetPartitionResponse :: Encode GetPartitionResponse where encode 
 
 -- | Constructs GetPartitionResponse from required parameters
 newGetPartitionResponse :: GetPartitionResponse
-newGetPartitionResponse  = GetPartitionResponse { "Partition": (NullOrUndefined Nothing) }
+newGetPartitionResponse  = GetPartitionResponse { "Partition": Nothing }
 
 -- | Constructs GetPartitionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetPartitionResponse' :: ( { "Partition" :: NullOrUndefined (Partition) } -> {"Partition" :: NullOrUndefined (Partition) } ) -> GetPartitionResponse
-newGetPartitionResponse'  customize = (GetPartitionResponse <<< customize) { "Partition": (NullOrUndefined Nothing) }
+newGetPartitionResponse' :: ( { "Partition" :: Maybe (Partition) } -> {"Partition" :: Maybe (Partition) } ) -> GetPartitionResponse
+newGetPartitionResponse'  customize = (GetPartitionResponse <<< customize) { "Partition": Nothing }
 
 
 
 newtype GetPartitionsRequest = GetPartitionsRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseName" :: (NameString)
   , "TableName" :: (NameString)
-  , "Expression" :: NullOrUndefined (PredicateString)
-  , "NextToken" :: NullOrUndefined (Token)
-  , "Segment" :: NullOrUndefined (Segment)
-  , "MaxResults" :: NullOrUndefined (PageSize)
+  , "Expression" :: Maybe (PredicateString)
+  , "NextToken" :: Maybe (Token)
+  , "Segment" :: Maybe (Segment)
+  , "MaxResults" :: Maybe (PageSize)
   }
 derive instance newtypeGetPartitionsRequest :: Newtype GetPartitionsRequest _
 derive instance repGenericGetPartitionsRequest :: Generic GetPartitionsRequest _
@@ -3226,18 +3225,18 @@ instance encodeGetPartitionsRequest :: Encode GetPartitionsRequest where encode 
 
 -- | Constructs GetPartitionsRequest from required parameters
 newGetPartitionsRequest :: NameString -> NameString -> GetPartitionsRequest
-newGetPartitionsRequest _DatabaseName _TableName = GetPartitionsRequest { "DatabaseName": _DatabaseName, "TableName": _TableName, "CatalogId": (NullOrUndefined Nothing), "Expression": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "Segment": (NullOrUndefined Nothing) }
+newGetPartitionsRequest _DatabaseName _TableName = GetPartitionsRequest { "DatabaseName": _DatabaseName, "TableName": _TableName, "CatalogId": Nothing, "Expression": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "Segment": Nothing }
 
 -- | Constructs GetPartitionsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetPartitionsRequest' :: NameString -> NameString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "Expression" :: NullOrUndefined (PredicateString) , "NextToken" :: NullOrUndefined (Token) , "Segment" :: NullOrUndefined (Segment) , "MaxResults" :: NullOrUndefined (PageSize) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "Expression" :: NullOrUndefined (PredicateString) , "NextToken" :: NullOrUndefined (Token) , "Segment" :: NullOrUndefined (Segment) , "MaxResults" :: NullOrUndefined (PageSize) } ) -> GetPartitionsRequest
-newGetPartitionsRequest' _DatabaseName _TableName customize = (GetPartitionsRequest <<< customize) { "DatabaseName": _DatabaseName, "TableName": _TableName, "CatalogId": (NullOrUndefined Nothing), "Expression": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "Segment": (NullOrUndefined Nothing) }
+newGetPartitionsRequest' :: NameString -> NameString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "Expression" :: Maybe (PredicateString) , "NextToken" :: Maybe (Token) , "Segment" :: Maybe (Segment) , "MaxResults" :: Maybe (PageSize) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "Expression" :: Maybe (PredicateString) , "NextToken" :: Maybe (Token) , "Segment" :: Maybe (Segment) , "MaxResults" :: Maybe (PageSize) } ) -> GetPartitionsRequest
+newGetPartitionsRequest' _DatabaseName _TableName customize = (GetPartitionsRequest <<< customize) { "DatabaseName": _DatabaseName, "TableName": _TableName, "CatalogId": Nothing, "Expression": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "Segment": Nothing }
 
 
 
 newtype GetPartitionsResponse = GetPartitionsResponse 
-  { "Partitions" :: NullOrUndefined (PartitionList)
-  , "NextToken" :: NullOrUndefined (Token)
+  { "Partitions" :: Maybe (PartitionList)
+  , "NextToken" :: Maybe (Token)
   }
 derive instance newtypeGetPartitionsResponse :: Newtype GetPartitionsResponse _
 derive instance repGenericGetPartitionsResponse :: Generic GetPartitionsResponse _
@@ -3247,21 +3246,21 @@ instance encodeGetPartitionsResponse :: Encode GetPartitionsResponse where encod
 
 -- | Constructs GetPartitionsResponse from required parameters
 newGetPartitionsResponse :: GetPartitionsResponse
-newGetPartitionsResponse  = GetPartitionsResponse { "NextToken": (NullOrUndefined Nothing), "Partitions": (NullOrUndefined Nothing) }
+newGetPartitionsResponse  = GetPartitionsResponse { "NextToken": Nothing, "Partitions": Nothing }
 
 -- | Constructs GetPartitionsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetPartitionsResponse' :: ( { "Partitions" :: NullOrUndefined (PartitionList) , "NextToken" :: NullOrUndefined (Token) } -> {"Partitions" :: NullOrUndefined (PartitionList) , "NextToken" :: NullOrUndefined (Token) } ) -> GetPartitionsResponse
-newGetPartitionsResponse'  customize = (GetPartitionsResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "Partitions": (NullOrUndefined Nothing) }
+newGetPartitionsResponse' :: ( { "Partitions" :: Maybe (PartitionList) , "NextToken" :: Maybe (Token) } -> {"Partitions" :: Maybe (PartitionList) , "NextToken" :: Maybe (Token) } ) -> GetPartitionsResponse
+newGetPartitionsResponse'  customize = (GetPartitionsResponse <<< customize) { "NextToken": Nothing, "Partitions": Nothing }
 
 
 
 newtype GetPlanRequest = GetPlanRequest 
   { "Mapping" :: (MappingList)
   , "Source" :: (CatalogEntry)
-  , "Sinks" :: NullOrUndefined (CatalogEntries)
-  , "Location" :: NullOrUndefined (Location)
-  , "Language" :: NullOrUndefined (Language)
+  , "Sinks" :: Maybe (CatalogEntries)
+  , "Location" :: Maybe (Location)
+  , "Language" :: Maybe (Language)
   }
 derive instance newtypeGetPlanRequest :: Newtype GetPlanRequest _
 derive instance repGenericGetPlanRequest :: Generic GetPlanRequest _
@@ -3271,18 +3270,18 @@ instance encodeGetPlanRequest :: Encode GetPlanRequest where encode = genericEnc
 
 -- | Constructs GetPlanRequest from required parameters
 newGetPlanRequest :: MappingList -> CatalogEntry -> GetPlanRequest
-newGetPlanRequest _Mapping _Source = GetPlanRequest { "Mapping": _Mapping, "Source": _Source, "Language": (NullOrUndefined Nothing), "Location": (NullOrUndefined Nothing), "Sinks": (NullOrUndefined Nothing) }
+newGetPlanRequest _Mapping _Source = GetPlanRequest { "Mapping": _Mapping, "Source": _Source, "Language": Nothing, "Location": Nothing, "Sinks": Nothing }
 
 -- | Constructs GetPlanRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetPlanRequest' :: MappingList -> CatalogEntry -> ( { "Mapping" :: (MappingList) , "Source" :: (CatalogEntry) , "Sinks" :: NullOrUndefined (CatalogEntries) , "Location" :: NullOrUndefined (Location) , "Language" :: NullOrUndefined (Language) } -> {"Mapping" :: (MappingList) , "Source" :: (CatalogEntry) , "Sinks" :: NullOrUndefined (CatalogEntries) , "Location" :: NullOrUndefined (Location) , "Language" :: NullOrUndefined (Language) } ) -> GetPlanRequest
-newGetPlanRequest' _Mapping _Source customize = (GetPlanRequest <<< customize) { "Mapping": _Mapping, "Source": _Source, "Language": (NullOrUndefined Nothing), "Location": (NullOrUndefined Nothing), "Sinks": (NullOrUndefined Nothing) }
+newGetPlanRequest' :: MappingList -> CatalogEntry -> ( { "Mapping" :: (MappingList) , "Source" :: (CatalogEntry) , "Sinks" :: Maybe (CatalogEntries) , "Location" :: Maybe (Location) , "Language" :: Maybe (Language) } -> {"Mapping" :: (MappingList) , "Source" :: (CatalogEntry) , "Sinks" :: Maybe (CatalogEntries) , "Location" :: Maybe (Location) , "Language" :: Maybe (Language) } ) -> GetPlanRequest
+newGetPlanRequest' _Mapping _Source customize = (GetPlanRequest <<< customize) { "Mapping": _Mapping, "Source": _Source, "Language": Nothing, "Location": Nothing, "Sinks": Nothing }
 
 
 
 newtype GetPlanResponse = GetPlanResponse 
-  { "PythonScript" :: NullOrUndefined (PythonScript)
-  , "ScalaCode" :: NullOrUndefined (ScalaCode)
+  { "PythonScript" :: Maybe (PythonScript)
+  , "ScalaCode" :: Maybe (ScalaCode)
   }
 derive instance newtypeGetPlanResponse :: Newtype GetPlanResponse _
 derive instance repGenericGetPlanResponse :: Generic GetPlanResponse _
@@ -3292,17 +3291,17 @@ instance encodeGetPlanResponse :: Encode GetPlanResponse where encode = genericE
 
 -- | Constructs GetPlanResponse from required parameters
 newGetPlanResponse :: GetPlanResponse
-newGetPlanResponse  = GetPlanResponse { "PythonScript": (NullOrUndefined Nothing), "ScalaCode": (NullOrUndefined Nothing) }
+newGetPlanResponse  = GetPlanResponse { "PythonScript": Nothing, "ScalaCode": Nothing }
 
 -- | Constructs GetPlanResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetPlanResponse' :: ( { "PythonScript" :: NullOrUndefined (PythonScript) , "ScalaCode" :: NullOrUndefined (ScalaCode) } -> {"PythonScript" :: NullOrUndefined (PythonScript) , "ScalaCode" :: NullOrUndefined (ScalaCode) } ) -> GetPlanResponse
-newGetPlanResponse'  customize = (GetPlanResponse <<< customize) { "PythonScript": (NullOrUndefined Nothing), "ScalaCode": (NullOrUndefined Nothing) }
+newGetPlanResponse' :: ( { "PythonScript" :: Maybe (PythonScript) , "ScalaCode" :: Maybe (ScalaCode) } -> {"PythonScript" :: Maybe (PythonScript) , "ScalaCode" :: Maybe (ScalaCode) } ) -> GetPlanResponse
+newGetPlanResponse'  customize = (GetPlanResponse <<< customize) { "PythonScript": Nothing, "ScalaCode": Nothing }
 
 
 
 newtype GetTableRequest = GetTableRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseName" :: (NameString)
   , "Name" :: (NameString)
   }
@@ -3314,17 +3313,17 @@ instance encodeGetTableRequest :: Encode GetTableRequest where encode = genericE
 
 -- | Constructs GetTableRequest from required parameters
 newGetTableRequest :: NameString -> NameString -> GetTableRequest
-newGetTableRequest _DatabaseName _Name = GetTableRequest { "DatabaseName": _DatabaseName, "Name": _Name, "CatalogId": (NullOrUndefined Nothing) }
+newGetTableRequest _DatabaseName _Name = GetTableRequest { "DatabaseName": _DatabaseName, "Name": _Name, "CatalogId": Nothing }
 
 -- | Constructs GetTableRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetTableRequest' :: NameString -> NameString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "Name" :: (NameString) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "Name" :: (NameString) } ) -> GetTableRequest
-newGetTableRequest' _DatabaseName _Name customize = (GetTableRequest <<< customize) { "DatabaseName": _DatabaseName, "Name": _Name, "CatalogId": (NullOrUndefined Nothing) }
+newGetTableRequest' :: NameString -> NameString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "Name" :: (NameString) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "Name" :: (NameString) } ) -> GetTableRequest
+newGetTableRequest' _DatabaseName _Name customize = (GetTableRequest <<< customize) { "DatabaseName": _DatabaseName, "Name": _Name, "CatalogId": Nothing }
 
 
 
 newtype GetTableResponse = GetTableResponse 
-  { "Table" :: NullOrUndefined (Table)
+  { "Table" :: Maybe (Table)
   }
 derive instance newtypeGetTableResponse :: Newtype GetTableResponse _
 derive instance repGenericGetTableResponse :: Generic GetTableResponse _
@@ -3334,20 +3333,20 @@ instance encodeGetTableResponse :: Encode GetTableResponse where encode = generi
 
 -- | Constructs GetTableResponse from required parameters
 newGetTableResponse :: GetTableResponse
-newGetTableResponse  = GetTableResponse { "Table": (NullOrUndefined Nothing) }
+newGetTableResponse  = GetTableResponse { "Table": Nothing }
 
 -- | Constructs GetTableResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetTableResponse' :: ( { "Table" :: NullOrUndefined (Table) } -> {"Table" :: NullOrUndefined (Table) } ) -> GetTableResponse
-newGetTableResponse'  customize = (GetTableResponse <<< customize) { "Table": (NullOrUndefined Nothing) }
+newGetTableResponse' :: ( { "Table" :: Maybe (Table) } -> {"Table" :: Maybe (Table) } ) -> GetTableResponse
+newGetTableResponse'  customize = (GetTableResponse <<< customize) { "Table": Nothing }
 
 
 
 newtype GetTableVersionRequest = GetTableVersionRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseName" :: (NameString)
   , "TableName" :: (NameString)
-  , "VersionId" :: NullOrUndefined (VersionString)
+  , "VersionId" :: Maybe (VersionString)
   }
 derive instance newtypeGetTableVersionRequest :: Newtype GetTableVersionRequest _
 derive instance repGenericGetTableVersionRequest :: Generic GetTableVersionRequest _
@@ -3357,17 +3356,17 @@ instance encodeGetTableVersionRequest :: Encode GetTableVersionRequest where enc
 
 -- | Constructs GetTableVersionRequest from required parameters
 newGetTableVersionRequest :: NameString -> NameString -> GetTableVersionRequest
-newGetTableVersionRequest _DatabaseName _TableName = GetTableVersionRequest { "DatabaseName": _DatabaseName, "TableName": _TableName, "CatalogId": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newGetTableVersionRequest _DatabaseName _TableName = GetTableVersionRequest { "DatabaseName": _DatabaseName, "TableName": _TableName, "CatalogId": Nothing, "VersionId": Nothing }
 
 -- | Constructs GetTableVersionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetTableVersionRequest' :: NameString -> NameString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "VersionId" :: NullOrUndefined (VersionString) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "VersionId" :: NullOrUndefined (VersionString) } ) -> GetTableVersionRequest
-newGetTableVersionRequest' _DatabaseName _TableName customize = (GetTableVersionRequest <<< customize) { "DatabaseName": _DatabaseName, "TableName": _TableName, "CatalogId": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newGetTableVersionRequest' :: NameString -> NameString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "VersionId" :: Maybe (VersionString) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "VersionId" :: Maybe (VersionString) } ) -> GetTableVersionRequest
+newGetTableVersionRequest' _DatabaseName _TableName customize = (GetTableVersionRequest <<< customize) { "DatabaseName": _DatabaseName, "TableName": _TableName, "CatalogId": Nothing, "VersionId": Nothing }
 
 
 
 newtype GetTableVersionResponse = GetTableVersionResponse 
-  { "TableVersion" :: NullOrUndefined (TableVersion)
+  { "TableVersion" :: Maybe (TableVersion)
   }
 derive instance newtypeGetTableVersionResponse :: Newtype GetTableVersionResponse _
 derive instance repGenericGetTableVersionResponse :: Generic GetTableVersionResponse _
@@ -3377,12 +3376,12 @@ instance encodeGetTableVersionResponse :: Encode GetTableVersionResponse where e
 
 -- | Constructs GetTableVersionResponse from required parameters
 newGetTableVersionResponse :: GetTableVersionResponse
-newGetTableVersionResponse  = GetTableVersionResponse { "TableVersion": (NullOrUndefined Nothing) }
+newGetTableVersionResponse  = GetTableVersionResponse { "TableVersion": Nothing }
 
 -- | Constructs GetTableVersionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetTableVersionResponse' :: ( { "TableVersion" :: NullOrUndefined (TableVersion) } -> {"TableVersion" :: NullOrUndefined (TableVersion) } ) -> GetTableVersionResponse
-newGetTableVersionResponse'  customize = (GetTableVersionResponse <<< customize) { "TableVersion": (NullOrUndefined Nothing) }
+newGetTableVersionResponse' :: ( { "TableVersion" :: Maybe (TableVersion) } -> {"TableVersion" :: Maybe (TableVersion) } ) -> GetTableVersionResponse
+newGetTableVersionResponse'  customize = (GetTableVersionResponse <<< customize) { "TableVersion": Nothing }
 
 
 
@@ -3396,11 +3395,11 @@ instance encodeGetTableVersionsList :: Encode GetTableVersionsList where encode 
 
 
 newtype GetTableVersionsRequest = GetTableVersionsRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseName" :: (NameString)
   , "TableName" :: (NameString)
-  , "NextToken" :: NullOrUndefined (Token)
-  , "MaxResults" :: NullOrUndefined (PageSize)
+  , "NextToken" :: Maybe (Token)
+  , "MaxResults" :: Maybe (PageSize)
   }
 derive instance newtypeGetTableVersionsRequest :: Newtype GetTableVersionsRequest _
 derive instance repGenericGetTableVersionsRequest :: Generic GetTableVersionsRequest _
@@ -3410,18 +3409,18 @@ instance encodeGetTableVersionsRequest :: Encode GetTableVersionsRequest where e
 
 -- | Constructs GetTableVersionsRequest from required parameters
 newGetTableVersionsRequest :: NameString -> NameString -> GetTableVersionsRequest
-newGetTableVersionsRequest _DatabaseName _TableName = GetTableVersionsRequest { "DatabaseName": _DatabaseName, "TableName": _TableName, "CatalogId": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetTableVersionsRequest _DatabaseName _TableName = GetTableVersionsRequest { "DatabaseName": _DatabaseName, "TableName": _TableName, "CatalogId": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs GetTableVersionsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetTableVersionsRequest' :: NameString -> NameString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "NextToken" :: NullOrUndefined (Token) , "MaxResults" :: NullOrUndefined (PageSize) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "NextToken" :: NullOrUndefined (Token) , "MaxResults" :: NullOrUndefined (PageSize) } ) -> GetTableVersionsRequest
-newGetTableVersionsRequest' _DatabaseName _TableName customize = (GetTableVersionsRequest <<< customize) { "DatabaseName": _DatabaseName, "TableName": _TableName, "CatalogId": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetTableVersionsRequest' :: NameString -> NameString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "NextToken" :: Maybe (Token) , "MaxResults" :: Maybe (PageSize) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "NextToken" :: Maybe (Token) , "MaxResults" :: Maybe (PageSize) } ) -> GetTableVersionsRequest
+newGetTableVersionsRequest' _DatabaseName _TableName customize = (GetTableVersionsRequest <<< customize) { "DatabaseName": _DatabaseName, "TableName": _TableName, "CatalogId": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype GetTableVersionsResponse = GetTableVersionsResponse 
-  { "TableVersions" :: NullOrUndefined (GetTableVersionsList)
-  , "NextToken" :: NullOrUndefined (Token)
+  { "TableVersions" :: Maybe (GetTableVersionsList)
+  , "NextToken" :: Maybe (Token)
   }
 derive instance newtypeGetTableVersionsResponse :: Newtype GetTableVersionsResponse _
 derive instance repGenericGetTableVersionsResponse :: Generic GetTableVersionsResponse _
@@ -3431,21 +3430,21 @@ instance encodeGetTableVersionsResponse :: Encode GetTableVersionsResponse where
 
 -- | Constructs GetTableVersionsResponse from required parameters
 newGetTableVersionsResponse :: GetTableVersionsResponse
-newGetTableVersionsResponse  = GetTableVersionsResponse { "NextToken": (NullOrUndefined Nothing), "TableVersions": (NullOrUndefined Nothing) }
+newGetTableVersionsResponse  = GetTableVersionsResponse { "NextToken": Nothing, "TableVersions": Nothing }
 
 -- | Constructs GetTableVersionsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetTableVersionsResponse' :: ( { "TableVersions" :: NullOrUndefined (GetTableVersionsList) , "NextToken" :: NullOrUndefined (Token) } -> {"TableVersions" :: NullOrUndefined (GetTableVersionsList) , "NextToken" :: NullOrUndefined (Token) } ) -> GetTableVersionsResponse
-newGetTableVersionsResponse'  customize = (GetTableVersionsResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "TableVersions": (NullOrUndefined Nothing) }
+newGetTableVersionsResponse' :: ( { "TableVersions" :: Maybe (GetTableVersionsList) , "NextToken" :: Maybe (Token) } -> {"TableVersions" :: Maybe (GetTableVersionsList) , "NextToken" :: Maybe (Token) } ) -> GetTableVersionsResponse
+newGetTableVersionsResponse'  customize = (GetTableVersionsResponse <<< customize) { "NextToken": Nothing, "TableVersions": Nothing }
 
 
 
 newtype GetTablesRequest = GetTablesRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseName" :: (NameString)
-  , "Expression" :: NullOrUndefined (FilterString)
-  , "NextToken" :: NullOrUndefined (Token)
-  , "MaxResults" :: NullOrUndefined (PageSize)
+  , "Expression" :: Maybe (FilterString)
+  , "NextToken" :: Maybe (Token)
+  , "MaxResults" :: Maybe (PageSize)
   }
 derive instance newtypeGetTablesRequest :: Newtype GetTablesRequest _
 derive instance repGenericGetTablesRequest :: Generic GetTablesRequest _
@@ -3455,18 +3454,18 @@ instance encodeGetTablesRequest :: Encode GetTablesRequest where encode = generi
 
 -- | Constructs GetTablesRequest from required parameters
 newGetTablesRequest :: NameString -> GetTablesRequest
-newGetTablesRequest _DatabaseName = GetTablesRequest { "DatabaseName": _DatabaseName, "CatalogId": (NullOrUndefined Nothing), "Expression": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetTablesRequest _DatabaseName = GetTablesRequest { "DatabaseName": _DatabaseName, "CatalogId": Nothing, "Expression": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs GetTablesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetTablesRequest' :: NameString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "Expression" :: NullOrUndefined (FilterString) , "NextToken" :: NullOrUndefined (Token) , "MaxResults" :: NullOrUndefined (PageSize) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "Expression" :: NullOrUndefined (FilterString) , "NextToken" :: NullOrUndefined (Token) , "MaxResults" :: NullOrUndefined (PageSize) } ) -> GetTablesRequest
-newGetTablesRequest' _DatabaseName customize = (GetTablesRequest <<< customize) { "DatabaseName": _DatabaseName, "CatalogId": (NullOrUndefined Nothing), "Expression": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetTablesRequest' :: NameString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "Expression" :: Maybe (FilterString) , "NextToken" :: Maybe (Token) , "MaxResults" :: Maybe (PageSize) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "Expression" :: Maybe (FilterString) , "NextToken" :: Maybe (Token) , "MaxResults" :: Maybe (PageSize) } ) -> GetTablesRequest
+newGetTablesRequest' _DatabaseName customize = (GetTablesRequest <<< customize) { "DatabaseName": _DatabaseName, "CatalogId": Nothing, "Expression": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype GetTablesResponse = GetTablesResponse 
-  { "TableList" :: NullOrUndefined (TableList)
-  , "NextToken" :: NullOrUndefined (Token)
+  { "TableList" :: Maybe (TableList)
+  , "NextToken" :: Maybe (Token)
   }
 derive instance newtypeGetTablesResponse :: Newtype GetTablesResponse _
 derive instance repGenericGetTablesResponse :: Generic GetTablesResponse _
@@ -3476,12 +3475,12 @@ instance encodeGetTablesResponse :: Encode GetTablesResponse where encode = gene
 
 -- | Constructs GetTablesResponse from required parameters
 newGetTablesResponse :: GetTablesResponse
-newGetTablesResponse  = GetTablesResponse { "NextToken": (NullOrUndefined Nothing), "TableList": (NullOrUndefined Nothing) }
+newGetTablesResponse  = GetTablesResponse { "NextToken": Nothing, "TableList": Nothing }
 
 -- | Constructs GetTablesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetTablesResponse' :: ( { "TableList" :: NullOrUndefined (TableList) , "NextToken" :: NullOrUndefined (Token) } -> {"TableList" :: NullOrUndefined (TableList) , "NextToken" :: NullOrUndefined (Token) } ) -> GetTablesResponse
-newGetTablesResponse'  customize = (GetTablesResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "TableList": (NullOrUndefined Nothing) }
+newGetTablesResponse' :: ( { "TableList" :: Maybe (TableList) , "NextToken" :: Maybe (Token) } -> {"TableList" :: Maybe (TableList) , "NextToken" :: Maybe (Token) } ) -> GetTablesResponse
+newGetTablesResponse'  customize = (GetTablesResponse <<< customize) { "NextToken": Nothing, "TableList": Nothing }
 
 
 
@@ -3506,7 +3505,7 @@ newGetTriggerRequest' _Name customize = (GetTriggerRequest <<< customize) { "Nam
 
 
 newtype GetTriggerResponse = GetTriggerResponse 
-  { "Trigger" :: NullOrUndefined (Trigger)
+  { "Trigger" :: Maybe (Trigger)
   }
 derive instance newtypeGetTriggerResponse :: Newtype GetTriggerResponse _
 derive instance repGenericGetTriggerResponse :: Generic GetTriggerResponse _
@@ -3516,19 +3515,19 @@ instance encodeGetTriggerResponse :: Encode GetTriggerResponse where encode = ge
 
 -- | Constructs GetTriggerResponse from required parameters
 newGetTriggerResponse :: GetTriggerResponse
-newGetTriggerResponse  = GetTriggerResponse { "Trigger": (NullOrUndefined Nothing) }
+newGetTriggerResponse  = GetTriggerResponse { "Trigger": Nothing }
 
 -- | Constructs GetTriggerResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetTriggerResponse' :: ( { "Trigger" :: NullOrUndefined (Trigger) } -> {"Trigger" :: NullOrUndefined (Trigger) } ) -> GetTriggerResponse
-newGetTriggerResponse'  customize = (GetTriggerResponse <<< customize) { "Trigger": (NullOrUndefined Nothing) }
+newGetTriggerResponse' :: ( { "Trigger" :: Maybe (Trigger) } -> {"Trigger" :: Maybe (Trigger) } ) -> GetTriggerResponse
+newGetTriggerResponse'  customize = (GetTriggerResponse <<< customize) { "Trigger": Nothing }
 
 
 
 newtype GetTriggersRequest = GetTriggersRequest 
-  { "NextToken" :: NullOrUndefined (GenericString)
-  , "DependentJobName" :: NullOrUndefined (NameString)
-  , "MaxResults" :: NullOrUndefined (PageSize)
+  { "NextToken" :: Maybe (GenericString)
+  , "DependentJobName" :: Maybe (NameString)
+  , "MaxResults" :: Maybe (PageSize)
   }
 derive instance newtypeGetTriggersRequest :: Newtype GetTriggersRequest _
 derive instance repGenericGetTriggersRequest :: Generic GetTriggersRequest _
@@ -3538,18 +3537,18 @@ instance encodeGetTriggersRequest :: Encode GetTriggersRequest where encode = ge
 
 -- | Constructs GetTriggersRequest from required parameters
 newGetTriggersRequest :: GetTriggersRequest
-newGetTriggersRequest  = GetTriggersRequest { "DependentJobName": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetTriggersRequest  = GetTriggersRequest { "DependentJobName": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs GetTriggersRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetTriggersRequest' :: ( { "NextToken" :: NullOrUndefined (GenericString) , "DependentJobName" :: NullOrUndefined (NameString) , "MaxResults" :: NullOrUndefined (PageSize) } -> {"NextToken" :: NullOrUndefined (GenericString) , "DependentJobName" :: NullOrUndefined (NameString) , "MaxResults" :: NullOrUndefined (PageSize) } ) -> GetTriggersRequest
-newGetTriggersRequest'  customize = (GetTriggersRequest <<< customize) { "DependentJobName": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetTriggersRequest' :: ( { "NextToken" :: Maybe (GenericString) , "DependentJobName" :: Maybe (NameString) , "MaxResults" :: Maybe (PageSize) } -> {"NextToken" :: Maybe (GenericString) , "DependentJobName" :: Maybe (NameString) , "MaxResults" :: Maybe (PageSize) } ) -> GetTriggersRequest
+newGetTriggersRequest'  customize = (GetTriggersRequest <<< customize) { "DependentJobName": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype GetTriggersResponse = GetTriggersResponse 
-  { "Triggers" :: NullOrUndefined (TriggerList)
-  , "NextToken" :: NullOrUndefined (GenericString)
+  { "Triggers" :: Maybe (TriggerList)
+  , "NextToken" :: Maybe (GenericString)
   }
 derive instance newtypeGetTriggersResponse :: Newtype GetTriggersResponse _
 derive instance repGenericGetTriggersResponse :: Generic GetTriggersResponse _
@@ -3559,17 +3558,17 @@ instance encodeGetTriggersResponse :: Encode GetTriggersResponse where encode = 
 
 -- | Constructs GetTriggersResponse from required parameters
 newGetTriggersResponse :: GetTriggersResponse
-newGetTriggersResponse  = GetTriggersResponse { "NextToken": (NullOrUndefined Nothing), "Triggers": (NullOrUndefined Nothing) }
+newGetTriggersResponse  = GetTriggersResponse { "NextToken": Nothing, "Triggers": Nothing }
 
 -- | Constructs GetTriggersResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetTriggersResponse' :: ( { "Triggers" :: NullOrUndefined (TriggerList) , "NextToken" :: NullOrUndefined (GenericString) } -> {"Triggers" :: NullOrUndefined (TriggerList) , "NextToken" :: NullOrUndefined (GenericString) } ) -> GetTriggersResponse
-newGetTriggersResponse'  customize = (GetTriggersResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "Triggers": (NullOrUndefined Nothing) }
+newGetTriggersResponse' :: ( { "Triggers" :: Maybe (TriggerList) , "NextToken" :: Maybe (GenericString) } -> {"Triggers" :: Maybe (TriggerList) , "NextToken" :: Maybe (GenericString) } ) -> GetTriggersResponse
+newGetTriggersResponse'  customize = (GetTriggersResponse <<< customize) { "NextToken": Nothing, "Triggers": Nothing }
 
 
 
 newtype GetUserDefinedFunctionRequest = GetUserDefinedFunctionRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseName" :: (NameString)
   , "FunctionName" :: (NameString)
   }
@@ -3581,17 +3580,17 @@ instance encodeGetUserDefinedFunctionRequest :: Encode GetUserDefinedFunctionReq
 
 -- | Constructs GetUserDefinedFunctionRequest from required parameters
 newGetUserDefinedFunctionRequest :: NameString -> NameString -> GetUserDefinedFunctionRequest
-newGetUserDefinedFunctionRequest _DatabaseName _FunctionName = GetUserDefinedFunctionRequest { "DatabaseName": _DatabaseName, "FunctionName": _FunctionName, "CatalogId": (NullOrUndefined Nothing) }
+newGetUserDefinedFunctionRequest _DatabaseName _FunctionName = GetUserDefinedFunctionRequest { "DatabaseName": _DatabaseName, "FunctionName": _FunctionName, "CatalogId": Nothing }
 
 -- | Constructs GetUserDefinedFunctionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetUserDefinedFunctionRequest' :: NameString -> NameString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "FunctionName" :: (NameString) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "FunctionName" :: (NameString) } ) -> GetUserDefinedFunctionRequest
-newGetUserDefinedFunctionRequest' _DatabaseName _FunctionName customize = (GetUserDefinedFunctionRequest <<< customize) { "DatabaseName": _DatabaseName, "FunctionName": _FunctionName, "CatalogId": (NullOrUndefined Nothing) }
+newGetUserDefinedFunctionRequest' :: NameString -> NameString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "FunctionName" :: (NameString) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "FunctionName" :: (NameString) } ) -> GetUserDefinedFunctionRequest
+newGetUserDefinedFunctionRequest' _DatabaseName _FunctionName customize = (GetUserDefinedFunctionRequest <<< customize) { "DatabaseName": _DatabaseName, "FunctionName": _FunctionName, "CatalogId": Nothing }
 
 
 
 newtype GetUserDefinedFunctionResponse = GetUserDefinedFunctionResponse 
-  { "UserDefinedFunction" :: NullOrUndefined (UserDefinedFunction)
+  { "UserDefinedFunction" :: Maybe (UserDefinedFunction)
   }
 derive instance newtypeGetUserDefinedFunctionResponse :: Newtype GetUserDefinedFunctionResponse _
 derive instance repGenericGetUserDefinedFunctionResponse :: Generic GetUserDefinedFunctionResponse _
@@ -3601,21 +3600,21 @@ instance encodeGetUserDefinedFunctionResponse :: Encode GetUserDefinedFunctionRe
 
 -- | Constructs GetUserDefinedFunctionResponse from required parameters
 newGetUserDefinedFunctionResponse :: GetUserDefinedFunctionResponse
-newGetUserDefinedFunctionResponse  = GetUserDefinedFunctionResponse { "UserDefinedFunction": (NullOrUndefined Nothing) }
+newGetUserDefinedFunctionResponse  = GetUserDefinedFunctionResponse { "UserDefinedFunction": Nothing }
 
 -- | Constructs GetUserDefinedFunctionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetUserDefinedFunctionResponse' :: ( { "UserDefinedFunction" :: NullOrUndefined (UserDefinedFunction) } -> {"UserDefinedFunction" :: NullOrUndefined (UserDefinedFunction) } ) -> GetUserDefinedFunctionResponse
-newGetUserDefinedFunctionResponse'  customize = (GetUserDefinedFunctionResponse <<< customize) { "UserDefinedFunction": (NullOrUndefined Nothing) }
+newGetUserDefinedFunctionResponse' :: ( { "UserDefinedFunction" :: Maybe (UserDefinedFunction) } -> {"UserDefinedFunction" :: Maybe (UserDefinedFunction) } ) -> GetUserDefinedFunctionResponse
+newGetUserDefinedFunctionResponse'  customize = (GetUserDefinedFunctionResponse <<< customize) { "UserDefinedFunction": Nothing }
 
 
 
 newtype GetUserDefinedFunctionsRequest = GetUserDefinedFunctionsRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseName" :: (NameString)
   , "Pattern" :: (NameString)
-  , "NextToken" :: NullOrUndefined (Token)
-  , "MaxResults" :: NullOrUndefined (PageSize)
+  , "NextToken" :: Maybe (Token)
+  , "MaxResults" :: Maybe (PageSize)
   }
 derive instance newtypeGetUserDefinedFunctionsRequest :: Newtype GetUserDefinedFunctionsRequest _
 derive instance repGenericGetUserDefinedFunctionsRequest :: Generic GetUserDefinedFunctionsRequest _
@@ -3625,18 +3624,18 @@ instance encodeGetUserDefinedFunctionsRequest :: Encode GetUserDefinedFunctionsR
 
 -- | Constructs GetUserDefinedFunctionsRequest from required parameters
 newGetUserDefinedFunctionsRequest :: NameString -> NameString -> GetUserDefinedFunctionsRequest
-newGetUserDefinedFunctionsRequest _DatabaseName _Pattern = GetUserDefinedFunctionsRequest { "DatabaseName": _DatabaseName, "Pattern": _Pattern, "CatalogId": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetUserDefinedFunctionsRequest _DatabaseName _Pattern = GetUserDefinedFunctionsRequest { "DatabaseName": _DatabaseName, "Pattern": _Pattern, "CatalogId": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs GetUserDefinedFunctionsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetUserDefinedFunctionsRequest' :: NameString -> NameString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "Pattern" :: (NameString) , "NextToken" :: NullOrUndefined (Token) , "MaxResults" :: NullOrUndefined (PageSize) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "Pattern" :: (NameString) , "NextToken" :: NullOrUndefined (Token) , "MaxResults" :: NullOrUndefined (PageSize) } ) -> GetUserDefinedFunctionsRequest
-newGetUserDefinedFunctionsRequest' _DatabaseName _Pattern customize = (GetUserDefinedFunctionsRequest <<< customize) { "DatabaseName": _DatabaseName, "Pattern": _Pattern, "CatalogId": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newGetUserDefinedFunctionsRequest' :: NameString -> NameString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "Pattern" :: (NameString) , "NextToken" :: Maybe (Token) , "MaxResults" :: Maybe (PageSize) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "Pattern" :: (NameString) , "NextToken" :: Maybe (Token) , "MaxResults" :: Maybe (PageSize) } ) -> GetUserDefinedFunctionsRequest
+newGetUserDefinedFunctionsRequest' _DatabaseName _Pattern customize = (GetUserDefinedFunctionsRequest <<< customize) { "DatabaseName": _DatabaseName, "Pattern": _Pattern, "CatalogId": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype GetUserDefinedFunctionsResponse = GetUserDefinedFunctionsResponse 
-  { "UserDefinedFunctions" :: NullOrUndefined (UserDefinedFunctionList)
-  , "NextToken" :: NullOrUndefined (Token)
+  { "UserDefinedFunctions" :: Maybe (UserDefinedFunctionList)
+  , "NextToken" :: Maybe (Token)
   }
 derive instance newtypeGetUserDefinedFunctionsResponse :: Newtype GetUserDefinedFunctionsResponse _
 derive instance repGenericGetUserDefinedFunctionsResponse :: Generic GetUserDefinedFunctionsResponse _
@@ -3646,12 +3645,12 @@ instance encodeGetUserDefinedFunctionsResponse :: Encode GetUserDefinedFunctions
 
 -- | Constructs GetUserDefinedFunctionsResponse from required parameters
 newGetUserDefinedFunctionsResponse :: GetUserDefinedFunctionsResponse
-newGetUserDefinedFunctionsResponse  = GetUserDefinedFunctionsResponse { "NextToken": (NullOrUndefined Nothing), "UserDefinedFunctions": (NullOrUndefined Nothing) }
+newGetUserDefinedFunctionsResponse  = GetUserDefinedFunctionsResponse { "NextToken": Nothing, "UserDefinedFunctions": Nothing }
 
 -- | Constructs GetUserDefinedFunctionsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetUserDefinedFunctionsResponse' :: ( { "UserDefinedFunctions" :: NullOrUndefined (UserDefinedFunctionList) , "NextToken" :: NullOrUndefined (Token) } -> {"UserDefinedFunctions" :: NullOrUndefined (UserDefinedFunctionList) , "NextToken" :: NullOrUndefined (Token) } ) -> GetUserDefinedFunctionsResponse
-newGetUserDefinedFunctionsResponse'  customize = (GetUserDefinedFunctionsResponse <<< customize) { "NextToken": (NullOrUndefined Nothing), "UserDefinedFunctions": (NullOrUndefined Nothing) }
+newGetUserDefinedFunctionsResponse' :: ( { "UserDefinedFunctions" :: Maybe (UserDefinedFunctionList) , "NextToken" :: Maybe (Token) } -> {"UserDefinedFunctions" :: Maybe (UserDefinedFunctionList) , "NextToken" :: Maybe (Token) } ) -> GetUserDefinedFunctionsResponse
+newGetUserDefinedFunctionsResponse'  customize = (GetUserDefinedFunctionsResponse <<< customize) { "NextToken": Nothing, "UserDefinedFunctions": Nothing }
 
 
 
@@ -3659,11 +3658,11 @@ newGetUserDefinedFunctionsResponse'  customize = (GetUserDefinedFunctionsRespons
 newtype GrokClassifier = GrokClassifier 
   { "Name" :: (NameString)
   , "Classification" :: (Classification)
-  , "CreationTime" :: NullOrUndefined (Types.Timestamp)
-  , "LastUpdated" :: NullOrUndefined (Types.Timestamp)
-  , "Version" :: NullOrUndefined (VersionId)
+  , "CreationTime" :: Maybe (Types.Timestamp)
+  , "LastUpdated" :: Maybe (Types.Timestamp)
+  , "Version" :: Maybe (VersionId)
   , "GrokPattern" :: (GrokPattern)
-  , "CustomPatterns" :: NullOrUndefined (CustomPatterns)
+  , "CustomPatterns" :: Maybe (CustomPatterns)
   }
 derive instance newtypeGrokClassifier :: Newtype GrokClassifier _
 derive instance repGenericGrokClassifier :: Generic GrokClassifier _
@@ -3673,12 +3672,12 @@ instance encodeGrokClassifier :: Encode GrokClassifier where encode = genericEnc
 
 -- | Constructs GrokClassifier from required parameters
 newGrokClassifier :: Classification -> GrokPattern -> NameString -> GrokClassifier
-newGrokClassifier _Classification _GrokPattern _Name = GrokClassifier { "Classification": _Classification, "GrokPattern": _GrokPattern, "Name": _Name, "CreationTime": (NullOrUndefined Nothing), "CustomPatterns": (NullOrUndefined Nothing), "LastUpdated": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newGrokClassifier _Classification _GrokPattern _Name = GrokClassifier { "Classification": _Classification, "GrokPattern": _GrokPattern, "Name": _Name, "CreationTime": Nothing, "CustomPatterns": Nothing, "LastUpdated": Nothing, "Version": Nothing }
 
 -- | Constructs GrokClassifier's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGrokClassifier' :: Classification -> GrokPattern -> NameString -> ( { "Name" :: (NameString) , "Classification" :: (Classification) , "CreationTime" :: NullOrUndefined (Types.Timestamp) , "LastUpdated" :: NullOrUndefined (Types.Timestamp) , "Version" :: NullOrUndefined (VersionId) , "GrokPattern" :: (GrokPattern) , "CustomPatterns" :: NullOrUndefined (CustomPatterns) } -> {"Name" :: (NameString) , "Classification" :: (Classification) , "CreationTime" :: NullOrUndefined (Types.Timestamp) , "LastUpdated" :: NullOrUndefined (Types.Timestamp) , "Version" :: NullOrUndefined (VersionId) , "GrokPattern" :: (GrokPattern) , "CustomPatterns" :: NullOrUndefined (CustomPatterns) } ) -> GrokClassifier
-newGrokClassifier' _Classification _GrokPattern _Name customize = (GrokClassifier <<< customize) { "Classification": _Classification, "GrokPattern": _GrokPattern, "Name": _Name, "CreationTime": (NullOrUndefined Nothing), "CustomPatterns": (NullOrUndefined Nothing), "LastUpdated": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newGrokClassifier' :: Classification -> GrokPattern -> NameString -> ( { "Name" :: (NameString) , "Classification" :: (Classification) , "CreationTime" :: Maybe (Types.Timestamp) , "LastUpdated" :: Maybe (Types.Timestamp) , "Version" :: Maybe (VersionId) , "GrokPattern" :: (GrokPattern) , "CustomPatterns" :: Maybe (CustomPatterns) } -> {"Name" :: (NameString) , "Classification" :: (Classification) , "CreationTime" :: Maybe (Types.Timestamp) , "LastUpdated" :: Maybe (Types.Timestamp) , "Version" :: Maybe (VersionId) , "GrokPattern" :: (GrokPattern) , "CustomPatterns" :: Maybe (CustomPatterns) } ) -> GrokClassifier
+newGrokClassifier' _Classification _GrokPattern _Name customize = (GrokClassifier <<< customize) { "Classification": _Classification, "GrokPattern": _GrokPattern, "Name": _Name, "CreationTime": Nothing, "CustomPatterns": Nothing, "LastUpdated": Nothing, "Version": Nothing }
 
 
 
@@ -3702,7 +3701,7 @@ instance encodeIdString :: Encode IdString where encode = genericEncode options
 
 -- | <p>The same unique identifier was associated with two different records.</p>
 newtype IdempotentParameterMismatchException = IdempotentParameterMismatchException 
-  { "Message" :: NullOrUndefined (MessageString)
+  { "Message" :: Maybe (MessageString)
   }
 derive instance newtypeIdempotentParameterMismatchException :: Newtype IdempotentParameterMismatchException _
 derive instance repGenericIdempotentParameterMismatchException :: Generic IdempotentParameterMismatchException _
@@ -3712,17 +3711,17 @@ instance encodeIdempotentParameterMismatchException :: Encode IdempotentParamete
 
 -- | Constructs IdempotentParameterMismatchException from required parameters
 newIdempotentParameterMismatchException :: IdempotentParameterMismatchException
-newIdempotentParameterMismatchException  = IdempotentParameterMismatchException { "Message": (NullOrUndefined Nothing) }
+newIdempotentParameterMismatchException  = IdempotentParameterMismatchException { "Message": Nothing }
 
 -- | Constructs IdempotentParameterMismatchException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newIdempotentParameterMismatchException' :: ( { "Message" :: NullOrUndefined (MessageString) } -> {"Message" :: NullOrUndefined (MessageString) } ) -> IdempotentParameterMismatchException
-newIdempotentParameterMismatchException'  customize = (IdempotentParameterMismatchException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newIdempotentParameterMismatchException' :: ( { "Message" :: Maybe (MessageString) } -> {"Message" :: Maybe (MessageString) } ) -> IdempotentParameterMismatchException
+newIdempotentParameterMismatchException'  customize = (IdempotentParameterMismatchException <<< customize) { "Message": Nothing }
 
 
 
 newtype ImportCatalogToGlueRequest = ImportCatalogToGlueRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   }
 derive instance newtypeImportCatalogToGlueRequest :: Newtype ImportCatalogToGlueRequest _
 derive instance repGenericImportCatalogToGlueRequest :: Generic ImportCatalogToGlueRequest _
@@ -3732,12 +3731,12 @@ instance encodeImportCatalogToGlueRequest :: Encode ImportCatalogToGlueRequest w
 
 -- | Constructs ImportCatalogToGlueRequest from required parameters
 newImportCatalogToGlueRequest :: ImportCatalogToGlueRequest
-newImportCatalogToGlueRequest  = ImportCatalogToGlueRequest { "CatalogId": (NullOrUndefined Nothing) }
+newImportCatalogToGlueRequest  = ImportCatalogToGlueRequest { "CatalogId": Nothing }
 
 -- | Constructs ImportCatalogToGlueRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newImportCatalogToGlueRequest' :: ( { "CatalogId" :: NullOrUndefined (CatalogIdString) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) } ) -> ImportCatalogToGlueRequest
-newImportCatalogToGlueRequest'  customize = (ImportCatalogToGlueRequest <<< customize) { "CatalogId": (NullOrUndefined Nothing) }
+newImportCatalogToGlueRequest' :: ( { "CatalogId" :: Maybe (CatalogIdString) } -> {"CatalogId" :: Maybe (CatalogIdString) } ) -> ImportCatalogToGlueRequest
+newImportCatalogToGlueRequest'  customize = (ImportCatalogToGlueRequest <<< customize) { "CatalogId": Nothing }
 
 
 
@@ -3770,7 +3769,7 @@ instance encodeIntegerValue :: Encode IntegerValue where encode = genericEncode 
 
 -- | <p>An internal service error occurred.</p>
 newtype InternalServiceException = InternalServiceException 
-  { "Message" :: NullOrUndefined (MessageString)
+  { "Message" :: Maybe (MessageString)
   }
 derive instance newtypeInternalServiceException :: Newtype InternalServiceException _
 derive instance repGenericInternalServiceException :: Generic InternalServiceException _
@@ -3780,18 +3779,18 @@ instance encodeInternalServiceException :: Encode InternalServiceException where
 
 -- | Constructs InternalServiceException from required parameters
 newInternalServiceException :: InternalServiceException
-newInternalServiceException  = InternalServiceException { "Message": (NullOrUndefined Nothing) }
+newInternalServiceException  = InternalServiceException { "Message": Nothing }
 
 -- | Constructs InternalServiceException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInternalServiceException' :: ( { "Message" :: NullOrUndefined (MessageString) } -> {"Message" :: NullOrUndefined (MessageString) } ) -> InternalServiceException
-newInternalServiceException'  customize = (InternalServiceException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInternalServiceException' :: ( { "Message" :: Maybe (MessageString) } -> {"Message" :: Maybe (MessageString) } ) -> InternalServiceException
+newInternalServiceException'  customize = (InternalServiceException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The input provided was not valid.</p>
 newtype InvalidInputException = InvalidInputException 
-  { "Message" :: NullOrUndefined (MessageString)
+  { "Message" :: Maybe (MessageString)
   }
 derive instance newtypeInvalidInputException :: Newtype InvalidInputException _
 derive instance repGenericInvalidInputException :: Generic InvalidInputException _
@@ -3801,20 +3800,20 @@ instance encodeInvalidInputException :: Encode InvalidInputException where encod
 
 -- | Constructs InvalidInputException from required parameters
 newInvalidInputException :: InvalidInputException
-newInvalidInputException  = InvalidInputException { "Message": (NullOrUndefined Nothing) }
+newInvalidInputException  = InvalidInputException { "Message": Nothing }
 
 -- | Constructs InvalidInputException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidInputException' :: ( { "Message" :: NullOrUndefined (MessageString) } -> {"Message" :: NullOrUndefined (MessageString) } ) -> InvalidInputException
-newInvalidInputException'  customize = (InvalidInputException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidInputException' :: ( { "Message" :: Maybe (MessageString) } -> {"Message" :: Maybe (MessageString) } ) -> InvalidInputException
+newInvalidInputException'  customize = (InvalidInputException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Specifies a JDBC data store to crawl.</p>
 newtype JdbcTarget = JdbcTarget 
-  { "ConnectionName" :: NullOrUndefined (ConnectionName)
-  , "Path" :: NullOrUndefined (Path)
-  , "Exclusions" :: NullOrUndefined (PathList)
+  { "ConnectionName" :: Maybe (ConnectionName)
+  , "Path" :: Maybe (Path)
+  , "Exclusions" :: Maybe (PathList)
   }
 derive instance newtypeJdbcTarget :: Newtype JdbcTarget _
 derive instance repGenericJdbcTarget :: Generic JdbcTarget _
@@ -3824,12 +3823,12 @@ instance encodeJdbcTarget :: Encode JdbcTarget where encode = genericEncode opti
 
 -- | Constructs JdbcTarget from required parameters
 newJdbcTarget :: JdbcTarget
-newJdbcTarget  = JdbcTarget { "ConnectionName": (NullOrUndefined Nothing), "Exclusions": (NullOrUndefined Nothing), "Path": (NullOrUndefined Nothing) }
+newJdbcTarget  = JdbcTarget { "ConnectionName": Nothing, "Exclusions": Nothing, "Path": Nothing }
 
 -- | Constructs JdbcTarget's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJdbcTarget' :: ( { "ConnectionName" :: NullOrUndefined (ConnectionName) , "Path" :: NullOrUndefined (Path) , "Exclusions" :: NullOrUndefined (PathList) } -> {"ConnectionName" :: NullOrUndefined (ConnectionName) , "Path" :: NullOrUndefined (Path) , "Exclusions" :: NullOrUndefined (PathList) } ) -> JdbcTarget
-newJdbcTarget'  customize = (JdbcTarget <<< customize) { "ConnectionName": (NullOrUndefined Nothing), "Exclusions": (NullOrUndefined Nothing), "Path": (NullOrUndefined Nothing) }
+newJdbcTarget' :: ( { "ConnectionName" :: Maybe (ConnectionName) , "Path" :: Maybe (Path) , "Exclusions" :: Maybe (PathList) } -> {"ConnectionName" :: Maybe (ConnectionName) , "Path" :: Maybe (Path) , "Exclusions" :: Maybe (PathList) } ) -> JdbcTarget
+newJdbcTarget'  customize = (JdbcTarget <<< customize) { "ConnectionName": Nothing, "Exclusions": Nothing, "Path": Nothing }
 
 
 
@@ -3844,18 +3843,18 @@ instance encodeJdbcTargetList :: Encode JdbcTargetList where encode = genericEnc
 
 -- | <p>Specifies a job.</p>
 newtype Job = Job 
-  { "Name" :: NullOrUndefined (NameString)
-  , "Description" :: NullOrUndefined (DescriptionString)
-  , "LogUri" :: NullOrUndefined (UriString)
-  , "Role" :: NullOrUndefined (RoleString)
-  , "CreatedOn" :: NullOrUndefined (TimestampValue)
-  , "LastModifiedOn" :: NullOrUndefined (TimestampValue)
-  , "ExecutionProperty" :: NullOrUndefined (ExecutionProperty)
-  , "Command" :: NullOrUndefined (JobCommand)
-  , "DefaultArguments" :: NullOrUndefined (GenericMap)
-  , "Connections" :: NullOrUndefined (ConnectionsList)
-  , "MaxRetries" :: NullOrUndefined (MaxRetries)
-  , "AllocatedCapacity" :: NullOrUndefined (IntegerValue)
+  { "Name" :: Maybe (NameString)
+  , "Description" :: Maybe (DescriptionString)
+  , "LogUri" :: Maybe (UriString)
+  , "Role" :: Maybe (RoleString)
+  , "CreatedOn" :: Maybe (TimestampValue)
+  , "LastModifiedOn" :: Maybe (TimestampValue)
+  , "ExecutionProperty" :: Maybe (ExecutionProperty)
+  , "Command" :: Maybe (JobCommand)
+  , "DefaultArguments" :: Maybe (GenericMap)
+  , "Connections" :: Maybe (ConnectionsList)
+  , "MaxRetries" :: Maybe (MaxRetries)
+  , "AllocatedCapacity" :: Maybe (IntegerValue)
   }
 derive instance newtypeJob :: Newtype Job _
 derive instance repGenericJob :: Generic Job _
@@ -3865,22 +3864,22 @@ instance encodeJob :: Encode Job where encode = genericEncode options
 
 -- | Constructs Job from required parameters
 newJob :: Job
-newJob  = Job { "AllocatedCapacity": (NullOrUndefined Nothing), "Command": (NullOrUndefined Nothing), "Connections": (NullOrUndefined Nothing), "CreatedOn": (NullOrUndefined Nothing), "DefaultArguments": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "ExecutionProperty": (NullOrUndefined Nothing), "LastModifiedOn": (NullOrUndefined Nothing), "LogUri": (NullOrUndefined Nothing), "MaxRetries": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Role": (NullOrUndefined Nothing) }
+newJob  = Job { "AllocatedCapacity": Nothing, "Command": Nothing, "Connections": Nothing, "CreatedOn": Nothing, "DefaultArguments": Nothing, "Description": Nothing, "ExecutionProperty": Nothing, "LastModifiedOn": Nothing, "LogUri": Nothing, "MaxRetries": Nothing, "Name": Nothing, "Role": Nothing }
 
 -- | Constructs Job's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJob' :: ( { "Name" :: NullOrUndefined (NameString) , "Description" :: NullOrUndefined (DescriptionString) , "LogUri" :: NullOrUndefined (UriString) , "Role" :: NullOrUndefined (RoleString) , "CreatedOn" :: NullOrUndefined (TimestampValue) , "LastModifiedOn" :: NullOrUndefined (TimestampValue) , "ExecutionProperty" :: NullOrUndefined (ExecutionProperty) , "Command" :: NullOrUndefined (JobCommand) , "DefaultArguments" :: NullOrUndefined (GenericMap) , "Connections" :: NullOrUndefined (ConnectionsList) , "MaxRetries" :: NullOrUndefined (MaxRetries) , "AllocatedCapacity" :: NullOrUndefined (IntegerValue) } -> {"Name" :: NullOrUndefined (NameString) , "Description" :: NullOrUndefined (DescriptionString) , "LogUri" :: NullOrUndefined (UriString) , "Role" :: NullOrUndefined (RoleString) , "CreatedOn" :: NullOrUndefined (TimestampValue) , "LastModifiedOn" :: NullOrUndefined (TimestampValue) , "ExecutionProperty" :: NullOrUndefined (ExecutionProperty) , "Command" :: NullOrUndefined (JobCommand) , "DefaultArguments" :: NullOrUndefined (GenericMap) , "Connections" :: NullOrUndefined (ConnectionsList) , "MaxRetries" :: NullOrUndefined (MaxRetries) , "AllocatedCapacity" :: NullOrUndefined (IntegerValue) } ) -> Job
-newJob'  customize = (Job <<< customize) { "AllocatedCapacity": (NullOrUndefined Nothing), "Command": (NullOrUndefined Nothing), "Connections": (NullOrUndefined Nothing), "CreatedOn": (NullOrUndefined Nothing), "DefaultArguments": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "ExecutionProperty": (NullOrUndefined Nothing), "LastModifiedOn": (NullOrUndefined Nothing), "LogUri": (NullOrUndefined Nothing), "MaxRetries": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Role": (NullOrUndefined Nothing) }
+newJob' :: ( { "Name" :: Maybe (NameString) , "Description" :: Maybe (DescriptionString) , "LogUri" :: Maybe (UriString) , "Role" :: Maybe (RoleString) , "CreatedOn" :: Maybe (TimestampValue) , "LastModifiedOn" :: Maybe (TimestampValue) , "ExecutionProperty" :: Maybe (ExecutionProperty) , "Command" :: Maybe (JobCommand) , "DefaultArguments" :: Maybe (GenericMap) , "Connections" :: Maybe (ConnectionsList) , "MaxRetries" :: Maybe (MaxRetries) , "AllocatedCapacity" :: Maybe (IntegerValue) } -> {"Name" :: Maybe (NameString) , "Description" :: Maybe (DescriptionString) , "LogUri" :: Maybe (UriString) , "Role" :: Maybe (RoleString) , "CreatedOn" :: Maybe (TimestampValue) , "LastModifiedOn" :: Maybe (TimestampValue) , "ExecutionProperty" :: Maybe (ExecutionProperty) , "Command" :: Maybe (JobCommand) , "DefaultArguments" :: Maybe (GenericMap) , "Connections" :: Maybe (ConnectionsList) , "MaxRetries" :: Maybe (MaxRetries) , "AllocatedCapacity" :: Maybe (IntegerValue) } ) -> Job
+newJob'  customize = (Job <<< customize) { "AllocatedCapacity": Nothing, "Command": Nothing, "Connections": Nothing, "CreatedOn": Nothing, "DefaultArguments": Nothing, "Description": Nothing, "ExecutionProperty": Nothing, "LastModifiedOn": Nothing, "LogUri": Nothing, "MaxRetries": Nothing, "Name": Nothing, "Role": Nothing }
 
 
 
 -- | <p>Defines a point which a job can resume processing.</p>
 newtype JobBookmarkEntry = JobBookmarkEntry 
-  { "JobName" :: NullOrUndefined (JobName)
-  , "Version" :: NullOrUndefined (IntegerValue)
-  , "Run" :: NullOrUndefined (IntegerValue)
-  , "Attempt" :: NullOrUndefined (IntegerValue)
-  , "JobBookmark" :: NullOrUndefined (JsonValue)
+  { "JobName" :: Maybe (JobName)
+  , "Version" :: Maybe (IntegerValue)
+  , "Run" :: Maybe (IntegerValue)
+  , "Attempt" :: Maybe (IntegerValue)
+  , "JobBookmark" :: Maybe (JsonValue)
   }
 derive instance newtypeJobBookmarkEntry :: Newtype JobBookmarkEntry _
 derive instance repGenericJobBookmarkEntry :: Generic JobBookmarkEntry _
@@ -3890,19 +3889,19 @@ instance encodeJobBookmarkEntry :: Encode JobBookmarkEntry where encode = generi
 
 -- | Constructs JobBookmarkEntry from required parameters
 newJobBookmarkEntry :: JobBookmarkEntry
-newJobBookmarkEntry  = JobBookmarkEntry { "Attempt": (NullOrUndefined Nothing), "JobBookmark": (NullOrUndefined Nothing), "JobName": (NullOrUndefined Nothing), "Run": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newJobBookmarkEntry  = JobBookmarkEntry { "Attempt": Nothing, "JobBookmark": Nothing, "JobName": Nothing, "Run": Nothing, "Version": Nothing }
 
 -- | Constructs JobBookmarkEntry's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJobBookmarkEntry' :: ( { "JobName" :: NullOrUndefined (JobName) , "Version" :: NullOrUndefined (IntegerValue) , "Run" :: NullOrUndefined (IntegerValue) , "Attempt" :: NullOrUndefined (IntegerValue) , "JobBookmark" :: NullOrUndefined (JsonValue) } -> {"JobName" :: NullOrUndefined (JobName) , "Version" :: NullOrUndefined (IntegerValue) , "Run" :: NullOrUndefined (IntegerValue) , "Attempt" :: NullOrUndefined (IntegerValue) , "JobBookmark" :: NullOrUndefined (JsonValue) } ) -> JobBookmarkEntry
-newJobBookmarkEntry'  customize = (JobBookmarkEntry <<< customize) { "Attempt": (NullOrUndefined Nothing), "JobBookmark": (NullOrUndefined Nothing), "JobName": (NullOrUndefined Nothing), "Run": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newJobBookmarkEntry' :: ( { "JobName" :: Maybe (JobName) , "Version" :: Maybe (IntegerValue) , "Run" :: Maybe (IntegerValue) , "Attempt" :: Maybe (IntegerValue) , "JobBookmark" :: Maybe (JsonValue) } -> {"JobName" :: Maybe (JobName) , "Version" :: Maybe (IntegerValue) , "Run" :: Maybe (IntegerValue) , "Attempt" :: Maybe (IntegerValue) , "JobBookmark" :: Maybe (JsonValue) } ) -> JobBookmarkEntry
+newJobBookmarkEntry'  customize = (JobBookmarkEntry <<< customize) { "Attempt": Nothing, "JobBookmark": Nothing, "JobName": Nothing, "Run": Nothing, "Version": Nothing }
 
 
 
 -- | <p>Specifies code that executes a job.</p>
 newtype JobCommand = JobCommand 
-  { "Name" :: NullOrUndefined (GenericString)
-  , "ScriptLocation" :: NullOrUndefined (ScriptLocationString)
+  { "Name" :: Maybe (GenericString)
+  , "ScriptLocation" :: Maybe (ScriptLocationString)
   }
 derive instance newtypeJobCommand :: Newtype JobCommand _
 derive instance repGenericJobCommand :: Generic JobCommand _
@@ -3912,12 +3911,12 @@ instance encodeJobCommand :: Encode JobCommand where encode = genericEncode opti
 
 -- | Constructs JobCommand from required parameters
 newJobCommand :: JobCommand
-newJobCommand  = JobCommand { "Name": (NullOrUndefined Nothing), "ScriptLocation": (NullOrUndefined Nothing) }
+newJobCommand  = JobCommand { "Name": Nothing, "ScriptLocation": Nothing }
 
 -- | Constructs JobCommand's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJobCommand' :: ( { "Name" :: NullOrUndefined (GenericString) , "ScriptLocation" :: NullOrUndefined (ScriptLocationString) } -> {"Name" :: NullOrUndefined (GenericString) , "ScriptLocation" :: NullOrUndefined (ScriptLocationString) } ) -> JobCommand
-newJobCommand'  customize = (JobCommand <<< customize) { "Name": (NullOrUndefined Nothing), "ScriptLocation": (NullOrUndefined Nothing) }
+newJobCommand' :: ( { "Name" :: Maybe (GenericString) , "ScriptLocation" :: Maybe (ScriptLocationString) } -> {"Name" :: Maybe (GenericString) , "ScriptLocation" :: Maybe (ScriptLocationString) } ) -> JobCommand
+newJobCommand'  customize = (JobCommand <<< customize) { "Name": Nothing, "ScriptLocation": Nothing }
 
 
 
@@ -3941,19 +3940,19 @@ instance encodeJobName :: Encode JobName where encode = genericEncode options
 
 -- | <p>Contains information about a job run.</p>
 newtype JobRun = JobRun 
-  { "Id" :: NullOrUndefined (IdString)
-  , "Attempt" :: NullOrUndefined (AttemptCount)
-  , "PreviousRunId" :: NullOrUndefined (IdString)
-  , "TriggerName" :: NullOrUndefined (NameString)
-  , "JobName" :: NullOrUndefined (NameString)
-  , "StartedOn" :: NullOrUndefined (TimestampValue)
-  , "LastModifiedOn" :: NullOrUndefined (TimestampValue)
-  , "CompletedOn" :: NullOrUndefined (TimestampValue)
-  , "JobRunState" :: NullOrUndefined (JobRunState)
-  , "Arguments" :: NullOrUndefined (GenericMap)
-  , "ErrorMessage" :: NullOrUndefined (ErrorString)
-  , "PredecessorRuns" :: NullOrUndefined (PredecessorList)
-  , "AllocatedCapacity" :: NullOrUndefined (IntegerValue)
+  { "Id" :: Maybe (IdString)
+  , "Attempt" :: Maybe (AttemptCount)
+  , "PreviousRunId" :: Maybe (IdString)
+  , "TriggerName" :: Maybe (NameString)
+  , "JobName" :: Maybe (NameString)
+  , "StartedOn" :: Maybe (TimestampValue)
+  , "LastModifiedOn" :: Maybe (TimestampValue)
+  , "CompletedOn" :: Maybe (TimestampValue)
+  , "JobRunState" :: Maybe (JobRunState)
+  , "Arguments" :: Maybe (GenericMap)
+  , "ErrorMessage" :: Maybe (ErrorString)
+  , "PredecessorRuns" :: Maybe (PredecessorList)
+  , "AllocatedCapacity" :: Maybe (IntegerValue)
   }
 derive instance newtypeJobRun :: Newtype JobRun _
 derive instance repGenericJobRun :: Generic JobRun _
@@ -3963,12 +3962,12 @@ instance encodeJobRun :: Encode JobRun where encode = genericEncode options
 
 -- | Constructs JobRun from required parameters
 newJobRun :: JobRun
-newJobRun  = JobRun { "AllocatedCapacity": (NullOrUndefined Nothing), "Arguments": (NullOrUndefined Nothing), "Attempt": (NullOrUndefined Nothing), "CompletedOn": (NullOrUndefined Nothing), "ErrorMessage": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "JobName": (NullOrUndefined Nothing), "JobRunState": (NullOrUndefined Nothing), "LastModifiedOn": (NullOrUndefined Nothing), "PredecessorRuns": (NullOrUndefined Nothing), "PreviousRunId": (NullOrUndefined Nothing), "StartedOn": (NullOrUndefined Nothing), "TriggerName": (NullOrUndefined Nothing) }
+newJobRun  = JobRun { "AllocatedCapacity": Nothing, "Arguments": Nothing, "Attempt": Nothing, "CompletedOn": Nothing, "ErrorMessage": Nothing, "Id": Nothing, "JobName": Nothing, "JobRunState": Nothing, "LastModifiedOn": Nothing, "PredecessorRuns": Nothing, "PreviousRunId": Nothing, "StartedOn": Nothing, "TriggerName": Nothing }
 
 -- | Constructs JobRun's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJobRun' :: ( { "Id" :: NullOrUndefined (IdString) , "Attempt" :: NullOrUndefined (AttemptCount) , "PreviousRunId" :: NullOrUndefined (IdString) , "TriggerName" :: NullOrUndefined (NameString) , "JobName" :: NullOrUndefined (NameString) , "StartedOn" :: NullOrUndefined (TimestampValue) , "LastModifiedOn" :: NullOrUndefined (TimestampValue) , "CompletedOn" :: NullOrUndefined (TimestampValue) , "JobRunState" :: NullOrUndefined (JobRunState) , "Arguments" :: NullOrUndefined (GenericMap) , "ErrorMessage" :: NullOrUndefined (ErrorString) , "PredecessorRuns" :: NullOrUndefined (PredecessorList) , "AllocatedCapacity" :: NullOrUndefined (IntegerValue) } -> {"Id" :: NullOrUndefined (IdString) , "Attempt" :: NullOrUndefined (AttemptCount) , "PreviousRunId" :: NullOrUndefined (IdString) , "TriggerName" :: NullOrUndefined (NameString) , "JobName" :: NullOrUndefined (NameString) , "StartedOn" :: NullOrUndefined (TimestampValue) , "LastModifiedOn" :: NullOrUndefined (TimestampValue) , "CompletedOn" :: NullOrUndefined (TimestampValue) , "JobRunState" :: NullOrUndefined (JobRunState) , "Arguments" :: NullOrUndefined (GenericMap) , "ErrorMessage" :: NullOrUndefined (ErrorString) , "PredecessorRuns" :: NullOrUndefined (PredecessorList) , "AllocatedCapacity" :: NullOrUndefined (IntegerValue) } ) -> JobRun
-newJobRun'  customize = (JobRun <<< customize) { "AllocatedCapacity": (NullOrUndefined Nothing), "Arguments": (NullOrUndefined Nothing), "Attempt": (NullOrUndefined Nothing), "CompletedOn": (NullOrUndefined Nothing), "ErrorMessage": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "JobName": (NullOrUndefined Nothing), "JobRunState": (NullOrUndefined Nothing), "LastModifiedOn": (NullOrUndefined Nothing), "PredecessorRuns": (NullOrUndefined Nothing), "PreviousRunId": (NullOrUndefined Nothing), "StartedOn": (NullOrUndefined Nothing), "TriggerName": (NullOrUndefined Nothing) }
+newJobRun' :: ( { "Id" :: Maybe (IdString) , "Attempt" :: Maybe (AttemptCount) , "PreviousRunId" :: Maybe (IdString) , "TriggerName" :: Maybe (NameString) , "JobName" :: Maybe (NameString) , "StartedOn" :: Maybe (TimestampValue) , "LastModifiedOn" :: Maybe (TimestampValue) , "CompletedOn" :: Maybe (TimestampValue) , "JobRunState" :: Maybe (JobRunState) , "Arguments" :: Maybe (GenericMap) , "ErrorMessage" :: Maybe (ErrorString) , "PredecessorRuns" :: Maybe (PredecessorList) , "AllocatedCapacity" :: Maybe (IntegerValue) } -> {"Id" :: Maybe (IdString) , "Attempt" :: Maybe (AttemptCount) , "PreviousRunId" :: Maybe (IdString) , "TriggerName" :: Maybe (NameString) , "JobName" :: Maybe (NameString) , "StartedOn" :: Maybe (TimestampValue) , "LastModifiedOn" :: Maybe (TimestampValue) , "CompletedOn" :: Maybe (TimestampValue) , "JobRunState" :: Maybe (JobRunState) , "Arguments" :: Maybe (GenericMap) , "ErrorMessage" :: Maybe (ErrorString) , "PredecessorRuns" :: Maybe (PredecessorList) , "AllocatedCapacity" :: Maybe (IntegerValue) } ) -> JobRun
+newJobRun'  customize = (JobRun <<< customize) { "AllocatedCapacity": Nothing, "Arguments": Nothing, "Attempt": Nothing, "CompletedOn": Nothing, "ErrorMessage": Nothing, "Id": Nothing, "JobName": Nothing, "JobRunState": Nothing, "LastModifiedOn": Nothing, "PredecessorRuns": Nothing, "PreviousRunId": Nothing, "StartedOn": Nothing, "TriggerName": Nothing }
 
 
 
@@ -3992,15 +3991,15 @@ instance encodeJobRunState :: Encode JobRunState where encode = genericEncode op
 
 -- | <p>Specifies information used to update an existing job. Note that the previous job definition will be completely overwritten by this information.</p>
 newtype JobUpdate = JobUpdate 
-  { "Description" :: NullOrUndefined (DescriptionString)
-  , "LogUri" :: NullOrUndefined (UriString)
-  , "Role" :: NullOrUndefined (RoleString)
-  , "ExecutionProperty" :: NullOrUndefined (ExecutionProperty)
-  , "Command" :: NullOrUndefined (JobCommand)
-  , "DefaultArguments" :: NullOrUndefined (GenericMap)
-  , "Connections" :: NullOrUndefined (ConnectionsList)
-  , "MaxRetries" :: NullOrUndefined (MaxRetries)
-  , "AllocatedCapacity" :: NullOrUndefined (IntegerValue)
+  { "Description" :: Maybe (DescriptionString)
+  , "LogUri" :: Maybe (UriString)
+  , "Role" :: Maybe (RoleString)
+  , "ExecutionProperty" :: Maybe (ExecutionProperty)
+  , "Command" :: Maybe (JobCommand)
+  , "DefaultArguments" :: Maybe (GenericMap)
+  , "Connections" :: Maybe (ConnectionsList)
+  , "MaxRetries" :: Maybe (MaxRetries)
+  , "AllocatedCapacity" :: Maybe (IntegerValue)
   }
 derive instance newtypeJobUpdate :: Newtype JobUpdate _
 derive instance repGenericJobUpdate :: Generic JobUpdate _
@@ -4010,21 +4009,21 @@ instance encodeJobUpdate :: Encode JobUpdate where encode = genericEncode option
 
 -- | Constructs JobUpdate from required parameters
 newJobUpdate :: JobUpdate
-newJobUpdate  = JobUpdate { "AllocatedCapacity": (NullOrUndefined Nothing), "Command": (NullOrUndefined Nothing), "Connections": (NullOrUndefined Nothing), "DefaultArguments": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "ExecutionProperty": (NullOrUndefined Nothing), "LogUri": (NullOrUndefined Nothing), "MaxRetries": (NullOrUndefined Nothing), "Role": (NullOrUndefined Nothing) }
+newJobUpdate  = JobUpdate { "AllocatedCapacity": Nothing, "Command": Nothing, "Connections": Nothing, "DefaultArguments": Nothing, "Description": Nothing, "ExecutionProperty": Nothing, "LogUri": Nothing, "MaxRetries": Nothing, "Role": Nothing }
 
 -- | Constructs JobUpdate's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJobUpdate' :: ( { "Description" :: NullOrUndefined (DescriptionString) , "LogUri" :: NullOrUndefined (UriString) , "Role" :: NullOrUndefined (RoleString) , "ExecutionProperty" :: NullOrUndefined (ExecutionProperty) , "Command" :: NullOrUndefined (JobCommand) , "DefaultArguments" :: NullOrUndefined (GenericMap) , "Connections" :: NullOrUndefined (ConnectionsList) , "MaxRetries" :: NullOrUndefined (MaxRetries) , "AllocatedCapacity" :: NullOrUndefined (IntegerValue) } -> {"Description" :: NullOrUndefined (DescriptionString) , "LogUri" :: NullOrUndefined (UriString) , "Role" :: NullOrUndefined (RoleString) , "ExecutionProperty" :: NullOrUndefined (ExecutionProperty) , "Command" :: NullOrUndefined (JobCommand) , "DefaultArguments" :: NullOrUndefined (GenericMap) , "Connections" :: NullOrUndefined (ConnectionsList) , "MaxRetries" :: NullOrUndefined (MaxRetries) , "AllocatedCapacity" :: NullOrUndefined (IntegerValue) } ) -> JobUpdate
-newJobUpdate'  customize = (JobUpdate <<< customize) { "AllocatedCapacity": (NullOrUndefined Nothing), "Command": (NullOrUndefined Nothing), "Connections": (NullOrUndefined Nothing), "DefaultArguments": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "ExecutionProperty": (NullOrUndefined Nothing), "LogUri": (NullOrUndefined Nothing), "MaxRetries": (NullOrUndefined Nothing), "Role": (NullOrUndefined Nothing) }
+newJobUpdate' :: ( { "Description" :: Maybe (DescriptionString) , "LogUri" :: Maybe (UriString) , "Role" :: Maybe (RoleString) , "ExecutionProperty" :: Maybe (ExecutionProperty) , "Command" :: Maybe (JobCommand) , "DefaultArguments" :: Maybe (GenericMap) , "Connections" :: Maybe (ConnectionsList) , "MaxRetries" :: Maybe (MaxRetries) , "AllocatedCapacity" :: Maybe (IntegerValue) } -> {"Description" :: Maybe (DescriptionString) , "LogUri" :: Maybe (UriString) , "Role" :: Maybe (RoleString) , "ExecutionProperty" :: Maybe (ExecutionProperty) , "Command" :: Maybe (JobCommand) , "DefaultArguments" :: Maybe (GenericMap) , "Connections" :: Maybe (ConnectionsList) , "MaxRetries" :: Maybe (MaxRetries) , "AllocatedCapacity" :: Maybe (IntegerValue) } ) -> JobUpdate
+newJobUpdate'  customize = (JobUpdate <<< customize) { "AllocatedCapacity": Nothing, "Command": Nothing, "Connections": Nothing, "DefaultArguments": Nothing, "Description": Nothing, "ExecutionProperty": Nothing, "LogUri": Nothing, "MaxRetries": Nothing, "Role": Nothing }
 
 
 
 -- | <p>A classifier for <code>JSON</code> content.</p>
 newtype JsonClassifier = JsonClassifier 
   { "Name" :: (NameString)
-  , "CreationTime" :: NullOrUndefined (Types.Timestamp)
-  , "LastUpdated" :: NullOrUndefined (Types.Timestamp)
-  , "Version" :: NullOrUndefined (VersionId)
+  , "CreationTime" :: Maybe (Types.Timestamp)
+  , "LastUpdated" :: Maybe (Types.Timestamp)
+  , "Version" :: Maybe (VersionId)
   , "JsonPath" :: (JsonPath)
   }
 derive instance newtypeJsonClassifier :: Newtype JsonClassifier _
@@ -4035,12 +4034,12 @@ instance encodeJsonClassifier :: Encode JsonClassifier where encode = genericEnc
 
 -- | Constructs JsonClassifier from required parameters
 newJsonClassifier :: JsonPath -> NameString -> JsonClassifier
-newJsonClassifier _JsonPath _Name = JsonClassifier { "JsonPath": _JsonPath, "Name": _Name, "CreationTime": (NullOrUndefined Nothing), "LastUpdated": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newJsonClassifier _JsonPath _Name = JsonClassifier { "JsonPath": _JsonPath, "Name": _Name, "CreationTime": Nothing, "LastUpdated": Nothing, "Version": Nothing }
 
 -- | Constructs JsonClassifier's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJsonClassifier' :: JsonPath -> NameString -> ( { "Name" :: (NameString) , "CreationTime" :: NullOrUndefined (Types.Timestamp) , "LastUpdated" :: NullOrUndefined (Types.Timestamp) , "Version" :: NullOrUndefined (VersionId) , "JsonPath" :: (JsonPath) } -> {"Name" :: (NameString) , "CreationTime" :: NullOrUndefined (Types.Timestamp) , "LastUpdated" :: NullOrUndefined (Types.Timestamp) , "Version" :: NullOrUndefined (VersionId) , "JsonPath" :: (JsonPath) } ) -> JsonClassifier
-newJsonClassifier' _JsonPath _Name customize = (JsonClassifier <<< customize) { "JsonPath": _JsonPath, "Name": _Name, "CreationTime": (NullOrUndefined Nothing), "LastUpdated": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newJsonClassifier' :: JsonPath -> NameString -> ( { "Name" :: (NameString) , "CreationTime" :: Maybe (Types.Timestamp) , "LastUpdated" :: Maybe (Types.Timestamp) , "Version" :: Maybe (VersionId) , "JsonPath" :: (JsonPath) } -> {"Name" :: (NameString) , "CreationTime" :: Maybe (Types.Timestamp) , "LastUpdated" :: Maybe (Types.Timestamp) , "Version" :: Maybe (VersionId) , "JsonPath" :: (JsonPath) } ) -> JsonClassifier
+newJsonClassifier' _JsonPath _Name customize = (JsonClassifier <<< customize) { "JsonPath": _JsonPath, "Name": _Name, "CreationTime": Nothing, "LastUpdated": Nothing, "Version": Nothing }
 
 
 
@@ -4082,12 +4081,12 @@ instance encodeLanguage :: Encode Language where encode = genericEncode options
 
 -- | <p>Status and error information about the most recent crawl.</p>
 newtype LastCrawlInfo = LastCrawlInfo 
-  { "Status" :: NullOrUndefined (LastCrawlStatus)
-  , "ErrorMessage" :: NullOrUndefined (DescriptionString)
-  , "LogGroup" :: NullOrUndefined (LogGroup)
-  , "LogStream" :: NullOrUndefined (LogStream)
-  , "MessagePrefix" :: NullOrUndefined (MessagePrefix)
-  , "StartTime" :: NullOrUndefined (Types.Timestamp)
+  { "Status" :: Maybe (LastCrawlStatus)
+  , "ErrorMessage" :: Maybe (DescriptionString)
+  , "LogGroup" :: Maybe (LogGroup)
+  , "LogStream" :: Maybe (LogStream)
+  , "MessagePrefix" :: Maybe (MessagePrefix)
+  , "StartTime" :: Maybe (Types.Timestamp)
   }
 derive instance newtypeLastCrawlInfo :: Newtype LastCrawlInfo _
 derive instance repGenericLastCrawlInfo :: Generic LastCrawlInfo _
@@ -4097,12 +4096,12 @@ instance encodeLastCrawlInfo :: Encode LastCrawlInfo where encode = genericEncod
 
 -- | Constructs LastCrawlInfo from required parameters
 newLastCrawlInfo :: LastCrawlInfo
-newLastCrawlInfo  = LastCrawlInfo { "ErrorMessage": (NullOrUndefined Nothing), "LogGroup": (NullOrUndefined Nothing), "LogStream": (NullOrUndefined Nothing), "MessagePrefix": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newLastCrawlInfo  = LastCrawlInfo { "ErrorMessage": Nothing, "LogGroup": Nothing, "LogStream": Nothing, "MessagePrefix": Nothing, "StartTime": Nothing, "Status": Nothing }
 
 -- | Constructs LastCrawlInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLastCrawlInfo' :: ( { "Status" :: NullOrUndefined (LastCrawlStatus) , "ErrorMessage" :: NullOrUndefined (DescriptionString) , "LogGroup" :: NullOrUndefined (LogGroup) , "LogStream" :: NullOrUndefined (LogStream) , "MessagePrefix" :: NullOrUndefined (MessagePrefix) , "StartTime" :: NullOrUndefined (Types.Timestamp) } -> {"Status" :: NullOrUndefined (LastCrawlStatus) , "ErrorMessage" :: NullOrUndefined (DescriptionString) , "LogGroup" :: NullOrUndefined (LogGroup) , "LogStream" :: NullOrUndefined (LogStream) , "MessagePrefix" :: NullOrUndefined (MessagePrefix) , "StartTime" :: NullOrUndefined (Types.Timestamp) } ) -> LastCrawlInfo
-newLastCrawlInfo'  customize = (LastCrawlInfo <<< customize) { "ErrorMessage": (NullOrUndefined Nothing), "LogGroup": (NullOrUndefined Nothing), "LogStream": (NullOrUndefined Nothing), "MessagePrefix": (NullOrUndefined Nothing), "StartTime": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newLastCrawlInfo' :: ( { "Status" :: Maybe (LastCrawlStatus) , "ErrorMessage" :: Maybe (DescriptionString) , "LogGroup" :: Maybe (LogGroup) , "LogStream" :: Maybe (LogStream) , "MessagePrefix" :: Maybe (MessagePrefix) , "StartTime" :: Maybe (Types.Timestamp) } -> {"Status" :: Maybe (LastCrawlStatus) , "ErrorMessage" :: Maybe (DescriptionString) , "LogGroup" :: Maybe (LogGroup) , "LogStream" :: Maybe (LogStream) , "MessagePrefix" :: Maybe (MessagePrefix) , "StartTime" :: Maybe (Types.Timestamp) } ) -> LastCrawlInfo
+newLastCrawlInfo'  customize = (LastCrawlInfo <<< customize) { "ErrorMessage": Nothing, "LogGroup": Nothing, "LogStream": Nothing, "MessagePrefix": Nothing, "StartTime": Nothing, "Status": Nothing }
 
 
 
@@ -4117,8 +4116,8 @@ instance encodeLastCrawlStatus :: Encode LastCrawlStatus where encode = genericE
 
 -- | <p>The location of resources.</p>
 newtype Location = Location 
-  { "Jdbc" :: NullOrUndefined (CodeGenNodeArgs)
-  , "S3" :: NullOrUndefined (CodeGenNodeArgs)
+  { "Jdbc" :: Maybe (CodeGenNodeArgs)
+  , "S3" :: Maybe (CodeGenNodeArgs)
   }
 derive instance newtypeLocation :: Newtype Location _
 derive instance repGenericLocation :: Generic Location _
@@ -4128,12 +4127,12 @@ instance encodeLocation :: Encode Location where encode = genericEncode options
 
 -- | Constructs Location from required parameters
 newLocation :: Location
-newLocation  = Location { "Jdbc": (NullOrUndefined Nothing), "S3": (NullOrUndefined Nothing) }
+newLocation  = Location { "Jdbc": Nothing, "S3": Nothing }
 
 -- | Constructs Location's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLocation' :: ( { "Jdbc" :: NullOrUndefined (CodeGenNodeArgs) , "S3" :: NullOrUndefined (CodeGenNodeArgs) } -> {"Jdbc" :: NullOrUndefined (CodeGenNodeArgs) , "S3" :: NullOrUndefined (CodeGenNodeArgs) } ) -> Location
-newLocation'  customize = (Location <<< customize) { "Jdbc": (NullOrUndefined Nothing), "S3": (NullOrUndefined Nothing) }
+newLocation' :: ( { "Jdbc" :: Maybe (CodeGenNodeArgs) , "S3" :: Maybe (CodeGenNodeArgs) } -> {"Jdbc" :: Maybe (CodeGenNodeArgs) , "S3" :: Maybe (CodeGenNodeArgs) } ) -> Location
+newLocation'  customize = (Location <<< customize) { "Jdbc": Nothing, "S3": Nothing }
 
 
 
@@ -4193,12 +4192,12 @@ instance encodeLogicalOperator :: Encode LogicalOperator where encode = genericE
 
 -- | <p>Defines a mapping.</p>
 newtype MappingEntry = MappingEntry 
-  { "SourceTable" :: NullOrUndefined (TableName)
-  , "SourcePath" :: NullOrUndefined (SchemaPathString)
-  , "SourceType" :: NullOrUndefined (FieldType)
-  , "TargetTable" :: NullOrUndefined (TableName)
-  , "TargetPath" :: NullOrUndefined (SchemaPathString)
-  , "TargetType" :: NullOrUndefined (FieldType)
+  { "SourceTable" :: Maybe (TableName)
+  , "SourcePath" :: Maybe (SchemaPathString)
+  , "SourceType" :: Maybe (FieldType)
+  , "TargetTable" :: Maybe (TableName)
+  , "TargetPath" :: Maybe (SchemaPathString)
+  , "TargetType" :: Maybe (FieldType)
   }
 derive instance newtypeMappingEntry :: Newtype MappingEntry _
 derive instance repGenericMappingEntry :: Generic MappingEntry _
@@ -4208,12 +4207,12 @@ instance encodeMappingEntry :: Encode MappingEntry where encode = genericEncode 
 
 -- | Constructs MappingEntry from required parameters
 newMappingEntry :: MappingEntry
-newMappingEntry  = MappingEntry { "SourcePath": (NullOrUndefined Nothing), "SourceTable": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing), "TargetPath": (NullOrUndefined Nothing), "TargetTable": (NullOrUndefined Nothing), "TargetType": (NullOrUndefined Nothing) }
+newMappingEntry  = MappingEntry { "SourcePath": Nothing, "SourceTable": Nothing, "SourceType": Nothing, "TargetPath": Nothing, "TargetTable": Nothing, "TargetType": Nothing }
 
 -- | Constructs MappingEntry's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMappingEntry' :: ( { "SourceTable" :: NullOrUndefined (TableName) , "SourcePath" :: NullOrUndefined (SchemaPathString) , "SourceType" :: NullOrUndefined (FieldType) , "TargetTable" :: NullOrUndefined (TableName) , "TargetPath" :: NullOrUndefined (SchemaPathString) , "TargetType" :: NullOrUndefined (FieldType) } -> {"SourceTable" :: NullOrUndefined (TableName) , "SourcePath" :: NullOrUndefined (SchemaPathString) , "SourceType" :: NullOrUndefined (FieldType) , "TargetTable" :: NullOrUndefined (TableName) , "TargetPath" :: NullOrUndefined (SchemaPathString) , "TargetType" :: NullOrUndefined (FieldType) } ) -> MappingEntry
-newMappingEntry'  customize = (MappingEntry <<< customize) { "SourcePath": (NullOrUndefined Nothing), "SourceTable": (NullOrUndefined Nothing), "SourceType": (NullOrUndefined Nothing), "TargetPath": (NullOrUndefined Nothing), "TargetTable": (NullOrUndefined Nothing), "TargetType": (NullOrUndefined Nothing) }
+newMappingEntry' :: ( { "SourceTable" :: Maybe (TableName) , "SourcePath" :: Maybe (SchemaPathString) , "SourceType" :: Maybe (FieldType) , "TargetTable" :: Maybe (TableName) , "TargetPath" :: Maybe (SchemaPathString) , "TargetType" :: Maybe (FieldType) } -> {"SourceTable" :: Maybe (TableName) , "SourcePath" :: Maybe (SchemaPathString) , "SourceType" :: Maybe (FieldType) , "TargetTable" :: Maybe (TableName) , "TargetPath" :: Maybe (SchemaPathString) , "TargetType" :: Maybe (FieldType) } ) -> MappingEntry
+newMappingEntry'  customize = (MappingEntry <<< customize) { "SourcePath": Nothing, "SourceTable": Nothing, "SourceType": Nothing, "TargetPath": Nothing, "TargetTable": Nothing, "TargetType": Nothing }
 
 
 
@@ -4300,7 +4299,7 @@ instance encodeNameStringList :: Encode NameStringList where encode = genericEnc
 
 -- | <p>There is no applicable schedule.</p>
 newtype NoScheduleException = NoScheduleException 
-  { "Message" :: NullOrUndefined (MessageString)
+  { "Message" :: Maybe (MessageString)
   }
 derive instance newtypeNoScheduleException :: Newtype NoScheduleException _
 derive instance repGenericNoScheduleException :: Generic NoScheduleException _
@@ -4310,12 +4309,12 @@ instance encodeNoScheduleException :: Encode NoScheduleException where encode = 
 
 -- | Constructs NoScheduleException from required parameters
 newNoScheduleException :: NoScheduleException
-newNoScheduleException  = NoScheduleException { "Message": (NullOrUndefined Nothing) }
+newNoScheduleException  = NoScheduleException { "Message": Nothing }
 
 -- | Constructs NoScheduleException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNoScheduleException' :: ( { "Message" :: NullOrUndefined (MessageString) } -> {"Message" :: NullOrUndefined (MessageString) } ) -> NoScheduleException
-newNoScheduleException'  customize = (NoScheduleException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newNoScheduleException' :: ( { "Message" :: Maybe (MessageString) } -> {"Message" :: Maybe (MessageString) } ) -> NoScheduleException
+newNoScheduleException'  customize = (NoScheduleException <<< customize) { "Message": Nothing }
 
 
 
@@ -4339,7 +4338,7 @@ instance encodeNonNegativeInteger :: Encode NonNegativeInteger where encode = ge
 
 -- | <p>The operation timed out.</p>
 newtype OperationTimeoutException = OperationTimeoutException 
-  { "Message" :: NullOrUndefined (MessageString)
+  { "Message" :: Maybe (MessageString)
   }
 derive instance newtypeOperationTimeoutException :: Newtype OperationTimeoutException _
 derive instance repGenericOperationTimeoutException :: Generic OperationTimeoutException _
@@ -4349,12 +4348,12 @@ instance encodeOperationTimeoutException :: Encode OperationTimeoutException whe
 
 -- | Constructs OperationTimeoutException from required parameters
 newOperationTimeoutException :: OperationTimeoutException
-newOperationTimeoutException  = OperationTimeoutException { "Message": (NullOrUndefined Nothing) }
+newOperationTimeoutException  = OperationTimeoutException { "Message": Nothing }
 
 -- | Constructs OperationTimeoutException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOperationTimeoutException' :: ( { "Message" :: NullOrUndefined (MessageString) } -> {"Message" :: NullOrUndefined (MessageString) } ) -> OperationTimeoutException
-newOperationTimeoutException'  customize = (OperationTimeoutException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newOperationTimeoutException' :: ( { "Message" :: Maybe (MessageString) } -> {"Message" :: Maybe (MessageString) } ) -> OperationTimeoutException
+newOperationTimeoutException'  customize = (OperationTimeoutException <<< customize) { "Message": Nothing }
 
 
 
@@ -4418,14 +4417,14 @@ instance encodeParametersMapValue :: Encode ParametersMapValue where encode = ge
 
 -- | <p>Represents a slice of table data.</p>
 newtype Partition = Partition 
-  { "Values" :: NullOrUndefined (ValueStringList)
-  , "DatabaseName" :: NullOrUndefined (NameString)
-  , "TableName" :: NullOrUndefined (NameString)
-  , "CreationTime" :: NullOrUndefined (Types.Timestamp)
-  , "LastAccessTime" :: NullOrUndefined (Types.Timestamp)
-  , "StorageDescriptor" :: NullOrUndefined (StorageDescriptor)
-  , "Parameters" :: NullOrUndefined (ParametersMap)
-  , "LastAnalyzedTime" :: NullOrUndefined (Types.Timestamp)
+  { "Values" :: Maybe (ValueStringList)
+  , "DatabaseName" :: Maybe (NameString)
+  , "TableName" :: Maybe (NameString)
+  , "CreationTime" :: Maybe (Types.Timestamp)
+  , "LastAccessTime" :: Maybe (Types.Timestamp)
+  , "StorageDescriptor" :: Maybe (StorageDescriptor)
+  , "Parameters" :: Maybe (ParametersMap)
+  , "LastAnalyzedTime" :: Maybe (Types.Timestamp)
   }
 derive instance newtypePartition :: Newtype Partition _
 derive instance repGenericPartition :: Generic Partition _
@@ -4435,19 +4434,19 @@ instance encodePartition :: Encode Partition where encode = genericEncode option
 
 -- | Constructs Partition from required parameters
 newPartition :: Partition
-newPartition  = Partition { "CreationTime": (NullOrUndefined Nothing), "DatabaseName": (NullOrUndefined Nothing), "LastAccessTime": (NullOrUndefined Nothing), "LastAnalyzedTime": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "StorageDescriptor": (NullOrUndefined Nothing), "TableName": (NullOrUndefined Nothing), "Values": (NullOrUndefined Nothing) }
+newPartition  = Partition { "CreationTime": Nothing, "DatabaseName": Nothing, "LastAccessTime": Nothing, "LastAnalyzedTime": Nothing, "Parameters": Nothing, "StorageDescriptor": Nothing, "TableName": Nothing, "Values": Nothing }
 
 -- | Constructs Partition's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPartition' :: ( { "Values" :: NullOrUndefined (ValueStringList) , "DatabaseName" :: NullOrUndefined (NameString) , "TableName" :: NullOrUndefined (NameString) , "CreationTime" :: NullOrUndefined (Types.Timestamp) , "LastAccessTime" :: NullOrUndefined (Types.Timestamp) , "StorageDescriptor" :: NullOrUndefined (StorageDescriptor) , "Parameters" :: NullOrUndefined (ParametersMap) , "LastAnalyzedTime" :: NullOrUndefined (Types.Timestamp) } -> {"Values" :: NullOrUndefined (ValueStringList) , "DatabaseName" :: NullOrUndefined (NameString) , "TableName" :: NullOrUndefined (NameString) , "CreationTime" :: NullOrUndefined (Types.Timestamp) , "LastAccessTime" :: NullOrUndefined (Types.Timestamp) , "StorageDescriptor" :: NullOrUndefined (StorageDescriptor) , "Parameters" :: NullOrUndefined (ParametersMap) , "LastAnalyzedTime" :: NullOrUndefined (Types.Timestamp) } ) -> Partition
-newPartition'  customize = (Partition <<< customize) { "CreationTime": (NullOrUndefined Nothing), "DatabaseName": (NullOrUndefined Nothing), "LastAccessTime": (NullOrUndefined Nothing), "LastAnalyzedTime": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "StorageDescriptor": (NullOrUndefined Nothing), "TableName": (NullOrUndefined Nothing), "Values": (NullOrUndefined Nothing) }
+newPartition' :: ( { "Values" :: Maybe (ValueStringList) , "DatabaseName" :: Maybe (NameString) , "TableName" :: Maybe (NameString) , "CreationTime" :: Maybe (Types.Timestamp) , "LastAccessTime" :: Maybe (Types.Timestamp) , "StorageDescriptor" :: Maybe (StorageDescriptor) , "Parameters" :: Maybe (ParametersMap) , "LastAnalyzedTime" :: Maybe (Types.Timestamp) } -> {"Values" :: Maybe (ValueStringList) , "DatabaseName" :: Maybe (NameString) , "TableName" :: Maybe (NameString) , "CreationTime" :: Maybe (Types.Timestamp) , "LastAccessTime" :: Maybe (Types.Timestamp) , "StorageDescriptor" :: Maybe (StorageDescriptor) , "Parameters" :: Maybe (ParametersMap) , "LastAnalyzedTime" :: Maybe (Types.Timestamp) } ) -> Partition
+newPartition'  customize = (Partition <<< customize) { "CreationTime": Nothing, "DatabaseName": Nothing, "LastAccessTime": Nothing, "LastAnalyzedTime": Nothing, "Parameters": Nothing, "StorageDescriptor": Nothing, "TableName": Nothing, "Values": Nothing }
 
 
 
 -- | <p>Contains information about a partition error.</p>
 newtype PartitionError = PartitionError 
-  { "PartitionValues" :: NullOrUndefined (ValueStringList)
-  , "ErrorDetail" :: NullOrUndefined (ErrorDetail)
+  { "PartitionValues" :: Maybe (ValueStringList)
+  , "ErrorDetail" :: Maybe (ErrorDetail)
   }
 derive instance newtypePartitionError :: Newtype PartitionError _
 derive instance repGenericPartitionError :: Generic PartitionError _
@@ -4457,12 +4456,12 @@ instance encodePartitionError :: Encode PartitionError where encode = genericEnc
 
 -- | Constructs PartitionError from required parameters
 newPartitionError :: PartitionError
-newPartitionError  = PartitionError { "ErrorDetail": (NullOrUndefined Nothing), "PartitionValues": (NullOrUndefined Nothing) }
+newPartitionError  = PartitionError { "ErrorDetail": Nothing, "PartitionValues": Nothing }
 
 -- | Constructs PartitionError's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPartitionError' :: ( { "PartitionValues" :: NullOrUndefined (ValueStringList) , "ErrorDetail" :: NullOrUndefined (ErrorDetail) } -> {"PartitionValues" :: NullOrUndefined (ValueStringList) , "ErrorDetail" :: NullOrUndefined (ErrorDetail) } ) -> PartitionError
-newPartitionError'  customize = (PartitionError <<< customize) { "ErrorDetail": (NullOrUndefined Nothing), "PartitionValues": (NullOrUndefined Nothing) }
+newPartitionError' :: ( { "PartitionValues" :: Maybe (ValueStringList) , "ErrorDetail" :: Maybe (ErrorDetail) } -> {"PartitionValues" :: Maybe (ValueStringList) , "ErrorDetail" :: Maybe (ErrorDetail) } ) -> PartitionError
+newPartitionError'  customize = (PartitionError <<< customize) { "ErrorDetail": Nothing, "PartitionValues": Nothing }
 
 
 
@@ -4477,11 +4476,11 @@ instance encodePartitionErrors :: Encode PartitionErrors where encode = genericE
 
 -- | <p>The structure used to create and update a partion.</p>
 newtype PartitionInput = PartitionInput 
-  { "Values" :: NullOrUndefined (ValueStringList)
-  , "LastAccessTime" :: NullOrUndefined (Types.Timestamp)
-  , "StorageDescriptor" :: NullOrUndefined (StorageDescriptor)
-  , "Parameters" :: NullOrUndefined (ParametersMap)
-  , "LastAnalyzedTime" :: NullOrUndefined (Types.Timestamp)
+  { "Values" :: Maybe (ValueStringList)
+  , "LastAccessTime" :: Maybe (Types.Timestamp)
+  , "StorageDescriptor" :: Maybe (StorageDescriptor)
+  , "Parameters" :: Maybe (ParametersMap)
+  , "LastAnalyzedTime" :: Maybe (Types.Timestamp)
   }
 derive instance newtypePartitionInput :: Newtype PartitionInput _
 derive instance repGenericPartitionInput :: Generic PartitionInput _
@@ -4491,12 +4490,12 @@ instance encodePartitionInput :: Encode PartitionInput where encode = genericEnc
 
 -- | Constructs PartitionInput from required parameters
 newPartitionInput :: PartitionInput
-newPartitionInput  = PartitionInput { "LastAccessTime": (NullOrUndefined Nothing), "LastAnalyzedTime": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "StorageDescriptor": (NullOrUndefined Nothing), "Values": (NullOrUndefined Nothing) }
+newPartitionInput  = PartitionInput { "LastAccessTime": Nothing, "LastAnalyzedTime": Nothing, "Parameters": Nothing, "StorageDescriptor": Nothing, "Values": Nothing }
 
 -- | Constructs PartitionInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPartitionInput' :: ( { "Values" :: NullOrUndefined (ValueStringList) , "LastAccessTime" :: NullOrUndefined (Types.Timestamp) , "StorageDescriptor" :: NullOrUndefined (StorageDescriptor) , "Parameters" :: NullOrUndefined (ParametersMap) , "LastAnalyzedTime" :: NullOrUndefined (Types.Timestamp) } -> {"Values" :: NullOrUndefined (ValueStringList) , "LastAccessTime" :: NullOrUndefined (Types.Timestamp) , "StorageDescriptor" :: NullOrUndefined (StorageDescriptor) , "Parameters" :: NullOrUndefined (ParametersMap) , "LastAnalyzedTime" :: NullOrUndefined (Types.Timestamp) } ) -> PartitionInput
-newPartitionInput'  customize = (PartitionInput <<< customize) { "LastAccessTime": (NullOrUndefined Nothing), "LastAnalyzedTime": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "StorageDescriptor": (NullOrUndefined Nothing), "Values": (NullOrUndefined Nothing) }
+newPartitionInput' :: ( { "Values" :: Maybe (ValueStringList) , "LastAccessTime" :: Maybe (Types.Timestamp) , "StorageDescriptor" :: Maybe (StorageDescriptor) , "Parameters" :: Maybe (ParametersMap) , "LastAnalyzedTime" :: Maybe (Types.Timestamp) } -> {"Values" :: Maybe (ValueStringList) , "LastAccessTime" :: Maybe (Types.Timestamp) , "StorageDescriptor" :: Maybe (StorageDescriptor) , "Parameters" :: Maybe (ParametersMap) , "LastAnalyzedTime" :: Maybe (Types.Timestamp) } ) -> PartitionInput
+newPartitionInput'  customize = (PartitionInput <<< customize) { "LastAccessTime": Nothing, "LastAnalyzedTime": Nothing, "Parameters": Nothing, "StorageDescriptor": Nothing, "Values": Nothing }
 
 
 
@@ -4559,9 +4558,9 @@ instance encodePathList :: Encode PathList where encode = genericEncode options
 
 -- | <p>Specifies the physical requirements for a connection.</p>
 newtype PhysicalConnectionRequirements = PhysicalConnectionRequirements 
-  { "SubnetId" :: NullOrUndefined (NameString)
-  , "SecurityGroupIdList" :: NullOrUndefined (SecurityGroupIdList)
-  , "AvailabilityZone" :: NullOrUndefined (NameString)
+  { "SubnetId" :: Maybe (NameString)
+  , "SecurityGroupIdList" :: Maybe (SecurityGroupIdList)
+  , "AvailabilityZone" :: Maybe (NameString)
   }
 derive instance newtypePhysicalConnectionRequirements :: Newtype PhysicalConnectionRequirements _
 derive instance repGenericPhysicalConnectionRequirements :: Generic PhysicalConnectionRequirements _
@@ -4571,19 +4570,19 @@ instance encodePhysicalConnectionRequirements :: Encode PhysicalConnectionRequir
 
 -- | Constructs PhysicalConnectionRequirements from required parameters
 newPhysicalConnectionRequirements :: PhysicalConnectionRequirements
-newPhysicalConnectionRequirements  = PhysicalConnectionRequirements { "AvailabilityZone": (NullOrUndefined Nothing), "SecurityGroupIdList": (NullOrUndefined Nothing), "SubnetId": (NullOrUndefined Nothing) }
+newPhysicalConnectionRequirements  = PhysicalConnectionRequirements { "AvailabilityZone": Nothing, "SecurityGroupIdList": Nothing, "SubnetId": Nothing }
 
 -- | Constructs PhysicalConnectionRequirements's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPhysicalConnectionRequirements' :: ( { "SubnetId" :: NullOrUndefined (NameString) , "SecurityGroupIdList" :: NullOrUndefined (SecurityGroupIdList) , "AvailabilityZone" :: NullOrUndefined (NameString) } -> {"SubnetId" :: NullOrUndefined (NameString) , "SecurityGroupIdList" :: NullOrUndefined (SecurityGroupIdList) , "AvailabilityZone" :: NullOrUndefined (NameString) } ) -> PhysicalConnectionRequirements
-newPhysicalConnectionRequirements'  customize = (PhysicalConnectionRequirements <<< customize) { "AvailabilityZone": (NullOrUndefined Nothing), "SecurityGroupIdList": (NullOrUndefined Nothing), "SubnetId": (NullOrUndefined Nothing) }
+newPhysicalConnectionRequirements' :: ( { "SubnetId" :: Maybe (NameString) , "SecurityGroupIdList" :: Maybe (SecurityGroupIdList) , "AvailabilityZone" :: Maybe (NameString) } -> {"SubnetId" :: Maybe (NameString) , "SecurityGroupIdList" :: Maybe (SecurityGroupIdList) , "AvailabilityZone" :: Maybe (NameString) } ) -> PhysicalConnectionRequirements
+newPhysicalConnectionRequirements'  customize = (PhysicalConnectionRequirements <<< customize) { "AvailabilityZone": Nothing, "SecurityGroupIdList": Nothing, "SubnetId": Nothing }
 
 
 
 -- | <p>A job run that was used in the predicate of a conditional trigger that triggered this job run.</p>
 newtype Predecessor = Predecessor 
-  { "JobName" :: NullOrUndefined (NameString)
-  , "RunId" :: NullOrUndefined (IdString)
+  { "JobName" :: Maybe (NameString)
+  , "RunId" :: Maybe (IdString)
   }
 derive instance newtypePredecessor :: Newtype Predecessor _
 derive instance repGenericPredecessor :: Generic Predecessor _
@@ -4593,12 +4592,12 @@ instance encodePredecessor :: Encode Predecessor where encode = genericEncode op
 
 -- | Constructs Predecessor from required parameters
 newPredecessor :: Predecessor
-newPredecessor  = Predecessor { "JobName": (NullOrUndefined Nothing), "RunId": (NullOrUndefined Nothing) }
+newPredecessor  = Predecessor { "JobName": Nothing, "RunId": Nothing }
 
 -- | Constructs Predecessor's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPredecessor' :: ( { "JobName" :: NullOrUndefined (NameString) , "RunId" :: NullOrUndefined (IdString) } -> {"JobName" :: NullOrUndefined (NameString) , "RunId" :: NullOrUndefined (IdString) } ) -> Predecessor
-newPredecessor'  customize = (Predecessor <<< customize) { "JobName": (NullOrUndefined Nothing), "RunId": (NullOrUndefined Nothing) }
+newPredecessor' :: ( { "JobName" :: Maybe (NameString) , "RunId" :: Maybe (IdString) } -> {"JobName" :: Maybe (NameString) , "RunId" :: Maybe (IdString) } ) -> Predecessor
+newPredecessor'  customize = (Predecessor <<< customize) { "JobName": Nothing, "RunId": Nothing }
 
 
 
@@ -4613,8 +4612,8 @@ instance encodePredecessorList :: Encode PredecessorList where encode = genericE
 
 -- | <p>Defines the predicate of the trigger, which determines when it fires.</p>
 newtype Predicate = Predicate 
-  { "Logical" :: NullOrUndefined (Logical)
-  , "Conditions" :: NullOrUndefined (ConditionList)
+  { "Logical" :: Maybe (Logical)
+  , "Conditions" :: Maybe (ConditionList)
   }
 derive instance newtypePredicate :: Newtype Predicate _
 derive instance repGenericPredicate :: Generic Predicate _
@@ -4624,12 +4623,12 @@ instance encodePredicate :: Encode Predicate where encode = genericEncode option
 
 -- | Constructs Predicate from required parameters
 newPredicate :: Predicate
-newPredicate  = Predicate { "Conditions": (NullOrUndefined Nothing), "Logical": (NullOrUndefined Nothing) }
+newPredicate  = Predicate { "Conditions": Nothing, "Logical": Nothing }
 
 -- | Constructs Predicate's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPredicate' :: ( { "Logical" :: NullOrUndefined (Logical) , "Conditions" :: NullOrUndefined (ConditionList) } -> {"Logical" :: NullOrUndefined (Logical) , "Conditions" :: NullOrUndefined (ConditionList) } ) -> Predicate
-newPredicate'  customize = (Predicate <<< customize) { "Conditions": (NullOrUndefined Nothing), "Logical": (NullOrUndefined Nothing) }
+newPredicate' :: ( { "Logical" :: Maybe (Logical) , "Conditions" :: Maybe (ConditionList) } -> {"Logical" :: Maybe (Logical) , "Conditions" :: Maybe (ConditionList) } ) -> Predicate
+newPredicate'  customize = (Predicate <<< customize) { "Conditions": Nothing, "Logical": Nothing }
 
 
 
@@ -4681,7 +4680,7 @@ newResetJobBookmarkRequest' _JobName customize = (ResetJobBookmarkRequest <<< cu
 
 
 newtype ResetJobBookmarkResponse = ResetJobBookmarkResponse 
-  { "JobBookmarkEntry" :: NullOrUndefined (JobBookmarkEntry)
+  { "JobBookmarkEntry" :: Maybe (JobBookmarkEntry)
   }
 derive instance newtypeResetJobBookmarkResponse :: Newtype ResetJobBookmarkResponse _
 derive instance repGenericResetJobBookmarkResponse :: Generic ResetJobBookmarkResponse _
@@ -4691,18 +4690,18 @@ instance encodeResetJobBookmarkResponse :: Encode ResetJobBookmarkResponse where
 
 -- | Constructs ResetJobBookmarkResponse from required parameters
 newResetJobBookmarkResponse :: ResetJobBookmarkResponse
-newResetJobBookmarkResponse  = ResetJobBookmarkResponse { "JobBookmarkEntry": (NullOrUndefined Nothing) }
+newResetJobBookmarkResponse  = ResetJobBookmarkResponse { "JobBookmarkEntry": Nothing }
 
 -- | Constructs ResetJobBookmarkResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResetJobBookmarkResponse' :: ( { "JobBookmarkEntry" :: NullOrUndefined (JobBookmarkEntry) } -> {"JobBookmarkEntry" :: NullOrUndefined (JobBookmarkEntry) } ) -> ResetJobBookmarkResponse
-newResetJobBookmarkResponse'  customize = (ResetJobBookmarkResponse <<< customize) { "JobBookmarkEntry": (NullOrUndefined Nothing) }
+newResetJobBookmarkResponse' :: ( { "JobBookmarkEntry" :: Maybe (JobBookmarkEntry) } -> {"JobBookmarkEntry" :: Maybe (JobBookmarkEntry) } ) -> ResetJobBookmarkResponse
+newResetJobBookmarkResponse'  customize = (ResetJobBookmarkResponse <<< customize) { "JobBookmarkEntry": Nothing }
 
 
 
 -- | <p>A resource numerical limit was exceeded.</p>
 newtype ResourceNumberLimitExceededException = ResourceNumberLimitExceededException 
-  { "Message" :: NullOrUndefined (MessageString)
+  { "Message" :: Maybe (MessageString)
   }
 derive instance newtypeResourceNumberLimitExceededException :: Newtype ResourceNumberLimitExceededException _
 derive instance repGenericResourceNumberLimitExceededException :: Generic ResourceNumberLimitExceededException _
@@ -4712,12 +4711,12 @@ instance encodeResourceNumberLimitExceededException :: Encode ResourceNumberLimi
 
 -- | Constructs ResourceNumberLimitExceededException from required parameters
 newResourceNumberLimitExceededException :: ResourceNumberLimitExceededException
-newResourceNumberLimitExceededException  = ResourceNumberLimitExceededException { "Message": (NullOrUndefined Nothing) }
+newResourceNumberLimitExceededException  = ResourceNumberLimitExceededException { "Message": Nothing }
 
 -- | Constructs ResourceNumberLimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceNumberLimitExceededException' :: ( { "Message" :: NullOrUndefined (MessageString) } -> {"Message" :: NullOrUndefined (MessageString) } ) -> ResourceNumberLimitExceededException
-newResourceNumberLimitExceededException'  customize = (ResourceNumberLimitExceededException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newResourceNumberLimitExceededException' :: ( { "Message" :: Maybe (MessageString) } -> {"Message" :: Maybe (MessageString) } ) -> ResourceNumberLimitExceededException
+newResourceNumberLimitExceededException'  customize = (ResourceNumberLimitExceededException <<< customize) { "Message": Nothing }
 
 
 
@@ -4732,8 +4731,8 @@ instance encodeResourceType :: Encode ResourceType where encode = genericEncode 
 
 -- | <p>URIs for function resources.</p>
 newtype ResourceUri = ResourceUri 
-  { "ResourceType" :: NullOrUndefined (ResourceType)
-  , "Uri" :: NullOrUndefined (URI)
+  { "ResourceType" :: Maybe (ResourceType)
+  , "Uri" :: Maybe (URI)
   }
 derive instance newtypeResourceUri :: Newtype ResourceUri _
 derive instance repGenericResourceUri :: Generic ResourceUri _
@@ -4743,12 +4742,12 @@ instance encodeResourceUri :: Encode ResourceUri where encode = genericEncode op
 
 -- | Constructs ResourceUri from required parameters
 newResourceUri :: ResourceUri
-newResourceUri  = ResourceUri { "ResourceType": (NullOrUndefined Nothing), "Uri": (NullOrUndefined Nothing) }
+newResourceUri  = ResourceUri { "ResourceType": Nothing, "Uri": Nothing }
 
 -- | Constructs ResourceUri's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceUri' :: ( { "ResourceType" :: NullOrUndefined (ResourceType) , "Uri" :: NullOrUndefined (URI) } -> {"ResourceType" :: NullOrUndefined (ResourceType) , "Uri" :: NullOrUndefined (URI) } ) -> ResourceUri
-newResourceUri'  customize = (ResourceUri <<< customize) { "ResourceType": (NullOrUndefined Nothing), "Uri": (NullOrUndefined Nothing) }
+newResourceUri' :: ( { "ResourceType" :: Maybe (ResourceType) , "Uri" :: Maybe (URI) } -> {"ResourceType" :: Maybe (ResourceType) , "Uri" :: Maybe (URI) } ) -> ResourceUri
+newResourceUri'  customize = (ResourceUri <<< customize) { "ResourceType": Nothing, "Uri": Nothing }
 
 
 
@@ -4799,8 +4798,8 @@ instance encodeRowTag :: Encode RowTag where encode = genericEncode options
 
 -- | <p>Specifies a data store in Amazon S3.</p>
 newtype S3Target = S3Target 
-  { "Path" :: NullOrUndefined (Path)
-  , "Exclusions" :: NullOrUndefined (PathList)
+  { "Path" :: Maybe (Path)
+  , "Exclusions" :: Maybe (PathList)
   }
 derive instance newtypeS3Target :: Newtype S3Target _
 derive instance repGenericS3Target :: Generic S3Target _
@@ -4810,12 +4809,12 @@ instance encodeS3Target :: Encode S3Target where encode = genericEncode options
 
 -- | Constructs S3Target from required parameters
 newS3Target :: S3Target
-newS3Target  = S3Target { "Exclusions": (NullOrUndefined Nothing), "Path": (NullOrUndefined Nothing) }
+newS3Target  = S3Target { "Exclusions": Nothing, "Path": Nothing }
 
 -- | Constructs S3Target's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newS3Target' :: ( { "Path" :: NullOrUndefined (Path) , "Exclusions" :: NullOrUndefined (PathList) } -> {"Path" :: NullOrUndefined (Path) , "Exclusions" :: NullOrUndefined (PathList) } ) -> S3Target
-newS3Target'  customize = (S3Target <<< customize) { "Exclusions": (NullOrUndefined Nothing), "Path": (NullOrUndefined Nothing) }
+newS3Target' :: ( { "Path" :: Maybe (Path) , "Exclusions" :: Maybe (PathList) } -> {"Path" :: Maybe (Path) , "Exclusions" :: Maybe (PathList) } ) -> S3Target
+newS3Target'  customize = (S3Target <<< customize) { "Exclusions": Nothing, "Path": Nothing }
 
 
 
@@ -4839,8 +4838,8 @@ instance encodeScalaCode :: Encode ScalaCode where encode = genericEncode option
 
 -- | <p>A scheduling object using a <code>cron</code> statement to schedule an event.</p>
 newtype Schedule = Schedule 
-  { "ScheduleExpression" :: NullOrUndefined (CronExpression)
-  , "State" :: NullOrUndefined (ScheduleState)
+  { "ScheduleExpression" :: Maybe (CronExpression)
+  , "State" :: Maybe (ScheduleState)
   }
 derive instance newtypeSchedule :: Newtype Schedule _
 derive instance repGenericSchedule :: Generic Schedule _
@@ -4850,12 +4849,12 @@ instance encodeSchedule :: Encode Schedule where encode = genericEncode options
 
 -- | Constructs Schedule from required parameters
 newSchedule :: Schedule
-newSchedule  = Schedule { "ScheduleExpression": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newSchedule  = Schedule { "ScheduleExpression": Nothing, "State": Nothing }
 
 -- | Constructs Schedule's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSchedule' :: ( { "ScheduleExpression" :: NullOrUndefined (CronExpression) , "State" :: NullOrUndefined (ScheduleState) } -> {"ScheduleExpression" :: NullOrUndefined (CronExpression) , "State" :: NullOrUndefined (ScheduleState) } ) -> Schedule
-newSchedule'  customize = (Schedule <<< customize) { "ScheduleExpression": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing) }
+newSchedule' :: ( { "ScheduleExpression" :: Maybe (CronExpression) , "State" :: Maybe (ScheduleState) } -> {"ScheduleExpression" :: Maybe (CronExpression) , "State" :: Maybe (ScheduleState) } ) -> Schedule
+newSchedule'  customize = (Schedule <<< customize) { "ScheduleExpression": Nothing, "State": Nothing }
 
 
 
@@ -4870,7 +4869,7 @@ instance encodeScheduleState :: Encode ScheduleState where encode = genericEncod
 
 -- | <p>The specified scheduler is not running.</p>
 newtype SchedulerNotRunningException = SchedulerNotRunningException 
-  { "Message" :: NullOrUndefined (MessageString)
+  { "Message" :: Maybe (MessageString)
   }
 derive instance newtypeSchedulerNotRunningException :: Newtype SchedulerNotRunningException _
 derive instance repGenericSchedulerNotRunningException :: Generic SchedulerNotRunningException _
@@ -4880,18 +4879,18 @@ instance encodeSchedulerNotRunningException :: Encode SchedulerNotRunningExcepti
 
 -- | Constructs SchedulerNotRunningException from required parameters
 newSchedulerNotRunningException :: SchedulerNotRunningException
-newSchedulerNotRunningException  = SchedulerNotRunningException { "Message": (NullOrUndefined Nothing) }
+newSchedulerNotRunningException  = SchedulerNotRunningException { "Message": Nothing }
 
 -- | Constructs SchedulerNotRunningException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSchedulerNotRunningException' :: ( { "Message" :: NullOrUndefined (MessageString) } -> {"Message" :: NullOrUndefined (MessageString) } ) -> SchedulerNotRunningException
-newSchedulerNotRunningException'  customize = (SchedulerNotRunningException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newSchedulerNotRunningException' :: ( { "Message" :: Maybe (MessageString) } -> {"Message" :: Maybe (MessageString) } ) -> SchedulerNotRunningException
+newSchedulerNotRunningException'  customize = (SchedulerNotRunningException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The specified scheduler is already running.</p>
 newtype SchedulerRunningException = SchedulerRunningException 
-  { "Message" :: NullOrUndefined (MessageString)
+  { "Message" :: Maybe (MessageString)
   }
 derive instance newtypeSchedulerRunningException :: Newtype SchedulerRunningException _
 derive instance repGenericSchedulerRunningException :: Generic SchedulerRunningException _
@@ -4901,18 +4900,18 @@ instance encodeSchedulerRunningException :: Encode SchedulerRunningException whe
 
 -- | Constructs SchedulerRunningException from required parameters
 newSchedulerRunningException :: SchedulerRunningException
-newSchedulerRunningException  = SchedulerRunningException { "Message": (NullOrUndefined Nothing) }
+newSchedulerRunningException  = SchedulerRunningException { "Message": Nothing }
 
 -- | Constructs SchedulerRunningException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSchedulerRunningException' :: ( { "Message" :: NullOrUndefined (MessageString) } -> {"Message" :: NullOrUndefined (MessageString) } ) -> SchedulerRunningException
-newSchedulerRunningException'  customize = (SchedulerRunningException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newSchedulerRunningException' :: ( { "Message" :: Maybe (MessageString) } -> {"Message" :: Maybe (MessageString) } ) -> SchedulerRunningException
+newSchedulerRunningException'  customize = (SchedulerRunningException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The specified scheduler is transitioning.</p>
 newtype SchedulerTransitioningException = SchedulerTransitioningException 
-  { "Message" :: NullOrUndefined (MessageString)
+  { "Message" :: Maybe (MessageString)
   }
 derive instance newtypeSchedulerTransitioningException :: Newtype SchedulerTransitioningException _
 derive instance repGenericSchedulerTransitioningException :: Generic SchedulerTransitioningException _
@@ -4922,19 +4921,19 @@ instance encodeSchedulerTransitioningException :: Encode SchedulerTransitioningE
 
 -- | Constructs SchedulerTransitioningException from required parameters
 newSchedulerTransitioningException :: SchedulerTransitioningException
-newSchedulerTransitioningException  = SchedulerTransitioningException { "Message": (NullOrUndefined Nothing) }
+newSchedulerTransitioningException  = SchedulerTransitioningException { "Message": Nothing }
 
 -- | Constructs SchedulerTransitioningException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSchedulerTransitioningException' :: ( { "Message" :: NullOrUndefined (MessageString) } -> {"Message" :: NullOrUndefined (MessageString) } ) -> SchedulerTransitioningException
-newSchedulerTransitioningException'  customize = (SchedulerTransitioningException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newSchedulerTransitioningException' :: ( { "Message" :: Maybe (MessageString) } -> {"Message" :: Maybe (MessageString) } ) -> SchedulerTransitioningException
+newSchedulerTransitioningException'  customize = (SchedulerTransitioningException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Crawler policy for update and deletion behavior.</p>
 newtype SchemaChangePolicy = SchemaChangePolicy 
-  { "UpdateBehavior" :: NullOrUndefined (UpdateBehavior)
-  , "DeleteBehavior" :: NullOrUndefined (DeleteBehavior)
+  { "UpdateBehavior" :: Maybe (UpdateBehavior)
+  , "DeleteBehavior" :: Maybe (DeleteBehavior)
   }
 derive instance newtypeSchemaChangePolicy :: Newtype SchemaChangePolicy _
 derive instance repGenericSchemaChangePolicy :: Generic SchemaChangePolicy _
@@ -4944,12 +4943,12 @@ instance encodeSchemaChangePolicy :: Encode SchemaChangePolicy where encode = ge
 
 -- | Constructs SchemaChangePolicy from required parameters
 newSchemaChangePolicy :: SchemaChangePolicy
-newSchemaChangePolicy  = SchemaChangePolicy { "DeleteBehavior": (NullOrUndefined Nothing), "UpdateBehavior": (NullOrUndefined Nothing) }
+newSchemaChangePolicy  = SchemaChangePolicy { "DeleteBehavior": Nothing, "UpdateBehavior": Nothing }
 
 -- | Constructs SchemaChangePolicy's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSchemaChangePolicy' :: ( { "UpdateBehavior" :: NullOrUndefined (UpdateBehavior) , "DeleteBehavior" :: NullOrUndefined (DeleteBehavior) } -> {"UpdateBehavior" :: NullOrUndefined (UpdateBehavior) , "DeleteBehavior" :: NullOrUndefined (DeleteBehavior) } ) -> SchemaChangePolicy
-newSchemaChangePolicy'  customize = (SchemaChangePolicy <<< customize) { "DeleteBehavior": (NullOrUndefined Nothing), "UpdateBehavior": (NullOrUndefined Nothing) }
+newSchemaChangePolicy' :: ( { "UpdateBehavior" :: Maybe (UpdateBehavior) , "DeleteBehavior" :: Maybe (DeleteBehavior) } -> {"UpdateBehavior" :: Maybe (UpdateBehavior) , "DeleteBehavior" :: Maybe (DeleteBehavior) } ) -> SchemaChangePolicy
+newSchemaChangePolicy'  customize = (SchemaChangePolicy <<< customize) { "DeleteBehavior": Nothing, "UpdateBehavior": Nothing }
 
 
 
@@ -5004,9 +5003,9 @@ newSegment' _SegmentNumber _TotalSegments customize = (Segment <<< customize) { 
 
 -- | <p>Information about a serialization/deserialization program (SerDe) which serves as an extractor and loader.</p>
 newtype SerDeInfo = SerDeInfo 
-  { "Name" :: NullOrUndefined (NameString)
-  , "SerializationLibrary" :: NullOrUndefined (NameString)
-  , "Parameters" :: NullOrUndefined (ParametersMap)
+  { "Name" :: Maybe (NameString)
+  , "SerializationLibrary" :: Maybe (NameString)
+  , "Parameters" :: Maybe (ParametersMap)
   }
 derive instance newtypeSerDeInfo :: Newtype SerDeInfo _
 derive instance repGenericSerDeInfo :: Generic SerDeInfo _
@@ -5016,20 +5015,20 @@ instance encodeSerDeInfo :: Encode SerDeInfo where encode = genericEncode option
 
 -- | Constructs SerDeInfo from required parameters
 newSerDeInfo :: SerDeInfo
-newSerDeInfo  = SerDeInfo { "Name": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "SerializationLibrary": (NullOrUndefined Nothing) }
+newSerDeInfo  = SerDeInfo { "Name": Nothing, "Parameters": Nothing, "SerializationLibrary": Nothing }
 
 -- | Constructs SerDeInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSerDeInfo' :: ( { "Name" :: NullOrUndefined (NameString) , "SerializationLibrary" :: NullOrUndefined (NameString) , "Parameters" :: NullOrUndefined (ParametersMap) } -> {"Name" :: NullOrUndefined (NameString) , "SerializationLibrary" :: NullOrUndefined (NameString) , "Parameters" :: NullOrUndefined (ParametersMap) } ) -> SerDeInfo
-newSerDeInfo'  customize = (SerDeInfo <<< customize) { "Name": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "SerializationLibrary": (NullOrUndefined Nothing) }
+newSerDeInfo' :: ( { "Name" :: Maybe (NameString) , "SerializationLibrary" :: Maybe (NameString) , "Parameters" :: Maybe (ParametersMap) } -> {"Name" :: Maybe (NameString) , "SerializationLibrary" :: Maybe (NameString) , "Parameters" :: Maybe (ParametersMap) } ) -> SerDeInfo
+newSerDeInfo'  customize = (SerDeInfo <<< customize) { "Name": Nothing, "Parameters": Nothing, "SerializationLibrary": Nothing }
 
 
 
 -- | <p>Specifies skewed values in a table. Skewed are ones that occur with very high frequency.</p>
 newtype SkewedInfo = SkewedInfo 
-  { "SkewedColumnNames" :: NullOrUndefined (NameStringList)
-  , "SkewedColumnValues" :: NullOrUndefined (ColumnValueStringList)
-  , "SkewedColumnValueLocationMaps" :: NullOrUndefined (LocationMap)
+  { "SkewedColumnNames" :: Maybe (NameStringList)
+  , "SkewedColumnValues" :: Maybe (ColumnValueStringList)
+  , "SkewedColumnValueLocationMaps" :: Maybe (LocationMap)
   }
 derive instance newtypeSkewedInfo :: Newtype SkewedInfo _
 derive instance repGenericSkewedInfo :: Generic SkewedInfo _
@@ -5039,12 +5038,12 @@ instance encodeSkewedInfo :: Encode SkewedInfo where encode = genericEncode opti
 
 -- | Constructs SkewedInfo from required parameters
 newSkewedInfo :: SkewedInfo
-newSkewedInfo  = SkewedInfo { "SkewedColumnNames": (NullOrUndefined Nothing), "SkewedColumnValueLocationMaps": (NullOrUndefined Nothing), "SkewedColumnValues": (NullOrUndefined Nothing) }
+newSkewedInfo  = SkewedInfo { "SkewedColumnNames": Nothing, "SkewedColumnValueLocationMaps": Nothing, "SkewedColumnValues": Nothing }
 
 -- | Constructs SkewedInfo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSkewedInfo' :: ( { "SkewedColumnNames" :: NullOrUndefined (NameStringList) , "SkewedColumnValues" :: NullOrUndefined (ColumnValueStringList) , "SkewedColumnValueLocationMaps" :: NullOrUndefined (LocationMap) } -> {"SkewedColumnNames" :: NullOrUndefined (NameStringList) , "SkewedColumnValues" :: NullOrUndefined (ColumnValueStringList) , "SkewedColumnValueLocationMaps" :: NullOrUndefined (LocationMap) } ) -> SkewedInfo
-newSkewedInfo'  customize = (SkewedInfo <<< customize) { "SkewedColumnNames": (NullOrUndefined Nothing), "SkewedColumnValueLocationMaps": (NullOrUndefined Nothing), "SkewedColumnValues": (NullOrUndefined Nothing) }
+newSkewedInfo' :: ( { "SkewedColumnNames" :: Maybe (NameStringList) , "SkewedColumnValues" :: Maybe (ColumnValueStringList) , "SkewedColumnValueLocationMaps" :: Maybe (LocationMap) } -> {"SkewedColumnNames" :: Maybe (NameStringList) , "SkewedColumnValues" :: Maybe (ColumnValueStringList) , "SkewedColumnValueLocationMaps" :: Maybe (LocationMap) } ) -> SkewedInfo
+newSkewedInfo'  customize = (SkewedInfo <<< customize) { "SkewedColumnNames": Nothing, "SkewedColumnValueLocationMaps": Nothing, "SkewedColumnValues": Nothing }
 
 
 
@@ -5108,9 +5107,9 @@ instance encodeStartCrawlerScheduleResponse :: Encode StartCrawlerScheduleRespon
 
 newtype StartJobRunRequest = StartJobRunRequest 
   { "JobName" :: (NameString)
-  , "JobRunId" :: NullOrUndefined (IdString)
-  , "Arguments" :: NullOrUndefined (GenericMap)
-  , "AllocatedCapacity" :: NullOrUndefined (IntegerValue)
+  , "JobRunId" :: Maybe (IdString)
+  , "Arguments" :: Maybe (GenericMap)
+  , "AllocatedCapacity" :: Maybe (IntegerValue)
   }
 derive instance newtypeStartJobRunRequest :: Newtype StartJobRunRequest _
 derive instance repGenericStartJobRunRequest :: Generic StartJobRunRequest _
@@ -5120,17 +5119,17 @@ instance encodeStartJobRunRequest :: Encode StartJobRunRequest where encode = ge
 
 -- | Constructs StartJobRunRequest from required parameters
 newStartJobRunRequest :: NameString -> StartJobRunRequest
-newStartJobRunRequest _JobName = StartJobRunRequest { "JobName": _JobName, "AllocatedCapacity": (NullOrUndefined Nothing), "Arguments": (NullOrUndefined Nothing), "JobRunId": (NullOrUndefined Nothing) }
+newStartJobRunRequest _JobName = StartJobRunRequest { "JobName": _JobName, "AllocatedCapacity": Nothing, "Arguments": Nothing, "JobRunId": Nothing }
 
 -- | Constructs StartJobRunRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStartJobRunRequest' :: NameString -> ( { "JobName" :: (NameString) , "JobRunId" :: NullOrUndefined (IdString) , "Arguments" :: NullOrUndefined (GenericMap) , "AllocatedCapacity" :: NullOrUndefined (IntegerValue) } -> {"JobName" :: (NameString) , "JobRunId" :: NullOrUndefined (IdString) , "Arguments" :: NullOrUndefined (GenericMap) , "AllocatedCapacity" :: NullOrUndefined (IntegerValue) } ) -> StartJobRunRequest
-newStartJobRunRequest' _JobName customize = (StartJobRunRequest <<< customize) { "JobName": _JobName, "AllocatedCapacity": (NullOrUndefined Nothing), "Arguments": (NullOrUndefined Nothing), "JobRunId": (NullOrUndefined Nothing) }
+newStartJobRunRequest' :: NameString -> ( { "JobName" :: (NameString) , "JobRunId" :: Maybe (IdString) , "Arguments" :: Maybe (GenericMap) , "AllocatedCapacity" :: Maybe (IntegerValue) } -> {"JobName" :: (NameString) , "JobRunId" :: Maybe (IdString) , "Arguments" :: Maybe (GenericMap) , "AllocatedCapacity" :: Maybe (IntegerValue) } ) -> StartJobRunRequest
+newStartJobRunRequest' _JobName customize = (StartJobRunRequest <<< customize) { "JobName": _JobName, "AllocatedCapacity": Nothing, "Arguments": Nothing, "JobRunId": Nothing }
 
 
 
 newtype StartJobRunResponse = StartJobRunResponse 
-  { "JobRunId" :: NullOrUndefined (IdString)
+  { "JobRunId" :: Maybe (IdString)
   }
 derive instance newtypeStartJobRunResponse :: Newtype StartJobRunResponse _
 derive instance repGenericStartJobRunResponse :: Generic StartJobRunResponse _
@@ -5140,12 +5139,12 @@ instance encodeStartJobRunResponse :: Encode StartJobRunResponse where encode = 
 
 -- | Constructs StartJobRunResponse from required parameters
 newStartJobRunResponse :: StartJobRunResponse
-newStartJobRunResponse  = StartJobRunResponse { "JobRunId": (NullOrUndefined Nothing) }
+newStartJobRunResponse  = StartJobRunResponse { "JobRunId": Nothing }
 
 -- | Constructs StartJobRunResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStartJobRunResponse' :: ( { "JobRunId" :: NullOrUndefined (IdString) } -> {"JobRunId" :: NullOrUndefined (IdString) } ) -> StartJobRunResponse
-newStartJobRunResponse'  customize = (StartJobRunResponse <<< customize) { "JobRunId": (NullOrUndefined Nothing) }
+newStartJobRunResponse' :: ( { "JobRunId" :: Maybe (IdString) } -> {"JobRunId" :: Maybe (IdString) } ) -> StartJobRunResponse
+newStartJobRunResponse'  customize = (StartJobRunResponse <<< customize) { "JobRunId": Nothing }
 
 
 
@@ -5170,7 +5169,7 @@ newStartTriggerRequest' _Name customize = (StartTriggerRequest <<< customize) { 
 
 
 newtype StartTriggerResponse = StartTriggerResponse 
-  { "Name" :: NullOrUndefined (NameString)
+  { "Name" :: Maybe (NameString)
   }
 derive instance newtypeStartTriggerResponse :: Newtype StartTriggerResponse _
 derive instance repGenericStartTriggerResponse :: Generic StartTriggerResponse _
@@ -5180,12 +5179,12 @@ instance encodeStartTriggerResponse :: Encode StartTriggerResponse where encode 
 
 -- | Constructs StartTriggerResponse from required parameters
 newStartTriggerResponse :: StartTriggerResponse
-newStartTriggerResponse  = StartTriggerResponse { "Name": (NullOrUndefined Nothing) }
+newStartTriggerResponse  = StartTriggerResponse { "Name": Nothing }
 
 -- | Constructs StartTriggerResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStartTriggerResponse' :: ( { "Name" :: NullOrUndefined (NameString) } -> {"Name" :: NullOrUndefined (NameString) } ) -> StartTriggerResponse
-newStartTriggerResponse'  customize = (StartTriggerResponse <<< customize) { "Name": (NullOrUndefined Nothing) }
+newStartTriggerResponse' :: ( { "Name" :: Maybe (NameString) } -> {"Name" :: Maybe (NameString) } ) -> StartTriggerResponse
+newStartTriggerResponse'  customize = (StartTriggerResponse <<< customize) { "Name": Nothing }
 
 
 
@@ -5268,7 +5267,7 @@ newStopTriggerRequest' _Name customize = (StopTriggerRequest <<< customize) { "N
 
 
 newtype StopTriggerResponse = StopTriggerResponse 
-  { "Name" :: NullOrUndefined (NameString)
+  { "Name" :: Maybe (NameString)
   }
 derive instance newtypeStopTriggerResponse :: Newtype StopTriggerResponse _
 derive instance repGenericStopTriggerResponse :: Generic StopTriggerResponse _
@@ -5278,29 +5277,29 @@ instance encodeStopTriggerResponse :: Encode StopTriggerResponse where encode = 
 
 -- | Constructs StopTriggerResponse from required parameters
 newStopTriggerResponse :: StopTriggerResponse
-newStopTriggerResponse  = StopTriggerResponse { "Name": (NullOrUndefined Nothing) }
+newStopTriggerResponse  = StopTriggerResponse { "Name": Nothing }
 
 -- | Constructs StopTriggerResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStopTriggerResponse' :: ( { "Name" :: NullOrUndefined (NameString) } -> {"Name" :: NullOrUndefined (NameString) } ) -> StopTriggerResponse
-newStopTriggerResponse'  customize = (StopTriggerResponse <<< customize) { "Name": (NullOrUndefined Nothing) }
+newStopTriggerResponse' :: ( { "Name" :: Maybe (NameString) } -> {"Name" :: Maybe (NameString) } ) -> StopTriggerResponse
+newStopTriggerResponse'  customize = (StopTriggerResponse <<< customize) { "Name": Nothing }
 
 
 
 -- | <p>Describes the physical storage of table data.</p>
 newtype StorageDescriptor = StorageDescriptor 
-  { "Columns" :: NullOrUndefined (ColumnList)
-  , "Location" :: NullOrUndefined (LocationString)
-  , "InputFormat" :: NullOrUndefined (FormatString)
-  , "OutputFormat" :: NullOrUndefined (FormatString)
-  , "Compressed" :: NullOrUndefined (Boolean)
-  , "NumberOfBuckets" :: NullOrUndefined (Int)
-  , "SerdeInfo" :: NullOrUndefined (SerDeInfo)
-  , "BucketColumns" :: NullOrUndefined (NameStringList)
-  , "SortColumns" :: NullOrUndefined (OrderList)
-  , "Parameters" :: NullOrUndefined (ParametersMap)
-  , "SkewedInfo" :: NullOrUndefined (SkewedInfo)
-  , "StoredAsSubDirectories" :: NullOrUndefined (Boolean)
+  { "Columns" :: Maybe (ColumnList)
+  , "Location" :: Maybe (LocationString)
+  , "InputFormat" :: Maybe (FormatString)
+  , "OutputFormat" :: Maybe (FormatString)
+  , "Compressed" :: Maybe (Boolean)
+  , "NumberOfBuckets" :: Maybe (Int)
+  , "SerdeInfo" :: Maybe (SerDeInfo)
+  , "BucketColumns" :: Maybe (NameStringList)
+  , "SortColumns" :: Maybe (OrderList)
+  , "Parameters" :: Maybe (ParametersMap)
+  , "SkewedInfo" :: Maybe (SkewedInfo)
+  , "StoredAsSubDirectories" :: Maybe (Boolean)
   }
 derive instance newtypeStorageDescriptor :: Newtype StorageDescriptor _
 derive instance repGenericStorageDescriptor :: Generic StorageDescriptor _
@@ -5310,12 +5309,12 @@ instance encodeStorageDescriptor :: Encode StorageDescriptor where encode = gene
 
 -- | Constructs StorageDescriptor from required parameters
 newStorageDescriptor :: StorageDescriptor
-newStorageDescriptor  = StorageDescriptor { "BucketColumns": (NullOrUndefined Nothing), "Columns": (NullOrUndefined Nothing), "Compressed": (NullOrUndefined Nothing), "InputFormat": (NullOrUndefined Nothing), "Location": (NullOrUndefined Nothing), "NumberOfBuckets": (NullOrUndefined Nothing), "OutputFormat": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "SerdeInfo": (NullOrUndefined Nothing), "SkewedInfo": (NullOrUndefined Nothing), "SortColumns": (NullOrUndefined Nothing), "StoredAsSubDirectories": (NullOrUndefined Nothing) }
+newStorageDescriptor  = StorageDescriptor { "BucketColumns": Nothing, "Columns": Nothing, "Compressed": Nothing, "InputFormat": Nothing, "Location": Nothing, "NumberOfBuckets": Nothing, "OutputFormat": Nothing, "Parameters": Nothing, "SerdeInfo": Nothing, "SkewedInfo": Nothing, "SortColumns": Nothing, "StoredAsSubDirectories": Nothing }
 
 -- | Constructs StorageDescriptor's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStorageDescriptor' :: ( { "Columns" :: NullOrUndefined (ColumnList) , "Location" :: NullOrUndefined (LocationString) , "InputFormat" :: NullOrUndefined (FormatString) , "OutputFormat" :: NullOrUndefined (FormatString) , "Compressed" :: NullOrUndefined (Boolean) , "NumberOfBuckets" :: NullOrUndefined (Int) , "SerdeInfo" :: NullOrUndefined (SerDeInfo) , "BucketColumns" :: NullOrUndefined (NameStringList) , "SortColumns" :: NullOrUndefined (OrderList) , "Parameters" :: NullOrUndefined (ParametersMap) , "SkewedInfo" :: NullOrUndefined (SkewedInfo) , "StoredAsSubDirectories" :: NullOrUndefined (Boolean) } -> {"Columns" :: NullOrUndefined (ColumnList) , "Location" :: NullOrUndefined (LocationString) , "InputFormat" :: NullOrUndefined (FormatString) , "OutputFormat" :: NullOrUndefined (FormatString) , "Compressed" :: NullOrUndefined (Boolean) , "NumberOfBuckets" :: NullOrUndefined (Int) , "SerdeInfo" :: NullOrUndefined (SerDeInfo) , "BucketColumns" :: NullOrUndefined (NameStringList) , "SortColumns" :: NullOrUndefined (OrderList) , "Parameters" :: NullOrUndefined (ParametersMap) , "SkewedInfo" :: NullOrUndefined (SkewedInfo) , "StoredAsSubDirectories" :: NullOrUndefined (Boolean) } ) -> StorageDescriptor
-newStorageDescriptor'  customize = (StorageDescriptor <<< customize) { "BucketColumns": (NullOrUndefined Nothing), "Columns": (NullOrUndefined Nothing), "Compressed": (NullOrUndefined Nothing), "InputFormat": (NullOrUndefined Nothing), "Location": (NullOrUndefined Nothing), "NumberOfBuckets": (NullOrUndefined Nothing), "OutputFormat": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "SerdeInfo": (NullOrUndefined Nothing), "SkewedInfo": (NullOrUndefined Nothing), "SortColumns": (NullOrUndefined Nothing), "StoredAsSubDirectories": (NullOrUndefined Nothing) }
+newStorageDescriptor' :: ( { "Columns" :: Maybe (ColumnList) , "Location" :: Maybe (LocationString) , "InputFormat" :: Maybe (FormatString) , "OutputFormat" :: Maybe (FormatString) , "Compressed" :: Maybe (Boolean) , "NumberOfBuckets" :: Maybe (Int) , "SerdeInfo" :: Maybe (SerDeInfo) , "BucketColumns" :: Maybe (NameStringList) , "SortColumns" :: Maybe (OrderList) , "Parameters" :: Maybe (ParametersMap) , "SkewedInfo" :: Maybe (SkewedInfo) , "StoredAsSubDirectories" :: Maybe (Boolean) } -> {"Columns" :: Maybe (ColumnList) , "Location" :: Maybe (LocationString) , "InputFormat" :: Maybe (FormatString) , "OutputFormat" :: Maybe (FormatString) , "Compressed" :: Maybe (Boolean) , "NumberOfBuckets" :: Maybe (Int) , "SerdeInfo" :: Maybe (SerDeInfo) , "BucketColumns" :: Maybe (NameStringList) , "SortColumns" :: Maybe (OrderList) , "Parameters" :: Maybe (ParametersMap) , "SkewedInfo" :: Maybe (SkewedInfo) , "StoredAsSubDirectories" :: Maybe (Boolean) } ) -> StorageDescriptor
+newStorageDescriptor'  customize = (StorageDescriptor <<< customize) { "BucketColumns": Nothing, "Columns": Nothing, "Compressed": Nothing, "InputFormat": Nothing, "Location": Nothing, "NumberOfBuckets": Nothing, "OutputFormat": Nothing, "Parameters": Nothing, "SerdeInfo": Nothing, "SkewedInfo": Nothing, "SortColumns": Nothing, "StoredAsSubDirectories": Nothing }
 
 
 
@@ -5331,21 +5330,21 @@ instance encodeStringList :: Encode StringList where encode = genericEncode opti
 -- | <p>Represents a collection of related data organized in columns and rows.</p>
 newtype Table = Table 
   { "Name" :: (NameString)
-  , "DatabaseName" :: NullOrUndefined (NameString)
-  , "Description" :: NullOrUndefined (DescriptionString)
-  , "Owner" :: NullOrUndefined (NameString)
-  , "CreateTime" :: NullOrUndefined (Types.Timestamp)
-  , "UpdateTime" :: NullOrUndefined (Types.Timestamp)
-  , "LastAccessTime" :: NullOrUndefined (Types.Timestamp)
-  , "LastAnalyzedTime" :: NullOrUndefined (Types.Timestamp)
-  , "Retention" :: NullOrUndefined (NonNegativeInteger)
-  , "StorageDescriptor" :: NullOrUndefined (StorageDescriptor)
-  , "PartitionKeys" :: NullOrUndefined (ColumnList)
-  , "ViewOriginalText" :: NullOrUndefined (ViewTextString)
-  , "ViewExpandedText" :: NullOrUndefined (ViewTextString)
-  , "TableType" :: NullOrUndefined (TableTypeString)
-  , "Parameters" :: NullOrUndefined (ParametersMap)
-  , "CreatedBy" :: NullOrUndefined (NameString)
+  , "DatabaseName" :: Maybe (NameString)
+  , "Description" :: Maybe (DescriptionString)
+  , "Owner" :: Maybe (NameString)
+  , "CreateTime" :: Maybe (Types.Timestamp)
+  , "UpdateTime" :: Maybe (Types.Timestamp)
+  , "LastAccessTime" :: Maybe (Types.Timestamp)
+  , "LastAnalyzedTime" :: Maybe (Types.Timestamp)
+  , "Retention" :: Maybe (NonNegativeInteger)
+  , "StorageDescriptor" :: Maybe (StorageDescriptor)
+  , "PartitionKeys" :: Maybe (ColumnList)
+  , "ViewOriginalText" :: Maybe (ViewTextString)
+  , "ViewExpandedText" :: Maybe (ViewTextString)
+  , "TableType" :: Maybe (TableTypeString)
+  , "Parameters" :: Maybe (ParametersMap)
+  , "CreatedBy" :: Maybe (NameString)
   }
 derive instance newtypeTable :: Newtype Table _
 derive instance repGenericTable :: Generic Table _
@@ -5355,19 +5354,19 @@ instance encodeTable :: Encode Table where encode = genericEncode options
 
 -- | Constructs Table from required parameters
 newTable :: NameString -> Table
-newTable _Name = Table { "Name": _Name, "CreateTime": (NullOrUndefined Nothing), "CreatedBy": (NullOrUndefined Nothing), "DatabaseName": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "LastAccessTime": (NullOrUndefined Nothing), "LastAnalyzedTime": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "PartitionKeys": (NullOrUndefined Nothing), "Retention": (NullOrUndefined Nothing), "StorageDescriptor": (NullOrUndefined Nothing), "TableType": (NullOrUndefined Nothing), "UpdateTime": (NullOrUndefined Nothing), "ViewExpandedText": (NullOrUndefined Nothing), "ViewOriginalText": (NullOrUndefined Nothing) }
+newTable _Name = Table { "Name": _Name, "CreateTime": Nothing, "CreatedBy": Nothing, "DatabaseName": Nothing, "Description": Nothing, "LastAccessTime": Nothing, "LastAnalyzedTime": Nothing, "Owner": Nothing, "Parameters": Nothing, "PartitionKeys": Nothing, "Retention": Nothing, "StorageDescriptor": Nothing, "TableType": Nothing, "UpdateTime": Nothing, "ViewExpandedText": Nothing, "ViewOriginalText": Nothing }
 
 -- | Constructs Table's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTable' :: NameString -> ( { "Name" :: (NameString) , "DatabaseName" :: NullOrUndefined (NameString) , "Description" :: NullOrUndefined (DescriptionString) , "Owner" :: NullOrUndefined (NameString) , "CreateTime" :: NullOrUndefined (Types.Timestamp) , "UpdateTime" :: NullOrUndefined (Types.Timestamp) , "LastAccessTime" :: NullOrUndefined (Types.Timestamp) , "LastAnalyzedTime" :: NullOrUndefined (Types.Timestamp) , "Retention" :: NullOrUndefined (NonNegativeInteger) , "StorageDescriptor" :: NullOrUndefined (StorageDescriptor) , "PartitionKeys" :: NullOrUndefined (ColumnList) , "ViewOriginalText" :: NullOrUndefined (ViewTextString) , "ViewExpandedText" :: NullOrUndefined (ViewTextString) , "TableType" :: NullOrUndefined (TableTypeString) , "Parameters" :: NullOrUndefined (ParametersMap) , "CreatedBy" :: NullOrUndefined (NameString) } -> {"Name" :: (NameString) , "DatabaseName" :: NullOrUndefined (NameString) , "Description" :: NullOrUndefined (DescriptionString) , "Owner" :: NullOrUndefined (NameString) , "CreateTime" :: NullOrUndefined (Types.Timestamp) , "UpdateTime" :: NullOrUndefined (Types.Timestamp) , "LastAccessTime" :: NullOrUndefined (Types.Timestamp) , "LastAnalyzedTime" :: NullOrUndefined (Types.Timestamp) , "Retention" :: NullOrUndefined (NonNegativeInteger) , "StorageDescriptor" :: NullOrUndefined (StorageDescriptor) , "PartitionKeys" :: NullOrUndefined (ColumnList) , "ViewOriginalText" :: NullOrUndefined (ViewTextString) , "ViewExpandedText" :: NullOrUndefined (ViewTextString) , "TableType" :: NullOrUndefined (TableTypeString) , "Parameters" :: NullOrUndefined (ParametersMap) , "CreatedBy" :: NullOrUndefined (NameString) } ) -> Table
-newTable' _Name customize = (Table <<< customize) { "Name": _Name, "CreateTime": (NullOrUndefined Nothing), "CreatedBy": (NullOrUndefined Nothing), "DatabaseName": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "LastAccessTime": (NullOrUndefined Nothing), "LastAnalyzedTime": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "PartitionKeys": (NullOrUndefined Nothing), "Retention": (NullOrUndefined Nothing), "StorageDescriptor": (NullOrUndefined Nothing), "TableType": (NullOrUndefined Nothing), "UpdateTime": (NullOrUndefined Nothing), "ViewExpandedText": (NullOrUndefined Nothing), "ViewOriginalText": (NullOrUndefined Nothing) }
+newTable' :: NameString -> ( { "Name" :: (NameString) , "DatabaseName" :: Maybe (NameString) , "Description" :: Maybe (DescriptionString) , "Owner" :: Maybe (NameString) , "CreateTime" :: Maybe (Types.Timestamp) , "UpdateTime" :: Maybe (Types.Timestamp) , "LastAccessTime" :: Maybe (Types.Timestamp) , "LastAnalyzedTime" :: Maybe (Types.Timestamp) , "Retention" :: Maybe (NonNegativeInteger) , "StorageDescriptor" :: Maybe (StorageDescriptor) , "PartitionKeys" :: Maybe (ColumnList) , "ViewOriginalText" :: Maybe (ViewTextString) , "ViewExpandedText" :: Maybe (ViewTextString) , "TableType" :: Maybe (TableTypeString) , "Parameters" :: Maybe (ParametersMap) , "CreatedBy" :: Maybe (NameString) } -> {"Name" :: (NameString) , "DatabaseName" :: Maybe (NameString) , "Description" :: Maybe (DescriptionString) , "Owner" :: Maybe (NameString) , "CreateTime" :: Maybe (Types.Timestamp) , "UpdateTime" :: Maybe (Types.Timestamp) , "LastAccessTime" :: Maybe (Types.Timestamp) , "LastAnalyzedTime" :: Maybe (Types.Timestamp) , "Retention" :: Maybe (NonNegativeInteger) , "StorageDescriptor" :: Maybe (StorageDescriptor) , "PartitionKeys" :: Maybe (ColumnList) , "ViewOriginalText" :: Maybe (ViewTextString) , "ViewExpandedText" :: Maybe (ViewTextString) , "TableType" :: Maybe (TableTypeString) , "Parameters" :: Maybe (ParametersMap) , "CreatedBy" :: Maybe (NameString) } ) -> Table
+newTable' _Name customize = (Table <<< customize) { "Name": _Name, "CreateTime": Nothing, "CreatedBy": Nothing, "DatabaseName": Nothing, "Description": Nothing, "LastAccessTime": Nothing, "LastAnalyzedTime": Nothing, "Owner": Nothing, "Parameters": Nothing, "PartitionKeys": Nothing, "Retention": Nothing, "StorageDescriptor": Nothing, "TableType": Nothing, "UpdateTime": Nothing, "ViewExpandedText": Nothing, "ViewOriginalText": Nothing }
 
 
 
 -- | <p>An error record for table operations.</p>
 newtype TableError = TableError 
-  { "TableName" :: NullOrUndefined (NameString)
-  , "ErrorDetail" :: NullOrUndefined (ErrorDetail)
+  { "TableName" :: Maybe (NameString)
+  , "ErrorDetail" :: Maybe (ErrorDetail)
   }
 derive instance newtypeTableError :: Newtype TableError _
 derive instance repGenericTableError :: Generic TableError _
@@ -5377,12 +5376,12 @@ instance encodeTableError :: Encode TableError where encode = genericEncode opti
 
 -- | Constructs TableError from required parameters
 newTableError :: TableError
-newTableError  = TableError { "ErrorDetail": (NullOrUndefined Nothing), "TableName": (NullOrUndefined Nothing) }
+newTableError  = TableError { "ErrorDetail": Nothing, "TableName": Nothing }
 
 -- | Constructs TableError's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTableError' :: ( { "TableName" :: NullOrUndefined (NameString) , "ErrorDetail" :: NullOrUndefined (ErrorDetail) } -> {"TableName" :: NullOrUndefined (NameString) , "ErrorDetail" :: NullOrUndefined (ErrorDetail) } ) -> TableError
-newTableError'  customize = (TableError <<< customize) { "ErrorDetail": (NullOrUndefined Nothing), "TableName": (NullOrUndefined Nothing) }
+newTableError' :: ( { "TableName" :: Maybe (NameString) , "ErrorDetail" :: Maybe (ErrorDetail) } -> {"TableName" :: Maybe (NameString) , "ErrorDetail" :: Maybe (ErrorDetail) } ) -> TableError
+newTableError'  customize = (TableError <<< customize) { "ErrorDetail": Nothing, "TableName": Nothing }
 
 
 
@@ -5398,17 +5397,17 @@ instance encodeTableErrors :: Encode TableErrors where encode = genericEncode op
 -- | <p>Structure used to create or update the table.</p>
 newtype TableInput = TableInput 
   { "Name" :: (NameString)
-  , "Description" :: NullOrUndefined (DescriptionString)
-  , "Owner" :: NullOrUndefined (NameString)
-  , "LastAccessTime" :: NullOrUndefined (Types.Timestamp)
-  , "LastAnalyzedTime" :: NullOrUndefined (Types.Timestamp)
-  , "Retention" :: NullOrUndefined (NonNegativeInteger)
-  , "StorageDescriptor" :: NullOrUndefined (StorageDescriptor)
-  , "PartitionKeys" :: NullOrUndefined (ColumnList)
-  , "ViewOriginalText" :: NullOrUndefined (ViewTextString)
-  , "ViewExpandedText" :: NullOrUndefined (ViewTextString)
-  , "TableType" :: NullOrUndefined (TableTypeString)
-  , "Parameters" :: NullOrUndefined (ParametersMap)
+  , "Description" :: Maybe (DescriptionString)
+  , "Owner" :: Maybe (NameString)
+  , "LastAccessTime" :: Maybe (Types.Timestamp)
+  , "LastAnalyzedTime" :: Maybe (Types.Timestamp)
+  , "Retention" :: Maybe (NonNegativeInteger)
+  , "StorageDescriptor" :: Maybe (StorageDescriptor)
+  , "PartitionKeys" :: Maybe (ColumnList)
+  , "ViewOriginalText" :: Maybe (ViewTextString)
+  , "ViewExpandedText" :: Maybe (ViewTextString)
+  , "TableType" :: Maybe (TableTypeString)
+  , "Parameters" :: Maybe (ParametersMap)
   }
 derive instance newtypeTableInput :: Newtype TableInput _
 derive instance repGenericTableInput :: Generic TableInput _
@@ -5418,12 +5417,12 @@ instance encodeTableInput :: Encode TableInput where encode = genericEncode opti
 
 -- | Constructs TableInput from required parameters
 newTableInput :: NameString -> TableInput
-newTableInput _Name = TableInput { "Name": _Name, "Description": (NullOrUndefined Nothing), "LastAccessTime": (NullOrUndefined Nothing), "LastAnalyzedTime": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "PartitionKeys": (NullOrUndefined Nothing), "Retention": (NullOrUndefined Nothing), "StorageDescriptor": (NullOrUndefined Nothing), "TableType": (NullOrUndefined Nothing), "ViewExpandedText": (NullOrUndefined Nothing), "ViewOriginalText": (NullOrUndefined Nothing) }
+newTableInput _Name = TableInput { "Name": _Name, "Description": Nothing, "LastAccessTime": Nothing, "LastAnalyzedTime": Nothing, "Owner": Nothing, "Parameters": Nothing, "PartitionKeys": Nothing, "Retention": Nothing, "StorageDescriptor": Nothing, "TableType": Nothing, "ViewExpandedText": Nothing, "ViewOriginalText": Nothing }
 
 -- | Constructs TableInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTableInput' :: NameString -> ( { "Name" :: (NameString) , "Description" :: NullOrUndefined (DescriptionString) , "Owner" :: NullOrUndefined (NameString) , "LastAccessTime" :: NullOrUndefined (Types.Timestamp) , "LastAnalyzedTime" :: NullOrUndefined (Types.Timestamp) , "Retention" :: NullOrUndefined (NonNegativeInteger) , "StorageDescriptor" :: NullOrUndefined (StorageDescriptor) , "PartitionKeys" :: NullOrUndefined (ColumnList) , "ViewOriginalText" :: NullOrUndefined (ViewTextString) , "ViewExpandedText" :: NullOrUndefined (ViewTextString) , "TableType" :: NullOrUndefined (TableTypeString) , "Parameters" :: NullOrUndefined (ParametersMap) } -> {"Name" :: (NameString) , "Description" :: NullOrUndefined (DescriptionString) , "Owner" :: NullOrUndefined (NameString) , "LastAccessTime" :: NullOrUndefined (Types.Timestamp) , "LastAnalyzedTime" :: NullOrUndefined (Types.Timestamp) , "Retention" :: NullOrUndefined (NonNegativeInteger) , "StorageDescriptor" :: NullOrUndefined (StorageDescriptor) , "PartitionKeys" :: NullOrUndefined (ColumnList) , "ViewOriginalText" :: NullOrUndefined (ViewTextString) , "ViewExpandedText" :: NullOrUndefined (ViewTextString) , "TableType" :: NullOrUndefined (TableTypeString) , "Parameters" :: NullOrUndefined (ParametersMap) } ) -> TableInput
-newTableInput' _Name customize = (TableInput <<< customize) { "Name": _Name, "Description": (NullOrUndefined Nothing), "LastAccessTime": (NullOrUndefined Nothing), "LastAnalyzedTime": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "Parameters": (NullOrUndefined Nothing), "PartitionKeys": (NullOrUndefined Nothing), "Retention": (NullOrUndefined Nothing), "StorageDescriptor": (NullOrUndefined Nothing), "TableType": (NullOrUndefined Nothing), "ViewExpandedText": (NullOrUndefined Nothing), "ViewOriginalText": (NullOrUndefined Nothing) }
+newTableInput' :: NameString -> ( { "Name" :: (NameString) , "Description" :: Maybe (DescriptionString) , "Owner" :: Maybe (NameString) , "LastAccessTime" :: Maybe (Types.Timestamp) , "LastAnalyzedTime" :: Maybe (Types.Timestamp) , "Retention" :: Maybe (NonNegativeInteger) , "StorageDescriptor" :: Maybe (StorageDescriptor) , "PartitionKeys" :: Maybe (ColumnList) , "ViewOriginalText" :: Maybe (ViewTextString) , "ViewExpandedText" :: Maybe (ViewTextString) , "TableType" :: Maybe (TableTypeString) , "Parameters" :: Maybe (ParametersMap) } -> {"Name" :: (NameString) , "Description" :: Maybe (DescriptionString) , "Owner" :: Maybe (NameString) , "LastAccessTime" :: Maybe (Types.Timestamp) , "LastAnalyzedTime" :: Maybe (Types.Timestamp) , "Retention" :: Maybe (NonNegativeInteger) , "StorageDescriptor" :: Maybe (StorageDescriptor) , "PartitionKeys" :: Maybe (ColumnList) , "ViewOriginalText" :: Maybe (ViewTextString) , "ViewExpandedText" :: Maybe (ViewTextString) , "TableType" :: Maybe (TableTypeString) , "Parameters" :: Maybe (ParametersMap) } ) -> TableInput
+newTableInput' _Name customize = (TableInput <<< customize) { "Name": _Name, "Description": Nothing, "LastAccessTime": Nothing, "LastAnalyzedTime": Nothing, "Owner": Nothing, "Parameters": Nothing, "PartitionKeys": Nothing, "Retention": Nothing, "StorageDescriptor": Nothing, "TableType": Nothing, "ViewExpandedText": Nothing, "ViewOriginalText": Nothing }
 
 
 
@@ -5465,8 +5464,8 @@ instance encodeTableTypeString :: Encode TableTypeString where encode = genericE
 
 -- | <p>Specifies a version of a table.</p>
 newtype TableVersion = TableVersion 
-  { "Table" :: NullOrUndefined (Table)
-  , "VersionId" :: NullOrUndefined (VersionString)
+  { "Table" :: Maybe (Table)
+  , "VersionId" :: Maybe (VersionString)
   }
 derive instance newtypeTableVersion :: Newtype TableVersion _
 derive instance repGenericTableVersion :: Generic TableVersion _
@@ -5476,20 +5475,20 @@ instance encodeTableVersion :: Encode TableVersion where encode = genericEncode 
 
 -- | Constructs TableVersion from required parameters
 newTableVersion :: TableVersion
-newTableVersion  = TableVersion { "Table": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newTableVersion  = TableVersion { "Table": Nothing, "VersionId": Nothing }
 
 -- | Constructs TableVersion's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTableVersion' :: ( { "Table" :: NullOrUndefined (Table) , "VersionId" :: NullOrUndefined (VersionString) } -> {"Table" :: NullOrUndefined (Table) , "VersionId" :: NullOrUndefined (VersionString) } ) -> TableVersion
-newTableVersion'  customize = (TableVersion <<< customize) { "Table": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newTableVersion' :: ( { "Table" :: Maybe (Table) , "VersionId" :: Maybe (VersionString) } -> {"Table" :: Maybe (Table) , "VersionId" :: Maybe (VersionString) } ) -> TableVersion
+newTableVersion'  customize = (TableVersion <<< customize) { "Table": Nothing, "VersionId": Nothing }
 
 
 
 -- | <p>An error record for table-version operations.</p>
 newtype TableVersionError = TableVersionError 
-  { "TableName" :: NullOrUndefined (NameString)
-  , "VersionId" :: NullOrUndefined (VersionString)
-  , "ErrorDetail" :: NullOrUndefined (ErrorDetail)
+  { "TableName" :: Maybe (NameString)
+  , "VersionId" :: Maybe (VersionString)
+  , "ErrorDetail" :: Maybe (ErrorDetail)
   }
 derive instance newtypeTableVersionError :: Newtype TableVersionError _
 derive instance repGenericTableVersionError :: Generic TableVersionError _
@@ -5499,12 +5498,12 @@ instance encodeTableVersionError :: Encode TableVersionError where encode = gene
 
 -- | Constructs TableVersionError from required parameters
 newTableVersionError :: TableVersionError
-newTableVersionError  = TableVersionError { "ErrorDetail": (NullOrUndefined Nothing), "TableName": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newTableVersionError  = TableVersionError { "ErrorDetail": Nothing, "TableName": Nothing, "VersionId": Nothing }
 
 -- | Constructs TableVersionError's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTableVersionError' :: ( { "TableName" :: NullOrUndefined (NameString) , "VersionId" :: NullOrUndefined (VersionString) , "ErrorDetail" :: NullOrUndefined (ErrorDetail) } -> {"TableName" :: NullOrUndefined (NameString) , "VersionId" :: NullOrUndefined (VersionString) , "ErrorDetail" :: NullOrUndefined (ErrorDetail) } ) -> TableVersionError
-newTableVersionError'  customize = (TableVersionError <<< customize) { "ErrorDetail": (NullOrUndefined Nothing), "TableName": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newTableVersionError' :: ( { "TableName" :: Maybe (NameString) , "VersionId" :: Maybe (VersionString) , "ErrorDetail" :: Maybe (ErrorDetail) } -> {"TableName" :: Maybe (NameString) , "VersionId" :: Maybe (VersionString) , "ErrorDetail" :: Maybe (ErrorDetail) } ) -> TableVersionError
+newTableVersionError'  customize = (TableVersionError <<< customize) { "ErrorDetail": Nothing, "TableName": Nothing, "VersionId": Nothing }
 
 
 
@@ -5546,14 +5545,14 @@ instance encodeTotalSegmentsInteger :: Encode TotalSegmentsInteger where encode 
 
 -- | <p>Information about a specific trigger.</p>
 newtype Trigger = Trigger 
-  { "Name" :: NullOrUndefined (NameString)
-  , "Id" :: NullOrUndefined (IdString)
-  , "Type" :: NullOrUndefined (TriggerType)
-  , "State" :: NullOrUndefined (TriggerState)
-  , "Description" :: NullOrUndefined (DescriptionString)
-  , "Schedule" :: NullOrUndefined (GenericString)
-  , "Actions" :: NullOrUndefined (ActionList)
-  , "Predicate" :: NullOrUndefined (Predicate)
+  { "Name" :: Maybe (NameString)
+  , "Id" :: Maybe (IdString)
+  , "Type" :: Maybe (TriggerType)
+  , "State" :: Maybe (TriggerState)
+  , "Description" :: Maybe (DescriptionString)
+  , "Schedule" :: Maybe (GenericString)
+  , "Actions" :: Maybe (ActionList)
+  , "Predicate" :: Maybe (Predicate)
   }
 derive instance newtypeTrigger :: Newtype Trigger _
 derive instance repGenericTrigger :: Generic Trigger _
@@ -5563,12 +5562,12 @@ instance encodeTrigger :: Encode Trigger where encode = genericEncode options
 
 -- | Constructs Trigger from required parameters
 newTrigger :: Trigger
-newTrigger  = Trigger { "Actions": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Predicate": (NullOrUndefined Nothing), "Schedule": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newTrigger  = Trigger { "Actions": Nothing, "Description": Nothing, "Id": Nothing, "Name": Nothing, "Predicate": Nothing, "Schedule": Nothing, "State": Nothing, "Type": Nothing }
 
 -- | Constructs Trigger's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTrigger' :: ( { "Name" :: NullOrUndefined (NameString) , "Id" :: NullOrUndefined (IdString) , "Type" :: NullOrUndefined (TriggerType) , "State" :: NullOrUndefined (TriggerState) , "Description" :: NullOrUndefined (DescriptionString) , "Schedule" :: NullOrUndefined (GenericString) , "Actions" :: NullOrUndefined (ActionList) , "Predicate" :: NullOrUndefined (Predicate) } -> {"Name" :: NullOrUndefined (NameString) , "Id" :: NullOrUndefined (IdString) , "Type" :: NullOrUndefined (TriggerType) , "State" :: NullOrUndefined (TriggerState) , "Description" :: NullOrUndefined (DescriptionString) , "Schedule" :: NullOrUndefined (GenericString) , "Actions" :: NullOrUndefined (ActionList) , "Predicate" :: NullOrUndefined (Predicate) } ) -> Trigger
-newTrigger'  customize = (Trigger <<< customize) { "Actions": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Predicate": (NullOrUndefined Nothing), "Schedule": (NullOrUndefined Nothing), "State": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newTrigger' :: ( { "Name" :: Maybe (NameString) , "Id" :: Maybe (IdString) , "Type" :: Maybe (TriggerType) , "State" :: Maybe (TriggerState) , "Description" :: Maybe (DescriptionString) , "Schedule" :: Maybe (GenericString) , "Actions" :: Maybe (ActionList) , "Predicate" :: Maybe (Predicate) } -> {"Name" :: Maybe (NameString) , "Id" :: Maybe (IdString) , "Type" :: Maybe (TriggerType) , "State" :: Maybe (TriggerState) , "Description" :: Maybe (DescriptionString) , "Schedule" :: Maybe (GenericString) , "Actions" :: Maybe (ActionList) , "Predicate" :: Maybe (Predicate) } ) -> Trigger
+newTrigger'  customize = (Trigger <<< customize) { "Actions": Nothing, "Description": Nothing, "Id": Nothing, "Name": Nothing, "Predicate": Nothing, "Schedule": Nothing, "State": Nothing, "Type": Nothing }
 
 
 
@@ -5601,11 +5600,11 @@ instance encodeTriggerType :: Encode TriggerType where encode = genericEncode op
 
 -- | <p>A structure used to provide information used to update a trigger. This object will update the the previous trigger definition by overwriting it completely.</p>
 newtype TriggerUpdate = TriggerUpdate 
-  { "Name" :: NullOrUndefined (NameString)
-  , "Description" :: NullOrUndefined (DescriptionString)
-  , "Schedule" :: NullOrUndefined (GenericString)
-  , "Actions" :: NullOrUndefined (ActionList)
-  , "Predicate" :: NullOrUndefined (Predicate)
+  { "Name" :: Maybe (NameString)
+  , "Description" :: Maybe (DescriptionString)
+  , "Schedule" :: Maybe (GenericString)
+  , "Actions" :: Maybe (ActionList)
+  , "Predicate" :: Maybe (Predicate)
   }
 derive instance newtypeTriggerUpdate :: Newtype TriggerUpdate _
 derive instance repGenericTriggerUpdate :: Generic TriggerUpdate _
@@ -5615,12 +5614,12 @@ instance encodeTriggerUpdate :: Encode TriggerUpdate where encode = genericEncod
 
 -- | Constructs TriggerUpdate from required parameters
 newTriggerUpdate :: TriggerUpdate
-newTriggerUpdate  = TriggerUpdate { "Actions": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Predicate": (NullOrUndefined Nothing), "Schedule": (NullOrUndefined Nothing) }
+newTriggerUpdate  = TriggerUpdate { "Actions": Nothing, "Description": Nothing, "Name": Nothing, "Predicate": Nothing, "Schedule": Nothing }
 
 -- | Constructs TriggerUpdate's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTriggerUpdate' :: ( { "Name" :: NullOrUndefined (NameString) , "Description" :: NullOrUndefined (DescriptionString) , "Schedule" :: NullOrUndefined (GenericString) , "Actions" :: NullOrUndefined (ActionList) , "Predicate" :: NullOrUndefined (Predicate) } -> {"Name" :: NullOrUndefined (NameString) , "Description" :: NullOrUndefined (DescriptionString) , "Schedule" :: NullOrUndefined (GenericString) , "Actions" :: NullOrUndefined (ActionList) , "Predicate" :: NullOrUndefined (Predicate) } ) -> TriggerUpdate
-newTriggerUpdate'  customize = (TriggerUpdate <<< customize) { "Actions": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Predicate": (NullOrUndefined Nothing), "Schedule": (NullOrUndefined Nothing) }
+newTriggerUpdate' :: ( { "Name" :: Maybe (NameString) , "Description" :: Maybe (DescriptionString) , "Schedule" :: Maybe (GenericString) , "Actions" :: Maybe (ActionList) , "Predicate" :: Maybe (Predicate) } -> {"Name" :: Maybe (NameString) , "Description" :: Maybe (DescriptionString) , "Schedule" :: Maybe (GenericString) , "Actions" :: Maybe (ActionList) , "Predicate" :: Maybe (Predicate) } ) -> TriggerUpdate
+newTriggerUpdate'  customize = (TriggerUpdate <<< customize) { "Actions": Nothing, "Description": Nothing, "Name": Nothing, "Predicate": Nothing, "Schedule": Nothing }
 
 
 
@@ -5643,9 +5642,9 @@ instance encodeUpdateBehavior :: Encode UpdateBehavior where encode = genericEnc
 
 
 newtype UpdateClassifierRequest = UpdateClassifierRequest 
-  { "GrokClassifier" :: NullOrUndefined (UpdateGrokClassifierRequest)
-  , "XMLClassifier" :: NullOrUndefined (UpdateXMLClassifierRequest)
-  , "JsonClassifier" :: NullOrUndefined (UpdateJsonClassifierRequest)
+  { "GrokClassifier" :: Maybe (UpdateGrokClassifierRequest)
+  , "XMLClassifier" :: Maybe (UpdateXMLClassifierRequest)
+  , "JsonClassifier" :: Maybe (UpdateJsonClassifierRequest)
   }
 derive instance newtypeUpdateClassifierRequest :: Newtype UpdateClassifierRequest _
 derive instance repGenericUpdateClassifierRequest :: Generic UpdateClassifierRequest _
@@ -5655,12 +5654,12 @@ instance encodeUpdateClassifierRequest :: Encode UpdateClassifierRequest where e
 
 -- | Constructs UpdateClassifierRequest from required parameters
 newUpdateClassifierRequest :: UpdateClassifierRequest
-newUpdateClassifierRequest  = UpdateClassifierRequest { "GrokClassifier": (NullOrUndefined Nothing), "JsonClassifier": (NullOrUndefined Nothing), "XMLClassifier": (NullOrUndefined Nothing) }
+newUpdateClassifierRequest  = UpdateClassifierRequest { "GrokClassifier": Nothing, "JsonClassifier": Nothing, "XMLClassifier": Nothing }
 
 -- | Constructs UpdateClassifierRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateClassifierRequest' :: ( { "GrokClassifier" :: NullOrUndefined (UpdateGrokClassifierRequest) , "XMLClassifier" :: NullOrUndefined (UpdateXMLClassifierRequest) , "JsonClassifier" :: NullOrUndefined (UpdateJsonClassifierRequest) } -> {"GrokClassifier" :: NullOrUndefined (UpdateGrokClassifierRequest) , "XMLClassifier" :: NullOrUndefined (UpdateXMLClassifierRequest) , "JsonClassifier" :: NullOrUndefined (UpdateJsonClassifierRequest) } ) -> UpdateClassifierRequest
-newUpdateClassifierRequest'  customize = (UpdateClassifierRequest <<< customize) { "GrokClassifier": (NullOrUndefined Nothing), "JsonClassifier": (NullOrUndefined Nothing), "XMLClassifier": (NullOrUndefined Nothing) }
+newUpdateClassifierRequest' :: ( { "GrokClassifier" :: Maybe (UpdateGrokClassifierRequest) , "XMLClassifier" :: Maybe (UpdateXMLClassifierRequest) , "JsonClassifier" :: Maybe (UpdateJsonClassifierRequest) } -> {"GrokClassifier" :: Maybe (UpdateGrokClassifierRequest) , "XMLClassifier" :: Maybe (UpdateXMLClassifierRequest) , "JsonClassifier" :: Maybe (UpdateJsonClassifierRequest) } ) -> UpdateClassifierRequest
+newUpdateClassifierRequest'  customize = (UpdateClassifierRequest <<< customize) { "GrokClassifier": Nothing, "JsonClassifier": Nothing, "XMLClassifier": Nothing }
 
 
 
@@ -5674,7 +5673,7 @@ instance encodeUpdateClassifierResponse :: Encode UpdateClassifierResponse where
 
 
 newtype UpdateConnectionRequest = UpdateConnectionRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "Name" :: (NameString)
   , "ConnectionInput" :: (ConnectionInput)
   }
@@ -5686,12 +5685,12 @@ instance encodeUpdateConnectionRequest :: Encode UpdateConnectionRequest where e
 
 -- | Constructs UpdateConnectionRequest from required parameters
 newUpdateConnectionRequest :: ConnectionInput -> NameString -> UpdateConnectionRequest
-newUpdateConnectionRequest _ConnectionInput _Name = UpdateConnectionRequest { "ConnectionInput": _ConnectionInput, "Name": _Name, "CatalogId": (NullOrUndefined Nothing) }
+newUpdateConnectionRequest _ConnectionInput _Name = UpdateConnectionRequest { "ConnectionInput": _ConnectionInput, "Name": _Name, "CatalogId": Nothing }
 
 -- | Constructs UpdateConnectionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateConnectionRequest' :: ConnectionInput -> NameString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "Name" :: (NameString) , "ConnectionInput" :: (ConnectionInput) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "Name" :: (NameString) , "ConnectionInput" :: (ConnectionInput) } ) -> UpdateConnectionRequest
-newUpdateConnectionRequest' _ConnectionInput _Name customize = (UpdateConnectionRequest <<< customize) { "ConnectionInput": _ConnectionInput, "Name": _Name, "CatalogId": (NullOrUndefined Nothing) }
+newUpdateConnectionRequest' :: ConnectionInput -> NameString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "Name" :: (NameString) , "ConnectionInput" :: (ConnectionInput) } -> {"CatalogId" :: Maybe (CatalogIdString) , "Name" :: (NameString) , "ConnectionInput" :: (ConnectionInput) } ) -> UpdateConnectionRequest
+newUpdateConnectionRequest' _ConnectionInput _Name customize = (UpdateConnectionRequest <<< customize) { "ConnectionInput": _ConnectionInput, "Name": _Name, "CatalogId": Nothing }
 
 
 
@@ -5706,15 +5705,15 @@ instance encodeUpdateConnectionResponse :: Encode UpdateConnectionResponse where
 
 newtype UpdateCrawlerRequest = UpdateCrawlerRequest 
   { "Name" :: (NameString)
-  , "Role" :: NullOrUndefined (Role)
-  , "DatabaseName" :: NullOrUndefined (DatabaseName)
-  , "Description" :: NullOrUndefined (DescriptionStringRemovable)
-  , "Targets" :: NullOrUndefined (CrawlerTargets)
-  , "Schedule" :: NullOrUndefined (CronExpression)
-  , "Classifiers" :: NullOrUndefined (ClassifierNameList)
-  , "TablePrefix" :: NullOrUndefined (TablePrefix)
-  , "SchemaChangePolicy" :: NullOrUndefined (SchemaChangePolicy)
-  , "Configuration" :: NullOrUndefined (CrawlerConfiguration)
+  , "Role" :: Maybe (Role)
+  , "DatabaseName" :: Maybe (DatabaseName)
+  , "Description" :: Maybe (DescriptionStringRemovable)
+  , "Targets" :: Maybe (CrawlerTargets)
+  , "Schedule" :: Maybe (CronExpression)
+  , "Classifiers" :: Maybe (ClassifierNameList)
+  , "TablePrefix" :: Maybe (TablePrefix)
+  , "SchemaChangePolicy" :: Maybe (SchemaChangePolicy)
+  , "Configuration" :: Maybe (CrawlerConfiguration)
   }
 derive instance newtypeUpdateCrawlerRequest :: Newtype UpdateCrawlerRequest _
 derive instance repGenericUpdateCrawlerRequest :: Generic UpdateCrawlerRequest _
@@ -5724,12 +5723,12 @@ instance encodeUpdateCrawlerRequest :: Encode UpdateCrawlerRequest where encode 
 
 -- | Constructs UpdateCrawlerRequest from required parameters
 newUpdateCrawlerRequest :: NameString -> UpdateCrawlerRequest
-newUpdateCrawlerRequest _Name = UpdateCrawlerRequest { "Name": _Name, "Classifiers": (NullOrUndefined Nothing), "Configuration": (NullOrUndefined Nothing), "DatabaseName": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Role": (NullOrUndefined Nothing), "Schedule": (NullOrUndefined Nothing), "SchemaChangePolicy": (NullOrUndefined Nothing), "TablePrefix": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newUpdateCrawlerRequest _Name = UpdateCrawlerRequest { "Name": _Name, "Classifiers": Nothing, "Configuration": Nothing, "DatabaseName": Nothing, "Description": Nothing, "Role": Nothing, "Schedule": Nothing, "SchemaChangePolicy": Nothing, "TablePrefix": Nothing, "Targets": Nothing }
 
 -- | Constructs UpdateCrawlerRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateCrawlerRequest' :: NameString -> ( { "Name" :: (NameString) , "Role" :: NullOrUndefined (Role) , "DatabaseName" :: NullOrUndefined (DatabaseName) , "Description" :: NullOrUndefined (DescriptionStringRemovable) , "Targets" :: NullOrUndefined (CrawlerTargets) , "Schedule" :: NullOrUndefined (CronExpression) , "Classifiers" :: NullOrUndefined (ClassifierNameList) , "TablePrefix" :: NullOrUndefined (TablePrefix) , "SchemaChangePolicy" :: NullOrUndefined (SchemaChangePolicy) , "Configuration" :: NullOrUndefined (CrawlerConfiguration) } -> {"Name" :: (NameString) , "Role" :: NullOrUndefined (Role) , "DatabaseName" :: NullOrUndefined (DatabaseName) , "Description" :: NullOrUndefined (DescriptionStringRemovable) , "Targets" :: NullOrUndefined (CrawlerTargets) , "Schedule" :: NullOrUndefined (CronExpression) , "Classifiers" :: NullOrUndefined (ClassifierNameList) , "TablePrefix" :: NullOrUndefined (TablePrefix) , "SchemaChangePolicy" :: NullOrUndefined (SchemaChangePolicy) , "Configuration" :: NullOrUndefined (CrawlerConfiguration) } ) -> UpdateCrawlerRequest
-newUpdateCrawlerRequest' _Name customize = (UpdateCrawlerRequest <<< customize) { "Name": _Name, "Classifiers": (NullOrUndefined Nothing), "Configuration": (NullOrUndefined Nothing), "DatabaseName": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "Role": (NullOrUndefined Nothing), "Schedule": (NullOrUndefined Nothing), "SchemaChangePolicy": (NullOrUndefined Nothing), "TablePrefix": (NullOrUndefined Nothing), "Targets": (NullOrUndefined Nothing) }
+newUpdateCrawlerRequest' :: NameString -> ( { "Name" :: (NameString) , "Role" :: Maybe (Role) , "DatabaseName" :: Maybe (DatabaseName) , "Description" :: Maybe (DescriptionStringRemovable) , "Targets" :: Maybe (CrawlerTargets) , "Schedule" :: Maybe (CronExpression) , "Classifiers" :: Maybe (ClassifierNameList) , "TablePrefix" :: Maybe (TablePrefix) , "SchemaChangePolicy" :: Maybe (SchemaChangePolicy) , "Configuration" :: Maybe (CrawlerConfiguration) } -> {"Name" :: (NameString) , "Role" :: Maybe (Role) , "DatabaseName" :: Maybe (DatabaseName) , "Description" :: Maybe (DescriptionStringRemovable) , "Targets" :: Maybe (CrawlerTargets) , "Schedule" :: Maybe (CronExpression) , "Classifiers" :: Maybe (ClassifierNameList) , "TablePrefix" :: Maybe (TablePrefix) , "SchemaChangePolicy" :: Maybe (SchemaChangePolicy) , "Configuration" :: Maybe (CrawlerConfiguration) } ) -> UpdateCrawlerRequest
+newUpdateCrawlerRequest' _Name customize = (UpdateCrawlerRequest <<< customize) { "Name": _Name, "Classifiers": Nothing, "Configuration": Nothing, "DatabaseName": Nothing, "Description": Nothing, "Role": Nothing, "Schedule": Nothing, "SchemaChangePolicy": Nothing, "TablePrefix": Nothing, "Targets": Nothing }
 
 
 
@@ -5744,7 +5743,7 @@ instance encodeUpdateCrawlerResponse :: Encode UpdateCrawlerResponse where encod
 
 newtype UpdateCrawlerScheduleRequest = UpdateCrawlerScheduleRequest 
   { "CrawlerName" :: (NameString)
-  , "Schedule" :: NullOrUndefined (CronExpression)
+  , "Schedule" :: Maybe (CronExpression)
   }
 derive instance newtypeUpdateCrawlerScheduleRequest :: Newtype UpdateCrawlerScheduleRequest _
 derive instance repGenericUpdateCrawlerScheduleRequest :: Generic UpdateCrawlerScheduleRequest _
@@ -5754,12 +5753,12 @@ instance encodeUpdateCrawlerScheduleRequest :: Encode UpdateCrawlerScheduleReque
 
 -- | Constructs UpdateCrawlerScheduleRequest from required parameters
 newUpdateCrawlerScheduleRequest :: NameString -> UpdateCrawlerScheduleRequest
-newUpdateCrawlerScheduleRequest _CrawlerName = UpdateCrawlerScheduleRequest { "CrawlerName": _CrawlerName, "Schedule": (NullOrUndefined Nothing) }
+newUpdateCrawlerScheduleRequest _CrawlerName = UpdateCrawlerScheduleRequest { "CrawlerName": _CrawlerName, "Schedule": Nothing }
 
 -- | Constructs UpdateCrawlerScheduleRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateCrawlerScheduleRequest' :: NameString -> ( { "CrawlerName" :: (NameString) , "Schedule" :: NullOrUndefined (CronExpression) } -> {"CrawlerName" :: (NameString) , "Schedule" :: NullOrUndefined (CronExpression) } ) -> UpdateCrawlerScheduleRequest
-newUpdateCrawlerScheduleRequest' _CrawlerName customize = (UpdateCrawlerScheduleRequest <<< customize) { "CrawlerName": _CrawlerName, "Schedule": (NullOrUndefined Nothing) }
+newUpdateCrawlerScheduleRequest' :: NameString -> ( { "CrawlerName" :: (NameString) , "Schedule" :: Maybe (CronExpression) } -> {"CrawlerName" :: (NameString) , "Schedule" :: Maybe (CronExpression) } ) -> UpdateCrawlerScheduleRequest
+newUpdateCrawlerScheduleRequest' _CrawlerName customize = (UpdateCrawlerScheduleRequest <<< customize) { "CrawlerName": _CrawlerName, "Schedule": Nothing }
 
 
 
@@ -5773,7 +5772,7 @@ instance encodeUpdateCrawlerScheduleResponse :: Encode UpdateCrawlerScheduleResp
 
 
 newtype UpdateDatabaseRequest = UpdateDatabaseRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "Name" :: (NameString)
   , "DatabaseInput" :: (DatabaseInput)
   }
@@ -5785,12 +5784,12 @@ instance encodeUpdateDatabaseRequest :: Encode UpdateDatabaseRequest where encod
 
 -- | Constructs UpdateDatabaseRequest from required parameters
 newUpdateDatabaseRequest :: DatabaseInput -> NameString -> UpdateDatabaseRequest
-newUpdateDatabaseRequest _DatabaseInput _Name = UpdateDatabaseRequest { "DatabaseInput": _DatabaseInput, "Name": _Name, "CatalogId": (NullOrUndefined Nothing) }
+newUpdateDatabaseRequest _DatabaseInput _Name = UpdateDatabaseRequest { "DatabaseInput": _DatabaseInput, "Name": _Name, "CatalogId": Nothing }
 
 -- | Constructs UpdateDatabaseRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateDatabaseRequest' :: DatabaseInput -> NameString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "Name" :: (NameString) , "DatabaseInput" :: (DatabaseInput) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "Name" :: (NameString) , "DatabaseInput" :: (DatabaseInput) } ) -> UpdateDatabaseRequest
-newUpdateDatabaseRequest' _DatabaseInput _Name customize = (UpdateDatabaseRequest <<< customize) { "DatabaseInput": _DatabaseInput, "Name": _Name, "CatalogId": (NullOrUndefined Nothing) }
+newUpdateDatabaseRequest' :: DatabaseInput -> NameString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "Name" :: (NameString) , "DatabaseInput" :: (DatabaseInput) } -> {"CatalogId" :: Maybe (CatalogIdString) , "Name" :: (NameString) , "DatabaseInput" :: (DatabaseInput) } ) -> UpdateDatabaseRequest
+newUpdateDatabaseRequest' _DatabaseInput _Name customize = (UpdateDatabaseRequest <<< customize) { "DatabaseInput": _DatabaseInput, "Name": _Name, "CatalogId": Nothing }
 
 
 
@@ -5805,9 +5804,9 @@ instance encodeUpdateDatabaseResponse :: Encode UpdateDatabaseResponse where enc
 
 newtype UpdateDevEndpointRequest = UpdateDevEndpointRequest 
   { "EndpointName" :: (GenericString)
-  , "PublicKey" :: NullOrUndefined (GenericString)
-  , "CustomLibraries" :: NullOrUndefined (DevEndpointCustomLibraries)
-  , "UpdateEtlLibraries" :: NullOrUndefined (BooleanValue)
+  , "PublicKey" :: Maybe (GenericString)
+  , "CustomLibraries" :: Maybe (DevEndpointCustomLibraries)
+  , "UpdateEtlLibraries" :: Maybe (BooleanValue)
   }
 derive instance newtypeUpdateDevEndpointRequest :: Newtype UpdateDevEndpointRequest _
 derive instance repGenericUpdateDevEndpointRequest :: Generic UpdateDevEndpointRequest _
@@ -5817,12 +5816,12 @@ instance encodeUpdateDevEndpointRequest :: Encode UpdateDevEndpointRequest where
 
 -- | Constructs UpdateDevEndpointRequest from required parameters
 newUpdateDevEndpointRequest :: GenericString -> UpdateDevEndpointRequest
-newUpdateDevEndpointRequest _EndpointName = UpdateDevEndpointRequest { "EndpointName": _EndpointName, "CustomLibraries": (NullOrUndefined Nothing), "PublicKey": (NullOrUndefined Nothing), "UpdateEtlLibraries": (NullOrUndefined Nothing) }
+newUpdateDevEndpointRequest _EndpointName = UpdateDevEndpointRequest { "EndpointName": _EndpointName, "CustomLibraries": Nothing, "PublicKey": Nothing, "UpdateEtlLibraries": Nothing }
 
 -- | Constructs UpdateDevEndpointRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateDevEndpointRequest' :: GenericString -> ( { "EndpointName" :: (GenericString) , "PublicKey" :: NullOrUndefined (GenericString) , "CustomLibraries" :: NullOrUndefined (DevEndpointCustomLibraries) , "UpdateEtlLibraries" :: NullOrUndefined (BooleanValue) } -> {"EndpointName" :: (GenericString) , "PublicKey" :: NullOrUndefined (GenericString) , "CustomLibraries" :: NullOrUndefined (DevEndpointCustomLibraries) , "UpdateEtlLibraries" :: NullOrUndefined (BooleanValue) } ) -> UpdateDevEndpointRequest
-newUpdateDevEndpointRequest' _EndpointName customize = (UpdateDevEndpointRequest <<< customize) { "EndpointName": _EndpointName, "CustomLibraries": (NullOrUndefined Nothing), "PublicKey": (NullOrUndefined Nothing), "UpdateEtlLibraries": (NullOrUndefined Nothing) }
+newUpdateDevEndpointRequest' :: GenericString -> ( { "EndpointName" :: (GenericString) , "PublicKey" :: Maybe (GenericString) , "CustomLibraries" :: Maybe (DevEndpointCustomLibraries) , "UpdateEtlLibraries" :: Maybe (BooleanValue) } -> {"EndpointName" :: (GenericString) , "PublicKey" :: Maybe (GenericString) , "CustomLibraries" :: Maybe (DevEndpointCustomLibraries) , "UpdateEtlLibraries" :: Maybe (BooleanValue) } ) -> UpdateDevEndpointRequest
+newUpdateDevEndpointRequest' _EndpointName customize = (UpdateDevEndpointRequest <<< customize) { "EndpointName": _EndpointName, "CustomLibraries": Nothing, "PublicKey": Nothing, "UpdateEtlLibraries": Nothing }
 
 
 
@@ -5838,9 +5837,9 @@ instance encodeUpdateDevEndpointResponse :: Encode UpdateDevEndpointResponse whe
 -- | <p>Specifies a grok classifier to update when passed to <code>UpdateClassifier</code>.</p>
 newtype UpdateGrokClassifierRequest = UpdateGrokClassifierRequest 
   { "Name" :: (NameString)
-  , "Classification" :: NullOrUndefined (Classification)
-  , "GrokPattern" :: NullOrUndefined (GrokPattern)
-  , "CustomPatterns" :: NullOrUndefined (CustomPatterns)
+  , "Classification" :: Maybe (Classification)
+  , "GrokPattern" :: Maybe (GrokPattern)
+  , "CustomPatterns" :: Maybe (CustomPatterns)
   }
 derive instance newtypeUpdateGrokClassifierRequest :: Newtype UpdateGrokClassifierRequest _
 derive instance repGenericUpdateGrokClassifierRequest :: Generic UpdateGrokClassifierRequest _
@@ -5850,12 +5849,12 @@ instance encodeUpdateGrokClassifierRequest :: Encode UpdateGrokClassifierRequest
 
 -- | Constructs UpdateGrokClassifierRequest from required parameters
 newUpdateGrokClassifierRequest :: NameString -> UpdateGrokClassifierRequest
-newUpdateGrokClassifierRequest _Name = UpdateGrokClassifierRequest { "Name": _Name, "Classification": (NullOrUndefined Nothing), "CustomPatterns": (NullOrUndefined Nothing), "GrokPattern": (NullOrUndefined Nothing) }
+newUpdateGrokClassifierRequest _Name = UpdateGrokClassifierRequest { "Name": _Name, "Classification": Nothing, "CustomPatterns": Nothing, "GrokPattern": Nothing }
 
 -- | Constructs UpdateGrokClassifierRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateGrokClassifierRequest' :: NameString -> ( { "Name" :: (NameString) , "Classification" :: NullOrUndefined (Classification) , "GrokPattern" :: NullOrUndefined (GrokPattern) , "CustomPatterns" :: NullOrUndefined (CustomPatterns) } -> {"Name" :: (NameString) , "Classification" :: NullOrUndefined (Classification) , "GrokPattern" :: NullOrUndefined (GrokPattern) , "CustomPatterns" :: NullOrUndefined (CustomPatterns) } ) -> UpdateGrokClassifierRequest
-newUpdateGrokClassifierRequest' _Name customize = (UpdateGrokClassifierRequest <<< customize) { "Name": _Name, "Classification": (NullOrUndefined Nothing), "CustomPatterns": (NullOrUndefined Nothing), "GrokPattern": (NullOrUndefined Nothing) }
+newUpdateGrokClassifierRequest' :: NameString -> ( { "Name" :: (NameString) , "Classification" :: Maybe (Classification) , "GrokPattern" :: Maybe (GrokPattern) , "CustomPatterns" :: Maybe (CustomPatterns) } -> {"Name" :: (NameString) , "Classification" :: Maybe (Classification) , "GrokPattern" :: Maybe (GrokPattern) , "CustomPatterns" :: Maybe (CustomPatterns) } ) -> UpdateGrokClassifierRequest
+newUpdateGrokClassifierRequest' _Name customize = (UpdateGrokClassifierRequest <<< customize) { "Name": _Name, "Classification": Nothing, "CustomPatterns": Nothing, "GrokPattern": Nothing }
 
 
 
@@ -5881,7 +5880,7 @@ newUpdateJobRequest' _JobName _JobUpdate customize = (UpdateJobRequest <<< custo
 
 
 newtype UpdateJobResponse = UpdateJobResponse 
-  { "JobName" :: NullOrUndefined (NameString)
+  { "JobName" :: Maybe (NameString)
   }
 derive instance newtypeUpdateJobResponse :: Newtype UpdateJobResponse _
 derive instance repGenericUpdateJobResponse :: Generic UpdateJobResponse _
@@ -5891,19 +5890,19 @@ instance encodeUpdateJobResponse :: Encode UpdateJobResponse where encode = gene
 
 -- | Constructs UpdateJobResponse from required parameters
 newUpdateJobResponse :: UpdateJobResponse
-newUpdateJobResponse  = UpdateJobResponse { "JobName": (NullOrUndefined Nothing) }
+newUpdateJobResponse  = UpdateJobResponse { "JobName": Nothing }
 
 -- | Constructs UpdateJobResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateJobResponse' :: ( { "JobName" :: NullOrUndefined (NameString) } -> {"JobName" :: NullOrUndefined (NameString) } ) -> UpdateJobResponse
-newUpdateJobResponse'  customize = (UpdateJobResponse <<< customize) { "JobName": (NullOrUndefined Nothing) }
+newUpdateJobResponse' :: ( { "JobName" :: Maybe (NameString) } -> {"JobName" :: Maybe (NameString) } ) -> UpdateJobResponse
+newUpdateJobResponse'  customize = (UpdateJobResponse <<< customize) { "JobName": Nothing }
 
 
 
 -- | <p>Specifies a JSON classifier to be updated.</p>
 newtype UpdateJsonClassifierRequest = UpdateJsonClassifierRequest 
   { "Name" :: (NameString)
-  , "JsonPath" :: NullOrUndefined (JsonPath)
+  , "JsonPath" :: Maybe (JsonPath)
   }
 derive instance newtypeUpdateJsonClassifierRequest :: Newtype UpdateJsonClassifierRequest _
 derive instance repGenericUpdateJsonClassifierRequest :: Generic UpdateJsonClassifierRequest _
@@ -5913,17 +5912,17 @@ instance encodeUpdateJsonClassifierRequest :: Encode UpdateJsonClassifierRequest
 
 -- | Constructs UpdateJsonClassifierRequest from required parameters
 newUpdateJsonClassifierRequest :: NameString -> UpdateJsonClassifierRequest
-newUpdateJsonClassifierRequest _Name = UpdateJsonClassifierRequest { "Name": _Name, "JsonPath": (NullOrUndefined Nothing) }
+newUpdateJsonClassifierRequest _Name = UpdateJsonClassifierRequest { "Name": _Name, "JsonPath": Nothing }
 
 -- | Constructs UpdateJsonClassifierRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateJsonClassifierRequest' :: NameString -> ( { "Name" :: (NameString) , "JsonPath" :: NullOrUndefined (JsonPath) } -> {"Name" :: (NameString) , "JsonPath" :: NullOrUndefined (JsonPath) } ) -> UpdateJsonClassifierRequest
-newUpdateJsonClassifierRequest' _Name customize = (UpdateJsonClassifierRequest <<< customize) { "Name": _Name, "JsonPath": (NullOrUndefined Nothing) }
+newUpdateJsonClassifierRequest' :: NameString -> ( { "Name" :: (NameString) , "JsonPath" :: Maybe (JsonPath) } -> {"Name" :: (NameString) , "JsonPath" :: Maybe (JsonPath) } ) -> UpdateJsonClassifierRequest
+newUpdateJsonClassifierRequest' _Name customize = (UpdateJsonClassifierRequest <<< customize) { "Name": _Name, "JsonPath": Nothing }
 
 
 
 newtype UpdatePartitionRequest = UpdatePartitionRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseName" :: (NameString)
   , "TableName" :: (NameString)
   , "PartitionValueList" :: (BoundedPartitionValueList)
@@ -5937,12 +5936,12 @@ instance encodeUpdatePartitionRequest :: Encode UpdatePartitionRequest where enc
 
 -- | Constructs UpdatePartitionRequest from required parameters
 newUpdatePartitionRequest :: NameString -> PartitionInput -> BoundedPartitionValueList -> NameString -> UpdatePartitionRequest
-newUpdatePartitionRequest _DatabaseName _PartitionInput _PartitionValueList _TableName = UpdatePartitionRequest { "DatabaseName": _DatabaseName, "PartitionInput": _PartitionInput, "PartitionValueList": _PartitionValueList, "TableName": _TableName, "CatalogId": (NullOrUndefined Nothing) }
+newUpdatePartitionRequest _DatabaseName _PartitionInput _PartitionValueList _TableName = UpdatePartitionRequest { "DatabaseName": _DatabaseName, "PartitionInput": _PartitionInput, "PartitionValueList": _PartitionValueList, "TableName": _TableName, "CatalogId": Nothing }
 
 -- | Constructs UpdatePartitionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdatePartitionRequest' :: NameString -> PartitionInput -> BoundedPartitionValueList -> NameString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionValueList" :: (BoundedPartitionValueList) , "PartitionInput" :: (PartitionInput) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionValueList" :: (BoundedPartitionValueList) , "PartitionInput" :: (PartitionInput) } ) -> UpdatePartitionRequest
-newUpdatePartitionRequest' _DatabaseName _PartitionInput _PartitionValueList _TableName customize = (UpdatePartitionRequest <<< customize) { "DatabaseName": _DatabaseName, "PartitionInput": _PartitionInput, "PartitionValueList": _PartitionValueList, "TableName": _TableName, "CatalogId": (NullOrUndefined Nothing) }
+newUpdatePartitionRequest' :: NameString -> PartitionInput -> BoundedPartitionValueList -> NameString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionValueList" :: (BoundedPartitionValueList) , "PartitionInput" :: (PartitionInput) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableName" :: (NameString) , "PartitionValueList" :: (BoundedPartitionValueList) , "PartitionInput" :: (PartitionInput) } ) -> UpdatePartitionRequest
+newUpdatePartitionRequest' _DatabaseName _PartitionInput _PartitionValueList _TableName customize = (UpdatePartitionRequest <<< customize) { "DatabaseName": _DatabaseName, "PartitionInput": _PartitionInput, "PartitionValueList": _PartitionValueList, "TableName": _TableName, "CatalogId": Nothing }
 
 
 
@@ -5956,10 +5955,10 @@ instance encodeUpdatePartitionResponse :: Encode UpdatePartitionResponse where e
 
 
 newtype UpdateTableRequest = UpdateTableRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseName" :: (NameString)
   , "TableInput" :: (TableInput)
-  , "SkipArchive" :: NullOrUndefined (BooleanNullable)
+  , "SkipArchive" :: Maybe (BooleanNullable)
   }
 derive instance newtypeUpdateTableRequest :: Newtype UpdateTableRequest _
 derive instance repGenericUpdateTableRequest :: Generic UpdateTableRequest _
@@ -5969,12 +5968,12 @@ instance encodeUpdateTableRequest :: Encode UpdateTableRequest where encode = ge
 
 -- | Constructs UpdateTableRequest from required parameters
 newUpdateTableRequest :: NameString -> TableInput -> UpdateTableRequest
-newUpdateTableRequest _DatabaseName _TableInput = UpdateTableRequest { "DatabaseName": _DatabaseName, "TableInput": _TableInput, "CatalogId": (NullOrUndefined Nothing), "SkipArchive": (NullOrUndefined Nothing) }
+newUpdateTableRequest _DatabaseName _TableInput = UpdateTableRequest { "DatabaseName": _DatabaseName, "TableInput": _TableInput, "CatalogId": Nothing, "SkipArchive": Nothing }
 
 -- | Constructs UpdateTableRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateTableRequest' :: NameString -> TableInput -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableInput" :: (TableInput) , "SkipArchive" :: NullOrUndefined (BooleanNullable) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "TableInput" :: (TableInput) , "SkipArchive" :: NullOrUndefined (BooleanNullable) } ) -> UpdateTableRequest
-newUpdateTableRequest' _DatabaseName _TableInput customize = (UpdateTableRequest <<< customize) { "DatabaseName": _DatabaseName, "TableInput": _TableInput, "CatalogId": (NullOrUndefined Nothing), "SkipArchive": (NullOrUndefined Nothing) }
+newUpdateTableRequest' :: NameString -> TableInput -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableInput" :: (TableInput) , "SkipArchive" :: Maybe (BooleanNullable) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "TableInput" :: (TableInput) , "SkipArchive" :: Maybe (BooleanNullable) } ) -> UpdateTableRequest
+newUpdateTableRequest' _DatabaseName _TableInput customize = (UpdateTableRequest <<< customize) { "DatabaseName": _DatabaseName, "TableInput": _TableInput, "CatalogId": Nothing, "SkipArchive": Nothing }
 
 
 
@@ -6009,7 +6008,7 @@ newUpdateTriggerRequest' _Name _TriggerUpdate customize = (UpdateTriggerRequest 
 
 
 newtype UpdateTriggerResponse = UpdateTriggerResponse 
-  { "Trigger" :: NullOrUndefined (Trigger)
+  { "Trigger" :: Maybe (Trigger)
   }
 derive instance newtypeUpdateTriggerResponse :: Newtype UpdateTriggerResponse _
 derive instance repGenericUpdateTriggerResponse :: Generic UpdateTriggerResponse _
@@ -6019,17 +6018,17 @@ instance encodeUpdateTriggerResponse :: Encode UpdateTriggerResponse where encod
 
 -- | Constructs UpdateTriggerResponse from required parameters
 newUpdateTriggerResponse :: UpdateTriggerResponse
-newUpdateTriggerResponse  = UpdateTriggerResponse { "Trigger": (NullOrUndefined Nothing) }
+newUpdateTriggerResponse  = UpdateTriggerResponse { "Trigger": Nothing }
 
 -- | Constructs UpdateTriggerResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateTriggerResponse' :: ( { "Trigger" :: NullOrUndefined (Trigger) } -> {"Trigger" :: NullOrUndefined (Trigger) } ) -> UpdateTriggerResponse
-newUpdateTriggerResponse'  customize = (UpdateTriggerResponse <<< customize) { "Trigger": (NullOrUndefined Nothing) }
+newUpdateTriggerResponse' :: ( { "Trigger" :: Maybe (Trigger) } -> {"Trigger" :: Maybe (Trigger) } ) -> UpdateTriggerResponse
+newUpdateTriggerResponse'  customize = (UpdateTriggerResponse <<< customize) { "Trigger": Nothing }
 
 
 
 newtype UpdateUserDefinedFunctionRequest = UpdateUserDefinedFunctionRequest 
-  { "CatalogId" :: NullOrUndefined (CatalogIdString)
+  { "CatalogId" :: Maybe (CatalogIdString)
   , "DatabaseName" :: (NameString)
   , "FunctionName" :: (NameString)
   , "FunctionInput" :: (UserDefinedFunctionInput)
@@ -6042,12 +6041,12 @@ instance encodeUpdateUserDefinedFunctionRequest :: Encode UpdateUserDefinedFunct
 
 -- | Constructs UpdateUserDefinedFunctionRequest from required parameters
 newUpdateUserDefinedFunctionRequest :: NameString -> UserDefinedFunctionInput -> NameString -> UpdateUserDefinedFunctionRequest
-newUpdateUserDefinedFunctionRequest _DatabaseName _FunctionInput _FunctionName = UpdateUserDefinedFunctionRequest { "DatabaseName": _DatabaseName, "FunctionInput": _FunctionInput, "FunctionName": _FunctionName, "CatalogId": (NullOrUndefined Nothing) }
+newUpdateUserDefinedFunctionRequest _DatabaseName _FunctionInput _FunctionName = UpdateUserDefinedFunctionRequest { "DatabaseName": _DatabaseName, "FunctionInput": _FunctionInput, "FunctionName": _FunctionName, "CatalogId": Nothing }
 
 -- | Constructs UpdateUserDefinedFunctionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateUserDefinedFunctionRequest' :: NameString -> UserDefinedFunctionInput -> NameString -> ( { "CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "FunctionName" :: (NameString) , "FunctionInput" :: (UserDefinedFunctionInput) } -> {"CatalogId" :: NullOrUndefined (CatalogIdString) , "DatabaseName" :: (NameString) , "FunctionName" :: (NameString) , "FunctionInput" :: (UserDefinedFunctionInput) } ) -> UpdateUserDefinedFunctionRequest
-newUpdateUserDefinedFunctionRequest' _DatabaseName _FunctionInput _FunctionName customize = (UpdateUserDefinedFunctionRequest <<< customize) { "DatabaseName": _DatabaseName, "FunctionInput": _FunctionInput, "FunctionName": _FunctionName, "CatalogId": (NullOrUndefined Nothing) }
+newUpdateUserDefinedFunctionRequest' :: NameString -> UserDefinedFunctionInput -> NameString -> ( { "CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "FunctionName" :: (NameString) , "FunctionInput" :: (UserDefinedFunctionInput) } -> {"CatalogId" :: Maybe (CatalogIdString) , "DatabaseName" :: (NameString) , "FunctionName" :: (NameString) , "FunctionInput" :: (UserDefinedFunctionInput) } ) -> UpdateUserDefinedFunctionRequest
+newUpdateUserDefinedFunctionRequest' _DatabaseName _FunctionInput _FunctionName customize = (UpdateUserDefinedFunctionRequest <<< customize) { "DatabaseName": _DatabaseName, "FunctionInput": _FunctionInput, "FunctionName": _FunctionName, "CatalogId": Nothing }
 
 
 
@@ -6063,8 +6062,8 @@ instance encodeUpdateUserDefinedFunctionResponse :: Encode UpdateUserDefinedFunc
 -- | <p>Specifies an XML classifier to be updated.</p>
 newtype UpdateXMLClassifierRequest = UpdateXMLClassifierRequest 
   { "Name" :: (NameString)
-  , "Classification" :: NullOrUndefined (Classification)
-  , "RowTag" :: NullOrUndefined (RowTag)
+  , "Classification" :: Maybe (Classification)
+  , "RowTag" :: Maybe (RowTag)
   }
 derive instance newtypeUpdateXMLClassifierRequest :: Newtype UpdateXMLClassifierRequest _
 derive instance repGenericUpdateXMLClassifierRequest :: Generic UpdateXMLClassifierRequest _
@@ -6074,12 +6073,12 @@ instance encodeUpdateXMLClassifierRequest :: Encode UpdateXMLClassifierRequest w
 
 -- | Constructs UpdateXMLClassifierRequest from required parameters
 newUpdateXMLClassifierRequest :: NameString -> UpdateXMLClassifierRequest
-newUpdateXMLClassifierRequest _Name = UpdateXMLClassifierRequest { "Name": _Name, "Classification": (NullOrUndefined Nothing), "RowTag": (NullOrUndefined Nothing) }
+newUpdateXMLClassifierRequest _Name = UpdateXMLClassifierRequest { "Name": _Name, "Classification": Nothing, "RowTag": Nothing }
 
 -- | Constructs UpdateXMLClassifierRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateXMLClassifierRequest' :: NameString -> ( { "Name" :: (NameString) , "Classification" :: NullOrUndefined (Classification) , "RowTag" :: NullOrUndefined (RowTag) } -> {"Name" :: (NameString) , "Classification" :: NullOrUndefined (Classification) , "RowTag" :: NullOrUndefined (RowTag) } ) -> UpdateXMLClassifierRequest
-newUpdateXMLClassifierRequest' _Name customize = (UpdateXMLClassifierRequest <<< customize) { "Name": _Name, "Classification": (NullOrUndefined Nothing), "RowTag": (NullOrUndefined Nothing) }
+newUpdateXMLClassifierRequest' :: NameString -> ( { "Name" :: (NameString) , "Classification" :: Maybe (Classification) , "RowTag" :: Maybe (RowTag) } -> {"Name" :: (NameString) , "Classification" :: Maybe (Classification) , "RowTag" :: Maybe (RowTag) } ) -> UpdateXMLClassifierRequest
+newUpdateXMLClassifierRequest' _Name customize = (UpdateXMLClassifierRequest <<< customize) { "Name": _Name, "Classification": Nothing, "RowTag": Nothing }
 
 
 
@@ -6094,12 +6093,12 @@ instance encodeUriString :: Encode UriString where encode = genericEncode option
 
 -- | <p>Represents the equivalent of a Hive user-defined function (<code>UDF</code>) definition.</p>
 newtype UserDefinedFunction = UserDefinedFunction 
-  { "FunctionName" :: NullOrUndefined (NameString)
-  , "ClassName" :: NullOrUndefined (NameString)
-  , "OwnerName" :: NullOrUndefined (NameString)
-  , "OwnerType" :: NullOrUndefined (PrincipalType)
-  , "CreateTime" :: NullOrUndefined (Types.Timestamp)
-  , "ResourceUris" :: NullOrUndefined (ResourceUriList)
+  { "FunctionName" :: Maybe (NameString)
+  , "ClassName" :: Maybe (NameString)
+  , "OwnerName" :: Maybe (NameString)
+  , "OwnerType" :: Maybe (PrincipalType)
+  , "CreateTime" :: Maybe (Types.Timestamp)
+  , "ResourceUris" :: Maybe (ResourceUriList)
   }
 derive instance newtypeUserDefinedFunction :: Newtype UserDefinedFunction _
 derive instance repGenericUserDefinedFunction :: Generic UserDefinedFunction _
@@ -6109,22 +6108,22 @@ instance encodeUserDefinedFunction :: Encode UserDefinedFunction where encode = 
 
 -- | Constructs UserDefinedFunction from required parameters
 newUserDefinedFunction :: UserDefinedFunction
-newUserDefinedFunction  = UserDefinedFunction { "ClassName": (NullOrUndefined Nothing), "CreateTime": (NullOrUndefined Nothing), "FunctionName": (NullOrUndefined Nothing), "OwnerName": (NullOrUndefined Nothing), "OwnerType": (NullOrUndefined Nothing), "ResourceUris": (NullOrUndefined Nothing) }
+newUserDefinedFunction  = UserDefinedFunction { "ClassName": Nothing, "CreateTime": Nothing, "FunctionName": Nothing, "OwnerName": Nothing, "OwnerType": Nothing, "ResourceUris": Nothing }
 
 -- | Constructs UserDefinedFunction's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUserDefinedFunction' :: ( { "FunctionName" :: NullOrUndefined (NameString) , "ClassName" :: NullOrUndefined (NameString) , "OwnerName" :: NullOrUndefined (NameString) , "OwnerType" :: NullOrUndefined (PrincipalType) , "CreateTime" :: NullOrUndefined (Types.Timestamp) , "ResourceUris" :: NullOrUndefined (ResourceUriList) } -> {"FunctionName" :: NullOrUndefined (NameString) , "ClassName" :: NullOrUndefined (NameString) , "OwnerName" :: NullOrUndefined (NameString) , "OwnerType" :: NullOrUndefined (PrincipalType) , "CreateTime" :: NullOrUndefined (Types.Timestamp) , "ResourceUris" :: NullOrUndefined (ResourceUriList) } ) -> UserDefinedFunction
-newUserDefinedFunction'  customize = (UserDefinedFunction <<< customize) { "ClassName": (NullOrUndefined Nothing), "CreateTime": (NullOrUndefined Nothing), "FunctionName": (NullOrUndefined Nothing), "OwnerName": (NullOrUndefined Nothing), "OwnerType": (NullOrUndefined Nothing), "ResourceUris": (NullOrUndefined Nothing) }
+newUserDefinedFunction' :: ( { "FunctionName" :: Maybe (NameString) , "ClassName" :: Maybe (NameString) , "OwnerName" :: Maybe (NameString) , "OwnerType" :: Maybe (PrincipalType) , "CreateTime" :: Maybe (Types.Timestamp) , "ResourceUris" :: Maybe (ResourceUriList) } -> {"FunctionName" :: Maybe (NameString) , "ClassName" :: Maybe (NameString) , "OwnerName" :: Maybe (NameString) , "OwnerType" :: Maybe (PrincipalType) , "CreateTime" :: Maybe (Types.Timestamp) , "ResourceUris" :: Maybe (ResourceUriList) } ) -> UserDefinedFunction
+newUserDefinedFunction'  customize = (UserDefinedFunction <<< customize) { "ClassName": Nothing, "CreateTime": Nothing, "FunctionName": Nothing, "OwnerName": Nothing, "OwnerType": Nothing, "ResourceUris": Nothing }
 
 
 
 -- | <p>A structure used to create or updata a user-defined function.</p>
 newtype UserDefinedFunctionInput = UserDefinedFunctionInput 
-  { "FunctionName" :: NullOrUndefined (NameString)
-  , "ClassName" :: NullOrUndefined (NameString)
-  , "OwnerName" :: NullOrUndefined (NameString)
-  , "OwnerType" :: NullOrUndefined (PrincipalType)
-  , "ResourceUris" :: NullOrUndefined (ResourceUriList)
+  { "FunctionName" :: Maybe (NameString)
+  , "ClassName" :: Maybe (NameString)
+  , "OwnerName" :: Maybe (NameString)
+  , "OwnerType" :: Maybe (PrincipalType)
+  , "ResourceUris" :: Maybe (ResourceUriList)
   }
 derive instance newtypeUserDefinedFunctionInput :: Newtype UserDefinedFunctionInput _
 derive instance repGenericUserDefinedFunctionInput :: Generic UserDefinedFunctionInput _
@@ -6134,12 +6133,12 @@ instance encodeUserDefinedFunctionInput :: Encode UserDefinedFunctionInput where
 
 -- | Constructs UserDefinedFunctionInput from required parameters
 newUserDefinedFunctionInput :: UserDefinedFunctionInput
-newUserDefinedFunctionInput  = UserDefinedFunctionInput { "ClassName": (NullOrUndefined Nothing), "FunctionName": (NullOrUndefined Nothing), "OwnerName": (NullOrUndefined Nothing), "OwnerType": (NullOrUndefined Nothing), "ResourceUris": (NullOrUndefined Nothing) }
+newUserDefinedFunctionInput  = UserDefinedFunctionInput { "ClassName": Nothing, "FunctionName": Nothing, "OwnerName": Nothing, "OwnerType": Nothing, "ResourceUris": Nothing }
 
 -- | Constructs UserDefinedFunctionInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUserDefinedFunctionInput' :: ( { "FunctionName" :: NullOrUndefined (NameString) , "ClassName" :: NullOrUndefined (NameString) , "OwnerName" :: NullOrUndefined (NameString) , "OwnerType" :: NullOrUndefined (PrincipalType) , "ResourceUris" :: NullOrUndefined (ResourceUriList) } -> {"FunctionName" :: NullOrUndefined (NameString) , "ClassName" :: NullOrUndefined (NameString) , "OwnerName" :: NullOrUndefined (NameString) , "OwnerType" :: NullOrUndefined (PrincipalType) , "ResourceUris" :: NullOrUndefined (ResourceUriList) } ) -> UserDefinedFunctionInput
-newUserDefinedFunctionInput'  customize = (UserDefinedFunctionInput <<< customize) { "ClassName": (NullOrUndefined Nothing), "FunctionName": (NullOrUndefined Nothing), "OwnerName": (NullOrUndefined Nothing), "OwnerType": (NullOrUndefined Nothing), "ResourceUris": (NullOrUndefined Nothing) }
+newUserDefinedFunctionInput' :: ( { "FunctionName" :: Maybe (NameString) , "ClassName" :: Maybe (NameString) , "OwnerName" :: Maybe (NameString) , "OwnerType" :: Maybe (PrincipalType) , "ResourceUris" :: Maybe (ResourceUriList) } -> {"FunctionName" :: Maybe (NameString) , "ClassName" :: Maybe (NameString) , "OwnerName" :: Maybe (NameString) , "OwnerType" :: Maybe (PrincipalType) , "ResourceUris" :: Maybe (ResourceUriList) } ) -> UserDefinedFunctionInput
+newUserDefinedFunctionInput'  customize = (UserDefinedFunctionInput <<< customize) { "ClassName": Nothing, "FunctionName": Nothing, "OwnerName": Nothing, "OwnerType": Nothing, "ResourceUris": Nothing }
 
 
 
@@ -6154,7 +6153,7 @@ instance encodeUserDefinedFunctionList :: Encode UserDefinedFunctionList where e
 
 -- | <p>A value could not be validated.</p>
 newtype ValidationException = ValidationException 
-  { "Message" :: NullOrUndefined (MessageString)
+  { "Message" :: Maybe (MessageString)
   }
 derive instance newtypeValidationException :: Newtype ValidationException _
 derive instance repGenericValidationException :: Generic ValidationException _
@@ -6164,12 +6163,12 @@ instance encodeValidationException :: Encode ValidationException where encode = 
 
 -- | Constructs ValidationException from required parameters
 newValidationException :: ValidationException
-newValidationException  = ValidationException { "Message": (NullOrUndefined Nothing) }
+newValidationException  = ValidationException { "Message": Nothing }
 
 -- | Constructs ValidationException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newValidationException' :: ( { "Message" :: NullOrUndefined (MessageString) } -> {"Message" :: NullOrUndefined (MessageString) } ) -> ValidationException
-newValidationException'  customize = (ValidationException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newValidationException' :: ( { "Message" :: Maybe (MessageString) } -> {"Message" :: Maybe (MessageString) } ) -> ValidationException
+newValidationException'  customize = (ValidationException <<< customize) { "Message": Nothing }
 
 
 
@@ -6202,7 +6201,7 @@ instance encodeVersionId :: Encode VersionId where encode = genericEncode option
 
 -- | <p>There was a version conflict.</p>
 newtype VersionMismatchException = VersionMismatchException 
-  { "Message" :: NullOrUndefined (MessageString)
+  { "Message" :: Maybe (MessageString)
   }
 derive instance newtypeVersionMismatchException :: Newtype VersionMismatchException _
 derive instance repGenericVersionMismatchException :: Generic VersionMismatchException _
@@ -6212,12 +6211,12 @@ instance encodeVersionMismatchException :: Encode VersionMismatchException where
 
 -- | Constructs VersionMismatchException from required parameters
 newVersionMismatchException :: VersionMismatchException
-newVersionMismatchException  = VersionMismatchException { "Message": (NullOrUndefined Nothing) }
+newVersionMismatchException  = VersionMismatchException { "Message": Nothing }
 
 -- | Constructs VersionMismatchException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newVersionMismatchException' :: ( { "Message" :: NullOrUndefined (MessageString) } -> {"Message" :: NullOrUndefined (MessageString) } ) -> VersionMismatchException
-newVersionMismatchException'  customize = (VersionMismatchException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newVersionMismatchException' :: ( { "Message" :: Maybe (MessageString) } -> {"Message" :: Maybe (MessageString) } ) -> VersionMismatchException
+newVersionMismatchException'  customize = (VersionMismatchException <<< customize) { "Message": Nothing }
 
 
 
@@ -6243,10 +6242,10 @@ instance encodeViewTextString :: Encode ViewTextString where encode = genericEnc
 newtype XMLClassifier = XMLClassifier 
   { "Name" :: (NameString)
   , "Classification" :: (Classification)
-  , "CreationTime" :: NullOrUndefined (Types.Timestamp)
-  , "LastUpdated" :: NullOrUndefined (Types.Timestamp)
-  , "Version" :: NullOrUndefined (VersionId)
-  , "RowTag" :: NullOrUndefined (RowTag)
+  , "CreationTime" :: Maybe (Types.Timestamp)
+  , "LastUpdated" :: Maybe (Types.Timestamp)
+  , "Version" :: Maybe (VersionId)
+  , "RowTag" :: Maybe (RowTag)
   }
 derive instance newtypeXMLClassifier :: Newtype XMLClassifier _
 derive instance repGenericXMLClassifier :: Generic XMLClassifier _
@@ -6256,10 +6255,10 @@ instance encodeXMLClassifier :: Encode XMLClassifier where encode = genericEncod
 
 -- | Constructs XMLClassifier from required parameters
 newXMLClassifier :: Classification -> NameString -> XMLClassifier
-newXMLClassifier _Classification _Name = XMLClassifier { "Classification": _Classification, "Name": _Name, "CreationTime": (NullOrUndefined Nothing), "LastUpdated": (NullOrUndefined Nothing), "RowTag": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newXMLClassifier _Classification _Name = XMLClassifier { "Classification": _Classification, "Name": _Name, "CreationTime": Nothing, "LastUpdated": Nothing, "RowTag": Nothing, "Version": Nothing }
 
 -- | Constructs XMLClassifier's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newXMLClassifier' :: Classification -> NameString -> ( { "Name" :: (NameString) , "Classification" :: (Classification) , "CreationTime" :: NullOrUndefined (Types.Timestamp) , "LastUpdated" :: NullOrUndefined (Types.Timestamp) , "Version" :: NullOrUndefined (VersionId) , "RowTag" :: NullOrUndefined (RowTag) } -> {"Name" :: (NameString) , "Classification" :: (Classification) , "CreationTime" :: NullOrUndefined (Types.Timestamp) , "LastUpdated" :: NullOrUndefined (Types.Timestamp) , "Version" :: NullOrUndefined (VersionId) , "RowTag" :: NullOrUndefined (RowTag) } ) -> XMLClassifier
-newXMLClassifier' _Classification _Name customize = (XMLClassifier <<< customize) { "Classification": _Classification, "Name": _Name, "CreationTime": (NullOrUndefined Nothing), "LastUpdated": (NullOrUndefined Nothing), "RowTag": (NullOrUndefined Nothing), "Version": (NullOrUndefined Nothing) }
+newXMLClassifier' :: Classification -> NameString -> ( { "Name" :: (NameString) , "Classification" :: (Classification) , "CreationTime" :: Maybe (Types.Timestamp) , "LastUpdated" :: Maybe (Types.Timestamp) , "Version" :: Maybe (VersionId) , "RowTag" :: Maybe (RowTag) } -> {"Name" :: (NameString) , "Classification" :: (Classification) , "CreationTime" :: Maybe (Types.Timestamp) , "LastUpdated" :: Maybe (Types.Timestamp) , "Version" :: Maybe (VersionId) , "RowTag" :: Maybe (RowTag) } ) -> XMLClassifier
+newXMLClassifier' _Classification _Name customize = (XMLClassifier <<< customize) { "Classification": _Classification, "Name": _Name, "CreationTime": Nothing, "LastUpdated": Nothing, "RowTag": Nothing, "Version": Nothing }
 
